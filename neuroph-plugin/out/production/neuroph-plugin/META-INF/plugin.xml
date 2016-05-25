@@ -1,0 +1,41 @@
+<idea-plugin version="2">
+  <id>com.thomas.needham.neurophidea</id>
+  <name>Neuroph For Intellij</name>
+  <version>1.0</version>
+  <vendor email="06needhamt@gmail.com" url="">Tom Needham</vendor>
+
+  <description><![CDATA[
+      Allows for easy integration of the Neuroph libraries
+      into intellij products and easy to use example neural networks
+    ]]></description>
+
+  <change-notes><![CDATA[
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="141.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+      <applicationConfigurable instance="com.thomas.needham.neurophidea.VersionSetting">
+
+      </applicationConfigurable>
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+      <action class="com.thomas.needham.neurophidea.InitAction" id="Init">
+
+      </action>
+    <!-- Add your actions here -->
+  </actions>
+
+</idea-plugin>

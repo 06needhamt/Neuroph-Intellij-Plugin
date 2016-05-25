@@ -29,4 +29,7 @@ package com.thomas.needham.neurophidea
 object Constants {
     val VERSION_KEY = "version"
     val LOCATION_KEY = "location"
+    val INITIALISATION_ACTION = "Initialisation"
+    val MENU_ACTION = "Menu"
+    val WINDOW_MENU_ACTION = "WindowMenu"
 }

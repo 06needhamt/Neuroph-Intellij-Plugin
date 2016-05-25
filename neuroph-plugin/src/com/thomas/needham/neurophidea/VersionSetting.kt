@@ -48,6 +48,8 @@ import javax.swing.JTextField
 class VersionSetting : Configurable {
     var properties : PropertiesComponent = PropertiesComponent.getInstance()
     val versions : ArrayList<String?> = ArrayList<String?>()
+    var oldVersion : String = ""
+    var oldPath : String = ""
 
     companion object Interface {
         var modified : Boolean = false
@@ -75,7 +77,8 @@ class VersionSetting : Configurable {
     }
 
     override fun reset() {
-
+        properties.setValue(LOCATION_KEY,oldPath)
+        properties.setValue(VERSION_KEY,oldVersion)
     }
 
     override fun createComponent() : JComponent? {
@@ -104,11 +107,13 @@ class VersionSetting : Configurable {
         locationBrowseButton.setBounds(insets.left + 400,insets.top + 100, 25,25)
         locationBrowseButton.addActionListener(ActionListener { e ->
             val desc = FileChooserDescriptor(true,false,true,true,false,false)
-            val consumer : Consumer<VirtualFile?> = NeurophJarConsumer() as Consumer<VirtualFile?>
+            val consumer : Consumer<VirtualFile?> = NeurophJarConsumer()
             FileChooser.chooseFile(desc,InitAction.project,null,consumer)
         })
         panel.add(locationBrowseButton)
         panel.isVisible = true
+        oldVersion = properties.getValue(VERSION_KEY,"")
+        oldPath = properties.getValue(LOCATION_KEY,"")
         return panel
     }
 

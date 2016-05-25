@@ -13,7 +13,6 @@ class CreateNetworkAction : AnAction() {
 
     override fun actionPerformed(e : AnActionEvent) {
         val form = CreateNetworkForm()
-        form.Show()
     }
 
     override fun update(e : AnActionEvent?) {

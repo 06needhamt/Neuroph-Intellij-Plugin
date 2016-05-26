@@ -21,20 +21,21 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea
+package com.thomas.needham.neurophidea.forms
+
+import com.intellij.openapi.fileChooser.FileChooser
+import java.awt.event.ActionEvent
+import java.awt.event.ActionListener
 
 /**
  * Created by thoma on 25/05/2016.
  */
-class TransferFunctions {
-    enum class Functions(nameString: String) {
-        SIGMOID("Sigmoid"),
-        GAUSSIAN("Gaussian");
-        //TODO Add More Transfer Functions
+class TrainingSetBrowseButtonActionListener : ActionListener {
+    companion object Data{
+        val defaultPath = ""
+        val allowedFileTypes = arrayOf("csv", "txt", "tset")
     }
-    companion object Names{
-        @JvmStatic val classNames = arrayOf("Sigmoid", "Gaussian")
-        @JvmStatic val friendlyNames = arrayOf("Sigmoid", "Gaussian")
-        //TODO Add More Transfer Functions
+    override fun actionPerformed(e : ActionEvent?) {
+        //FileChooser.chooseFile()
     }
 }

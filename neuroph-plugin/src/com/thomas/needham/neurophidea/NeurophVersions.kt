@@ -26,26 +26,26 @@ package com.thomas.needham.neurophidea
 /**
  * Created by thoma on 24/05/2016.
  */
-enum class NeurophVersions(val version : String) {
-    VERSION_2_9("2.9"),
-    VERSION_2_8("2.8"),
-    VERSION_2_7("2.7"),
-    VERSION_2_6("2.6"),
-    VERSION_2_5RC2("2.5RC2"),
-    VERSION_2_5RC1("2.5RC1"),
-    VERSION_2_5("2.5");
-    /* Can't add due to no download links
-    VERSION_2_4("2.4"),
-    VERSION_2_3_1("2.3.1"),
-    VERSION_2_3("2.3"),
-    VERSION_2_2("2.2"),
-    VERSION_2_1_1_BETA("2.1.1_beta"),
-    VERSION_2_1_0_BETA("2.1.0_beta"),
-    VERSION_2_0_0_ALPHA("2.0.0_alpha"),
-    VERSION_1_0_1_ALPHA("1.0.1_alpha"),
-    VERSION_1_0_0_ALPHA("1.0.0_alpha"),
-    */
-    companion object Data{
+class NeurophVersions {
+    enum class Versions(val version : String) {
+        VERSION_2_9("2.9"),
+        VERSION_2_8("2.8"),
+        VERSION_2_7("2.7"),
+        VERSION_2_6("2.6"),
+        VERSION_2_5RC2("2.5RC2"),
+        VERSION_2_5RC1("2.5RC1"),
+        VERSION_2_5("2.5"),
+        VERSION_2_4("2.4"),
+        VERSION_2_3_1("2.3.1"),
+        VERSION_2_3("2.3"),
+        VERSION_2_2("2.2"),
+        VERSION_2_1_1_BETA("2.1.1_beta"),
+        VERSION_2_1_0_BETA("2.1.0_beta"),
+        VERSION_2_0_0_ALPHA("2.0.0_alpha"),
+        VERSION_1_0_1_ALPHA("1.0.1_alpha"),
+        VERSION_1_0_0_ALPHA("1.0.0_alpha");
+    }
+    companion object Links{
         val URLS = arrayOf("http://netix.dl.sourceforge.net/project/neuroph/neuroph-2.9/neuroph-2.9.zip",
                 "http://netix.dl.sourceforge.net/project/neuroph/neuroph-2.8/neuroph-2.8.zip",
                 "http://netix.dl.sourceforge.net/project/neuroph/neuroph-2.7/neuroph-2.7.zip",

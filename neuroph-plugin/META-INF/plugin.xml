@@ -56,9 +56,13 @@ SOFTWARE. -->
             </action>
         </group>
         <action class="com.thomas.needham.neurophidea.InitAction" id="Init">
-
+            <add-to-group group-id="NewProjectOrModuleGroup" anchor="last"/>
         </action>
         <!-- Add your actions here -->
     </actions>
-
+<application-components>
+    <component>
+        <implementation-class>com.thomas.needham.neurophidea.PluginRegistration</implementation-class>
+    </component>
+</application-components>
 </idea-plugin>

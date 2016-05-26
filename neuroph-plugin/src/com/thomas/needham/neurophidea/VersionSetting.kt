@@ -124,8 +124,8 @@ class VersionSetting : Configurable {
     }
 
     private fun PopulateVersions() {
-        for(i in IntRange(0,NeurophVersions.values().size - 1)){
-            versions.add(NeurophVersions.values()[i].version)
+        for(i in IntRange(0,NeurophVersions.Versions.values().size - 1)){
+            versions.add(NeurophVersions.Versions.values()[i].version)
             versionSelector.addItem(versions[i])
         }
         if(properties.isValueSet(VERSION_KEY)) {

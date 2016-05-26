@@ -8,6 +8,7 @@ import com.intellij.util.Icons
 import com.thomas.needham.neurophidea.Constants
 import com.thomas.needham.neurophidea.CreateNetworkAction
 import com.thomas.needham.neurophidea.VersionSetting
+import com.thomas.needham.neurophidea.Constants.TRAINING_SET_LOCATION_KEY
 
 /**
  * Created by thoma on 26/05/2016.
@@ -27,6 +28,7 @@ class TrainingSetFileConsumer : Consumer<VirtualFile?> {
         for(ext : String in TrainingSetBrowseButtonActionListener.allowedFileTypes){
             if(p0?.extension?.equals(ext)!!){
                 path = p0?.path
+                properties.setValue(TRAINING_SET_LOCATION_KEY,path)
                 return
             }
         }

@@ -52,5 +52,6 @@ fun CreateNetworkForm.PopulateLearningRules() {
 }
 fun CreateNetworkForm.AddOnClickListeners() {
     val trainingListener : TrainingSetBrowseButtonActionListener? = TrainingSetBrowseButtonActionListener()
+    trainingListener?.formInstance = this
     btnBrowseTrainingData.addActionListener(trainingListener)
 }

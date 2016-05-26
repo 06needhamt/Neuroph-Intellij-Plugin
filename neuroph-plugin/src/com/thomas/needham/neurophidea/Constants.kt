@@ -32,4 +32,5 @@ object Constants {
     val INITIALISATION_ACTION = "Initialisation"
     val MENU_ACTION = "Menu"
     val WINDOW_MENU_ACTION = "WindowMenu"
+    val TRAINING_SET_LOCATION_KEY = "TrainingSetLocation"
 }

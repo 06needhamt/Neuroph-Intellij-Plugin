@@ -23,7 +23,13 @@ SOFTWARE.
  */
 package com.thomas.needham.neurophidea.forms
 
+import com.intellij.ide.util.PropertiesComponent
 import com.intellij.openapi.fileChooser.FileChooser
+import com.intellij.openapi.fileChooser.FileChooserDescriptor
+import com.intellij.openapi.vfs.VirtualFile
+import com.intellij.util.Consumer
+import com.thomas.needham.neurophidea.CreateNetworkAction
+import com.thomas.needham.neurophidea.Constants.TRAINING_SET_LOCATION_KEY
 import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
 
@@ -31,12 +37,20 @@ import java.awt.event.ActionListener
  * Created by thoma on 25/05/2016.
  */
 class TrainingSetBrowseButtonActionListener : ActionListener {
+    var formInstance : CreateNetworkForm? = null
+
     companion object Data{
         val defaultPath = ""
         val allowedFileTypes = arrayOf("csv", "txt", "tset")
+        val fileDescriptor = FileChooserDescriptor(true,false,false,false,false,false)
+        val consumer : TrainingSetFileConsumer? = TrainingSetFileConsumer()
+        val properties = PropertiesComponent.getInstance()
+        var chosenPath = ""
     }
     override fun actionPerformed(e : ActionEvent?) {
         println("In On Click")
-        //FileChooser.chooseFile()
+        FileChooser.chooseFile(fileDescriptor, CreateNetworkAction.project,null,consumer as Consumer<VirtualFile?>)
+        chosenPath = properties.getValue(TRAINING_SET_LOCATION_KEY,defaultPath)
+        formInstance?.txtTrainingData?.text = chosenPath
     }
 }

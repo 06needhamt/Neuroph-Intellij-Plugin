@@ -31,7 +31,6 @@ import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.util.Consumer
 import java.awt.Dimension
 import java.awt.event.ItemEvent
-import java.util.*
 import javax.swing.JComboBox
 import javax.swing.JComponent
 import javax.swing.JLabel
@@ -39,6 +38,7 @@ import javax.swing.JPanel
 import com.thomas.needham.neurophidea.Constants.VERSION_KEY
 import com.thomas.needham.neurophidea.Constants.LOCATION_KEY
 import java.awt.event.ActionListener
+import java.util.ArrayList
 import javax.swing.JButton
 import javax.swing.JTextField
 

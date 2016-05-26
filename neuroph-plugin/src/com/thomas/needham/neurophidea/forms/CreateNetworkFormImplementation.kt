@@ -21,22 +21,36 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
+@file:JvmName("CreateNetworkForm\$Ext")
+@file:JvmMultifileClass()
 package com.thomas.needham.neurophidea.forms
 
-import com.intellij.openapi.fileChooser.FileChooser
-import java.awt.event.ActionEvent
-import java.awt.event.ActionListener
+import com.thomas.needham.neurophidea.LearningRules
+import com.thomas.needham.neurophidea.NetworkTypes
+import com.thomas.needham.neurophidea.TransferFunctions
 
 /**
- * Created by thoma on 25/05/2016.
+ * Created by thoma on 26/05/2016.
  */
-class TrainingSetBrowseButtonActionListener : ActionListener {
-    companion object Data{
-        val defaultPath = ""
-        val allowedFileTypes = arrayOf("csv", "txt", "tset")
+
+fun CreateNetworkForm.PopulateTransferFunctions() {
+    for (i in 0..TransferFunctions.Functions.values().size - 1) {
+        cmbTransferFunction.addItem(TransferFunctions.friendlyNames[i])
     }
-    override fun actionPerformed(e : ActionEvent?) {
-        println("In On Click")
-        //FileChooser.chooseFile()
+}
+
+fun CreateNetworkForm.PopulateNetworktypes() {
+    for (i in 0..NetworkTypes.Types.values().size - 1) {
+        cmbNetworkType.addItem(NetworkTypes.friendlyNames[i])
     }
+}
+
+fun CreateNetworkForm.PopulateLearningRules() {
+    for (i in 0..LearningRules.Rules.values().size - 1) {
+        cmbLearningRule.addItem(LearningRules.friendlyNames[i])
+    }
+}
+fun CreateNetworkForm.AddOnClickListeners() {
+    val trainingListener : TrainingSetBrowseButtonActionListener? = TrainingSetBrowseButtonActionListener()
+    btnBrowseTrainingData.addActionListener(trainingListener)
 }

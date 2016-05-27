@@ -29,7 +29,8 @@ import com.intellij.openapi.fileChooser.FileChooserDescriptor
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.util.Consumer
 import com.thomas.needham.neurophidea.Constants.NETWORK_OUTPUT_LOCATION_KEY
-import com.thomas.needham.neurophidea.CreateNetworkAction
+import com.thomas.needham.neurophidea.actions.CreateNetworkAction
+import com.thomas.needham.neurophidea.consumers.NetworkOutputFileConsumer
 import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
 

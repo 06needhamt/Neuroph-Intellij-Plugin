@@ -25,9 +25,9 @@ SOFTWARE.
 @file:JvmMultifileClass() // Do Some Kotlin Sorcery!
 package com.thomas.needham.neurophidea.forms
 
-import com.thomas.needham.neurophidea.LearningRules
-import com.thomas.needham.neurophidea.NetworkTypes
-import com.thomas.needham.neurophidea.TransferFunctions
+import com.thomas.needham.neurophidea.datastructures.LearningRules
+import com.thomas.needham.neurophidea.datastructures.NetworkTypes
+import com.thomas.needham.neurophidea.datastructures.TransferFunctions
 
 /**
  * Created by thoma on 26/05/2016.

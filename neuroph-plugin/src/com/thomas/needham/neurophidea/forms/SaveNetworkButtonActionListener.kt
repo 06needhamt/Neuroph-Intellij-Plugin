@@ -2,11 +2,11 @@ package com.thomas.needham.neurophidea.forms
 
 import com.intellij.openapi.ui.Messages
 import com.intellij.util.Icons
-import com.thomas.needham.neurophidea.CreateNetworkAction
-import com.thomas.needham.neurophidea.LearningRules
-import com.thomas.needham.neurophidea.NetworkConfiguration
-import com.thomas.needham.neurophidea.NetworkTypes
-import com.thomas.needham.neurophidea.TransferFunctions
+import com.thomas.needham.neurophidea.actions.CreateNetworkAction
+import com.thomas.needham.neurophidea.datastructures.LearningRules
+import com.thomas.needham.neurophidea.datastructures.NetworkConfiguration
+import com.thomas.needham.neurophidea.datastructures.NetworkTypes
+import com.thomas.needham.neurophidea.datastructures.TransferFunctions
 import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
 import java.io.File
@@ -89,7 +89,7 @@ class SaveNetworkButtonActionListener : ActionListener {
         val transferFunction : TransferFunctions.Functions = TransferFunctions.Functions.valueOf((formInstance?.cmbTransferFunction?.selectedItem as String).replace(' ', '_').toUpperCase())
         val trainingDataPath : String = formInstance?.txtTrainingData?.text!!
         val networkOutputPath : String = formInstance?.txtNetworkOutputPath?.text!!
-        network = NetworkConfiguration(name,type,layers,learningRule,transferFunction,trainingDataPath,networkOutputPath)
+        network = NetworkConfiguration(name, type, layers, learningRule, transferFunction, trainingDataPath, networkOutputPath)
         return network
     }
 

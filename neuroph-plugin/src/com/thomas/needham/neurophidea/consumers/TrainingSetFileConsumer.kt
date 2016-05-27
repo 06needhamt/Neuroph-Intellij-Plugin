@@ -1,4 +1,4 @@
-package com.thomas.needham.neurophidea.forms
+package com.thomas.needham.neurophidea.consumers
 
 import com.intellij.ide.util.PropertiesComponent
 import com.intellij.openapi.ui.Messages
@@ -6,9 +6,10 @@ import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.util.Consumer
 import com.intellij.util.Icons
 import com.thomas.needham.neurophidea.Constants
-import com.thomas.needham.neurophidea.CreateNetworkAction
-import com.thomas.needham.neurophidea.VersionSetting
+import com.thomas.needham.neurophidea.actions.CreateNetworkAction
+import com.thomas.needham.neurophidea.settings.VersionSetting
 import com.thomas.needham.neurophidea.Constants.TRAINING_SET_LOCATION_KEY
+import com.thomas.needham.neurophidea.forms.TrainingSetBrowseButtonActionListener
 
 /**
  * Created by thoma on 26/05/2016.
@@ -28,10 +29,10 @@ class TrainingSetFileConsumer : Consumer<VirtualFile?> {
         for(ext : String in TrainingSetBrowseButtonActionListener.allowedFileTypes){
             if(p0?.extension?.equals(ext)!!){
                 path = p0?.path
-                properties.setValue(TRAINING_SET_LOCATION_KEY,path)
+                properties.setValue(TRAINING_SET_LOCATION_KEY, path)
                 return
             }
         }
-        Messages.showOkCancelDialog(CreateNetworkAction.project,"Invalid training data selected","Error",Icons.ERROR_INTRODUCTION_ICON)
+        Messages.showOkCancelDialog(CreateNetworkAction.project,"Invalid training data selected","Error", Icons.ERROR_INTRODUCTION_ICON)
     }
 }

@@ -21,40 +21,33 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea.forms
+package com.thomas.needham.neurophidea.consumers
 
 import com.intellij.ide.util.PropertiesComponent
+import com.intellij.openapi.ui.Messages
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.util.Consumer
-import com.intellij.openapi.ui.Messages
-import com.intellij.openapi.vfs.newvfs.impl.VirtualDirectoryImpl
 import com.intellij.util.Icons
 import com.thomas.needham.neurophidea.Constants.VERSION_KEY
-import com.thomas.needham.neurophidea.Constants.NETWORK_OUTPUT_LOCATION_KEY
-import com.thomas.needham.neurophidea.CreateNetworkAction
-
+import com.thomas.needham.neurophidea.settings.VersionSetting
 
 /**
- * Created by thoma on 27/05/2016.
+ * Created by thoma on 25/05/2016.
  */
-class NetworkOutputFileConsumer : Consumer<VirtualDirectoryImpl?> {
+class NeurophJarConsumer : Consumer<VirtualFile?> {
     constructor(){
 
     }
     companion object Data{
-        @JvmStatic var properties = PropertiesComponent.getInstance()
-        @JvmStatic var version = properties.getValue(VERSION_KEY)
-        @JvmStatic var path : String? = ""
+        var properties = PropertiesComponent.getInstance()
+        var version = properties.getValue(VERSION_KEY)
     }
-    override fun consume(p0 : VirtualDirectoryImpl?) {
-        path = p0?.path
-        properties.setValue(NETWORK_OUTPUT_LOCATION_KEY,path)
-    }
-//    override fun consume(p0 : VirtualFile?) {
-//        path = p0?.path
-//        properties.setValue(NETWORK_OUTPUT_LOCATION_KEY,path)
-//        return
-//    }
 
-        //Messages.showOkCancelDialog(CreateNetworkAction.project,"Invalid output file or directory", "Error", Icons.ERROR_INTRODUCTION_ICON)
+    override fun consume(p0 : VirtualFile?) {
+        if(!p0?.name?.contains("neuroph")!! || !p0?.extension?.equals("jar")!!){
+           Messages.showOkCancelDialog("Path to neuroph.jar is not valid","Invalid Path", Icons.JAR_ICON)
+            return
+        }
+        VersionSetting.locationTextBox.text = p0?.path
+    }
 }

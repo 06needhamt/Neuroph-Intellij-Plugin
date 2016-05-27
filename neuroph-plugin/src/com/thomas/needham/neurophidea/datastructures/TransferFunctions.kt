@@ -21,24 +21,20 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea
-
-import java.io.Serializable
+package com.thomas.needham.neurophidea.datastructures
 
 /**
  * Created by thoma on 25/05/2016.
  */
-
-class LearningRules : Serializable{
-    enum class Rules(nameString: String) {
-        //Enum must be nested within a class to avoid a NoClassDefFoundException possible Kotlin bug???
-        BACK_PROPAGATION("Back Propagation"),
-        DYNAMIC_BACK_PROPAGATION("Dynamic Back Propagation");
-        //TODO Add more learning rules
+class TransferFunctions {
+    enum class Functions(nameString: String) {
+        SIGMOID("Sigmoid"),
+        GAUSSIAN("Gaussian");
+        //TODO Add More Transfer Functions
     }
     companion object Names{
-        @JvmStatic val classNames = arrayOf("BackPropagation", "DynamicBackPropagation")
-        @JvmStatic val friendlyNames = arrayOf("Back Propagation", "Dynamic Back Propagation")
-        //TODO Add more learning rules
+        @JvmStatic val classNames = arrayOf("Sigmoid", "Gaussian")
+        @JvmStatic val friendlyNames = arrayOf("Sigmoid", "Gaussian")
+        //TODO Add More Transfer Functions
     }
 }

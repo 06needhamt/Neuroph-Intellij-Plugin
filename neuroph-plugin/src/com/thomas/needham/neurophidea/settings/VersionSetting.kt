@@ -20,7 +20,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-package com.thomas.needham.neurophidea
+package com.thomas.needham.neurophidea.settings
 
 import com.intellij.ide.util.PropertiesComponent
 import com.intellij.openapi.fileChooser.FileChooser
@@ -37,6 +37,10 @@ import javax.swing.JLabel
 import javax.swing.JPanel
 import com.thomas.needham.neurophidea.Constants.VERSION_KEY
 import com.thomas.needham.neurophidea.Constants.LOCATION_KEY
+import com.thomas.needham.neurophidea.settings.JARLocationDocumentListener
+import com.thomas.needham.neurophidea.datastructures.NeurophVersions
+import com.thomas.needham.neurophidea.actions.InitAction
+import com.thomas.needham.neurophidea.consumers.NeurophJarConsumer
 import java.awt.event.ActionListener
 import java.util.ArrayList
 import javax.swing.JButton
@@ -82,11 +86,11 @@ class VersionSetting : Configurable {
     }
 
     override fun createComponent() : JComponent? {
-        versionLabel.preferredSize = Dimension(100,50)
-        versionLabel.setBounds(insets.left + 50,insets.top + 50,100,25)
+        versionLabel.preferredSize = Dimension(100, 50)
+        versionLabel.setBounds(insets.left + 50, insets.top + 50,100,25)
         panel.add(versionLabel)
-        versionSelector.preferredSize = Dimension(200,50)
-        versionSelector.setBounds(insets.left + 200,insets.top + 50,200,25)
+        versionSelector.preferredSize = Dimension(200, 50)
+        versionSelector.setBounds(insets.left + 200, insets.top + 50,200,25)
         PopulateVersions()
         versionSelector.addItemListener { e ->
             if(e.stateChange == ItemEvent.SELECTED){
@@ -95,20 +99,20 @@ class VersionSetting : Configurable {
 
         }
         panel.add(versionSelector)
-        locationLabel.preferredSize = Dimension(150,50)
-        locationLabel.setBounds(insets.left + 50,insets.top + 100, 150,25)
+        locationLabel.preferredSize = Dimension(150, 50)
+        locationLabel.setBounds(insets.left + 50, insets.top + 100, 150,25)
         panel.add(locationLabel)
-        locationTextBox.preferredSize = Dimension(200,50)
-        locationTextBox.setBounds(insets.left + 200,insets.top + 100, 200,25)
+        locationTextBox.preferredSize = Dimension(200, 50)
+        locationTextBox.setBounds(insets.left + 200, insets.top + 100, 200,25)
         PopulateLocation()
         panel.add(locationTextBox)
         locationTextBox.document.addDocumentListener(JARLocationDocumentListener())
-        locationBrowseButton.preferredSize = Dimension(25,25)
-        locationBrowseButton.setBounds(insets.left + 400,insets.top + 100, 25,25)
+        locationBrowseButton.preferredSize = Dimension(25, 25)
+        locationBrowseButton.setBounds(insets.left + 400, insets.top + 100, 25,25)
         locationBrowseButton.addActionListener(ActionListener { e ->
-            val desc = FileChooserDescriptor(true,false,true,true,false,false)
+            val desc = FileChooserDescriptor(true, false, true, true, false, false)
             val consumer : Consumer<VirtualFile?> = NeurophJarConsumer()
-            FileChooser.chooseFile(desc,InitAction.project,null,consumer)
+            FileChooser.chooseFile(desc, InitAction.project, null, consumer)
         })
         panel.add(locationBrowseButton)
         panel.isVisible = true
@@ -124,7 +128,7 @@ class VersionSetting : Configurable {
     }
 
     private fun PopulateVersions() {
-        for(i in IntRange(0,NeurophVersions.Versions.values().size - 1)){
+        for(i in IntRange(0, NeurophVersions.Versions.values().size - 1)){
             versions.add(NeurophVersions.Versions.values()[i].version)
             versionSelector.addItem(versions[i])
         }
@@ -136,7 +140,7 @@ class VersionSetting : Configurable {
     override fun apply() {
         if(modified) {
             properties.setValue(VERSION_KEY, versionSelector.getItemAt(versionSelector.selectedIndex))
-            properties.setValue(LOCATION_KEY,locationTextBox.text)
+            properties.setValue(LOCATION_KEY, locationTextBox.text)
         }
     }
 

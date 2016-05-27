@@ -42,7 +42,7 @@ SOFTWARE. -->
     -->
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationConfigurable instance="com.thomas.needham.neurophidea.VersionSetting">
+        <applicationConfigurable instance="com.thomas.needham.neurophidea.settings.VersionSetting">
 
         </applicationConfigurable>
         <!-- Add your extensions here -->
@@ -51,18 +51,26 @@ SOFTWARE. -->
     <actions>
         <group id="NeurophGroup" text="Neuroph" popup="true">
             <add-to-group group-id="ToolsMenu" anchor="first"/>
-            <action class="com.thomas.needham.neurophidea.CreateNetworkAction"  text="Create New Network" id="CreateNetwork">
 
+            <action class="com.thomas.needham.neurophidea.actions.CreateNetworkAction"
+                    text="Create New Network" id="CreateNetwork" description="Creates a new Neural Network">
+                <keyboard-shortcut first-keystroke="ctrl alt N" keymap="$default"/>
+            </action>
+
+            <action id="OpenExistingNetwork" class="com.thomas.needham.neurophidea.actions.OpenExistingNetworkAction"
+                    text="Open Existing Network" description="Opens an existing network created by this plugin">
+                <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt O"/>
             </action>
         </group>
-        <action class="com.thomas.needham.neurophidea.InitAction" id="Init">
+        <action class="com.thomas.needham.neurophidea.actions.InitAction" id="Init">
             <add-to-group group-id="NewProjectOrModuleGroup" anchor="last"/>
         </action>
         <!-- Add your actions here -->
+
     </actions>
 <application-components>
     <component>
-        <implementation-class>com.thomas.needham.neurophidea.PluginRegistration</implementation-class>
+        <implementation-class>com.thomas.needham.neurophidea.actions.PluginRegistration</implementation-class>
     </component>
 </application-components>
 </idea-plugin>

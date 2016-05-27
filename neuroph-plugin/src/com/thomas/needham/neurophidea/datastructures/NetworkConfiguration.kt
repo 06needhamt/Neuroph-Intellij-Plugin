@@ -21,14 +21,17 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea
+package com.thomas.needham.neurophidea.datastructures
 
+import com.thomas.needham.neurophidea.datastructures.LearningRules
+import com.thomas.needham.neurophidea.datastructures.NetworkTypes
+import com.thomas.needham.neurophidea.datastructures.TransferFunctions
 import java.io.Serializable
 
 /**
  * Created by thoma on 27/05/2016.
  */
-class NetworkConfiguration : Serializable{
+class NetworkConfiguration : Serializable {
     var networkName : String
     var networkType : NetworkTypes.Types
     var networkLayers : Array<Int>
@@ -38,10 +41,10 @@ class NetworkConfiguration : Serializable{
     var networkOutputPath : String
 
     companion object Examples{
-        val SingleLayerPerceptron = NetworkConfiguration("SingleLayerPerceptron",NetworkTypes.Types.PERCEPTRON,
-                arrayOf(2,1),LearningRules.Rules.BACK_PROPAGATION,TransferFunctions.Functions.GAUSSIAN,"","")
-        val MultiLayerPerceptron = NetworkConfiguration("MultiLayerPerceptron",NetworkTypes.Types.PERCEPTRON,
-                arrayOf(4,2,1),LearningRules.Rules.BACK_PROPAGATION,TransferFunctions.Functions.GAUSSIAN,"","")
+        val SingleLayerPerceptron = NetworkConfiguration("SingleLayerPerceptron", NetworkTypes.Types.PERCEPTRON,
+                arrayOf(2, 1), LearningRules.Rules.BACK_PROPAGATION, TransferFunctions.Functions.GAUSSIAN, "", "")
+        val MultiLayerPerceptron = NetworkConfiguration("MultiLayerPerceptron", NetworkTypes.Types.PERCEPTRON,
+                arrayOf(4, 2, 1), LearningRules.Rules.BACK_PROPAGATION, TransferFunctions.Functions.GAUSSIAN, "", "")
     }
 
     constructor(networkName : String, networkType : NetworkTypes.Types, networkLayers : Array<Int>,

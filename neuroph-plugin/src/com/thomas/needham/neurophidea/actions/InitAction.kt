@@ -1,5 +1,4 @@
-/*
-The MIT License (MIT)
+/* The MIT License (MIT)
 
 Copyright (c) 2016 Tom Needham
 
@@ -20,21 +19,33 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
- */
-package com.thomas.needham.neurophidea
+*/
+package com.thomas.needham.neurophidea.actions
+
+import com.intellij.openapi.actionSystem.AnAction
+import com.intellij.openapi.actionSystem.AnActionEvent
+import com.intellij.openapi.project.Project
 
 /**
- * Created by thoma on 25/05/2016.
+ * Created by thoma on 24/05/2016.
  */
-class TransferFunctions {
-    enum class Functions(nameString: String) {
-        SIGMOID("Sigmoid"),
-        GAUSSIAN("Gaussian");
-        //TODO Add More Transfer Functions
+
+class InitAction : AnAction {
+    companion object ProjectInfo{
+        var project : Project? = null
+        var projectDirectory : String? = ""
+        var isOpen : Boolean? = false
     }
-    companion object Names{
-        @JvmStatic val classNames = arrayOf("Sigmoid", "Gaussian")
-        @JvmStatic val friendlyNames = arrayOf("Sigmoid", "Gaussian")
-        //TODO Add More Transfer Functions
+    constructor(){
+
     }
+    constructor(text : String?) : super(text){
+
+    }
+    override fun actionPerformed(p0 : AnActionEvent?) {
+        project = p0?.project
+        projectDirectory = project?.basePath
+        isOpen = project?.isOpen
+    }
+
 }

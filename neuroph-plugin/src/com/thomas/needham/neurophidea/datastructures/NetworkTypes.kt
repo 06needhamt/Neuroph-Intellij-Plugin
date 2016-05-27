@@ -21,24 +21,24 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea
+package com.thomas.needham.neurophidea.datastructures
 
-import javax.swing.event.DocumentEvent
-import javax.swing.event.DocumentListener
+import java.io.Serializable
 
 /**
- * Created by thoma on 24/05/2016.
+ * Created by thoma on 25/05/2016.
  */
-class JARLocationDocumentListener : DocumentListener {
-    override fun insertUpdate(e : DocumentEvent?) {
-
+class NetworkTypes : Serializable {
+    enum class Types(nameString: String){
+        //Enum must be nested within a class to avoid a NoClassDefFoundException possible Kotlin bug???
+        PERCEPTRON("Perceptron"),
+        MULTI_LAYER_PERCEPTRON("Multi Layer Perceptron");
+        //TODO add more network types
     }
+    companion object Names{
+        @JvmStatic val classNames = arrayOf("Perceptron", "MultiLayerPerceptron")
+        @JvmStatic val friendlyNames = arrayOf("Perceptron", "Multi Layer Perceptron")
 
-    override fun removeUpdate(e : DocumentEvent?) {
-
-    }
-
-    override fun changedUpdate(e : DocumentEvent?) {
-        VersionSetting.modified = true
+        //TODO add more network types
     }
 }

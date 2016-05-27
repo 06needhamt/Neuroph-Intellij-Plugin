@@ -21,7 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea
+package com.thomas.needham.neurophidea.actions
 
 import com.intellij.openapi.actionSystem.ActionManager
 import com.intellij.openapi.actionSystem.DefaultActionGroup
@@ -29,6 +29,7 @@ import com.intellij.openapi.components.ApplicationComponent
 import com.thomas.needham.neurophidea.Constants.INITIALISATION_ACTION
 import com.thomas.needham.neurophidea.Constants.MENU_ACTION
 import com.thomas.needham.neurophidea.Constants.WINDOW_MENU_ACTION
+import com.thomas.needham.neurophidea.actions.InitAction
 
 /**
  * Created by thoma on 25/05/2016.

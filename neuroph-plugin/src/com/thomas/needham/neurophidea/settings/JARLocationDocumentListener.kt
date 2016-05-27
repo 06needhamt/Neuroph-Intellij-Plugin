@@ -1,4 +1,5 @@
-/* The MIT License (MIT)
+/*
+The MIT License (MIT)
 
 Copyright (c) 2016 Tom Needham
 
@@ -19,33 +20,26 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-*/
-package com.thomas.needham.neurophidea
+ */
+package com.thomas.needham.neurophidea.settings
 
-import com.intellij.openapi.actionSystem.AnAction
-import com.intellij.openapi.actionSystem.AnActionEvent
-import com.intellij.openapi.project.Project
+import com.thomas.needham.neurophidea.settings.VersionSetting
+import javax.swing.event.DocumentEvent
+import javax.swing.event.DocumentListener
 
 /**
  * Created by thoma on 24/05/2016.
  */
-
-class InitAction : AnAction {
-    companion object ProjectInfo{
-        var project : Project? = null
-        var projectDirectory : String? = ""
-        var isOpen : Boolean? = false
-    }
-    constructor(){
+class JARLocationDocumentListener : DocumentListener {
+    override fun insertUpdate(e : DocumentEvent?) {
 
     }
-    constructor(text : String?) : super(text){
+
+    override fun removeUpdate(e : DocumentEvent?) {
 
     }
-    override fun actionPerformed(p0 : AnActionEvent?) {
-        project = p0?.project
-        projectDirectory = project?.basePath
-        isOpen = project?.isOpen
-    }
 
+    override fun changedUpdate(e : DocumentEvent?) {
+        VersionSetting.modified = true
+    }
 }

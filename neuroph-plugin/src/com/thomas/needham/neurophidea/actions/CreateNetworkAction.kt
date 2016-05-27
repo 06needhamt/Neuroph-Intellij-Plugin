@@ -1,8 +1,9 @@
-package com.thomas.needham.neurophidea
+package com.thomas.needham.neurophidea.actions
 
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.project.Project
+import com.thomas.needham.neurophidea.actions.InitAction
 import com.thomas.needham.neurophidea.forms.CreateNetworkForm
 import java.awt.Toolkit
 import javax.swing.WindowConstants

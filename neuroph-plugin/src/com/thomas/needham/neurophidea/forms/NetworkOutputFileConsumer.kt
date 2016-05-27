@@ -24,33 +24,37 @@ SOFTWARE.
 package com.thomas.needham.neurophidea.forms
 
 import com.intellij.ide.util.PropertiesComponent
-import com.intellij.openapi.fileChooser.FileChooser
-import com.intellij.openapi.fileChooser.FileChooserDescriptor
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.util.Consumer
+import com.intellij.openapi.ui.Messages
+import com.intellij.openapi.vfs.newvfs.impl.VirtualDirectoryImpl
+import com.intellij.util.Icons
+import com.thomas.needham.neurophidea.Constants.VERSION_KEY
+import com.thomas.needham.neurophidea.Constants.NETWORK_OUTPUT_LOCATION_KEY
 import com.thomas.needham.neurophidea.CreateNetworkAction
-import com.thomas.needham.neurophidea.Constants.TRAINING_SET_LOCATION_KEY
-import java.awt.event.ActionEvent
-import java.awt.event.ActionListener
+
 
 /**
- * Created by thoma on 25/05/2016.
+ * Created by thoma on 27/05/2016.
  */
-class TrainingSetBrowseButtonActionListener : ActionListener {
-    var formInstance : CreateNetworkForm? = null
+class NetworkOutputFileConsumer : Consumer<VirtualDirectoryImpl?> {
+    constructor(){
 
+    }
     companion object Data{
-        val defaultPath = ""
-        val allowedFileTypes = arrayOf("csv", "txt", "tset")
-        val fileDescriptor = FileChooserDescriptor(true,false,false,false,false,false)
-        val consumer : TrainingSetFileConsumer? = TrainingSetFileConsumer()
-        val properties = PropertiesComponent.getInstance()
-        var chosenPath = ""
+        @JvmStatic var properties = PropertiesComponent.getInstance()
+        @JvmStatic var version = properties.getValue(VERSION_KEY)
+        @JvmStatic var path : String? = ""
     }
-    override fun actionPerformed(e : ActionEvent?) {
-        properties?.setValue(TRAINING_SET_LOCATION_KEY,defaultPath)
-        FileChooser.chooseFile(fileDescriptor, CreateNetworkAction.project,null,consumer as Consumer<VirtualFile?>)
-        chosenPath = properties.getValue(TRAINING_SET_LOCATION_KEY,defaultPath)
-        formInstance?.txtTrainingData?.text = chosenPath
+    override fun consume(p0 : VirtualDirectoryImpl?) {
+        path = p0?.path
+        properties.setValue(NETWORK_OUTPUT_LOCATION_KEY,path)
     }
+//    override fun consume(p0 : VirtualFile?) {
+//        path = p0?.path
+//        properties.setValue(NETWORK_OUTPUT_LOCATION_KEY,path)
+//        return
+//    }
+
+        //val dialog = Messages.showOkCancelDialog(CreateNetworkAction.project,"Invalid output file or directory", "Error", Icons.ERROR_INTRODUCTION_ICON)
 }

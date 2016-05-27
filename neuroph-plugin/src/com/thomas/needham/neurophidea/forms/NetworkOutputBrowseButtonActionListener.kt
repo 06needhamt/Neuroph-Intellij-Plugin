@@ -28,29 +28,30 @@ import com.intellij.openapi.fileChooser.FileChooser
 import com.intellij.openapi.fileChooser.FileChooserDescriptor
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.util.Consumer
+import com.thomas.needham.neurophidea.Constants.NETWORK_OUTPUT_LOCATION_KEY
 import com.thomas.needham.neurophidea.CreateNetworkAction
-import com.thomas.needham.neurophidea.Constants.TRAINING_SET_LOCATION_KEY
 import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
 
 /**
- * Created by thoma on 25/05/2016.
+ * Created by thoma on 27/05/2016.
  */
-class TrainingSetBrowseButtonActionListener : ActionListener {
+class NetworkOutputBrowseButtonActionListener : ActionListener {
     var formInstance : CreateNetworkForm? = null
 
     companion object Data{
         val defaultPath = ""
-        val allowedFileTypes = arrayOf("csv", "txt", "tset")
-        val fileDescriptor = FileChooserDescriptor(true,false,false,false,false,false)
-        val consumer : TrainingSetFileConsumer? = TrainingSetFileConsumer()
+        val allowedFileTypes = arrayOf("json","nnet")
+        val fileDescriptor = FileChooserDescriptor(false,true,false,false,false,false)
+        val consumer : NetworkOutputFileConsumer? = NetworkOutputFileConsumer()
         val properties = PropertiesComponent.getInstance()
         var chosenPath = ""
     }
+
     override fun actionPerformed(e : ActionEvent?) {
-        properties?.setValue(TRAINING_SET_LOCATION_KEY,defaultPath)
-        FileChooser.chooseFile(fileDescriptor, CreateNetworkAction.project,null,consumer as Consumer<VirtualFile?>)
-        chosenPath = properties.getValue(TRAINING_SET_LOCATION_KEY,defaultPath)
-        formInstance?.txtTrainingData?.text = chosenPath
+        NetworkOutputBrowseButtonActionListener.properties?.setValue(NETWORK_OUTPUT_LOCATION_KEY, TrainingSetBrowseButtonActionListener.defaultPath)
+        FileChooser.chooseFile(NetworkOutputBrowseButtonActionListener.fileDescriptor, CreateNetworkAction.project,null, NetworkOutputBrowseButtonActionListener.consumer as Consumer<VirtualFile?>)
+        NetworkOutputBrowseButtonActionListener.chosenPath = NetworkOutputBrowseButtonActionListener.properties.getValue(NETWORK_OUTPUT_LOCATION_KEY, NetworkOutputBrowseButtonActionListener.defaultPath)
+        formInstance?.txtNetworkOutputPath?.text = NetworkOutputBrowseButtonActionListener.chosenPath
     }
 }

@@ -23,11 +23,13 @@ SOFTWARE.
  */
 package com.thomas.needham.neurophidea
 
+import java.io.Serializable
+
 /**
  * Created by thoma on 25/05/2016.
  */
 
-class LearningRules {
+class LearningRules : Serializable{
     enum class Rules(nameString: String) {
         //Enum must be nested within a class to avoid a NoClassDefFoundException possible Kotlin bug???
         BACK_PROPAGATION("Back Propagation"),

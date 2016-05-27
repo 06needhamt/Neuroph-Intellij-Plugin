@@ -32,6 +32,6 @@ class TrainingSetFileConsumer : Consumer<VirtualFile?> {
                 return
             }
         }
-        val dialog = Messages.showOkCancelDialog(CreateNetworkAction.project,"Invalid training data selected","Error",Icons.ERROR_INTRODUCTION_ICON)
+        Messages.showOkCancelDialog(CreateNetworkAction.project,"Invalid training data selected","Error",Icons.ERROR_INTRODUCTION_ICON)
     }
 }

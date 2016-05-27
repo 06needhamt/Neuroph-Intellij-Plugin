@@ -28,6 +28,7 @@ package com.thomas.needham.neurophidea
  */
 class NeurophVersions {
     enum class Versions(val version : String) {
+        //Enum must be nested within a class to avoid a NoClassDefFoundException possible Kotlin bug???
         VERSION_2_9("2.9"),
         VERSION_2_8("2.8"),
         VERSION_2_7("2.7"),

@@ -21,8 +21,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-@file:JvmName("CreateNetworkForm\$Ext")
-@file:JvmMultifileClass()
+@file:JvmName("CreateNetworkForm\$Ext") // Do Some Kotlin Sorcery!
+@file:JvmMultifileClass() // Do Some Kotlin Sorcery!
 package com.thomas.needham.neurophidea.forms
 
 import com.thomas.needham.neurophidea.LearningRules
@@ -57,4 +57,7 @@ fun CreateNetworkForm.AddOnClickListeners() {
     val outputListener : NetworkOutputBrowseButtonActionListener? = NetworkOutputBrowseButtonActionListener()
     outputListener?.formInstance = this
     btnBrowseOutput.addActionListener(outputListener)
+    val saveNetworkListener : SaveNetworkButtonActionListener? = SaveNetworkButtonActionListener()
+    saveNetworkListener?.formInstance = this
+    btnSaveNetwork.addActionListener(saveNetworkListener)
 }

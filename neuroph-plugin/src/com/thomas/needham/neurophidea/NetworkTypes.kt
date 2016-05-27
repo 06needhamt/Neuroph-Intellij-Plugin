@@ -23,11 +23,14 @@ SOFTWARE.
  */
 package com.thomas.needham.neurophidea
 
+import java.io.Serializable
+
 /**
  * Created by thoma on 25/05/2016.
  */
-class NetworkTypes {
+class NetworkTypes : Serializable{
     enum class Types(nameString: String){
+        //Enum must be nested within a class to avoid a NoClassDefFoundException possible Kotlin bug???
         PERCEPTRON("Perceptron"),
         MULTI_LAYER_PERCEPTRON("Multi Layer Perceptron");
         //TODO add more network types

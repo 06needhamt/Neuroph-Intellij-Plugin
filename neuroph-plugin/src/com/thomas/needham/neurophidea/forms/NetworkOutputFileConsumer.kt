@@ -56,5 +56,5 @@ class NetworkOutputFileConsumer : Consumer<VirtualDirectoryImpl?> {
 //        return
 //    }
 
-        //val dialog = Messages.showOkCancelDialog(CreateNetworkAction.project,"Invalid output file or directory", "Error", Icons.ERROR_INTRODUCTION_ICON)
+        //Messages.showOkCancelDialog(CreateNetworkAction.project,"Invalid output file or directory", "Error", Icons.ERROR_INTRODUCTION_ICON)
 }

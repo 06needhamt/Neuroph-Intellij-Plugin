@@ -44,7 +44,7 @@ class NeurophJarConsumer : Consumer<VirtualFile?> {
 
     override fun consume(p0 : VirtualFile?) {
         if(!p0?.name?.contains("neuroph")!! || !p0?.extension?.equals("jar")!!){
-            val builder = Messages.showOkCancelDialog("Path to neuroph.jar is not valid","Invalid Path", Icons.JAR_ICON)
+           Messages.showOkCancelDialog("Path to neuroph.jar is not valid","Invalid Path", Icons.JAR_ICON)
             return
         }
         VersionSetting.locationTextBox.text = p0?.path

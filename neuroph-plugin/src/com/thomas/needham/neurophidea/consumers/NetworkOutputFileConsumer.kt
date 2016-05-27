@@ -42,7 +42,7 @@ class NetworkOutputFileConsumer : Consumer<VirtualDirectoryImpl?> {
 
     }
     companion object Data{
-        @JvmStatic var properties = PropertiesComponent.getInstance(CreateNetworkAction.project)
+        @JvmStatic var properties = PropertiesComponent.getInstance()
         @JvmStatic var version = properties.getValue(VERSION_KEY)
         @JvmStatic var path : String? = ""
     }
@@ -50,4 +50,11 @@ class NetworkOutputFileConsumer : Consumer<VirtualDirectoryImpl?> {
         path = p0?.path
         properties.setValue(NETWORK_OUTPUT_LOCATION_KEY, path)
     }
+//    override fun consume(p0 : VirtualFile?) {
+//        path = p0?.path
+//        properties.setValue(NETWORK_OUTPUT_LOCATION_KEY,path)
+//        return
+//    }
+
+        //Messages.showOkCancelDialog(CreateNetworkAction.project,"Invalid output file or directory", "Error", Icons.ERROR_INTRODUCTION_ICON)
 }

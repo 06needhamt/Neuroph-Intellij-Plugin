@@ -20,7 +20,7 @@ class TrainingSetFileConsumer : Consumer<VirtualFile?> {
 
     }
     companion object Data{
-        @JvmStatic var properties = PropertiesComponent.getInstance()
+        @JvmStatic var properties = PropertiesComponent.getInstance(CreateNetworkAction.project)
         @JvmStatic var version = properties.getValue(Constants.VERSION_KEY)
         @JvmStatic var path : String? = ""
     }

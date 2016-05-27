@@ -45,7 +45,7 @@ class NetworkOutputBrowseButtonActionListener : ActionListener {
         val allowedFileTypes = arrayOf("json","nnet")
         val fileDescriptor = FileChooserDescriptor(false,true,false,false,false,false)
         val consumer : NetworkOutputFileConsumer? = NetworkOutputFileConsumer()
-        val properties = PropertiesComponent.getInstance()
+        val properties = PropertiesComponent.getInstance(CreateNetworkAction.project)
         var chosenPath = ""
     }
 

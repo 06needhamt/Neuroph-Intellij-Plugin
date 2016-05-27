@@ -45,7 +45,7 @@ class TrainingSetBrowseButtonActionListener : ActionListener {
         val allowedFileTypes = arrayOf("csv", "txt", "tset")
         val fileDescriptor = FileChooserDescriptor(true,false,false,false,false,false)
         val consumer : TrainingSetFileConsumer? = TrainingSetFileConsumer()
-        val properties = PropertiesComponent.getInstance()
+        val properties = PropertiesComponent.getInstance(CreateNetworkAction.project)
         var chosenPath = ""
     }
     override fun actionPerformed(e : ActionEvent?) {

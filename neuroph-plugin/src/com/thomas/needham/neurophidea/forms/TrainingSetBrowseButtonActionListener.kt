@@ -28,8 +28,8 @@ import com.intellij.openapi.fileChooser.FileChooser
 import com.intellij.openapi.fileChooser.FileChooserDescriptor
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.util.Consumer
-import com.thomas.needham.neurophidea.actions.ShowCreateNetworkFormAction
 import com.thomas.needham.neurophidea.Constants.TRAINING_SET_LOCATION_KEY
+import com.thomas.needham.neurophidea.actions.ShowCreateNetworkFormAction
 import com.thomas.needham.neurophidea.consumers.TrainingSetFileConsumer
 import java.awt.event.ActionEvent
 import java.awt.event.ActionListener

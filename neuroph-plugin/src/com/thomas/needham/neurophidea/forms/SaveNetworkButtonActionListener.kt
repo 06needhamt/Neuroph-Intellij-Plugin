@@ -7,6 +7,9 @@ import com.thomas.needham.neurophidea.datastructures.LearningRules
 import com.thomas.needham.neurophidea.datastructures.NetworkConfiguration
 import com.thomas.needham.neurophidea.datastructures.NetworkTypes
 import com.thomas.needham.neurophidea.datastructures.TransferFunctions
+import com.thomas.needham.neurophidea.Predicates.EqualToZero
+import com.thomas.needham.neurophidea.Predicates.EqualToOrLessThan
+import com.thomas.needham.neurophidea.exceptions.InvalidLayerSizeException
 import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
 import java.io.File
@@ -71,24 +74,51 @@ class SaveNetworkButtonActionListener : ActionListener {
     private fun CreateNetworkConfiguration() : NetworkConfiguration? {
         val name : String = formInstance?.txtNetworkName?.text!!
         val type : NetworkTypes.Types = NetworkTypes.Types.valueOf((formInstance?.cmbNetworkType?.selectedItem as String).replace(' ', '_').toUpperCase())
+        var error = false
         val getLayers : (String) -> Array<Int?> = { e ->
             val temp : List<String> = e.split(',')
             val result : Array<Int?> = arrayOfNulls<Int>(temp.size)
             try{
                 for(i in IntRange(0,temp.size - 1 )){
                     result[i] = temp[i].toInt()
+                    if(EqualToOrLessThan(result[i]!!,0)){
+                        throw InvalidLayerSizeException("Layer Sizes must be greater than 0")
+                    }
                 }
+                if(result.size < 2){
+                    Messages.showErrorDialog(ShowCreateNetworkFormAction.project,"Networks must consist of at least 2 layers","Error")
+                    error = true
+                    arrayOf(0)
+                }
+                else if(type == NetworkTypes.Types.PERCEPTRON && result.size > 2){
+                    Messages.showErrorDialog(ShowCreateNetworkFormAction.project, "Perceptron Network Type must consist of two layers", "Error")
+                    error = true
+                    arrayOf(0)
+                }
+                else if(type == NetworkTypes.Types.MULTI_LAYER_PERCEPTRON && result.size < 3){
+                    Messages.showErrorDialog(ShowCreateNetworkFormAction.project,"Multi Layer Perceptron Network Type must consist of at least 3 layers","Error")
+                    error = true
+                    arrayOf(0)
+                }
+                //TODO add more validation rules
                 result
             }
-            catch (ex: NumberFormatException){
-                ex.printStackTrace(System.err)
+            catch (nfe: NumberFormatException){
+                nfe.printStackTrace(System.err)
                 Messages.showErrorDialog(ShowCreateNetworkFormAction.project, "Invalid Layers", "Error")
+                error = true
+                arrayOf(0)
+            }
+            catch(ilse: InvalidLayerSizeException){
+                ilse.printStackTrace(System.err)
+                Messages.showErrorDialog(ShowCreateNetworkFormAction.project,"Layer Sizes must be greater than 0","Error")
+                error = true
                 arrayOf(0)
             }
         } // More Kotlin Sorcery
 
         val layers : Array<Int> = getLayers(formInstance?.txtLayers?.text!!).filterNotNull().toTypedArray<Int>() // Even More Sorcery
-        if(layers[0] == 0)
+        if(error)
             return null
         val learningRule : LearningRules.Rules = LearningRules.Rules.valueOf((formInstance?.cmbLearningRule?.selectedItem as String).replace(' ', '_').toUpperCase())
         val transferFunction : TransferFunctions.Functions = TransferFunctions.Functions.valueOf((formInstance?.cmbTransferFunction?.selectedItem as String).replace(' ', '_').toUpperCase())

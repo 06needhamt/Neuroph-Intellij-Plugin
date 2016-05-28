@@ -123,14 +123,17 @@ class SaveNetworkButtonActionListener : ActionListener {
         val learningRule : LearningRules.Rules = LearningRules.Rules.valueOf((formInstance?.cmbLearningRule?.selectedItem as String).replace(' ', '_').toUpperCase())
         val transferFunction : TransferFunctions.Functions = TransferFunctions.Functions.valueOf((formInstance?.cmbTransferFunction?.selectedItem as String).replace(' ', '_').toUpperCase())
         val trainingDataPath : String = formInstance?.txtTrainingData?.text!!
+        val testingDataPath : String = formInstance?.txtTestingData?.text!!
         val networkOutputPath : String = formInstance?.txtNetworkOutputPath?.text!!
-        network = NetworkConfiguration(name, type, layers, learningRule, transferFunction, trainingDataPath, networkOutputPath)
+        network = NetworkConfiguration(name, type, layers, learningRule, transferFunction,
+                trainingDataPath, testingDataPath,networkOutputPath)
         return network
     }
 
     private fun CheckInput() : Boolean {
         return !(formInstance?.txtLayers?.text.equals("") || formInstance?.txtNetworkName?.text.equals("") ||
-                formInstance?.txtTrainingData?.text.equals("") || formInstance?.txtNetworkOutputPath?.text.equals(""))
+                formInstance?.txtTrainingData?.text.equals("") || formInstance?.txtTestingData?.text.equals("") ||
+                formInstance?.txtNetworkOutputPath?.text.equals(""))
     }
 
 }

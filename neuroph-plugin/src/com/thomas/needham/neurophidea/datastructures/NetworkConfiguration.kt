@@ -38,24 +38,28 @@ class NetworkConfiguration : Serializable {
     var networkLearningRule : LearningRules.Rules
     var networkTransferFunction : TransferFunctions.Functions
     var networkTrainingDataPath : String
+    var networkTestingDataPath : String
     var networkOutputPath : String
 
     companion object Examples{
         val SingleLayerPerceptron = NetworkConfiguration("SingleLayerPerceptron", NetworkTypes.Types.PERCEPTRON,
-                arrayOf(2, 1), LearningRules.Rules.BACK_PROPAGATION, TransferFunctions.Functions.GAUSSIAN, "", "")
+                arrayOf(2, 1), LearningRules.Rules.BACK_PROPAGATION, TransferFunctions.Functions.GAUSSIAN,
+                "Train Data", "Test Data", "Output Path")
         val MultiLayerPerceptron = NetworkConfiguration("MultiLayerPerceptron", NetworkTypes.Types.PERCEPTRON,
-                arrayOf(4, 2, 1), LearningRules.Rules.BACK_PROPAGATION, TransferFunctions.Functions.GAUSSIAN, "", "")
+                arrayOf(4, 2, 1), LearningRules.Rules.BACK_PROPAGATION, TransferFunctions.Functions.GAUSSIAN,
+                "Train Data", "Test Data", "Output Path")
     }
 
     constructor(networkName : String, networkType : NetworkTypes.Types, networkLayers : Array<Int>,
                 networkLearningRule : LearningRules.Rules, networkTransferFunction : TransferFunctions.Functions,
-                networkTrainingDataPath : String, networkOutputPath : String) {
+                networkTrainingDataPath : String, networkTestingDataPath: String, networkOutputPath : String) {
         this.networkName = networkName
         this.networkType = networkType
         this.networkLayers = networkLayers
         this.networkLearningRule = networkLearningRule
         this.networkTransferFunction = networkTransferFunction
         this.networkTrainingDataPath = networkTrainingDataPath
+        this.networkTestingDataPath = networkTestingDataPath
         this.networkOutputPath = networkOutputPath
     }
 

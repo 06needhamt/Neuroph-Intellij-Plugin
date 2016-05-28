@@ -45,6 +45,8 @@ public class CreateNetworkForm extends JFrame {
     public JTextField txtNetworkOutputPath;
     public JButton btnBrowseOutput;
     public JPanel root;
+    public JTextField txtTestingData;
+    public JButton btnBrowseTestingData;
 
     public CreateNetworkForm() throws HeadlessException {
         super("Create New Neural Network");
@@ -80,7 +82,7 @@ public class CreateNetworkForm extends JFrame {
         root = new JPanel();
         root.setLayout(new BorderLayout(0, 0));
         inner = new JPanel();
-        inner.setLayout(new GridLayoutManager(8, 3, new Insets(5, 10, 0, 5), -1, -1));
+        inner.setLayout(new GridLayoutManager(9, 3, new Insets(5, 10, 0, 5), -1, -1));
         inner.setName("root");
         root.add(inner, BorderLayout.CENTER);
         final JLabel label1 = new JLabel();
@@ -103,7 +105,7 @@ public class CreateNetworkForm extends JFrame {
         inner.add(label6, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JLabel label7 = new JLabel();
         label7.setText("Network Output Path");
-        inner.add(label7, new GridConstraints(6, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        inner.add(label7, new GridConstraints(7, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         cmbNetworkType = new JComboBox();
         cmbNetworkType.setName("cmbNetworkType");
         inner.add(cmbNetworkType, new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
@@ -115,7 +117,7 @@ public class CreateNetworkForm extends JFrame {
         btnSaveNetwork.setLabel("Save Network");
         btnSaveNetwork.setName("btnSaveNetwork");
         btnSaveNetwork.setText("Save Network");
-        inner.add(btnSaveNetwork, new GridConstraints(7, 0, 1, 3, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        inner.add(btnSaveNetwork, new GridConstraints(8, 0, 1, 3, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         txtLayers = new JTextField();
         txtLayers.setName("txtLayers");
         inner.add(txtLayers, new GridConstraints(2, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
@@ -137,10 +139,18 @@ public class CreateNetworkForm extends JFrame {
         inner.add(btnBrowseTrainingData, new GridConstraints(5, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         txtNetworkOutputPath = new JTextField();
         txtNetworkOutputPath.setName("txtNetworkOutputPath");
-        inner.add(txtNetworkOutputPath, new GridConstraints(6, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        inner.add(txtNetworkOutputPath, new GridConstraints(7, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         btnBrowseOutput = new JButton();
         btnBrowseOutput.setText("Browse");
-        inner.add(btnBrowseOutput, new GridConstraints(6, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        inner.add(btnBrowseOutput, new GridConstraints(7, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        final JLabel label8 = new JLabel();
+        label8.setText("Testing Data");
+        inner.add(label8, new GridConstraints(6, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        txtTestingData = new JTextField();
+        inner.add(txtTestingData, new GridConstraints(6, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        btnBrowseTestingData = new JButton();
+        btnBrowseTestingData.setText("Browse");
+        inner.add(btnBrowseTestingData, new GridConstraints(6, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     }
 
     /**

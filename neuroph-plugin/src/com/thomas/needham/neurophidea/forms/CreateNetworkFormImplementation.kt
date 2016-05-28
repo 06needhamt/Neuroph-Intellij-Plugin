@@ -54,6 +54,9 @@ fun CreateNetworkForm.AddOnClickListeners() {
     val trainingListener : TrainingSetBrowseButtonActionListener? = TrainingSetBrowseButtonActionListener()
     trainingListener?.formInstance = this
     btnBrowseTrainingData.addActionListener(trainingListener)
+    val testingListener : TestingSetBrowseButtonActionListener? = TestingSetBrowseButtonActionListener()
+    testingListener?.formInstance = this
+    btnBrowseTestingData.addActionListener(testingListener)
     val outputListener : NetworkOutputBrowseButtonActionListener? = NetworkOutputBrowseButtonActionListener()
     outputListener?.formInstance = this
     btnBrowseOutput.addActionListener(outputListener)

@@ -3,7 +3,7 @@ package com.thomas.needham.neurophidea.actions
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.project.Project
-import com.thomas.needham.neurophidea.actions.InitAction
+import com.thomas.needham.neurophidea.actions.InitialisationAction
 import com.thomas.needham.neurophidea.forms.CreateNetworkForm
 import java.awt.Toolkit
 import javax.swing.WindowConstants
@@ -21,9 +21,9 @@ class ShowCreateNetworkFormAction : AnAction() {
         var isOpen : Boolean? = false
     }
     override fun actionPerformed(e : AnActionEvent) {
-        InitAction.project = e.project
-        InitAction.projectDirectory = InitAction.project?.basePath
-        InitAction.isOpen = InitAction.project?.isOpen
+        InitialisationAction.project = e.project
+        InitialisationAction.projectDirectory = InitialisationAction.project?.basePath
+        InitialisationAction.isOpen = InitialisationAction.project?.isOpen
         form = CreateNetworkForm()
     }
 

@@ -39,7 +39,7 @@ import com.thomas.needham.neurophidea.Constants.VERSION_KEY
 import com.thomas.needham.neurophidea.Constants.LOCATION_KEY
 import com.thomas.needham.neurophidea.settings.JARLocationDocumentListener
 import com.thomas.needham.neurophidea.datastructures.NeurophVersions
-import com.thomas.needham.neurophidea.actions.InitAction
+import com.thomas.needham.neurophidea.actions.InitialisationAction
 import com.thomas.needham.neurophidea.consumers.NeurophJarConsumer
 import java.awt.event.ActionListener
 import java.util.ArrayList
@@ -112,7 +112,7 @@ class VersionSetting : Configurable {
         locationBrowseButton.addActionListener(ActionListener { e ->
             val desc = FileChooserDescriptor(true, false, true, true, false, false)
             val consumer : Consumer<VirtualFile?> = NeurophJarConsumer()
-            FileChooser.chooseFile(desc, InitAction.project, null, consumer)
+            FileChooser.chooseFile(desc, InitialisationAction.project, null, consumer)
         })
         panel.add(locationBrowseButton)
         panel.isVisible = true

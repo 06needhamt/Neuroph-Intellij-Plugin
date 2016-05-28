@@ -30,7 +30,7 @@ import com.intellij.openapi.project.Project
  * Created by thoma on 24/05/2016.
  */
 
-class InitAction : AnAction {
+class InitialisationAction : AnAction {
     companion object ProjectInfo{
         var project : Project? = null
         var projectDirectory : String? = ""

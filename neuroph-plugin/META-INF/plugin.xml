@@ -62,7 +62,7 @@ SOFTWARE. -->
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt O"/>
             </action>
         </group>
-        <action class="com.thomas.needham.neurophidea.actions.InitAction" id="Init">
+        <action class="com.thomas.needham.neurophidea.actions.InitialisationAction" id="Init">
             <add-to-group group-id="NewProjectOrModuleGroup" anchor="last"/>
         </action>
         <!-- Add your actions here -->

@@ -60,7 +60,7 @@ SOFTWARE. -->
               <!--<add-to-group group-id="NeurophGroup"/> -->
           </action>
       </group>
-      <action class="com.thomas.needham.neurophidea.actions.InitAction" id="Init">
+      <action class="com.thomas.needham.neurophidea.actions.InitialisationAction" id="Init">
 
       </action>
     <!-- Add your actions here -->

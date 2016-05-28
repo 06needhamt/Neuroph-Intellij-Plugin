@@ -10,7 +10,7 @@ import com.intellij.openapi.ui.Messages
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.util.Consumer
 import com.intellij.util.Icons
-import com.thomas.needham.neurophidea.actions.InitAction
+import com.thomas.needham.neurophidea.actions.InitialisationAction
 import com.thomas.needham.neurophidea.consumers.OpenNetworkConsumer
 import com.thomas.needham.neurophidea.datastructures.NetworkConfiguration
 import com.thomas.needham.neurophidea.Constants.NETWORK_TO_OPEN_LOCATION_KEY
@@ -56,8 +56,8 @@ class OpenExistingNetworkAction : AnAction() {
 
     }
     override fun actionPerformed(e : AnActionEvent) {
-        project = InitAction.project
-        projectDirectory = InitAction.projectDirectory
+        project = InitialisationAction.project
+        projectDirectory = InitialisationAction.projectDirectory
         isOpen = project?.isOpen
         FileChooser.chooseFile(fileDesc,project,null,consumer as Consumer<VirtualFile?>)
         val network : NetworkConfiguration? = getNetwork(properties.getValue(NETWORK_TO_OPEN_LOCATION_KEY,"")) ?: return

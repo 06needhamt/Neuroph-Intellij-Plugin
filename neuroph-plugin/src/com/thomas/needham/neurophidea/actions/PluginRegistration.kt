@@ -29,7 +29,6 @@ import com.intellij.openapi.components.ApplicationComponent
 import com.thomas.needham.neurophidea.Constants.INITIALISATION_ACTION
 import com.thomas.needham.neurophidea.Constants.MENU_ACTION
 import com.thomas.needham.neurophidea.Constants.WINDOW_MENU_ACTION
-import com.thomas.needham.neurophidea.actions.InitialisationAction
 
 /**
  * Created by thoma on 25/05/2016.

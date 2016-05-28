@@ -32,11 +32,9 @@ import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.Messages
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.util.Consumer
-import com.intellij.util.Icons
-import com.thomas.needham.neurophidea.actions.InitialisationAction
+import com.thomas.needham.neurophidea.Constants.NETWORK_TO_OPEN_LOCATION_KEY
 import com.thomas.needham.neurophidea.consumers.OpenNetworkConsumer
 import com.thomas.needham.neurophidea.datastructures.NetworkConfiguration
-import com.thomas.needham.neurophidea.Constants.NETWORK_TO_OPEN_LOCATION_KEY
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileNotFoundException

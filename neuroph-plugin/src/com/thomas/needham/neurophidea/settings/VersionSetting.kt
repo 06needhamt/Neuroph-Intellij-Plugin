@@ -26,24 +26,22 @@ import com.intellij.ide.util.PropertiesComponent
 import com.intellij.openapi.fileChooser.FileChooser
 import com.intellij.openapi.fileChooser.FileChooserDescriptor
 import com.intellij.openapi.options.Configurable
-import com.intellij.openapi.vcs.changes.ui.SelectFilePathsDialog
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.util.Consumer
+import com.thomas.needham.neurophidea.Constants.LOCATION_KEY
+import com.thomas.needham.neurophidea.Constants.VERSION_KEY
+import com.thomas.needham.neurophidea.actions.InitialisationAction
+import com.thomas.needham.neurophidea.consumers.NeurophJarConsumer
+import com.thomas.needham.neurophidea.datastructures.NeurophVersions
 import java.awt.Dimension
+import java.awt.event.ActionListener
 import java.awt.event.ItemEvent
+import java.util.*
+import javax.swing.JButton
 import javax.swing.JComboBox
 import javax.swing.JComponent
 import javax.swing.JLabel
 import javax.swing.JPanel
-import com.thomas.needham.neurophidea.Constants.VERSION_KEY
-import com.thomas.needham.neurophidea.Constants.LOCATION_KEY
-import com.thomas.needham.neurophidea.settings.JARLocationDocumentListener
-import com.thomas.needham.neurophidea.datastructures.NeurophVersions
-import com.thomas.needham.neurophidea.actions.InitialisationAction
-import com.thomas.needham.neurophidea.consumers.NeurophJarConsumer
-import java.awt.event.ActionListener
-import java.util.ArrayList
-import javax.swing.JButton
 import javax.swing.JTextField
 
 /**

@@ -23,7 +23,6 @@ SOFTWARE.
  */
 package com.thomas.needham.neurophidea.settings
 
-import com.thomas.needham.neurophidea.settings.VersionSetting
 import javax.swing.event.DocumentEvent
 import javax.swing.event.DocumentListener
 

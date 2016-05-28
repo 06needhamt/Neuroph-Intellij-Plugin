@@ -30,6 +30,7 @@ import java.io.Serializable
  */
 class NetworkTypes : Serializable {
     enum class Types(nameString: String){
+
         //Enum must be nested within a class to avoid a NoClassDefFoundException possible Kotlin bug???
         PERCEPTRON("Perceptron"),
         MULTI_LAYER_PERCEPTRON("Multi Layer Perceptron");
@@ -38,7 +39,9 @@ class NetworkTypes : Serializable {
     companion object Names{
         @JvmStatic val classNames = arrayOf("Perceptron", "MultiLayerPerceptron")
         @JvmStatic val friendlyNames = arrayOf("Perceptron", "Multi Layer Perceptron")
-
+        @JvmStatic fun GetClassName(v: NetworkTypes.Types) : String{
+            return classNames[v.ordinal]
+        }
         //TODO add more network types
     }
 }

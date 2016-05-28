@@ -3,8 +3,8 @@ package com.thomas.needham.neurophidea.consumers
 import com.intellij.ide.util.PropertiesComponent
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.util.Consumer
-import com.thomas.needham.neurophidea.Constants.VERSION_KEY
 import com.thomas.needham.neurophidea.Constants.NETWORK_TO_OPEN_LOCATION_KEY
+import com.thomas.needham.neurophidea.Constants.VERSION_KEY
 
 /**
  * Created by thoma on 27/05/2016.

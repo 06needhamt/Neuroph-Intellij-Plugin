@@ -23,9 +23,6 @@ SOFTWARE.
  */
 package com.thomas.needham.neurophidea.datastructures
 
-import com.thomas.needham.neurophidea.datastructures.LearningRules
-import com.thomas.needham.neurophidea.datastructures.NetworkTypes
-import com.thomas.needham.neurophidea.datastructures.TransferFunctions
 import java.io.Serializable
 
 /**

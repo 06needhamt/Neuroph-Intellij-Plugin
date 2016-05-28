@@ -2,13 +2,12 @@ package com.thomas.needham.neurophidea.forms
 
 import com.intellij.openapi.ui.Messages
 import com.intellij.util.Icons
+import com.thomas.needham.neurophidea.Predicates.EqualToOrLessThan
 import com.thomas.needham.neurophidea.actions.ShowCreateNetworkFormAction
 import com.thomas.needham.neurophidea.datastructures.LearningRules
 import com.thomas.needham.neurophidea.datastructures.NetworkConfiguration
 import com.thomas.needham.neurophidea.datastructures.NetworkTypes
 import com.thomas.needham.neurophidea.datastructures.TransferFunctions
-import com.thomas.needham.neurophidea.Predicates.EqualToZero
-import com.thomas.needham.neurophidea.Predicates.EqualToOrLessThan
 import com.thomas.needham.neurophidea.exceptions.InvalidLayerSizeException
 import java.awt.event.ActionEvent
 import java.awt.event.ActionListener

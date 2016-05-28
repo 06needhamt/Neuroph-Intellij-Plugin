@@ -8,7 +8,6 @@ import com.intellij.util.Consumer
 import com.thomas.needham.neurophidea.Constants.TESTING_SET_LOCATION_KEY
 import com.thomas.needham.neurophidea.actions.ShowCreateNetworkFormAction
 import com.thomas.needham.neurophidea.consumers.TestingSetFileConsumer
-import com.thomas.needham.neurophidea.consumers.TrainingSetFileConsumer
 import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
 

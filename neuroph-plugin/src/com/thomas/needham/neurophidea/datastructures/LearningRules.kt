@@ -39,6 +39,9 @@ class LearningRules : Serializable {
     companion object Names{
         @JvmStatic val classNames = arrayOf("BackPropagation", "DynamicBackPropagation")
         @JvmStatic val friendlyNames = arrayOf("Back Propagation", "Dynamic Back Propagation")
+        @JvmStatic fun GetClassName(v: LearningRules.Rules) : String{
+            return classNames[v.ordinal]
+        }
         //TODO Add more learning rules
     }
 }

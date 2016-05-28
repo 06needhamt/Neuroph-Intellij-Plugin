@@ -24,14 +24,10 @@ SOFTWARE.
 package com.thomas.needham.neurophidea.consumers
 
 import com.intellij.ide.util.PropertiesComponent
-import com.intellij.openapi.vfs.VirtualFile
-import com.intellij.util.Consumer
-import com.intellij.openapi.ui.Messages
 import com.intellij.openapi.vfs.newvfs.impl.VirtualDirectoryImpl
-import com.intellij.util.Icons
-import com.thomas.needham.neurophidea.Constants.VERSION_KEY
+import com.intellij.util.Consumer
 import com.thomas.needham.neurophidea.Constants.NETWORK_OUTPUT_LOCATION_KEY
-import com.thomas.needham.neurophidea.actions.ShowCreateNetworkFormAction
+import com.thomas.needham.neurophidea.Constants.VERSION_KEY
 
 
 /**

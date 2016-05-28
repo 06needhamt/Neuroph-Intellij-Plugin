@@ -55,7 +55,7 @@ SOFTWARE. -->
   <actions>
       <group id="NeurophGroup" text="Neuroph" popup="true">
           <add-to-group group-id="ToolsMenu" anchor="first"/>
-          <action id="CreateNetwork" class="com.thomas.needham.neurophidea.actions.CreateNetworkAction" text="Create New Network"
+          <action id="CreateNetwork" class="com.thomas.needham.neurophidea.actions.ShowCreateNetworkFormAction" text="Create New Network"
                   description="Creates a new Neural Network">
               <!--<add-to-group group-id="NeurophGroup"/> -->
           </action>

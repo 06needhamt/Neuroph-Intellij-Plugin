@@ -34,4 +34,5 @@ object Constants {
     val WINDOW_MENU_ACTION = "WindowMenu"
     val TRAINING_SET_LOCATION_KEY = "TrainingSetLocation"
     val NETWORK_OUTPUT_LOCATION_KEY = "NetworkOutputLocation"
+    val NETWORK_TO_OPEN_LOCATION_KEY = "NetworkToOpenLocation"
 }

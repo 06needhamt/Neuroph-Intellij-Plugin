@@ -28,7 +28,7 @@ import com.intellij.openapi.fileChooser.FileChooser
 import com.intellij.openapi.fileChooser.FileChooserDescriptor
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.util.Consumer
-import com.thomas.needham.neurophidea.actions.CreateNetworkAction
+import com.thomas.needham.neurophidea.actions.ShowCreateNetworkFormAction
 import com.thomas.needham.neurophidea.Constants.TRAINING_SET_LOCATION_KEY
 import com.thomas.needham.neurophidea.consumers.TrainingSetFileConsumer
 import java.awt.event.ActionEvent
@@ -50,7 +50,7 @@ class TrainingSetBrowseButtonActionListener : ActionListener {
     }
     override fun actionPerformed(e : ActionEvent?) {
         properties?.setValue(TRAINING_SET_LOCATION_KEY,defaultPath)
-        FileChooser.chooseFile(fileDescriptor, CreateNetworkAction.project,null,consumer as Consumer<VirtualFile?>)
+        FileChooser.chooseFile(fileDescriptor, ShowCreateNetworkFormAction.project,null,consumer as Consumer<VirtualFile?>)
         chosenPath = properties.getValue(TRAINING_SET_LOCATION_KEY,defaultPath)
         formInstance?.txtTrainingData?.text = chosenPath
     }

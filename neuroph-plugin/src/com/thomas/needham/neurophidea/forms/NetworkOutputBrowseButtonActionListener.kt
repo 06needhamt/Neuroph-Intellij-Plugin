@@ -29,7 +29,7 @@ import com.intellij.openapi.fileChooser.FileChooserDescriptor
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.util.Consumer
 import com.thomas.needham.neurophidea.Constants.NETWORK_OUTPUT_LOCATION_KEY
-import com.thomas.needham.neurophidea.actions.CreateNetworkAction
+import com.thomas.needham.neurophidea.actions.ShowCreateNetworkFormAction
 import com.thomas.needham.neurophidea.consumers.NetworkOutputFileConsumer
 import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
@@ -51,7 +51,7 @@ class NetworkOutputBrowseButtonActionListener : ActionListener {
 
     override fun actionPerformed(e : ActionEvent?) {
         NetworkOutputBrowseButtonActionListener.properties?.setValue(NETWORK_OUTPUT_LOCATION_KEY, TrainingSetBrowseButtonActionListener.defaultPath)
-        FileChooser.chooseFile(NetworkOutputBrowseButtonActionListener.fileDescriptor, CreateNetworkAction.project,null, NetworkOutputBrowseButtonActionListener.consumer as Consumer<VirtualFile?>)
+        FileChooser.chooseFile(NetworkOutputBrowseButtonActionListener.fileDescriptor, ShowCreateNetworkFormAction.project,null, NetworkOutputBrowseButtonActionListener.consumer as Consumer<VirtualFile?>)
         NetworkOutputBrowseButtonActionListener.chosenPath = NetworkOutputBrowseButtonActionListener.properties.getValue(NETWORK_OUTPUT_LOCATION_KEY, NetworkOutputBrowseButtonActionListener.defaultPath)
         formInstance?.txtNetworkOutputPath?.text = NetworkOutputBrowseButtonActionListener.chosenPath
     }

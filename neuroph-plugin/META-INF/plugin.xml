@@ -52,7 +52,7 @@ SOFTWARE. -->
         <group id="NeurophGroup" text="Neuroph" popup="true">
             <add-to-group group-id="ToolsMenu" anchor="first"/>
 
-            <action class="com.thomas.needham.neurophidea.actions.CreateNetworkAction"
+            <action class="com.thomas.needham.neurophidea.actions.ShowCreateNetworkFormAction"
                     text="Create New Network" id="CreateNetwork" description="Creates a new Neural Network">
                 <keyboard-shortcut first-keystroke="ctrl alt N" keymap="$default"/>
             </action>

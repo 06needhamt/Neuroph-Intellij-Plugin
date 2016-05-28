@@ -2,7 +2,7 @@ package com.thomas.needham.neurophidea.forms
 
 import com.intellij.openapi.ui.Messages
 import com.intellij.util.Icons
-import com.thomas.needham.neurophidea.actions.CreateNetworkAction
+import com.thomas.needham.neurophidea.actions.ShowCreateNetworkFormAction
 import com.thomas.needham.neurophidea.datastructures.LearningRules
 import com.thomas.needham.neurophidea.datastructures.NetworkConfiguration
 import com.thomas.needham.neurophidea.datastructures.NetworkTypes
@@ -28,35 +28,37 @@ class SaveNetworkButtonActionListener : ActionListener {
     }
     override fun actionPerformed(e : ActionEvent?) {
         if(!CheckInput()){
-            Messages.showOkCancelDialog(CreateNetworkAction.project,"Please Fill Out All Fields",
-                    "Error", Icons.ERROR_INTRODUCTION_ICON)
+            Messages.showErrorDialog(ShowCreateNetworkFormAction.project,"Please Fill Out All Fields",
+                    "Error")
             return
         }
         network = CreateNetworkConfiguration()
         if(network == null){
-            Messages.showOkCancelDialog(CreateNetworkAction.project,"Error Creating Network Configuration",
-                    "Error", Icons.ERROR_INTRODUCTION_ICON)
+            Messages.showErrorDialog(ShowCreateNetworkFormAction.project,"Error Creating Network Configuration",
+                    "Error")
             return
         }
         outputDirectory = network?.networkOutputPath!!
-        configurationOutputPath = outputDirectory + "\\" + network?.networkName + ".conf"
-        networkFileOutputPath = outputDirectory + "\\" + network?.networkName + ".nnet"
-        codeFileOutputPath = outputDirectory + "\\" + network?.networkName + ".java"
+        configurationOutputPath = outputDirectory + "/" + network?.networkName + ".conf"
+        networkFileOutputPath = outputDirectory + "/" + network?.networkName + ".nnet"
+        codeFileOutputPath = outputDirectory + "/" + network?.networkName + ".java"
         if(!WriteNetworkToFile()){
-            Messages.showOkCancelDialog(CreateNetworkAction.project,"Error writing network configuration to file",
-                    "Error", Icons.ERROR_INTRODUCTION_ICON)
+            Messages.showErrorDialog(ShowCreateNetworkFormAction.project,"Error writing network configuration to file",
+                    "Error")
         }
     }
 
     private fun WriteNetworkToFile() : Boolean {
         try{
             val file = File(configurationOutputPath)
+            if(!file.exists())
+                file.createNewFile()
             val fos = FileOutputStream(file,false)
             val oos = ObjectOutputStream(fos)
             oos.writeObject(network)
             oos.flush()
             oos.close()
-            Messages.showOkCancelDialog(CreateNetworkAction.project,"Network Configuration Successfully written to "
+            Messages.showOkCancelDialog(ShowCreateNetworkFormAction.project,"Network Configuration Successfully written to "
                     + configurationOutputPath, "Success",Icons.COPY_ICON)
             return true
         }
@@ -79,12 +81,15 @@ class SaveNetworkButtonActionListener : ActionListener {
                 result
             }
             catch (ex: NumberFormatException){
-                println(ex.printStackTrace(System.err))
-                Messages.showOkCancelDialog("Invalid Layers", "Error", Icons.ERROR_INTRODUCTION_ICON)
+                ex.printStackTrace(System.err)
+                Messages.showErrorDialog(ShowCreateNetworkFormAction.project, "Invalid Layers", "Error")
                 arrayOf(0)
             }
         } // More Kotlin Sorcery
+
         val layers : Array<Int> = getLayers(formInstance?.txtLayers?.text!!).filterNotNull().toTypedArray<Int>() // Even More Sorcery
+        if(layers[0] == 0)
+            return null
         val learningRule : LearningRules.Rules = LearningRules.Rules.valueOf((formInstance?.cmbLearningRule?.selectedItem as String).replace(' ', '_').toUpperCase())
         val transferFunction : TransferFunctions.Functions = TransferFunctions.Functions.valueOf((formInstance?.cmbTransferFunction?.selectedItem as String).replace(' ', '_').toUpperCase())
         val trainingDataPath : String = formInstance?.txtTrainingData?.text!!

@@ -11,7 +11,7 @@ import javax.swing.WindowConstants
 /**
  * Created by thoma on 25/05/2016.
  */
-class CreateNetworkAction : AnAction() {
+class ShowCreateNetworkFormAction : AnAction() {
     var form : CreateNetworkForm? = null
     var itr : Long = 0
 

@@ -1,4 +1,4 @@
-package com.thomas.needham.neurophidea.forms
+package com.thomas.needham.neurophidea.forms.create
 
 import com.intellij.openapi.ui.Messages
 import com.intellij.util.Icons
@@ -9,6 +9,7 @@ import com.thomas.needham.neurophidea.datastructures.NetworkConfiguration
 import com.thomas.needham.neurophidea.datastructures.NetworkTypes
 import com.thomas.needham.neurophidea.datastructures.TransferFunctions
 import com.thomas.needham.neurophidea.exceptions.InvalidLayerSizeException
+import com.thomas.needham.neurophidea.forms.create.CreateNetworkForm
 import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
 import java.io.File

@@ -61,12 +61,16 @@ SOFTWARE. -->
                     text="Open Existing Network" description="Opens an existing network created by this plugin">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt O"/>
             </action>
+            <action id="ExportNetworkToSourceCode"
+                    class="com.thomas.needham.neurophidea.actions.ExportNetworkToSourceCodeAction"
+                    text="Export Network To Source Code" description="Exports A network to its java source code equivalent">
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt G"/>
+            </action>
         </group>
         <action class="com.thomas.needham.neurophidea.actions.InitialisationAction" id="Init">
             <add-to-group group-id="NewProjectOrModuleGroup" anchor="last"/>
         </action>
         <!-- Add your actions here -->
-
     </actions>
 <application-components>
     <component>

@@ -7,7 +7,7 @@ import com.intellij.util.Consumer
 import com.thomas.needham.neurophidea.Constants
 import com.thomas.needham.neurophidea.Constants.TRAINING_SET_LOCATION_KEY
 import com.thomas.needham.neurophidea.actions.ShowCreateNetworkFormAction
-import com.thomas.needham.neurophidea.forms.TrainingSetBrowseButtonActionListener
+import com.thomas.needham.neurophidea.forms.create.TrainingSetBrowseButtonActionListener
 
 /**
  * Created by thoma on 26/05/2016.

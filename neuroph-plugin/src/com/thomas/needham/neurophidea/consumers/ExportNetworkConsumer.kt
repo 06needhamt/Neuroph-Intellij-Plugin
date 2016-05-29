@@ -21,38 +21,28 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea.actions
+package com.thomas.needham.neurophidea.consumers
 
-import com.intellij.openapi.actionSystem.AnAction
-import com.intellij.openapi.actionSystem.AnActionEvent
-import com.intellij.openapi.project.Project
-import com.thomas.needham.neurophidea.forms.create.CreateNetworkForm
+import com.intellij.ide.util.PropertiesComponent
+import com.intellij.openapi.vfs.VirtualFile
+import com.intellij.util.Consumer
+import com.thomas.needham.neurophidea.Constants.NETWORK_TO_EXPORT_LOCATION_KEY
+import com.thomas.needham.neurophidea.Constants.VERSION_KEY
 
 /**
- * Created by thoma on 25/05/2016.
+ * Created by thoma on 29/05/2016.
  */
-class ShowCreateNetworkFormAction : AnAction() {
-    var form : CreateNetworkForm? = null
-    var itr : Long = 0L
+class ExportNetworkConsumer : Consumer<VirtualFile?> {
+    constructor(){
 
-    companion object ProjectInfo{
-        var project : Project? = null
-        var projectDirectory : String? = ""
-        var isOpen : Boolean? = false
     }
-    override fun actionPerformed(e : AnActionEvent) {
-        InitialisationAction.project = e.project
-        InitialisationAction.projectDirectory = InitialisationAction.project?.basePath
-        InitialisationAction.isOpen = InitialisationAction.project?.isOpen
-        form = CreateNetworkForm()
+    companion object Data{
+        @JvmStatic var properties = PropertiesComponent.getInstance()
+        @JvmStatic var version = properties.getValue(VERSION_KEY)
+        @JvmStatic var path : String? = ""
     }
-
-    override fun update(e : AnActionEvent?) {
-        super.update(e)
-        if(form != null){
-            form?.repaint(itr,0,0,form?.width!!,form?.height!!)
-            itr++
-        }
-        e?.presentation?.isEnabledAndVisible = true
+    override fun consume(p0 : VirtualFile?) {
+        path = p0?.path
+        properties.setValue(NETWORK_TO_EXPORT_LOCATION_KEY, path)
     }
 }

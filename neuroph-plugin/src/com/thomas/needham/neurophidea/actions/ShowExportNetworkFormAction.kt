@@ -26,13 +26,13 @@ package com.thomas.needham.neurophidea.actions
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.project.Project
-import com.thomas.needham.neurophidea.forms.create.CreateNetworkForm
+import com.thomas.needham.neurophidea.forms.export.ExportNetworkForm
 
 /**
- * Created by thoma on 25/05/2016.
+ * Created by thoma on 28/05/2016.
  */
-class ShowCreateNetworkFormAction : AnAction() {
-    var form : CreateNetworkForm? = null
+class ShowExportNetworkFormAction : AnAction() {
+    var form : ExportNetworkForm? = null
     var itr : Long = 0L
 
     companion object ProjectInfo{
@@ -40,11 +40,12 @@ class ShowCreateNetworkFormAction : AnAction() {
         var projectDirectory : String? = ""
         var isOpen : Boolean? = false
     }
+
     override fun actionPerformed(e : AnActionEvent) {
         InitialisationAction.project = e.project
         InitialisationAction.projectDirectory = InitialisationAction.project?.basePath
         InitialisationAction.isOpen = InitialisationAction.project?.isOpen
-        form = CreateNetworkForm()
+        form = ExportNetworkForm()
     }
 
     override fun update(e : AnActionEvent?) {

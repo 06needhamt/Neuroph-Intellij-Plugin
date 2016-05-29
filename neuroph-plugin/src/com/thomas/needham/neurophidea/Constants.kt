@@ -36,4 +36,5 @@ object Constants {
     val TESTING_SET_LOCATION_KEY = "TestingSetLocation"
     val NETWORK_OUTPUT_LOCATION_KEY = "NetworkOutputLocation"
     val NETWORK_TO_OPEN_LOCATION_KEY = "NetworkToOpenLocation"
+    val NETWORK_TO_EXPORT_LOCATION_KEY = "NetworkToExportLocation"
 }

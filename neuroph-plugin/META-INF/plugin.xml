@@ -62,7 +62,7 @@ SOFTWARE. -->
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt O"/>
             </action>
             <action id="ExportNetworkToSourceCode"
-                    class="com.thomas.needham.neurophidea.actions.ExportNetworkToSourceCodeAction"
+                    class="com.thomas.needham.neurophidea.actions.ShowExportNetworkFormAction"
                     text="Export Network To Source Code" description="Exports A network to its java source code equivalent">
             <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt G"/>
             </action>

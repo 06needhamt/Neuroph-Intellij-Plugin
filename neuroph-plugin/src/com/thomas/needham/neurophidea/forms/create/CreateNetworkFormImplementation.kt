@@ -34,34 +34,34 @@ import com.thomas.needham.neurophidea.forms.create.CreateNetworkForm
  * Created by thoma on 26/05/2016.
  */
 
-fun com.thomas.needham.neurophidea.forms.create.CreateNetworkForm.PopulateTransferFunctions() {
-    for (i in 0..com.thomas.needham.neurophidea.datastructures.TransferFunctions.Functions.values().size - 1) {
-        cmbTransferFunction.addItem(com.thomas.needham.neurophidea.datastructures.TransferFunctions.Names.friendlyNames[i])
+fun CreateNetworkForm.PopulateTransferFunctions() {
+    for (i in 0..TransferFunctions.Functions.values().size - 1) {
+        cmbTransferFunction.addItem(TransferFunctions.friendlyNames[i])
     }
 }
 
-fun com.thomas.needham.neurophidea.forms.create.CreateNetworkForm.PopulateNetworktypes() {
-    for (i in 0..com.thomas.needham.neurophidea.datastructures.NetworkTypes.Types.values().size - 1) {
-        cmbNetworkType.addItem(com.thomas.needham.neurophidea.datastructures.NetworkTypes.Names.friendlyNames[i])
+fun CreateNetworkForm.PopulateNetworktypes() {
+    for (i in 0..NetworkTypes.Types.values().size - 1) {
+        cmbNetworkType.addItem(NetworkTypes.friendlyNames[i])
     }
 }
 
-fun com.thomas.needham.neurophidea.forms.create.CreateNetworkForm.PopulateLearningRules() {
-    for (i in 0..com.thomas.needham.neurophidea.datastructures.LearningRules.Rules.values().size - 1) {
-        cmbLearningRule.addItem(com.thomas.needham.neurophidea.datastructures.LearningRules.Names.friendlyNames[i])
+fun CreateNetworkForm.PopulateLearningRules() {
+    for (i in 0..LearningRules.Rules.values().size - 1) {
+        cmbLearningRule.addItem(LearningRules.friendlyNames[i])
     }
 }
-fun com.thomas.needham.neurophidea.forms.create.CreateNetworkForm.AddOnClickListeners() {
-    val trainingListener : com.thomas.needham.neurophidea.forms.create.TrainingSetBrowseButtonActionListener? = com.thomas.needham.neurophidea.forms.create.TrainingSetBrowseButtonActionListener()
+fun CreateNetworkForm.AddOnClickListeners() {
+    val trainingListener : TrainingSetBrowseButtonActionListener? = TrainingSetBrowseButtonActionListener()
     trainingListener?.formInstance = this
     btnBrowseTrainingData.addActionListener(trainingListener)
-    val testingListener : com.thomas.needham.neurophidea.forms.create.TestingSetBrowseButtonActionListener? = com.thomas.needham.neurophidea.forms.create.TestingSetBrowseButtonActionListener()
+    val testingListener : TestingSetBrowseButtonActionListener? = TestingSetBrowseButtonActionListener()
     testingListener?.formInstance = this
     btnBrowseTestingData.addActionListener(testingListener)
-    val outputListener : com.thomas.needham.neurophidea.forms.create.NetworkOutputBrowseButtonActionListener? = com.thomas.needham.neurophidea.forms.create.NetworkOutputBrowseButtonActionListener()
+    val outputListener : NetworkOutputBrowseButtonActionListener? = NetworkOutputBrowseButtonActionListener()
     outputListener?.formInstance = this
     btnBrowseOutput.addActionListener(outputListener)
-    val saveNetworkListener : com.thomas.needham.neurophidea.forms.create.SaveNetworkButtonActionListener? = com.thomas.needham.neurophidea.forms.create.SaveNetworkButtonActionListener()
+    val saveNetworkListener : SaveNetworkButtonActionListener? = SaveNetworkButtonActionListener()
     saveNetworkListener?.formInstance = this
     btnSaveNetwork.addActionListener(saveNetworkListener)
 }

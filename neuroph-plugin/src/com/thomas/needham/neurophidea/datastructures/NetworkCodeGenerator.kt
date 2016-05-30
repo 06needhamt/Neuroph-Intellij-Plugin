@@ -19,7 +19,6 @@ class NetworkCodeGenerator {
         @JvmStatic var path : String? = ""
         val coreImports = "import java.io.BufferedReader;" + "\n" +
                             "import java.io.BufferedWriter;" + "\n" +
-                            "import java.io.BufferedReader;" + "\n" +
                             "import java.io.File;" + "\n" +
                             "import java.io.FileWriter;" + "\n" +
                             "import java.io.IOException;" + "\n" +
@@ -88,7 +87,7 @@ class NetworkCodeGenerator {
                                 "}" + "\n" + "\n" +
                                 "testingSet = TrainingSet.createFromFile(setPath, inputSize, outputSize,\",\");" + "\n" +
                                 "int count = testingSet.elements().size();" + "\n" +
-                                "double averageDevience = 0;" + "\n" +
+                                "double averageDeviance = 0;" + "\n" +
                                 "String resultString = \"\";" + "\n" +
                                 "try{" + "\n" +
                                 "File file = new File(\"Results \" + setPath);" + "\n" +
@@ -104,8 +103,8 @@ class NetworkCodeGenerator {
                                 "expected = testingSet.elementAt(i).getIdealArray()[0];" + "\n" +
                                 "System.out.println(\"Calculated Output: \" + calculated);" + "\n" +
                                 "System.out.println(\"Expected Output: \" + expected);" + "\n" +
-                                "System.out.println(\"Devience: \" + (calculated - expected));" + "\n" +
-                                "averageDevience += Math.abs(Math.abs(calculated) - Math.abs(expected));" + "\n" +
+                                "System.out.println(\"Deviance: \" + (calculated - expected));" + "\n" +
+                                "averageDeviance += Math.abs(Math.abs(calculated) - Math.abs(expected));" + "\n" +
                                 "total += network.getOutput()[0];" + "\n" +
                                 "resultString = \"\";"+ "\n" +
                                 "for(int cols = 0; cols < testingSet.elementAt(i).getInputArray().length; cols++) {" + "\n" +
@@ -121,7 +120,7 @@ class NetworkCodeGenerator {
                                 "}" + "\n" +
                                 "System.out.println();" + "\n" +
                                 "System.out.println(\"Average: \" + total / count);" + "\n" +
-                                "System.out.println(\"Average Devience % : \" + (averageDevience / count) * 100);" + "\n" +
+                                "System.out.println(\"Average Deviance % : \" + (averageDeviance / count) * 100);" + "\n" +
                                 "bw.flush();" + "\n" +
                                 "bw.close();" + "\n" +
                                 "}" + "\n" +

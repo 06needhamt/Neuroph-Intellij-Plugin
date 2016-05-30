@@ -2,7 +2,6 @@ package com.thomas.needham.neurophidea.test;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -89,7 +88,7 @@ public class TestNetwork {
 
         testingSet = TrainingSet.createFromFile(setPath, inputSize, outputSize,",");
         int count = testingSet.elements().size();
-        double averageDevience = 0;
+        double averageDeviance = 0;
         String resultString = "";
         try{
             File file = new File("Results " + setPath);
@@ -105,8 +104,8 @@ public class TestNetwork {
                 expected = testingSet.elementAt(i).getIdealArray()[0];
                 System.out.println("Calculated Output: " + calculated);
                 System.out.println("Expected Output: " + expected);
-                System.out.println("Devience: " + (calculated - expected));
-                averageDevience += Math.abs(Math.abs(calculated) - Math.abs(expected));
+                System.out.println("Deviance: " + (calculated - expected));
+                averageDeviance += Math.abs(Math.abs(calculated) - Math.abs(expected));
                 total += network.getOutput()[0];
                 resultString = "";
                 for(int cols = 0; cols < testingSet.elementAt(i).getInputArray().length; cols++) {
@@ -122,7 +121,7 @@ public class TestNetwork {
             }
             System.out.println();
             System.out.println("Average: " + total / count);
-            System.out.println("Average Devience % : " + (averageDevience / count) * 100);
+            System.out.println("Average Deviance % : " + (averageDeviance / count) * 100);
             bw.flush();
             bw.close();
         }

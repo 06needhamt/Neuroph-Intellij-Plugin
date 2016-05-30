@@ -36,7 +36,7 @@ class TransferFunctions {
         @JvmStatic val classNames = arrayOf("Sigmoid", "Gaussian")
         @JvmStatic val friendlyNames = arrayOf("Sigmoid", "Gaussian")
         @JvmStatic fun GetClassName(v: TransferFunctions.Functions) : String{
-            return NetworkTypes.classNames[v.ordinal]
+            return classNames[v.ordinal]
         }
         //TODO Add More Transfer Functions
     }

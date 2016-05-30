@@ -30,7 +30,13 @@ package com.thomas.needham.neurophidea.forms.export
  */
 
 fun ExportNetworkForm.AddOnClickListeners(){
-    val exportListener : ExportNetworkBrowseButtonActionListener? = ExportNetworkBrowseButtonActionListener()
+    val networkListener : ExportNetworkBrowseButtonActionListener? = ExportNetworkBrowseButtonActionListener()
+    networkListener?.formInstance = this
+    btnBrowseExport?.addActionListener(networkListener)
+    val exportSourceListener : ExportSourceBrowseButtonActionListener? = ExportSourceBrowseButtonActionListener()
+    exportSourceListener?.formInstance = this
+    btnExportSource?.addActionListener(exportSourceListener)
+    val exportListener : ExportSourceButtonActionListener? = ExportSourceButtonActionListener()
     exportListener?.formInstance = this
-    btnBrowseExport?.addActionListener(exportListener)
+    btnExport?.addActionListener(exportListener)
 }

@@ -19,6 +19,7 @@ class NetworkCodeGenerator {
         @JvmStatic var path : String? = ""
         val coreImports = "import java.io.BufferedReader;" + "\n" +
                             "import java.io.BufferedWriter;" + "\n" +
+                            "import java.io.BufferedReader;" + "\n" +
                             "import java.io.File;" + "\n" +
                             "import java.io.FileWriter;" + "\n" +
                             "import java.io.IOException;" + "\n" +
@@ -30,6 +31,16 @@ class NetworkCodeGenerator {
                             "import org.neuroph.core.learning.SupervisedTrainingElement;" + "\n" +
                             "import org.neuroph.core.learning.TrainingSet;" + "\n" +
                             "import org.neuroph.util.TransferFunctionType;" + "\n" + "\n"
+        val getLayersString : (Array<Int>) -> String = { layers -> //Use Some Kotlin Sorcery to convert Array<Int> to comma delimited string
+            var result = ""
+            for(i in IntRange(0,layers.size - 1)) {
+                if(i == layers.size - 1)
+                    result += layers[i].toString()
+                else
+                    result += (layers[i].toString() + ",")
+            }
+            result
+        }
     }
 
     constructor(@NotNull network: NetworkConfiguration?, outputPath: String){
@@ -49,7 +60,7 @@ class NetworkCodeGenerator {
         sourceOutput += "\n"
         sourceOutput += DefineTrainNetwork()
         sourceOutput += "\n"
-        sourceOutput += DefineTestNetwork();
+        sourceOutput += DefineTestNetwork()
         sourceOutput += "\n"
         sourceOutput += DefineTestNetworkAuto()
         sourceOutput += "\n"
@@ -62,6 +73,7 @@ class NetworkCodeGenerator {
         var brace = ""
         while(braces > 0){
             brace += "}" + "\n"
+            braces--
         }
         return brace
     }
@@ -69,41 +81,41 @@ class NetworkCodeGenerator {
     private fun DefineTestNetworkAuto() : String {
         val testNetworkAuto = "static void testNetworkAuto(String setPath) { " + "\n" +
                                 "double total = 0.0;" + "\n" +
-                                "ArrayList<Integer> list = new ArrayList<Integer>" + "\n" +
+                                "ArrayList<Integer> list = new ArrayList<Integer>();" + "\n" +
                                 "ArrayList<String> outputLine = new ArrayList<String>();" + "\n" +
                                 "for(int layer : layers) { " + "\n" +
                                 "list.add(layer);" + "\n" +
                                 "}" + "\n" + "\n" +
-                                "testingSet = TrainingSet.createFromFile(setpath, inputSize, outputSize,\",\"" + "\n" +
-                                "int count = testingset.elements().size();" + "\n" +
+                                "testingSet = TrainingSet.createFromFile(setPath, inputSize, outputSize,\",\");" + "\n" +
+                                "int count = testingSet.elements().size();" + "\n" +
                                 "double averageDevience = 0;" + "\n" +
                                 "String resultString = \"\";" + "\n" +
                                 "try{" + "\n" +
-                                "File file = new File(\"Results \" + setName);" + "\n" +
+                                "File file = new File(\"Results \" + setPath);" + "\n" +
                                 "FileWriter fw = new FileWriter(file);" + "\n" +
                                 "BufferedWriter bw = new BufferedWriter(fw);" + "\n" +
                                 "" + "\n" +
-                                "for(int i = 0; i < testingset.elements().size(); i ++){" + "\n" +
+                                "for(int i = 0; i < testingSet.elements().size(); i ++){" + "\n" +
                                 "double expected;" + "\n" +
                                 "double calculated;" + "\n" +
-                                "network.setInput(testingset.elementAt(i).getInput());" + "\n" +
+                                "network.setInput(testingSet.elementAt(i).getInput());" + "\n" +
                                 "network.calculate();" + "\n" +
                                 "calculated = network.getOutput()[0];" + "\n" +
-                                "expected = testingset.elementAt(i).getIdealArray()[0];" + "\n" +
+                                "expected = testingSet.elementAt(i).getIdealArray()[0];" + "\n" +
                                 "System.out.println(\"Calculated Output: \" + calculated);" + "\n" +
                                 "System.out.println(\"Expected Output: \" + expected);" + "\n" +
                                 "System.out.println(\"Devience: \" + (calculated - expected));" + "\n" +
                                 "averageDevience += Math.abs(Math.abs(calculated) - Math.abs(expected));" + "\n" +
                                 "total += network.getOutput()[0];" + "\n" +
-                                "resultString = \";\" "+ "\n" +
-                                "for(int cols = 0; cols < testingset.elementAt(i).getInputArray().length; cols ++) {" + "\n" +
-                                "resultString += testingset.elementAt(i).getInputArray()[cols] + \", \";" + "\n" +
+                                "resultString = \"\";"+ "\n" +
+                                "for(int cols = 0; cols < testingSet.elementAt(i).getInputArray().length; cols++) {" + "\n" +
+                                "resultString += testingSet.elementAt(i).getInputArray()[cols] + \", \";" + "\n" +
                                 "}" + "\n" +
                                 "for(int t = 0; t < network.getOutput().length; t++) {" + "\n" +
                                 "resultString += network.getOutput()[t] + \", \";" + "\n" +
                                 "}" + "\n" +
                                 "resultString = resultString.substring(0, resultString.length()-2);" + "\n" +
-                                "resultString += \"\n\";" + "\n" +
+                                "resultString += \"\";" + "\n" +
                                 "bw.write(resultString);" + "\n" +
                                 "bw.flush();" + "\n" +
                                 "}" + "\n" +
@@ -123,12 +135,12 @@ class NetworkCodeGenerator {
     private fun DefineTestNetwork() : String {
         val testNetwork = "static void testNetwork() { " + "\n" +
                             "String input = \"\";" + "\n" +
-                            "BufferredReader fromKeyboard = new BufferredReader(new InputStreamReader(System.in));" + "\n" +
+                            "BufferedReader fromKeyboard = new BufferedReader(new InputStreamReader(System.in));" + "\n" +
                             "ArrayList<Double> testValues = new ArrayList<Double>();" + "\n" +
                             "double[] testValuesDouble;" + "\n" +
                             "do { " + "\n" +
                             "try { " + "\n" +
-                            "System.out.println(\"Enter test values or \"\": \");" + "\n" +
+                            "System.out.println(\"Enter test values or \\\"\\\": \");" + "\n" +
                             "input = fromKeyboard.readLine();" + "\n" +
                             "if(input.equals(\"\")) { " + "\n" +
                             "break;" + "\n" +
@@ -144,13 +156,12 @@ class NetworkCodeGenerator {
                             "} catch(NumberFormatException nfe) { " + "\n" +
                             "nfe.printStackTrace(System.err);" + "\n" +
                             "}" + "\n" +
-                            "testValuesDouble = new Double[testValues.size()];" + "\n" +
+                            "testValuesDouble = new double[testValues.size()];" + "\n" +
                             "for(int t = 0; t < testValuesDouble.length; t++) {" + "\n" +
                             "testValuesDouble[t] = testValues.get(t).doubleValue();" + "\n" +
                             "}" + "\n" +
                             "network.setInput(testValuesDouble);" + "\n" +
                             "network.calculate();" + "\n" +
-                            "printOutput(network.getOutput());" + "\n" +
                             "} while (!input.equals(\"\"));" + "\n" +
                             "}" + "\n"
         return testNetwork
@@ -158,26 +169,26 @@ class NetworkCodeGenerator {
 
     private fun DefineTrainNetwork() : String {
         val trainNetwork = "static void trainNetwork() { " + "\n" +
-                            "ArrayList<Integer> list = new ArrayList<Integer>" + "\n" +
+                            "ArrayList<Integer> list = new ArrayList<Integer>();" + "\n" +
                             "for(int layer : layers) { " + "\n" +
                             "list.add(layer);" + "\n" +
                             "}" + "\n" + "\n" +
                             "NeuralNetwork network = new ${NetworkTypes.GetClassName(network?.networkType!!)}" +
                             "(list, TransferFunctionType.${network?.networkTransferFunction?.name});" + "\n" +
-                            "trainingSet = new TrainingSet<SupervisedLearningElement>(inputSize, outputSize);" + "\n" +
-                            "trainingSet = TrainingSet.createFromFile(${network?.networkTrainingDataPath}, inputSize, outputSize, \",\");" + "\n" +
-                            "${TransferFunctions.GetClassName(network?.networkTransferFunction!!)} learningRule = " +
-                            "new ${TransferFunctions.GetClassName(network?.networkTransferFunction!!)}();" + "\n" +
+                            "trainingSet = new TrainingSet<SupervisedTrainingElement>(inputSize, outputSize);" + "\n" +
+                            "trainingSet = TrainingSet.createFromFile(\"${network?.networkTrainingDataPath}\", inputSize, outputSize, \",\");" + "\n" +
+                            "${LearningRules.GetClassName(network?.networkLearningRule!!)} learningRule = " +
+                            "new ${LearningRules.GetClassName(network?.networkLearningRule!!)}();" + "\n" +
                             "network.setLearningRule(learningRule);" + "\n" +
                             "network.learn(trainingSet);" + "\n" +
-                            "network.save(${network?.networkOutputPath}" + "/" + "${network?.networkName}" + ".nnet);" + "\n" +
+                            "network.save(\"${network?.networkOutputPath}" + "/" + "${network?.networkName}" + ".nnet\");" + "\n" +
                             "}" + "\n"
         return trainNetwork
     }
 
     private fun DefineLoadNetwork() : String {
         val loadNetwork = "static void loadNetwork() { " + "\n" +
-                                "network = NeuralNetwork.load(${network?.networkOutputPath + "/" + network?.networkName + ".conf"};" + "\n" +
+                                "network = NeuralNetwork.load(\"${network?.networkOutputPath + "/" + network?.networkName + ".nnet"}\");" + "\n" +
                             "}" + "\n"
         return loadNetwork
     }
@@ -186,9 +197,9 @@ class NetworkCodeGenerator {
         val variables = "static int inputSize = ${network?.networkLayers?.first()};" + "\n" +
                         "static int outputSize = ${network?.networkLayers?.last()};" + "\n" +
                         "static NeuralNetwork network;" + "\n" +
-                        "static TrainingSet<SupervisedTrainingElement> trainingSet" + "\n" +
-                        "static TrainingSet<SupervisedTrainingElement> testingSet" + "\n" +
-                        "static int[] layers = ${network?.networkLayers}" + "\n"
+                        "static TrainingSet<SupervisedTrainingElement> trainingSet;" + "\n" +
+                        "static TrainingSet<SupervisedTrainingElement> testingSet;" + "\n" +
+                        "static int[] layers = {${getLayersString(network?.networkLayers!!)}};" + "\n"
         return variables
     }
 
@@ -202,7 +213,7 @@ class NetworkCodeGenerator {
         var imports = coreImports
         when (network?.networkType){
             NetworkTypes.Types.PERCEPTRON -> imports += "import org.neuroph.nnet.Perceptron;" + "\n"
-            NetworkTypes.Types.MULTI_LAYER_PERCEPTRON -> imports += "org.neuroph.nnet.MultiLayerPerceptron" + "\n"
+            NetworkTypes.Types.MULTI_LAYER_PERCEPTRON -> imports += "import org.neuroph.nnet.MultiLayerPerceptron;" + "\n"
             else -> imports += "import UnknownType;" + "\n"
             //TODO Add More Network Types
         }
@@ -210,11 +221,13 @@ class NetworkCodeGenerator {
             LearningRules.Rules.BACK_PROPAGATION -> imports += "import org.neuroph.nnet.learning.BackPropagation;" + "\n"
             LearningRules.Rules.DYNAMIC_BACK_PROPAGATION -> imports += "import org.neuroph.nnet.learning.DynamicBackPropagation;" + "\n"
             else -> imports += "import UnknownLearningRule;" + "\n"
+            //TODO Add More Learning Rules
         }
         when(network?.networkTransferFunction){
-            TransferFunctions.Functions.GAUSSIAN -> imports += "import org.neuroph.core.transfer.Gaussian" + "\n"
-            TransferFunctions.Functions.SIGMOID -> imports += "import org.neuroph.core.transfer.Sigmoid" + "\n"
+            TransferFunctions.Functions.GAUSSIAN -> imports += "import org.neuroph.core.transfer.Gaussian;" + "\n"
+            TransferFunctions.Functions.SIGMOID -> imports += "import org.neuroph.core.transfer.Sigmoid;" + "\n"
             else -> imports += "import UnknownTransferFunction;" + "\n"
+            //TODO Add More Transfer Functions
         }
         return imports
     }

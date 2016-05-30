@@ -24,7 +24,6 @@ SOFTWARE.
 package com.thomas.needham.neurophidea.forms.export;
 
 import com.intellij.uiDesigner.core.*;
-import com.thomas.needham.neurophidea.forms.create.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -37,7 +36,7 @@ public class ExportNetworkForm extends JFrame {
     public JPanel inner;
     public JButton btnExport;
     public JButton btnBrowseExport;
-    public JButton browseButton;
+    public JButton btnExportSource;
     public JTextField txtExportNetwork;
     public JTextField txtSourceCodePath;
 
@@ -72,7 +71,7 @@ public class ExportNetworkForm extends JFrame {
         root = new JPanel();
         root.setLayout(new BorderLayout(0, 0));
         inner = new JPanel();
-        inner.setLayout(new GridLayoutManager(3, 3, new Insets(0, 0, 0, 0), -1, -1));
+        inner.setLayout(new GridLayoutManager(3, 3, new Insets(5, 10, 0, 5), -1, -1));
         root.add(inner, BorderLayout.CENTER);
         final JLabel label1 = new JLabel();
         label1.setText("Network To Export");
@@ -86,9 +85,9 @@ public class ExportNetworkForm extends JFrame {
         btnBrowseExport = new JButton();
         btnBrowseExport.setText("Browse");
         inner.add(btnBrowseExport, new GridConstraints(0, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        browseButton = new JButton();
-        browseButton.setText("Browse");
-        inner.add(browseButton, new GridConstraints(1, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        btnExportSource = new JButton();
+        btnExportSource.setText("Browse");
+        inner.add(btnExportSource, new GridConstraints(1, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         txtExportNetwork = new JTextField();
         inner.add(txtExportNetwork, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         txtSourceCodePath = new JTextField();

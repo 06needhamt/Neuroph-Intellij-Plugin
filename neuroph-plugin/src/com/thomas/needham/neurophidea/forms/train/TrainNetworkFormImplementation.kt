@@ -21,22 +21,22 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea.actions
-
-import com.intellij.openapi.actionSystem.AnAction
-import com.intellij.openapi.actionSystem.AnActionEvent
-import com.intellij.openapi.project.Project
+@file:JvmName("TrainNetworkForm\$Ext") // Do Some Kotlin Sorcery!
+@file:JvmMultifileClass() // Do Some Kotlin Sorcery!
+package com.thomas.needham.neurophidea.forms.train
 
 /**
- * Created by thoma on 25/05/2016.
+ * Created by thoma on 31/05/2016.
  */
-class NeurophMenuAction : AnAction() {
-    companion object ProjectInfo{
-        var project : Project? = null
-        var projectDirectory : String? = ""
-        var isOpen : Boolean? = false
-    }
-    override fun actionPerformed(e : AnActionEvent) {
-        println("Neuroph Menu Initialised")
-    }
+
+fun TrainNetworkForm.AddOnClickListeners(){
+    val browseNetworkListener : TrainNetworkBrowseButtonActionListener? = TrainNetworkBrowseButtonActionListener()
+    browseNetworkListener?.formInstance = this
+    btnBrowseNetwork.addActionListener(browseNetworkListener)
+    val trainingSetListener : TrainingSetBrowseButtonActionListener? = TrainingSetBrowseButtonActionListener()
+    trainingSetListener?.formInstance = this
+    btnBrowseTrainingSet.addActionListener(trainingSetListener)
+    val trainListener : TrainNetworkButtonActionListener? = TrainNetworkButtonActionListener()
+    trainListener?.formInstance = this
+    btnTrainNetwork.addActionListener(trainListener)
 }

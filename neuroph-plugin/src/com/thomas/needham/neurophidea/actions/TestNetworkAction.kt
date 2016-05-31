@@ -25,18 +25,13 @@ package com.thomas.needham.neurophidea.actions
 
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
-import com.intellij.openapi.project.Project
 
 /**
- * Created by thoma on 25/05/2016.
+ * Created by thoma on 30/05/2016.
  */
-class NeurophMenuAction : AnAction() {
-    companion object ProjectInfo{
-        var project : Project? = null
-        var projectDirectory : String? = ""
-        var isOpen : Boolean? = false
-    }
+class TestNetworkAction : AnAction() {
+
     override fun actionPerformed(e : AnActionEvent) {
-        println("Neuroph Menu Initialised")
+
     }
 }

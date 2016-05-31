@@ -38,4 +38,8 @@ object Constants {
     val NETWORK_TO_OPEN_LOCATION_KEY = "NetworkToOpenLocation"
     val NETWORK_TO_EXPORT_LOCATION_KEY = "NetworkToExportLocation"
     val SOURCE_TO_EXPORT_LOCATION_KEY = "SourceToExportLocation"
+    val NETWORK_TO_TRAIN_LOCATION_KEY = "NetworkToTrainLocation"
+    val TRAIN_FORM_TRAINING_SET_LOCATION_KEY = "NetworkToTrainTrainingSetLocation"
+    val COMMA_DELIMITED = ","
+    val SPACE_DELIMITED = " "
 }

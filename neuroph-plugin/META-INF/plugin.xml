@@ -59,12 +59,20 @@ SOFTWARE. -->
 
             <action id="OpenExistingNetwork" class="com.thomas.needham.neurophidea.actions.OpenExistingNetworkAction"
                     text="Open Existing Network" description="Opens an existing network created by this plugin">
-                <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt O"/>
+                <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt H"/>
             </action>
             <action id="ExportNetworkToSourceCode"
                     class="com.thomas.needham.neurophidea.actions.ShowExportNetworkFormAction"
                     text="Export Network To Source Code" description="Exports A network to its java source code equivalent">
             <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt G"/>
+            </action>
+            <action id="TrainNetworkAction" class="com.thomas.needham.neurophidea.actions.ShowTrainNetworkFormAction"
+                    text="Train Network" description="Trains a network">
+                <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt A"/>
+            </action>
+            <action id="TestNetworkAction" class="com.thomas.needham.neurophidea.actions.TestNetworkAction"
+                    text="Test Network" description="Tests a network">
+                <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt B"/>
             </action>
         </group>
         <action class="com.thomas.needham.neurophidea.actions.InitialisationAction" id="Init">

@@ -26,7 +26,7 @@ package com.thomas.needham.neurophidea.forms.export
 import com.intellij.ide.util.PropertiesComponent
 import com.intellij.openapi.ui.Messages
 import com.intellij.util.Icons
-import com.thomas.needham.neurophidea.datastructures.NetworkCodeGenerator
+import com.thomas.needham.neurophidea.core.NetworkCodeGenerator
 import com.thomas.needham.neurophidea.datastructures.NetworkConfiguration
 import com.thomas.needham.neurophidea.Constants.NETWORK_TO_EXPORT_LOCATION_KEY
 import com.thomas.needham.neurophidea.Constants.SOURCE_TO_EXPORT_LOCATION_KEY
@@ -99,7 +99,7 @@ class ExportSourceButtonActionListener : ActionListener {
         inputPath = properties.getValue(NETWORK_TO_EXPORT_LOCATION_KEY,defaultPath)
         network = getNetwork(inputPath)
         outputPath = properties.getValue(SOURCE_TO_EXPORT_LOCATION_KEY,defaultPath) + "/" + "${network?.networkName}.java"
-        codeGenerator = NetworkCodeGenerator(network,outputPath)
+        codeGenerator = NetworkCodeGenerator(network, outputPath)
         if(codeGenerator == null)
             return
         sourceCode = codeGenerator?.GenerateCode()!!

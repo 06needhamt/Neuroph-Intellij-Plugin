@@ -10,6 +10,7 @@
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/encog-engine-2.5.0.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/kotlin-runtime-sources.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/mysql-connector-java-5.1.17-bin.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/KotlinMath.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

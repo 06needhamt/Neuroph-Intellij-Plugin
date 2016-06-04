@@ -38,7 +38,7 @@ import java.awt.event.ActionListener
 /**
  * Created by thoma on 25/05/2016.
  */
-class TrainingSetBrowseButtonActionListener : ActionListener {
+class CreateTrainingSetBrowseButtonActionListener : ActionListener {
     var formInstance : CreateNetworkForm? = null
 
     companion object Data{

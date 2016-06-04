@@ -30,7 +30,7 @@ import com.intellij.util.Consumer
 import com.thomas.needham.neurophidea.Constants.TRAIN_FORM_TRAINING_SET_LOCATION_KEY
 import com.thomas.needham.neurophidea.Constants.VERSION_KEY
 import com.thomas.needham.neurophidea.actions.ShowCreateNetworkFormAction
-import com.thomas.needham.neurophidea.forms.create.TrainingSetBrowseButtonActionListener
+import com.thomas.needham.neurophidea.forms.create.CreateTrainingSetBrowseButtonActionListener
 
 /**
  * Created by thoma on 31/05/2016.
@@ -47,7 +47,7 @@ class TrainNetworkSetFileConsumer : Consumer<VirtualFile?> {
     }
 
     override fun consume(p0 : VirtualFile?) {
-        for(ext : String in TrainingSetBrowseButtonActionListener.allowedFileTypes){
+        for(ext : String in CreateTrainingSetBrowseButtonActionListener.allowedFileTypes){
             if(p0?.extension?.equals(ext)!!){
                 path = p0?.path
                 properties.setValue(TRAIN_FORM_TRAINING_SET_LOCATION_KEY, path)

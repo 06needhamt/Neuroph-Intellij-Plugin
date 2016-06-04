@@ -21,28 +21,24 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea
+@file:JvmName("TestNetworkForm\$Ext") // Do Some Kotlin Sorcery!
+@file:JvmMultifileClass() // Do Some Kotlin Sorcery!
+package com.thomas.needham.neurophidea.forms.test
+
+import com.thomas.needham.neurophidea.forms.test.TestNetworkBrowseButtonActionListener
 
 /**
- * Created by thoma on 24/05/2016.
+ * Created by thoma on 04/06/2016.
  */
-object Constants {
-    val VERSION_KEY = "version"
-    val LOCATION_KEY = "location"
-    val INITIALISATION_ACTION = "Initialisation"
-    val MENU_ACTION = "Menu"
-    val WINDOW_MENU_ACTION = "WindowMenu"
-    val TRAINING_SET_LOCATION_KEY = "TrainingSetLocation"
-    val TESTING_SET_LOCATION_KEY = "TestingSetLocation"
-    val NETWORK_OUTPUT_LOCATION_KEY = "NetworkOutputLocation"
-    val NETWORK_TO_OPEN_LOCATION_KEY = "NetworkToOpenLocation"
-    val NETWORK_TO_EXPORT_LOCATION_KEY = "NetworkToExportLocation"
-    val SOURCE_TO_EXPORT_LOCATION_KEY = "SourceToExportLocation"
-    val NETWORK_TO_TRAIN_LOCATION_KEY = "NetworkToTrainLocation"
-    val NETWORK_TO_TEST_LOCATION_KEY = "NetworkToTestLocation"
-    val TRAIN_FORM_TRAINING_SET_LOCATION_KEY = "NetworkToTrainTrainingSetLocation"
-    val TEST_FORM_TESTING_SET_LOCATION_KEY = "NetworkToTestTestingSetLocation"
-    val NETWORK_RESULTS_LOCATION_KEY = "NetworkResultsLocation"
-    val COMMA_DELIMITED = ","
-    val SPACE_DELIMITED = " "
+
+fun TestNetworkForm.AddOnClickListeners(){
+    val browseNetworkListener : TestNetworkBrowseButtonActionListener? = TestNetworkBrowseButtonActionListener()
+    browseNetworkListener?.formInstance = this
+    btnBrowseNetwork?.addActionListener(browseNetworkListener)
+    val browseTestingSetListener : TestingSetBrowseButtonActionListener? = TestingSetBrowseButtonActionListener()
+    browseTestingSetListener?.formInstance = this
+    btnBrowseTestingSet?.addActionListener(browseTestingSetListener)
+    val resultsActionListener : NetworkResultsBrowseActionListener? = NetworkResultsBrowseActionListener()
+    resultsActionListener?.formInstance = this
+    btnBrowseOutput?.addActionListener(resultsActionListener)
 }

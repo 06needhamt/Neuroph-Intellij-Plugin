@@ -15,7 +15,7 @@ import java.awt.event.ActionListener
 /**
  * Created by thoma on 28/05/2016.
  */
-class TestingSetBrowseButtonActionListener : ActionListener {
+class CreateTestingSetBrowseButtonActionListener : ActionListener {
     var formInstance : CreateNetworkForm? = null
     companion object Data{
         val defaultPath = ""
@@ -27,9 +27,9 @@ class TestingSetBrowseButtonActionListener : ActionListener {
     }
     
     override fun actionPerformed(e : ActionEvent?) {
-        TestingSetBrowseButtonActionListener.properties?.setValue(TESTING_SET_LOCATION_KEY, TestingSetBrowseButtonActionListener.defaultPath)
-        FileChooser.chooseFile(TestingSetBrowseButtonActionListener.fileDescriptor, ShowCreateNetworkFormAction.project,null, TestingSetBrowseButtonActionListener.consumer as Consumer<VirtualFile?>)
-        TestingSetBrowseButtonActionListener.chosenPath = TestingSetBrowseButtonActionListener.properties.getValue(TESTING_SET_LOCATION_KEY, TestingSetBrowseButtonActionListener.defaultPath)
-        formInstance?.txtTestingData?.text = TestingSetBrowseButtonActionListener.chosenPath
+        CreateTestingSetBrowseButtonActionListener.properties?.setValue(TESTING_SET_LOCATION_KEY, CreateTestingSetBrowseButtonActionListener.defaultPath)
+        FileChooser.chooseFile(CreateTestingSetBrowseButtonActionListener.fileDescriptor, ShowCreateNetworkFormAction.project,null, CreateTestingSetBrowseButtonActionListener.consumer as Consumer<VirtualFile?>)
+        CreateTestingSetBrowseButtonActionListener.chosenPath = CreateTestingSetBrowseButtonActionListener.properties.getValue(TESTING_SET_LOCATION_KEY, CreateTestingSetBrowseButtonActionListener.defaultPath)
+        formInstance?.txtTestingData?.text = CreateTestingSetBrowseButtonActionListener.chosenPath
     }
 }

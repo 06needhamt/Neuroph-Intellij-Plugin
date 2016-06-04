@@ -51,7 +51,7 @@ class NetworkOutputBrowseButtonActionListener : ActionListener {
     }
 
     override fun actionPerformed(e : ActionEvent?) {
-        properties?.setValue(NETWORK_OUTPUT_LOCATION_KEY, TrainingSetBrowseButtonActionListener.defaultPath)
+        properties?.setValue(NETWORK_OUTPUT_LOCATION_KEY, CreateTrainingSetBrowseButtonActionListener.defaultPath)
         FileChooser.chooseFile(fileDescriptor, ShowCreateNetworkFormAction.project,null, consumer as Consumer<VirtualFile?>)
         chosenPath = properties.getValue(NETWORK_OUTPUT_LOCATION_KEY, defaultPath)
         formInstance?.txtNetworkOutputPath?.text = chosenPath

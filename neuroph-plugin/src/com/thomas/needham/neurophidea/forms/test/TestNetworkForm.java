@@ -23,20 +23,16 @@ public class TestNetworkForm extends JFrame {
     private JTextPane txtTestingData;
 
     public TestNetworkForm() {
-        super("Train Network");
+        super("Test Network");
         this.setContentPane(root);
         this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         Toolkit t = Toolkit.getDefaultToolkit();
         int x = (int) ((t.getScreenSize().getWidth() - (double) this.getWidth()) / 2.0D);
         int y = (int) ((t.getScreenSize().getHeight() - (double) this.getHeight()) / 2.0D);
         this.setLocation(x, y);
-
+        TestNetworkFormImplementationKt.AddOnClickListeners(this);
         this.pack();
         this.setVisible(true);
-    }
-
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
     }
 
     {

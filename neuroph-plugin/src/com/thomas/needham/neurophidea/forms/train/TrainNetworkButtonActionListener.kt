@@ -48,9 +48,9 @@ class TrainNetworkButtonActionListener : ActionListener{
 
     override fun actionPerformed(e : ActionEvent?) {
         if(!formInstance?.txtInputData?.text.equals("")){
-            var input = formInstance?.txtInputData?.text
-            var split = input?.split(",")
-            var parsedOutput = DoubleArray(split?.size!!)
+            val input = formInstance?.txtInputData?.text
+            val split = input?.split(",")
+            val parsedOutput = DoubleArray(split?.size!!)
             for(i in 0..split?.size!!){
                 parsedOutput[i] = split!![i].toDouble()
             }

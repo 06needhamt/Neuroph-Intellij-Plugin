@@ -70,7 +70,7 @@ SOFTWARE. -->
                     text="Train Network" description="Trains a network">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt A"/>
             </action>
-            <action id="TestNetworkAction" class="com.thomas.needham.neurophidea.actions.TestNetworkAction"
+            <action id="TestNetworkAction" class="com.thomas.needham.neurophidea.actions.ShowTestNetworkFormAction"
                     text="Test Network" description="Tests a network">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt B"/>
             </action>

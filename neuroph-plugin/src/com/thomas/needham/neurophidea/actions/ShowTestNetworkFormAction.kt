@@ -23,15 +23,40 @@ SOFTWARE.
  */
 package com.thomas.needham.neurophidea.actions
 
+import com.intellij.ide.util.PropertiesComponent
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
+import com.intellij.openapi.project.Project
+import com.thomas.needham.neurophidea.forms.test.TestNetworkForm
 
 /**
  * Created by thoma on 30/05/2016.
  */
-class TestNetworkAction : AnAction() {
+class ShowTestNetworkFormAction : AnAction() {
 
+    var form : TestNetworkForm? = null
+    var itr : Long = 0L
+
+    companion object Data{
+        var project : Project? = null
+        var projectDirectory : String? = ""
+        var isOpen : Boolean? = false
+        val properties = PropertiesComponent.getInstance()
+
+    }
     override fun actionPerformed(e : AnActionEvent) {
+        InitialisationAction.project = e.project
+        InitialisationAction.projectDirectory = InitialisationAction.project?.basePath
+        InitialisationAction.isOpen = InitialisationAction.project?.isOpen
+        form = TestNetworkForm()
+    }
 
+    override fun update(e : AnActionEvent?) {
+        super.update(e)
+        if(form != null){
+            form?.repaint(itr,0,0,form?.width!!,form?.height!!)
+            itr++
+        }
+        e?.presentation?.isEnabledAndVisible = true
     }
 }

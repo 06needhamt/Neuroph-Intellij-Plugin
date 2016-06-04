@@ -12,8 +12,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0bf29350-129e-4cfc-8762-78cb4578196f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/META-INF/plugin.xml" afterPath="$PROJECT_DIR$/META-INF/plugin.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/TestNetworkAction.kt" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowTestNetworkFormAction.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkForm.form" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkForm.form" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkForm.java" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkForm.java" />
     </list>
     <ignored path="neuroph-plugin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,14 +71,14 @@
       <file leaf-file-name="TrainNetworkForm.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="54" selection-end-column="5" />
+            <state relative-caret-position="311">
+              <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestNetworkForm.form" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TestNetworkForm.form" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/test/TestNetworkForm.form">
           <provider selected="true" editor-type-id="ui-designer">
             <state />
@@ -88,7 +88,7 @@
       <file leaf-file-name="ShowTestNetworkFormAction.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowTestNetworkFormAction.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
+            <state relative-caret-position="533">
               <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
               <folding>
                 <element signature="e#1133#1395#0" expanded="true" />
@@ -100,7 +100,7 @@
       <file leaf-file-name="ShowTrainNetworkFormAction.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowTrainNetworkFormAction.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
+            <state relative-caret-position="-66">
               <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="59" selection-end-column="5" />
               <folding />
             </state>
@@ -118,6 +118,16 @@
         <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkForm.form">
           <provider selected="true" editor-type-id="ui-designer">
             <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TrainNetworkButtonActionListener.kt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkButtonActionListener.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -189,15 +199,15 @@
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/exceptions/UnknownLearningRuleException.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainingSetBrowseButtonActionListener.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkBrowseButtonActionListener.kt" />
-        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkButtonActionListener.kt" />
-        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkForm.java" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/NetworkToTrainConsumer.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/TrainNetworkSetFileConsumer.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/NetworkCodeGenerator.kt" />
-        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkForm.form" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowTestNetworkFormAction.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/test/TestNetworkForm.java" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/test/TestNetworkForm.form" />
+        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkButtonActionListener.kt" />
+        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkForm.java" />
+        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkForm.form" />
       </list>
     </option>
   </component>
@@ -961,7 +971,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1654" height="993" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -971,7 +981,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23935558" sideWeight="0.5055617" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24534884" sideWeight="0.49443826" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24534884" sideWeight="0.49443826" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32790697" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.304266" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -982,7 +992,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3244186" sideWeight="0.49666294" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3244186" sideWeight="0.49666294" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1033,8 +1043,14 @@
           <properties />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkButtonActionListener.kt</url>
+          <line>49</line>
+          <properties />
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="34" />
+      <option name="time" value="35" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1306,16 +1322,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkButtonActionListener.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
-          <folding>
-            <element signature="e#1137#1755#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/NetworkToTrainConsumer.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1370,47 +1376,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/export/ExportNetworkForm.form">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowTrainNetworkFormAction.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="59" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkForm.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowTestNetworkFormAction.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding>
-            <element signature="e#1133#1395#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="54" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/test/TestNetworkForm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1421,9 +1386,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowTrainNetworkFormAction.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-66">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="59" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowTestNetworkFormAction.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding>
+            <element signature="e#1133#1395#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/export/ExportNetworkForm.form">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/test/TestNetworkForm.form">
       <provider selected="true" editor-type-id="ui-designer">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkForm.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkButtonActionListener.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>

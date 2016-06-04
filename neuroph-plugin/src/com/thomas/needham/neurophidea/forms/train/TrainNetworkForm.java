@@ -38,8 +38,10 @@ public class TrainNetworkForm extends JFrame {
     public JTextField txtTrainingSet;
     public JButton btnBrowseNetwork;
     public JButton btnBrowseTrainingSet;
-    public JTextPane txtInputData;
+    //public JTextPane txtInputData;
     public JButton btnTrainNetwork;
+    public JScrollPane TrainingDataScrollPane;
+    public JTextPane txtInputData;
 
     public TrainNetworkForm() {
         super("Train Network");
@@ -93,13 +95,13 @@ public class TrainNetworkForm extends JFrame {
         btnBrowseTrainingSet = new JButton();
         btnBrowseTrainingSet.setText("Browse");
         inner.add(btnBrowseTrainingSet, new GridConstraints(1, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        txtInputData = new JTextPane();
-        txtInputData.setBackground(new Color(-12236470));
-        txtInputData.setToolTipText("Input Comma Seperated values to train network");
-        inner.add(txtInputData, new GridConstraints(2, 1, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 50), null, 0, false));
         btnTrainNetwork = new JButton();
         btnTrainNetwork.setText("Train Network");
         inner.add(btnTrainNetwork, new GridConstraints(3, 0, 1, 3, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        TrainingDataScrollPane = new JScrollPane();
+        inner.add(TrainingDataScrollPane, new GridConstraints(2, 1, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        txtInputData = new JTextPane();
+        TrainingDataScrollPane.setViewportView(txtInputData);
     }
 
     /**

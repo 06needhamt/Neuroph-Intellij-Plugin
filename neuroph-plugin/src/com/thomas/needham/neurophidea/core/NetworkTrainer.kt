@@ -61,6 +61,7 @@ class NetworkTrainer {
     var properties = PropertiesComponent.getInstance()
     var inputSize : Int = 0
     var outputSize : Int = 0
+
     companion object Data{
         var networkPath = ""
         var trainingSetPath = ""

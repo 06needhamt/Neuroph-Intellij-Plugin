@@ -26,6 +26,7 @@ SOFTWARE.
 package com.thomas.needham.neurophidea.forms.test
 
 import com.thomas.needham.neurophidea.forms.test.TestNetworkBrowseButtonActionListener
+import com.thomas.needham.neurophidea.forms.train.TrainNetworkButtonActionListener
 
 /**
  * Created by thoma on 04/06/2016.
@@ -41,4 +42,7 @@ fun TestNetworkForm.AddOnClickListeners(){
     val resultsActionListener : NetworkResultsBrowseActionListener? = NetworkResultsBrowseActionListener()
     resultsActionListener?.formInstance = this
     btnBrowseOutput?.addActionListener(resultsActionListener)
+    val trainActionListener : TestNetworkButtonActionListener? = TestNetworkButtonActionListener()
+    trainActionListener?.formInstance = this
+    btnTestNetwork.addActionListener(trainActionListener)
 }

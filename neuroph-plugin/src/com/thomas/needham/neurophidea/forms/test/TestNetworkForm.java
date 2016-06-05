@@ -19,8 +19,8 @@ public class TestNetworkForm extends JFrame {
     public JButton btnBrowseTestingSet;
     public JButton btnBrowseOutput;
     public JButton btnTestNetwork;
-    private JScrollPane TrainingDataScrollPane;
-    private JTextPane txtTestingData;
+    public JScrollPane TrainingDataScrollPane;
+    public JTextPane txtTestingData;
 
     public TestNetworkForm() {
         super("Test Network");

@@ -2,7 +2,7 @@ package com.thomas.needham.neurophidea.core
 
 import com.intellij.ide.util.PropertiesComponent
 import com.intellij.openapi.ui.Messages
-import com.intellij.util.Icons
+import com.intellij.util.PlatformIcons
 import com.thomas.needham.neurophidea.Constants.NETWORK_TO_TEST_LOCATION_KEY
 import com.thomas.needham.neurophidea.Constants.COMMA_DELIMITED
 import com.thomas.needham.neurophidea.actions.OpenExistingNetworkAction
@@ -110,8 +110,8 @@ class NetworkTester {
             val fileWriter : FileWriter = FileWriter(file,false)
             val bufferedWriter : BufferedWriter = BufferedWriter(fileWriter)
             for(i in 0..testingSet?.elements()?.size!! - 1 step 1){
-                var calculated : Double = 0.0
-                var expected : Double = 0.0
+                var calculated : Double
+                var expected : Double
                 network?.setInput(*testingSet?.elementAt(i)?.input!!)
                 network?.calculate()
                 calculated = network?.output!![0]
@@ -136,8 +136,8 @@ class NetworkTester {
             }
             var message = "Average: ${total / testingSet?.elements()?.size!!}" + "\n" +
                             "Average Deviance: ${(averageDevience / testingSet?.elements()?.size!!) * 100}" + "%"
-            Messages.showOkCancelDialog(ShowTestNetworkFormAction.project,message,"Results", Icons.CHECK_ICON)
-            Messages.showOkCancelDialog(ShowTestNetworkFormAction.project,"Results Written to file ${file.path}","Success",Icons.CHECK_ICON)
+            Messages.showOkCancelDialog(ShowTestNetworkFormAction.project,message,"Results", PlatformIcons.CHECK_ICON)
+            Messages.showOkCancelDialog(ShowTestNetworkFormAction.project,"Results Written to file ${file.path}","Success",PlatformIcons.CHECK_ICON)
         }
         catch(ioe: IOException){
             ioe.printStackTrace(System.err)

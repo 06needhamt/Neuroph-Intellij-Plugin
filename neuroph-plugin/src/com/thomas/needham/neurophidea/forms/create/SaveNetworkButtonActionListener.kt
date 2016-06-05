@@ -1,7 +1,7 @@
 package com.thomas.needham.neurophidea.forms.create
 
 import com.intellij.openapi.ui.Messages
-import com.intellij.util.Icons
+import com.intellij.util.PlatformIcons
 import com.thomas.needham.neurophidea.Predicates.EqualToOrLessThan
 import com.thomas.needham.neurophidea.actions.ShowCreateNetworkFormAction
 import com.thomas.needham.neurophidea.datastructures.LearningRules
@@ -62,7 +62,7 @@ class SaveNetworkButtonActionListener : ActionListener {
             oos.flush()
             oos.close()
             Messages.showOkCancelDialog(ShowCreateNetworkFormAction.project,"Network Configuration Successfully written to "
-                    + configurationOutputPath, "Success",Icons.COPY_ICON)
+                    + configurationOutputPath, "Success",PlatformIcons.COPY_ICON)
             return true
         }
         catch(ex: IOException){

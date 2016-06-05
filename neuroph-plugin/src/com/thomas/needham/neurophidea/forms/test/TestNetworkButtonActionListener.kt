@@ -2,7 +2,7 @@ package com.thomas.needham.neurophidea.forms.test
 
 import com.intellij.ide.util.PropertiesComponent
 import com.intellij.openapi.ui.Messages
-import com.intellij.util.Icons
+import com.intellij.util.PlatformIcons
 import com.thomas.needham.neurophidea.Constants.NETWORK_TO_TEST_LOCATION_KEY
 import com.thomas.needham.neurophidea.Constants.TEST_FORM_TESTING_SET_LOCATION_KEY
 import com.thomas.needham.neurophidea.core.NetworkTester
@@ -36,6 +36,6 @@ class TestNetworkButtonActionListener : ActionListener {
             networkTester = NetworkTester(properties.getValue(NETWORK_TO_TEST_LOCATION_KEY, ""), properties.getValue(TEST_FORM_TESTING_SET_LOCATION_KEY, ""), formInstance?.txtOutputPath?.text!!)
         }
         networkTester?.TestNetwork()
-        Messages.showOkCancelDialog("Network Successfully Tested!", "Success", Icons.CHECK_ICON)
+        Messages.showOkCancelDialog("Network Successfully Tested!", "Success", PlatformIcons.CHECK_ICON)
     }
 }

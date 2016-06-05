@@ -25,7 +25,7 @@ package com.thomas.needham.neurophidea.forms.export
 
 import com.intellij.ide.util.PropertiesComponent
 import com.intellij.openapi.ui.Messages
-import com.intellij.util.Icons
+import com.intellij.util.PlatformIcons
 import com.thomas.needham.neurophidea.core.NetworkCodeGenerator
 import com.thomas.needham.neurophidea.datastructures.NetworkConfiguration
 import com.thomas.needham.neurophidea.Constants.NETWORK_TO_EXPORT_LOCATION_KEY
@@ -104,6 +104,6 @@ class ExportSourceButtonActionListener : ActionListener {
             return
         sourceCode = codeGenerator?.GenerateCode()!!
         writeCode(sourceCode)
-        Messages.showOkCancelDialog(ShowExportNetworkFormAction.project,"Source code successfully written to file", "Success", Icons.COPY_ICON)
+        Messages.showOkCancelDialog(ShowExportNetworkFormAction.project,"Source code successfully written to file", "Success", PlatformIcons.COPY_ICON)
     }
 }

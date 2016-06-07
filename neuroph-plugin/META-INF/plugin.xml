@@ -18,7 +18,7 @@ SOFTWARE. -->
 <idea-plugin version="2">
     <id>com.thomas.needham.neurophidea</id>
     <name>Neuroph For Intellij</name>
-    <version>0.1.1</version>
+    <version>0.2.0</version>
     <vendor email="06needhamt@gmail.com" url="">Tom Needham</vendor>
 
     <description><![CDATA[
@@ -43,8 +43,16 @@ SOFTWARE. -->
 
     <extensions defaultExtensionNs="com.intellij">
         <applicationConfigurable instance="com.thomas.needham.neurophidea.settings.VersionSetting">
-
         </applicationConfigurable>
+
+        <moduleType implementationClass="com.thomas.needham.neurophidea.project.NeurophModule">
+        </moduleType>
+
+        <sdkType implementation="com.thomas.needham.neurophidea.project.NeurophSDK">
+        </sdkType>
+
+        <moduleBuilder builderClass="com.thomas.needham.neurophidea.project.NeurophModuleBuilder">
+        </moduleBuilder>
         <!-- Add your extensions here -->
     </extensions>
 
@@ -79,6 +87,8 @@ SOFTWARE. -->
             <add-to-group group-id="NewProjectOrModuleGroup" anchor="last"/>
         </action>
         <!-- Add your actions here -->
+        <action id="DownliadNeurophAction" class="com.thomas.needham.neurophidea.actions.DownloadNeurophAction"
+                text="Download Neuroph" description="Downloads A Neuroph SDK"/>
     </actions>
 <application-components>
     <component>

@@ -43,6 +43,8 @@ object Constants {
     val TRAIN_FORM_TRAINING_SET_LOCATION_KEY = "NetworkToTrainTrainingSetLocation"
     val TEST_FORM_TESTING_SET_LOCATION_KEY = "NetworkToTestTestingSetLocation"
     val NETWORK_RESULTS_LOCATION_KEY = "NetworkResultsLocation"
+    val LAST_USED_NEUROPH_HOME = "LastUsedNeurophHomeLocation"
+    val SDK_NAME = "NEUROPH_SDK"
     val COMMA_DELIMITED = ","
     val SPACE_DELIMITED = " "
 }

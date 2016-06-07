@@ -7,14 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bf29350-129e-4cfc-8762-78cb4578196f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/DownloadNeurophAction.kt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/NeurophSDKConsumer.kt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDKComboBox.kt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDKCondition.kt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/facet/NeurophFacet.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/META-INF/plugin.xml" afterPath="$PROJECT_DIR$/META-INF/plugin.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/Constants.kt" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/Constants.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophModuleBuilder.kt" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophModuleBuilder.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDK.kt" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDK.kt" />
     </list>
     <ignored path="neuroph-plugin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -100,11 +95,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NeurophSDK.kt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NeurophSDK.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDK.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="66" selection-end-column="13" />
+            <state relative-caret-position="388">
+              <caret line="64" column="31" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NeurophModuleBuilder.kt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophModuleBuilder.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="156" column="70" selection-start-line="156" selection-start-column="70" selection-end-line="156" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -194,19 +199,19 @@
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/facet/NeurophFacetSettings.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/facet/NeurophFacetType.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophModule.kt" />
-        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDK.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDKCondition.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDKData.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/RunWriteActionRunnable.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDKPanel.form" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDKComboBoxActionListener.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophWizardInputField.kt" />
-        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophModuleBuilder.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophWizardStep.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkForm.java" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDKCellRenderer.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDKComboBox.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDKPanel.java" />
+        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDK.kt" />
+        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophModuleBuilder.kt" />
       </list>
     </option>
   </component>
@@ -264,8 +269,62 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="neuroph-plugin">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="neuroph-plugin">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="com/thomas/needham/neurophidea">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="neuroph-plugin">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="com/thomas/needham/neurophidea">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="exceptions">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -694,60 +753,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="neuroph-plugin">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="neuroph-plugin">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="com/thomas/needham/neurophidea">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="neuroph-plugin">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="com/thomas/needham/neurophidea">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="exceptions">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1092,7 +1097,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24280782" sideWeight="0.49276975" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24280782" sideWeight="0.49276975" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23935558" sideWeight="0.5055617" order="0" side_tool="true" content_ui="tabs" />
@@ -1233,9 +1238,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#1082#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1264,7 +1266,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="372">
           <caret line="46" column="32" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1421,13 +1422,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophModuleBuilder.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="173" column="40" selection-start-line="173" selection-start-column="40" selection-end-line="173" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA 162.426.1/lib/openapi.jar!/com/intellij/ui/ComboboxWithBrowseButton.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1467,7 +1461,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="40" column="6" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1552,14 +1545,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
           <caret line="12" column="58" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDK.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="66" selection-end-column="13" />
+        <state relative-caret-position="388">
+          <caret line="64" column="31" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophModuleBuilder.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="156" column="70" selection-start-line="156" selection-start-column="70" selection-end-line="156" selection-end-column="70" />
           <folding />
         </state>
       </provider>

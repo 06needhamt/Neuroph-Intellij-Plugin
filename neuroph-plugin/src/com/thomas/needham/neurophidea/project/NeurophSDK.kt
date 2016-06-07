@@ -60,10 +60,10 @@ class NeurophSDK : SdkType("Neuroph SDK") {
     override fun isValidSdkHome(p0 : String?) : Boolean {
         val home = LocalFileSystem.getInstance().findFileByIoFile(File(p0));
         if (home != null && home.exists() && home.isDirectory()) {
-            val neuroph = home.findChild("neuroph");
-            val lib = home.findChild("lib");
-            if (neuroph != null && neuroph.name.contains("neuroph") && lib != null && lib.isDirectory) {
-                return true;
+            for(file: VirtualFile? in home.children){
+                if(file?.name?.contains("neuroph")!! && file?.extension.equals("jar")){
+                    return true
+                }
             }
         }
         return false

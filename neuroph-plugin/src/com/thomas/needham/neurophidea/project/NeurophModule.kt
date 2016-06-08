@@ -29,7 +29,7 @@ import javax.swing.Icon
 /**
  * Created by thoma on 06/06/2016.
  */
-class NeurophModule : ModuleType<NeurophModuleBuilder>("Neuroph Module") {
+class NeurophModule : ModuleType<NeurophModuleBuilder>("Neuroph Project") {
     companion object Instance{
         val INSTANCE : NeurophModule? = NeurophModule.INSTANCE
     }
@@ -43,7 +43,7 @@ class NeurophModule : ModuleType<NeurophModuleBuilder>("Neuroph Module") {
     }
 
     override fun getName() : String {
-        return "Neuroph Module"
+        return "Neuroph Project"
     }
 
     override fun getDescription() : String {

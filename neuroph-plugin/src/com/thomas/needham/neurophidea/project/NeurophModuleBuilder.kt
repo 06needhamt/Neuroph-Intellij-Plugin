@@ -136,15 +136,15 @@ class NeurophModuleBuilder : JavaModuleBuilder, ModuleBuilderListener {
         if (ProjectJdkTable.getInstance().getSdksOfType(NeurophSDK.getInstance()).isEmpty()) {
             return "<html><body>Before you start make sure you have Neuroph installed." +
                     "<br/>Download <a href='http://downloads.sourceforge.net/project/neuroph/neuroph-2.92/neurophstudio-2.92.zip?r=http%3A%2F%2Fneuroph.sourceforge.net%2Fdownload.html&ts=1465207712&use_mirror=tenet'>the latest version</a>" +
-                    "<br/>Unpack the zip file to any folder and select it as Redline SDK</body></html>";
+                    "<br/>Unpack the zip file to any folder and select it as Neuroph SDK</body></html>";
         }
         else {
-            return "Neuroph Module"
+            return "Neuroph Project"
         }
     }
 
     override fun getPresentableName() : String? {
-        return "Neuroph Module"
+        return "Neuroph Project"
     }
 
     override fun getGroupName() : String? {

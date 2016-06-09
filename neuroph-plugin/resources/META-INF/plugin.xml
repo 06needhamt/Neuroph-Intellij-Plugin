@@ -19,7 +19,7 @@ SOFTWARE. -->
 <idea-plugin version="2">
     <id>com.thomas.needham.neurophidea</id>
     <name>Neuroph For Intellij</name>
-    <version>0.3.0</version>
+    <version>0.4.0</version>
     <vendor email="06needhamt@gmail.com" url="https://github.com/06needhamt/Neuroph-Intellij-Plugin">Tom Needham</vendor>
 
     <description><![CDATA[
@@ -83,12 +83,17 @@ SOFTWARE. -->
                     text="Test Network" description="Tests a network">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt B"/>
             </action>
+            <action id="DisplayNetworkOutputAction"
+                    class="com.thomas.needham.neurophidea.actions.ShowNetworkOutputFormAction" text="Display Network Output"
+                    description="Displays a Network&#39;s Output">
+                <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt D"/>
+            </action>
         </group>
         <action class="com.thomas.needham.neurophidea.actions.InitialisationAction" id="Init">
             <add-to-group group-id="NewProjectOrModuleGroup" anchor="last"/>
         </action>
         <!-- Add your actions here -->
-        <action id="DownliadNeurophAction" class="com.thomas.needham.neurophidea.actions.DownloadNeurophAction"
+        <action id="DownloadNeurophAction" class="com.thomas.needham.neurophidea.actions.DownloadNeurophAction"
                 text="Download Neuroph" description="Downloads A Neuroph SDK"/>
     </actions>
     <application-components>

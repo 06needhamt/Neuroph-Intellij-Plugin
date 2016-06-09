@@ -19,7 +19,7 @@ SOFTWARE. -->
 <idea-plugin version="2">
     <id>com.thomas.needham.neurophidea</id>
     <name>Neuroph For Intellij</name>
-    <version>0.4.0</version>
+    <version>0.5.0</version>
     <vendor email="06needhamt@gmail.com" url="https://github.com/06needhamt/Neuroph-Intellij-Plugin">Tom Needham</vendor>
 
     <description><![CDATA[
@@ -54,6 +54,9 @@ SOFTWARE. -->
 
         <moduleBuilder builderClass="com.thomas.needham.neurophidea.project.NeurophModuleBuilder">
         </moduleBuilder>
+        <fileType.fileViewProviderFactory filetype="nnet" implementationClass="com.thomas.needham.neurophidea.designer.NnetFileViewProvider">
+
+        </fileType.fileViewProviderFactory>
         <!-- Add your extensions here -->
     </extensions>
 

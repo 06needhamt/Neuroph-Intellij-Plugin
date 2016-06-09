@@ -33,15 +33,30 @@ class NetworkTypes : Serializable {
 
         //Enum must be nested within a class to avoid a NoClassDefFoundException possible Kotlin bug???
         PERCEPTRON("Perceptron"),
-        MULTI_LAYER_PERCEPTRON("Multi Layer Perceptron");
-        //TODO add more network types
+        MULTI_LAYER_PERCEPTRON("Multi Layer Perceptron"),
+        ADALINE("Adaline"),
+        BAM("BAM"),
+        COMPETITIVE_NETWORK("Competitive Network"),
+        HOPFIELD("Hopfield"),
+        INSTAR("Instar"),
+        KOHONEN("Kohonen"),
+        MAX_NET("Max Net"),
+        NEURO_FUZZY_PERCEPTRON("Neuro Fuzzy Perceptron"),
+        NEUROPH("Neuroph"),
+        OUTSTAR("Outstar"),
+        RBF_NETWORK("RBF Network"),
+        SUPERVISED_HEBBIAN_NETWORK("Supervised Hebbian Network"),
+        UNSUPERVISED_HEBBIAN_NETWORK("Unsupervised Hebbian Network");
     }
     companion object Names{
-        @JvmStatic val classNames = arrayOf("Perceptron", "MultiLayerPerceptron")
-        @JvmStatic val friendlyNames = arrayOf("Perceptron", "Multi Layer Perceptron")
+        @JvmStatic val classNames = arrayOf("Perceptron", "MultiLayerPerceptron", "Adaline", "BAM", "CompetitiveNetwork", "Hopfield",
+                "Instar", "Kohonen", "MaxNet", "NeuroFuzzyPerceptron", "Neuroph", "Outstar", "RbfNetwork", "SupervisedHebbianNetwork",
+                "UnsupervisedHebbianNetwork")
+        @JvmStatic val friendlyNames = arrayOf("Perceptron", "Multi Layer Perceptron", "Adaline", "BAM","Competitive Network", "Hopfield",
+                "Instar", "Kohonen", "Max Net", "Neuro Fuzzy Perceptron", "Neuroph", "Outstar", "RBF Network","Supervised Hebbian Network",
+                "Unsupervised Hebbian Network")
         @JvmStatic fun GetClassName(v: NetworkTypes.Types) : String{
             return classNames[v.ordinal]
         }
-        //TODO add more network types
     }
 }

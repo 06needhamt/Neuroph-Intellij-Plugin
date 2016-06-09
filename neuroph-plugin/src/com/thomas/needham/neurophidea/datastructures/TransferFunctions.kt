@@ -28,16 +28,22 @@ package com.thomas.needham.neurophidea.datastructures
  */
 class TransferFunctions {
     enum class Functions(nameString: String) {
-        SIGMOID("Sigmoid"),
-        GAUSSIAN("Gaussian");
-        //TODO Add More Transfer Functions
+        SIGMOID("SIGMOID"),
+        GAUSSIAN("GAUSSIAN"),
+        LINEAR("LINEAR"),
+        LOG("LOG"),
+        RAMP("RAMP"),
+        SGN("SGN"),
+        SIN("SIN"),
+        STEP("STEP"),
+        TANH("TANH"),
+        TRAPEZOID("TRAPEZOID");
     }
     companion object Names{
-        @JvmStatic val classNames = arrayOf("Sigmoid", "Gaussian")
-        @JvmStatic val friendlyNames = arrayOf("Sigmoid", "Gaussian")
+        @JvmStatic val classNames = arrayOf("Sigmoid", "Gaussian", "Linear", "Log", "Ramp", "Sgn", "Sin", "Step", "Tanh", "Trapezoid")
+        @JvmStatic val friendlyNames = arrayOf("Sigmoid", "Gaussian", "Linear", "Log", "Ramp", "Sgn", "Sin", "Step", "Tanh", "Trapezoid")
         @JvmStatic fun GetClassName(v: TransferFunctions.Functions) : String{
             return classNames[v.ordinal]
         }
-        //TODO Add More Transfer Functions
     }
 }

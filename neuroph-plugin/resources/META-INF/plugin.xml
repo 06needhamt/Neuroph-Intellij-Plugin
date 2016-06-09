@@ -15,11 +15,12 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. -->
+
 <idea-plugin version="2">
     <id>com.thomas.needham.neurophidea</id>
     <name>Neuroph For Intellij</name>
-    <version>0.2.1</version>
-    <vendor email="06needhamt@gmail.com" url="">Tom Needham</vendor>
+    <version>0.3.0</version>
+    <vendor email="06needhamt@gmail.com" url="https://github.com/06needhamt/Neuroph-Intellij-Plugin">Tom Needham</vendor>
 
     <description><![CDATA[
       Allows for easy integration of the Neuroph libraries

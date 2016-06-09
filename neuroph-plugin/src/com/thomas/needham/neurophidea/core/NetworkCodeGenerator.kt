@@ -239,20 +239,55 @@ class NetworkCodeGenerator {
         when (network?.networkType){
             NetworkTypes.Types.PERCEPTRON -> imports += "import org.neuroph.nnet.Perceptron;" + "\n"
             NetworkTypes.Types.MULTI_LAYER_PERCEPTRON -> imports += "import org.neuroph.nnet.MultiLayerPerceptron;" + "\n"
+            NetworkTypes.Types.ADALINE -> imports += "import org.neuroph.nnet.Adaline;" + "\n"
+            NetworkTypes.Types.BAM -> imports += "import org.neuroph.nnet.BAM;" + "\n"
+            NetworkTypes.Types.COMPETITIVE_NETWORK -> imports += "import org.neuroph.nnet.CompetitiveNetwork;" + "\n"
+            NetworkTypes.Types.HOPFIELD -> imports += "import org.neuroph.nnet.Hopfield;" + "\n"
+            NetworkTypes.Types.INSTAR -> imports += "import org.neuroph.nnet.Instar;" + "\n"
+            NetworkTypes.Types.KOHONEN -> imports += "import org.neuroph.nnet.Kohonen;" + "\n"
+            NetworkTypes.Types.MAX_NET -> imports += "import org.neuroph.nnet.MaxNet;" + "\n"
+            NetworkTypes.Types.NEUROPH -> imports += "import org.neuroph.nnet.Neuroph;" + "\n"
+            NetworkTypes.Types.NEURO_FUZZY_PERCEPTRON -> imports += "import org.neuroph.nnet.NeuroFuzzyPerceptron;" + "\n"
+            NetworkTypes.Types.OUTSTAR -> imports += "import org.neuroph.nnet.OutStar;" + "\n"
+            NetworkTypes.Types.RBF_NETWORK -> imports += "import org.neuroph.nnet.RbfNetwork;" + "\n"
+            NetworkTypes.Types.SUPERVISED_HEBBIAN_NETWORK -> imports += "import org.neuroph.nnet.SupervisedHebbianNetwork;" + "\n"
+            NetworkTypes.Types.UNSUPERVISED_HEBBIAN_NETWORK -> imports += "import org.neuroph.nnet.UnsupervisedHebbianNetwork;" + "\n"
             else -> imports += "import UnknownType;" + "\n"
-            //TODO Add More Network Types
         }
         when(network?.networkLearningRule){
             LearningRules.Rules.BACK_PROPAGATION -> imports += "import org.neuroph.nnet.learning.BackPropagation;" + "\n"
             LearningRules.Rules.DYNAMIC_BACK_PROPAGATION -> imports += "import org.neuroph.nnet.learning.DynamicBackPropagation;" + "\n"
+            LearningRules.Rules.ANTI_HEBBAN_LEARNING -> imports += "import org.neuroph.nnet.learning.AntiHebbianLearning;" + "\n"
+            LearningRules.Rules.BINARY_HEBBIAN_LEARNING -> imports += "import org.neuroph.nnet.learning.BinaryHebbianLearning;" + "\n"
+            LearningRules.Rules.COMPETITIVE_LEARNING -> imports += "import org.neuroph.nnet.learning.CompetitiveLearning" + "\n"
+            LearningRules.Rules.GENERALIZED_HEBBIAN_LEARNING -> imports += "import org.neuroph.nnet.learning.GeneralizedHebbianLearning;" + "\n"
+            LearningRules.Rules.HOPFIELD_LEARNING -> imports += "import org.neuroph.nnet.learning.HopfieldLearning;" + "\n"
+            LearningRules.Rules.INSTAR_LEARNING -> imports += "import org.neuroph.nnet.learning.InstarLearning;" + "\n"
+            LearningRules.Rules.KOHONEN_LEARNING -> imports += "import org.neuroph.nnet.learning.KohonenLearning;" + "\n"
+            LearningRules.Rules.LMS -> imports += "import org.neuroph.nnet.learning.LMS;" + "\n"
+            LearningRules.Rules.MOMENTUM_BACK_PROPAGATION -> imports += "import org.neuroph.nnet.learning.MomentumBackPropagation;" + "\n"
+            LearningRules.Rules.OJA_LEARNING -> imports += "import org.neuroph.nnet.learning.OjaLearning;" + "\n"
+            LearningRules.Rules.OUTSTAR_LEARNING -> imports += "import org.neuroph.nnet.learning.OutstarLearning;" + "\n"
+            LearningRules.Rules.PERCEPTRON_LEARNING -> imports += "import org.neuroph.nnet.learning.PerceptronLearning;" + "\n"
+            LearningRules.Rules.RESILIENT_PROPAGATION -> imports += "import org.neuroph.nnet.learning.ResilientPropagation;" + "\n"
+            LearningRules.Rules.SIGMOID_DELTA_RULE -> imports += "import org.neuroph.nnet.learning.SigmoidDeltaRule;" + "\n"
+            LearningRules.Rules.SIMULATED_ANNEALING_LEARNING -> imports += "import org.neuroph.nnet.learning.SimulatedAnnealingLearning;" + "\n"
+            LearningRules.Rules.SUPERVISED_HEBBIAN_LEARNING -> imports += "import org.neuroph.nnet.learning.SupervisedHebbianLearning;" + "\n"
+            LearningRules.Rules.UNSUPERVISED_HEBBIAN_LEARNING -> imports += "import org.neuroph.nnet.learning.UnsupervisedHebbianLearning;" + "\n"
             else -> imports += "import UnknownLearningRule;" + "\n"
-            //TODO Add More Learning Rules
         }
         when(network?.networkTransferFunction){
             TransferFunctions.Functions.GAUSSIAN -> imports += "import org.neuroph.core.transfer.Gaussian;" + "\n"
             TransferFunctions.Functions.SIGMOID -> imports += "import org.neuroph.core.transfer.Sigmoid;" + "\n"
+            TransferFunctions.Functions.LINEAR -> imports += "import org.neuroph.core.transfer.Linear;" + "\n"
+            TransferFunctions.Functions.LOG -> imports += "import org.neuroph.core.transfer.Log;" + "\n"
+            TransferFunctions.Functions.RAMP -> imports += "import org.neuroph.core.transfer.Ramp;" + "\n"
+            TransferFunctions.Functions.TRAPEZOID -> imports += "import org.neuroph.core.transfer.Trapezoid;" + "\n"
+            TransferFunctions.Functions.SGN -> imports += "import org.neuroph.core.transfer.Sgn;" + "\n"
+            TransferFunctions.Functions.SIN -> imports += "import org.neuroph.core.transfer.Sin;" + "\n"
+            TransferFunctions.Functions.STEP -> imports += "import org.neuroph.core.transfer.Step;" + "\n"
+            TransferFunctions.Functions.TANH -> imports += "import org.neuroph.core.transfer.Tanh;" + "\n"
             else -> imports += "import UnknownTransferFunction;" + "\n"
-            //TODO Add More Transfer Functions
         }
         return imports
     }

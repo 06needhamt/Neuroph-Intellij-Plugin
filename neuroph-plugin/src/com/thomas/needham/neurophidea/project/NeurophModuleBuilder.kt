@@ -62,7 +62,7 @@ import javax.swing.Icon
 import javax.swing.JComponent
 
 /**
- * Created by thoma on 06/06/2016.
+ * Created by Thomas Needham on 06/06/2016.
  */
 class NeurophModuleBuilder : JavaModuleBuilder, ModuleBuilderListener {
     companion object Data{

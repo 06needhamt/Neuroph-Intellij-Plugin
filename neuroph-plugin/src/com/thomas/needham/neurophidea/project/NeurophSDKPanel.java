@@ -39,7 +39,7 @@ import java.awt.BorderLayout;
 import java.awt.Insets;
 
 /**
- * Created by thoma on 06/06/2016.
+ * Created by Thomas Needham on 06/06/2016.
  */
 public class NeurophSDKPanel extends JFrame {
     public JPanel root;

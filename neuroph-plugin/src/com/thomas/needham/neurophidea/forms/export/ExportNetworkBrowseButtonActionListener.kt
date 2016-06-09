@@ -36,7 +36,7 @@ import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
 
 /**
- * Created by thoma on 29/05/2016.
+ * Created by Thomas Needham on 29/05/2016.
  */
 class ExportNetworkBrowseButtonActionListener : ActionListener {
     var formInstance : ExportNetworkForm? = null

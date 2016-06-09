@@ -31,7 +31,7 @@ import com.thomas.needham.neurophidea.project.facet.NeurophFacetConfiguration
 import org.jetbrains.annotations.NotNull
 
 /**
- * Created by thoma on 07/06/2016.
+ * Created by Thomas Needham on 07/06/2016.
  */
 class NeurophFacet : Facet<NeurophFacetConfiguration> {
     constructor(@NotNull type: FacetType<NeurophFacet, NeurophFacetConfiguration>?,

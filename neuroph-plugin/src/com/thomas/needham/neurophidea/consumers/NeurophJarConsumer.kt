@@ -31,7 +31,7 @@ import com.thomas.needham.neurophidea.Constants.VERSION_KEY
 import com.thomas.needham.neurophidea.settings.VersionSetting
 
 /**
- * Created by thoma on 25/05/2016.
+ * Created by Thomas Needham on 25/05/2016.
  */
 class NeurophJarConsumer : Consumer<VirtualFile?> {
     constructor(){

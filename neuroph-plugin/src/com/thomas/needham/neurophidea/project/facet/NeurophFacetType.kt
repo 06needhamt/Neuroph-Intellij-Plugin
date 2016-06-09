@@ -32,7 +32,7 @@ import com.intellij.openapi.module.ModuleType
 import javax.swing.Icon
 
 /**
- * Created by thoma on 07/06/2016.
+ * Created by Thomas Needham on 07/06/2016.
  */
 class NeurophFacetType : FacetType<NeurophFacet,NeurophFacetConfiguration> {
     companion object ID{

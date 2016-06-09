@@ -28,7 +28,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.project.Project
 
 /**
- * Created by thoma on 25/05/2016.
+ * Created by Thomas Needham on 25/05/2016.
  */
 class NeurophMenuAction : AnAction() {
     companion object ProjectInfo{

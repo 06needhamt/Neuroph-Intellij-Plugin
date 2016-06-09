@@ -30,7 +30,7 @@ import com.thomas.needham.neurophidea.Constants.NETWORK_TO_EXPORT_LOCATION_KEY
 import com.thomas.needham.neurophidea.Constants.VERSION_KEY
 
 /**
- * Created by thoma on 29/05/2016.
+ * Created by Thomas Needham on 29/05/2016.
  */
 class ExportNetworkConsumer : Consumer<VirtualFile?> {
     constructor(){

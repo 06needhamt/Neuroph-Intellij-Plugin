@@ -42,7 +42,7 @@ import java.io.File
 import javax.swing.Icon
 
 /**
- * Created by thoma on 06/06/2016.
+ * Created by Thomas Needham on 06/06/2016.
  */
 class NeurophSDK : SdkType("Neuroph SDK") {
 

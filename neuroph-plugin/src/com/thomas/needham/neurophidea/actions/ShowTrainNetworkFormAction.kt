@@ -31,7 +31,7 @@ import com.thomas.needham.neurophidea.forms.export.ExportNetworkForm
 import com.thomas.needham.neurophidea.forms.train.TrainNetworkForm
 
 /**
- * Created by thoma on 30/05/2016.
+ * Created by Thomas Needham on 30/05/2016.
  */
 class ShowTrainNetworkFormAction : AnAction() {
     var form : TrainNetworkForm? = null

@@ -33,7 +33,7 @@ import java.io.IOException
 import java.io.ObjectInputStream
 
 /**
- * Created by thoma on 09/06/2016.
+ * Created by Thomas Needham on 09/06/2016.
  */
 class NnetViewer {
     val file : VirtualFile?

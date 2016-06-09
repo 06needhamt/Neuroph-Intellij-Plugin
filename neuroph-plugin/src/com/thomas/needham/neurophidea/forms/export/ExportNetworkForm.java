@@ -29,7 +29,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Created by thoma on 29/05/2016.
+ * Created by Thomas Needham on 29/05/2016.
  */
 public class ExportNetworkForm extends JFrame {
     public JPanel root;

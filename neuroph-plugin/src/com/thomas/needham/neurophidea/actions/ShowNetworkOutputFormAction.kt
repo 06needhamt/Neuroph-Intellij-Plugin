@@ -34,7 +34,7 @@ import com.thomas.needham.neurophidea.forms.test.TestNetworkForm
 import java.io.File
 
 /**
- * Created by thoma on 09/06/2016.
+ * Created by Thomas Needham on 09/06/2016.
  */
 class ShowNetworkOutputFormAction : AnAction() {
     var form : NetworkOutputForm? = null

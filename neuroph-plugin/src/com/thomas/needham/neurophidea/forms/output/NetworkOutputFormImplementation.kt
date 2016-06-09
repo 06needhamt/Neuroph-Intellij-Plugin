@@ -31,7 +31,7 @@ import java.io.FileReader
 import javax.swing.ListModel
 
 /**
- * Created by thoma on 09/06/2016.
+ * Created by Thomas Needham on 09/06/2016.
  */
 
 fun NetworkOutputForm.PopulateLists(path: String){

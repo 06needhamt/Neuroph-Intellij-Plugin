@@ -43,7 +43,7 @@ import java.io.IOException
 import java.io.ObjectInputStream
 
 /**
- * Created by thoma on 29/05/2016.
+ * Created by Thomas Needham on 29/05/2016.
  */
 class ExportSourceButtonActionListener : ActionListener {
     var formInstance : ExportNetworkForm? = null

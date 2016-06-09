@@ -31,7 +31,7 @@ import com.thomas.needham.neurophidea.datastructures.TransferFunctions
 import org.jetbrains.annotations.NotNull
 
 /**
- * Created by thoma on 28/05/2016.
+ * Created by Thomas Needham on 28/05/2016.
  */
 class NetworkCodeGenerator {
     val network : NetworkConfiguration?

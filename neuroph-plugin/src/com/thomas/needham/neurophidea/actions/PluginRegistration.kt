@@ -31,7 +31,7 @@ import com.thomas.needham.neurophidea.Constants.MENU_ACTION
 import com.thomas.needham.neurophidea.Constants.WINDOW_MENU_ACTION
 
 /**
- * Created by thoma on 25/05/2016.
+ * Created by Thomas Needham on 25/05/2016.
  */
 class PluginRegistration : ApplicationComponent {
     val actionManager = ActionManager.getInstance()

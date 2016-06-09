@@ -29,7 +29,7 @@ import javax.naming.ConfigurationException
 import javax.swing.JComponent
 
 /**
- * Created by thoma on 06/06/2016.
+ * Created by Thomas Needham on 06/06/2016.
  */
 class NeurophWizardStep : ModuleWizardStep {
     var panel  : NeurophSDKPanel? = null

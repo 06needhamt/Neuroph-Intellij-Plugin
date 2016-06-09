@@ -34,7 +34,7 @@ import org.jdom.Element
 import org.jetbrains.annotations.NotNull
 
 /**
- * Created by thoma on 06/06/2016.
+ * Created by Thomas Needham on 06/06/2016.
  */
 class NeurophFacetConfiguration : FacetConfiguration, PersistentStateComponent<NeurophFacetSettings> {
      companion object Data{

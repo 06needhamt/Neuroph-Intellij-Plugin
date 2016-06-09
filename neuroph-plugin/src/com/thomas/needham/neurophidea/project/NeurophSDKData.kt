@@ -29,7 +29,7 @@ import com.intellij.util.xmlb.XmlSerializerUtil
 import com.sun.org.apache.xml.internal.serialize.XMLSerializer
 
 /**
- * Created by thoma on 06/06/2016.
+ * Created by Thomas Needham on 06/06/2016.
  */
 class NeurophSDKData : SdkAdditionalData, PersistentStateComponent<NeurophSDKData>{
     var homePath = ""

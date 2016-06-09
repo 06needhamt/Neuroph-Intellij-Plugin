@@ -24,7 +24,7 @@ SOFTWARE.
 package com.thomas.needham.neurophidea.exceptions
 
 /**
- * Created by thoma on 30/05/2016.
+ * Created by Thomas Needham on 30/05/2016.
  */
 class UnknownLearningRuleException(message: String?) : Exception(message) {
     override val message : String?

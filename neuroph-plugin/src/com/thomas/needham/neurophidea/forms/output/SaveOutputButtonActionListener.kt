@@ -38,7 +38,7 @@ import java.io.FileWriter
 import java.util.*
 
 /**
- * Created by thoma on 09/06/2016.
+ * Created by Thomas Needham on 09/06/2016.
  */
 class SaveOutputButtonActionListener  : ActionListener {
     var formInstance : NetworkOutputForm? = null

@@ -24,7 +24,7 @@ SOFTWARE.
 package com.thomas.needham.neurophidea.datastructures
 
 /**
- * Created by thoma on 24/05/2016.
+ * Created by Thomas Needham on 24/05/2016.
  */
 class NeurophVersions {
     enum class Versions(val version : String) {

@@ -27,7 +27,7 @@ import java.awt.event.WindowAdapter
 import java.awt.event.WindowEvent
 
 /**
- * Created by thoma on 09/06/2016.
+ * Created by Thomas Needham on 09/06/2016.
  */
 class WindowCloseListener : WindowAdapter {
     val lambda : () -> Unit

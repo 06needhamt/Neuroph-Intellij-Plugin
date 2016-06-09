@@ -18,7 +18,7 @@ import java.io.IOException
 import java.util.Arrays
 
 /**
- * Created by thoma on 06/06/2016.
+ * Created by Thomas Needham on 06/06/2016.
  */
 class NeurophSDKConsumer : Consumer<MutableList<VirtualFile?>?> {
     override fun consume(virtualFiles : MutableList<VirtualFile?>?) {

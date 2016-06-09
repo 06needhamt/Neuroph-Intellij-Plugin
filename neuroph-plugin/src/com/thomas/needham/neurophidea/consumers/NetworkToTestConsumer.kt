@@ -33,7 +33,7 @@ import com.thomas.needham.neurophidea.forms.train.TrainNetworkBrowseButtonAction
 import com.thomas.needham.neurophidea.forms.test.TestNetworkBrowseButtonActionListener
 
 /**
- * Created by thoma on 04/06/2016.
+ * Created by Thomas Needham on 04/06/2016.
  */
 class NetworkToTestConsumer : Consumer<VirtualFile?> {
 

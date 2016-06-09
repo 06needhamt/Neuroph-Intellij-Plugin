@@ -26,7 +26,7 @@ package com.thomas.needham.neurophidea.designer
 import com.intellij.lang.Language
 
 /**
- * Created by thoma on 09/06/2016.
+ * Created by Thomas Needham on 09/06/2016.
  */
 class NnetLanguage(ID : String, vararg mimeTypes : String?) : Language(ID, *mimeTypes) {
 

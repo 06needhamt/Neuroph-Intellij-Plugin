@@ -27,7 +27,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.project.Project
 
 /**
- * Created by thoma on 24/05/2016.
+ * Created by Thomas Needham on 24/05/2016.
  */
 
 class InitialisationAction : AnAction {

@@ -27,7 +27,7 @@ import javax.swing.event.DocumentEvent
 import javax.swing.event.DocumentListener
 
 /**
- * Created by thoma on 24/05/2016.
+ * Created by Thomas Needham on 24/05/2016.
  */
 class JARLocationDocumentListener : DocumentListener {
     override fun insertUpdate(e : DocumentEvent?) {

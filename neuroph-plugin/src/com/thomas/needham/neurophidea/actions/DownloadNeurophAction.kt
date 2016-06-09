@@ -36,7 +36,7 @@ import com.thomas.needham.neurophidea.consumers.NeurophSDKConsumer
 import com.thomas.needham.neurophidea.project.NeurophSDKPanel
 
 /**
- * Created by thoma on 06/06/2016.
+ * Created by Thomas Needham on 06/06/2016.
  */
 class DownloadNeurophAction : AnAction() {
     companion object Data {

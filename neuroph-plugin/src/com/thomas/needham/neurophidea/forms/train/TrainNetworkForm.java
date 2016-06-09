@@ -29,7 +29,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Created by thoma on 31/05/2016.
+ * Created by Thomas Needham on 31/05/2016.
  */
 public class TrainNetworkForm extends JFrame {
     public JPanel root;

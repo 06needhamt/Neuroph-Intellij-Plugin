@@ -30,7 +30,7 @@ import com.intellij.psi.FileViewProviderFactory
 import com.intellij.psi.PsiManager
 
 /**
- * Created by thoma on 09/06/2016.
+ * Created by Thomas Needham on 09/06/2016.
  */
 class NnetFileViewProvider : FileViewProviderFactory {
 

@@ -42,7 +42,7 @@ import java.io.IOException
 import java.io.ObjectInputStream
 
 /**
- * Created by thoma on 27/05/2016.
+ * Created by Thomas Needham on 27/05/2016.
  */
 class OpenExistingNetworkAction : AnAction() {
 

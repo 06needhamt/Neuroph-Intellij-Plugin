@@ -29,7 +29,7 @@ import com.intellij.openapi.project.Project
 import com.thomas.needham.neurophidea.forms.create.CreateNetworkForm
 
 /**
- * Created by thoma on 25/05/2016.
+ * Created by Thomas Needham on 25/05/2016.
  */
 class ShowCreateNetworkFormAction : AnAction() {
     var form : CreateNetworkForm? = null

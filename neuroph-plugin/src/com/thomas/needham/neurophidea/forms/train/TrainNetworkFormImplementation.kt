@@ -26,7 +26,7 @@ SOFTWARE.
 package com.thomas.needham.neurophidea.forms.train
 
 /**
- * Created by thoma on 31/05/2016.
+ * Created by Thomas Needham on 31/05/2016.
  */
 
 fun TrainNetworkForm.AddOnClickListeners(){

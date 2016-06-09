@@ -29,7 +29,7 @@ import com.thomas.needham.neurophidea.forms.test.TestNetworkBrowseButtonActionLi
 import com.thomas.needham.neurophidea.forms.train.TrainNetworkButtonActionListener
 
 /**
- * Created by thoma on 04/06/2016.
+ * Created by Thomas Needham on 04/06/2016.
  */
 
 fun TestNetworkForm.AddOnClickListeners(){

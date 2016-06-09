@@ -30,7 +30,7 @@ import com.thomas.needham.neurophidea.Constants.VERSION_KEY
 import com.thomas.needham.neurophidea.Constants.NETWORK_RESULTS_OUTPUT_LOCATION_KEY
 
 /**
- * Created by thoma on 09/06/2016.
+ * Created by Thomas Needham on 09/06/2016.
  */
 class NetworkResultsOutputConsumer : Consumer<VirtualDirectoryImpl?> {
     constructor() {

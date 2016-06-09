@@ -30,7 +30,7 @@ import com.thomas.needham.neurophidea.Constants.SDK_NAME
 import javax.swing.JComponent
 
 /**
- * Created by thoma on 07/06/2016.
+ * Created by Thomas Needham on 07/06/2016.
  */
 open class NeurophWizardInputField : WizardInputField<NeurophSDKComboBox> {
     companion object Data{

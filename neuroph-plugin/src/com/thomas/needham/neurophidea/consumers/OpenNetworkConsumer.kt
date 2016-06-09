@@ -30,7 +30,7 @@ import com.thomas.needham.neurophidea.Constants.NETWORK_TO_OPEN_LOCATION_KEY
 import com.thomas.needham.neurophidea.Constants.VERSION_KEY
 
 /**
- * Created by thoma on 27/05/2016.
+ * Created by Thomas Needham on 27/05/2016.
  */
 class OpenNetworkConsumer  : Consumer<VirtualFile?> {
     constructor(){

@@ -24,7 +24,7 @@ SOFTWARE.
 package com.thomas.needham.neurophidea.project.facet
 
 /**
- * Created by thoma on 06/06/2016.
+ * Created by Thomas Needham on 06/06/2016.
  */
 class NeurophFacetSettings {
     var neurophSDKName : String? = null

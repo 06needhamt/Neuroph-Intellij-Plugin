@@ -45,7 +45,7 @@ import javax.swing.JPanel
 import javax.swing.JTextField
 
 /**
- * Created by thoma on 24/05/2016.
+ * Created by Thomas Needham on 24/05/2016.
  */
 class VersionSetting : Configurable {
     var properties : PropertiesComponent = PropertiesComponent.getInstance()

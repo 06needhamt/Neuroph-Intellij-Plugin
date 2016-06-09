@@ -24,7 +24,7 @@ SOFTWARE.
 package com.thomas.needham.neurophidea
 
 /**
- * Created by thoma on 24/05/2016.
+ * Created by Thomas Needham on 24/05/2016.
  */
 object Constants {
     val VERSION_KEY = "version"

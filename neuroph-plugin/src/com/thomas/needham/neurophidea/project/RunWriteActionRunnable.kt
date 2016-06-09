@@ -31,7 +31,7 @@ import com.intellij.openapi.vfs.VirtualFile
 import java.io.IOException
 
 /**
- * Created by thoma on 06/06/2016.
+ * Created by Thomas Needham on 06/06/2016.
  */
 class RunWriteActionRunnable : Runnable{
     var builder : NeurophModuleBuilder?

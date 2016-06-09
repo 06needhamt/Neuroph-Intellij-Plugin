@@ -52,7 +52,7 @@ import java.io.IOException
 import java.io.ObjectInputStream
 
 /**
- * Created by thoma on 30/05/2016.
+ * Created by Thomas Needham on 30/05/2016.
  */
 class NetworkTrainer {
     var network : NeuralNetwork? = null

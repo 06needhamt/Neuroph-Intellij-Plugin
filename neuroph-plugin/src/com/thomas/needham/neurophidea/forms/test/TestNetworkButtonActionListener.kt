@@ -35,7 +35,7 @@ import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
 
 /**
- * Created by thoma on 05/06/2016.
+ * Created by Thomas Needham on 05/06/2016.
  */
 class TestNetworkButtonActionListener : ActionListener {
 

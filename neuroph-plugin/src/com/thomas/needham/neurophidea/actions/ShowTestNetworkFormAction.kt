@@ -30,7 +30,7 @@ import com.intellij.openapi.project.Project
 import com.thomas.needham.neurophidea.forms.test.TestNetworkForm
 
 /**
- * Created by thoma on 30/05/2016.
+ * Created by Thomas Needham on 30/05/2016.
  */
 class ShowTestNetworkFormAction : AnAction() {
 

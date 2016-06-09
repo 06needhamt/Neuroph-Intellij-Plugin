@@ -29,7 +29,7 @@ import com.intellij.openapi.project.Project
 import com.thomas.needham.neurophidea.forms.export.ExportNetworkForm
 
 /**
- * Created by thoma on 28/05/2016.
+ * Created by Thomas Needham on 28/05/2016.
  */
 class ShowExportNetworkFormAction : AnAction() {
     var form : ExportNetworkForm? = null

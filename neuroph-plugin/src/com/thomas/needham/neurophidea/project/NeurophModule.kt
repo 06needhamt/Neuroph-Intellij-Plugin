@@ -27,7 +27,7 @@ import com.intellij.openapi.module.ModuleType
 import javax.swing.Icon
 
 /**
- * Created by thoma on 06/06/2016.
+ * Created by Thomas Needham on 06/06/2016.
  */
 class NeurophModule : ModuleType<NeurophModuleBuilder>("Neuroph Project") {
     companion object Instance{

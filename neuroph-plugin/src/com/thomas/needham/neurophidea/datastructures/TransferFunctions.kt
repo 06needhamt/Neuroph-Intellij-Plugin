@@ -24,7 +24,7 @@ SOFTWARE.
 package com.thomas.needham.neurophidea.datastructures
 
 /**
- * Created by thoma on 25/05/2016.
+ * Created by Thomas Needham on 25/05/2016.
  */
 class TransferFunctions {
     enum class Functions(nameString: String) {

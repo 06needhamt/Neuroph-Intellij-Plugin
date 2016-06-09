@@ -30,7 +30,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Created by thoma on 04/06/2016.
+ * Created by Thomas Needham on 04/06/2016.
  */
 public class TestNetworkForm extends JFrame {
     public JPanel root;

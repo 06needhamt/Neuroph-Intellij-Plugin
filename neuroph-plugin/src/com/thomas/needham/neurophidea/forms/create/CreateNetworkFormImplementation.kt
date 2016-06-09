@@ -31,7 +31,7 @@ import com.thomas.needham.neurophidea.datastructures.TransferFunctions
 import com.thomas.needham.neurophidea.forms.create.CreateNetworkForm
 
 /**
- * Created by thoma on 26/05/2016.
+ * Created by Thomas Needham on 26/05/2016.
  */
 
 fun CreateNetworkForm.PopulateTransferFunctions() {

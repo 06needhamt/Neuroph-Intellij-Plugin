@@ -26,7 +26,7 @@ SOFTWARE.
 package com.thomas.needham.neurophidea.forms.export
 
 /**
- * Created by thoma on 29/05/2016.
+ * Created by Thomas Needham on 29/05/2016.
  */
 
 fun ExportNetworkForm.AddOnClickListeners(){

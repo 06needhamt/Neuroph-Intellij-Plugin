@@ -26,7 +26,7 @@ package com.thomas.needham.neurophidea.datastructures
 import java.io.Serializable
 
 /**
- * Created by thoma on 25/05/2016.
+ * Created by Thomas Needham on 25/05/2016.
  */
 
 class LearningRules : Serializable {

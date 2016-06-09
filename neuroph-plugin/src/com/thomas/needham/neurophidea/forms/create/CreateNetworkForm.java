@@ -30,7 +30,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Created by thoma on 25/05/2016.
+ * Created by Thomas Needham on 25/05/2016.
  */
 public class CreateNetworkForm extends JFrame {
     public JPanel inner;

@@ -41,7 +41,7 @@ import java.io.IOException
 import java.io.ObjectOutputStream
 
 /**
- * Created by thoma on 27/05/2016.
+ * Created by Thomas Needham on 27/05/2016.
  */
 class SaveNetworkButtonActionListener : ActionListener {
     var formInstance : CreateNetworkForm? = null

@@ -24,7 +24,7 @@ SOFTWARE.
 package com.thomas.needham.neurophidea
 
 /**
- * Created by thoma on 28/05/2016.
+ * Created by Thomas Needham on 28/05/2016.
  */
 object Predicates {
     @JvmStatic val EqualTo : (Int,Int) -> Boolean = { a,b ->

@@ -30,7 +30,7 @@ import javax.swing.DefaultComboBoxModel
 import javax.swing.ListCellRenderer
 
 /**
- * Created by thoma on 06/06/2016.
+ * Created by Thomas Needham on 06/06/2016.
  */
 class NeurophSDKComboBox : ComboboxWithBrowseButton {
     companion object Data{

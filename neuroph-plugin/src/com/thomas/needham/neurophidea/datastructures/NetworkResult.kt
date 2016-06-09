@@ -30,7 +30,7 @@ import org.neuroph.core.learning.TrainingSet
 import java.io.Serializable
 
 /**
- * Created by thoma on 05/06/2016.
+ * Created by Thomas Needham on 05/06/2016.
  */
 class NetworkResult : Serializable {
     var calculatedOutput : Array<Double>

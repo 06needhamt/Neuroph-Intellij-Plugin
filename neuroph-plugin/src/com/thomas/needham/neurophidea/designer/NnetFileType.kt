@@ -29,7 +29,7 @@ import com.intellij.util.PlatformIcons
 import javax.swing.Icon
 
 /**
- * Created by thoma on 09/06/2016.
+ * Created by Thomas Needham on 09/06/2016.
  */
 class NnetFileType : FileType {
 

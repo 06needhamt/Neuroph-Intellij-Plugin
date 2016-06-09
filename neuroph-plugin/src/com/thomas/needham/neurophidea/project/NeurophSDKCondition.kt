@@ -27,7 +27,7 @@ import com.intellij.openapi.projectRoots.Sdk
 import com.intellij.openapi.util.Condition
 
 /**
- * Created by thoma on 07/06/2016.
+ * Created by Thomas Needham on 07/06/2016.
  */
 class NeurophSDKCondition : Condition<Sdk?> {
     override fun value(p0 : Sdk?) : Boolean {

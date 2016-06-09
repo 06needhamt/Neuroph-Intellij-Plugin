@@ -33,7 +33,7 @@ import com.thomas.needham.neurophidea.actions.ShowCreateNetworkFormAction
 import com.thomas.needham.neurophidea.forms.create.CreateTrainingSetBrowseButtonActionListener
 
 /**
- * Created by thoma on 31/05/2016.
+ * Created by Thomas Needham on 31/05/2016.
  */
 class TrainNetworkSetFileConsumer : Consumer<VirtualFile?> {
 

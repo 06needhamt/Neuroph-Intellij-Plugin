@@ -32,7 +32,7 @@ import com.thomas.needham.neurophidea.Constants.VERSION_KEY
 import com.thomas.needham.neurophidea.forms.train.TrainNetworkBrowseButtonActionListener
 
 /**
- * Created by thoma on 31/05/2016.
+ * Created by Thomas Needham on 31/05/2016.
  */
 class NetworkToTrainConsumer : Consumer<VirtualFile?> {
     constructor(){

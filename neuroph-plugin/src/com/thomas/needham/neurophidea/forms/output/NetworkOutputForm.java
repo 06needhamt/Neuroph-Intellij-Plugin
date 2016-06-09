@@ -45,7 +45,7 @@ import java.awt.Insets;
 import java.awt.Toolkit;
 
 /**
- * Created by thoma on 09/06/2016.
+ * Created by Thomas Needham on 09/06/2016.
  */
 public class NetworkOutputForm extends JFrame {
     public JPanel root;

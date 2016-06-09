@@ -29,7 +29,7 @@ import com.intellij.ui.SimpleTextAttributes
 import javax.swing.JList
 
 /**
- * Created by thoma on 06/06/2016.
+ * Created by Thomas Needham on 06/06/2016.
  */
 class NeurophSDKCellRenderer : ColoredListCellRenderer<Any>() {
     override fun customizeCellRenderer(p0 : JList<out Any>, p1 : Any?, p2 : Int, p3 : Boolean, p4 : Boolean) {

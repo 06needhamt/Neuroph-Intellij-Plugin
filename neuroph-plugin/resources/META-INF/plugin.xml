@@ -19,7 +19,7 @@ SOFTWARE. -->
 <idea-plugin version="2">
     <id>com.thomas.needham.neurophidea</id>
     <name>Neuroph For Intellij</name>
-    <version>0.5.0</version>
+    <version>0.4.1</version>
     <vendor email="06needhamt@gmail.com" url="https://github.com/06needhamt/Neuroph-Intellij-Plugin">Tom Needham</vendor>
 
     <description><![CDATA[

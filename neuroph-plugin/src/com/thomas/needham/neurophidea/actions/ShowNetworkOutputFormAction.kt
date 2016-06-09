@@ -27,6 +27,7 @@ import com.intellij.ide.util.PropertiesComponent
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.project.Project
+import com.intellij.openapi.ui.Messages
 import com.thomas.needham.neurophidea.forms.output.NetworkOutputForm
 import com.thomas.needham.neurophidea.forms.output.WindowCloseListener
 import com.thomas.needham.neurophidea.forms.test.TestNetworkForm
@@ -50,7 +51,7 @@ class ShowNetworkOutputFormAction : AnAction() {
             val dir = File(dirPath)
             val files = dir.listFiles()
             if (files == null || files.size == 0) {
-                null
+                throw IllegalArgumentException("Invalid File Path")
             }
 
             var lastModifiedFile = files[0]
@@ -60,6 +61,7 @@ class ShowNetworkOutputFormAction : AnAction() {
                 }
             }
             lastModifiedFile
+
         }
     }
     override fun actionPerformed(e : AnActionEvent) {
@@ -68,11 +70,20 @@ class ShowNetworkOutputFormAction : AnAction() {
         InitialisationAction.isOpen = InitialisationAction.project?.isOpen
         testAction?.actionPerformed(e)
         val listener : WindowCloseListener? = WindowCloseListener {
-            val dirpath = testAction?.form?.txtOutputPath?.text
-            path = lastModifiedFile(dirpath)?.path
-            form = NetworkOutputForm(path!!)
+            try {
+                val dirpath = testAction?.form?.txtOutputPath?.text
+                val file = lastModifiedFile(dirpath)
+                if (file == null)
+                    return@WindowCloseListener
+                form = NetworkOutputForm(path!!)
+            }
+            catch(iae: IllegalArgumentException){
+                iae.printStackTrace(System.err)
+                return@WindowCloseListener
+            }
         }
         testAction?.form?.addWindowListener(listener)
+        exit@ Unit
     }
 
     override fun update(e : AnActionEvent?) {

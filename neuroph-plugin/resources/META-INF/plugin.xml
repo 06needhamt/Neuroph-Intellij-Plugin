@@ -19,7 +19,7 @@ SOFTWARE. -->
 <idea-plugin version="2">
     <id>com.thomas.needham.neurophidea</id>
     <name>Neuroph For Intellij</name>
-    <version>0.5.0</version>
+    <version>0.4.2</version>
     <vendor email="06needhamt@gmail.com" url="https://github.com/06needhamt/Neuroph-Intellij-Plugin">Tom Needham</vendor>
 
     <description><![CDATA[
@@ -62,7 +62,7 @@ SOFTWARE. -->
 
     <actions>
         <group id="NeurophGroup" text="Neuroph" popup="true">
-            <add-to-group group-id="ToolsMenu" anchor="first"/>
+            <add-to-group group-id="MainMenu" anchor="after" relative-to-action="ToolsMenu"/>
 
             <action class="com.thomas.needham.neurophidea.actions.ShowCreateNetworkFormAction"
                     text="Create New Network" id="CreateNetwork" description="Creates a new Neural Network">

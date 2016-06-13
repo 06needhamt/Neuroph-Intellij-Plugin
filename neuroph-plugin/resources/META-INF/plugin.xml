@@ -91,6 +91,8 @@ SOFTWARE. -->
                     description="Displays a Network&#39;s Output">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt D"/>
             </action>
+            <action id="ShowAboutFromAction" class="com.thomas.needham.neurophidea.actions.ShowAboutFromAction"
+                    text="About This Plugin" description="Shows Information about this plugin"/>
         </group>
         <action class="com.thomas.needham.neurophidea.actions.InitialisationAction" id="Init">
             <add-to-group group-id="NewProjectOrModuleGroup" anchor="last"/>
@@ -98,6 +100,7 @@ SOFTWARE. -->
         <!-- Add your actions here -->
         <action id="DownloadNeurophAction" class="com.thomas.needham.neurophidea.actions.DownloadNeurophAction"
                 text="Download Neuroph" description="Downloads A Neuroph SDK"/>
+
     </actions>
     <application-components>
         <component>

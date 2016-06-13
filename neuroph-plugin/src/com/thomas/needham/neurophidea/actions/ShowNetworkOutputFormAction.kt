@@ -69,10 +69,12 @@ class ShowNetworkOutputFormAction : AnAction() {
         InitialisationAction.projectDirectory = InitialisationAction.project?.basePath
         InitialisationAction.isOpen = InitialisationAction.project?.isOpen
         testAction?.actionPerformed(e)
+        testAction?.form?.shouldClose = true
         val listener : WindowCloseListener? = WindowCloseListener {
             try {
                 val dirpath = testAction?.form?.txtOutputPath?.text
                 val file = lastModifiedFile(dirpath)
+                path = file?.path
                 if (file == null)
                     return@WindowCloseListener
                 form = NetworkOutputForm(path!!)

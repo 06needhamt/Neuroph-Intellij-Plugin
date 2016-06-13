@@ -44,6 +44,7 @@ public class TestNetworkForm extends JFrame {
     public JButton btnTestNetwork;
     public JScrollPane TrainingDataScrollPane;
     public JTextPane txtTestingData;
+    public boolean shouldClose = false;
 
     public TestNetworkForm() {
         super("Test Network");

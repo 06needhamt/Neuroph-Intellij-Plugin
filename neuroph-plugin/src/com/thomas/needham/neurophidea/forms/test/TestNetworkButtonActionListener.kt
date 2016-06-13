@@ -33,6 +33,7 @@ import com.thomas.needham.neurophidea.core.NetworkTrainer
 import com.thomas.needham.neurophidea.forms.train.TrainNetworkForm
 import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
+import java.awt.event.WindowEvent
 
 /**
  * Created by Thomas Needham on 05/06/2016.
@@ -60,5 +61,9 @@ class TestNetworkButtonActionListener : ActionListener {
         }
         networkTester?.TestNetwork()
         Messages.showOkCancelDialog("Network Successfully Tested!", "Success", PlatformIcons.CHECK_ICON)
+        if(formInstance?.shouldClose!!) {
+            formInstance?.dispatchEvent(WindowEvent(formInstance,WindowEvent.WINDOW_CLOSING))
+            formInstance?.dispose()
+        }
     }
 }

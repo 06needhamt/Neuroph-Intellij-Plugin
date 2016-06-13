@@ -94,6 +94,11 @@ SOFTWARE. -->
             <!--<action id="OpenExistingNetworkAction" class="com.thomas.needham.neurophidea.actions.OpenExistingNetworkAction"-->
                     <!--text="Open Existing Network" description="Opens An Existing Network">-->
             <!--</action> &lt;!&ndash; Uncomment To Debug Open Network Form &ndash;&gt;-->
+            <action id="ShowNetworkWeightsFormAction"
+                    class="com.thomas.needham.neurophidea.actions.ShowNetworkWeightsFormAction" text="Edit Network Weights"
+                    description="Manually Edit Network Weights">
+                <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt W"/>
+            </action>
             <action id="ShowAboutFromAction" class="com.thomas.needham.neurophidea.actions.ShowAboutFromAction"
                     text="About This Plugin" description="Shows Information about this plugin">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt ESCAPE"/>

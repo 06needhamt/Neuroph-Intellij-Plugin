@@ -28,6 +28,7 @@ public class OpenNetworkForm extends JFrame {
     public JButton btnBrowseNetwork;
     public JButton btnOpenNetwork;
     public NeuralNetwork network;
+    public boolean shouldClose = false;
 
     public OpenNetworkForm() throws HeadlessException {
         super("Open Existing Neural Network");

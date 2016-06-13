@@ -65,9 +65,9 @@ class ShowNetworkOutputFormAction : AnAction() {
         }
     }
     override fun actionPerformed(e : AnActionEvent) {
-        InitialisationAction.project = e.project
-        InitialisationAction.projectDirectory = InitialisationAction.project?.basePath
-        InitialisationAction.isOpen = InitialisationAction.project?.isOpen
+        project = e.project
+        projectDirectory = project?.basePath
+        isOpen = project?.isOpen
         testAction?.actionPerformed(e)
         testAction?.form?.shouldClose = true
         val listener : WindowCloseListener? = WindowCloseListener {

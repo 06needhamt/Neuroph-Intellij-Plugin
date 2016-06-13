@@ -21,28 +21,10 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea.consumers
-
-import com.intellij.ide.util.PropertiesComponent
-import com.intellij.openapi.vfs.newvfs.impl.VirtualDirectoryImpl
-import com.intellij.util.Consumer
-import com.thomas.needham.neurophidea.Constants.SOURCE_TO_EXPORT_LOCATION_KEY
-import com.thomas.needham.neurophidea.Constants.VERSION_KEY
+@file:JvmName("ExportWeightsForm\$Ext") // Do Some Kotlin Sorcery!
+@file:JvmMultifileClass() // Do Some Kotlin Sorcery!
+package com.thomas.needham.neurophidea.forms.weights
 
 /**
- * Created by Thomas Needham on 29/05/2016.
+ * Created by thoma on 13/06/2016.
  */
-class ExportSourceConsumer : Consumer<VirtualDirectoryImpl?> {
-    constructor(){
-
-    }
-    companion object Data{
-        @JvmStatic var properties = PropertiesComponent.getInstance()
-        @JvmStatic var version = properties.getValue(VERSION_KEY)
-        @JvmStatic var path : String? = ""
-    }
-    override fun consume(p0 : VirtualDirectoryImpl?) {
-        path = p0?.path
-        properties.setValue(SOURCE_TO_EXPORT_LOCATION_KEY, path)
-    }
-}

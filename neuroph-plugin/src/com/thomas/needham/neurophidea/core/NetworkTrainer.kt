@@ -27,7 +27,7 @@ import com.intellij.ide.util.PropertiesComponent
 import com.intellij.openapi.ui.Messages
 import com.thomas.needham.neurophidea.Constants
 import com.thomas.needham.neurophidea.Constants.NETWORK_TO_TRAIN_LOCATION_KEY
-import com.thomas.needham.neurophidea.actions.OpenExistingNetworkAction
+import com.thomas.needham.neurophidea.actions.OpenExistingNetworkConfigurationAction
 import com.thomas.needham.neurophidea.datastructures.NetworkConfiguration
 import com.thomas.needham.neurophidea.Constants.COMMA_DELIMITED
 import com.thomas.needham.neurophidea.actions.ShowTrainNetworkFormAction
@@ -96,12 +96,12 @@ class NetworkTrainer {
         }
         catch (ioe: IOException){
             ioe.printStackTrace(System.err)
-            Messages.showErrorDialog(OpenExistingNetworkAction.project,"Error Reading Network From file", "Error")
+            Messages.showErrorDialog(OpenExistingNetworkConfigurationAction.project,"Error Reading Network From file", "Error")
             return null
         }
         catch (fnfe: FileNotFoundException){
             fnfe.printStackTrace(System.err)
-            Messages.showErrorDialog(OpenExistingNetworkAction.project, "No Network Configuration Found at: ${ShowTrainNetworkFormAction.properties.getValue(NETWORK_TO_TRAIN_LOCATION_KEY, "")}", "Error")
+            Messages.showErrorDialog(OpenExistingNetworkConfigurationAction.project, "No Network Configuration Found at: ${ShowTrainNetworkFormAction.properties.getValue(NETWORK_TO_TRAIN_LOCATION_KEY, "")}", "Error")
             return null
         }
     }

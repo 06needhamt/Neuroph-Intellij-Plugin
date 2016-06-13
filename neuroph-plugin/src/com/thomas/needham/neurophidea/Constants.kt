@@ -35,7 +35,7 @@ object Constants {
     val TRAINING_SET_LOCATION_KEY = "TrainingSetLocation"
     val TESTING_SET_LOCATION_KEY = "TestingSetLocation"
     val NETWORK_OUTPUT_LOCATION_KEY = "NetworkOutputLocation"
-    val NETWORK_TO_OPEN_LOCATION_KEY = "NetworkToOpenLocation"
+    val NETWORK_CONFIGURATION_TO_OPEN_LOCATION_KEY = "NetworkConfigurationToOpenLocation"
     val NETWORK_TO_EXPORT_LOCATION_KEY = "NetworkToExportLocation"
     val SOURCE_TO_EXPORT_LOCATION_KEY = "SourceToExportLocation"
     val NETWORK_TO_TRAIN_LOCATION_KEY = "NetworkToTrainLocation"
@@ -46,6 +46,7 @@ object Constants {
     val NETWORK_RESULTS_OUTPUT_LOCATION_KEY = "NetworkResultsOutputLocation"
     val LAST_USED_NEUROPH_HOME = "LastUsedNeurophHomeLocation"
     val SDK_NAME = "NEUROPH_SDK"
+    val NETWORK_TO_OPEN_LOCATION_KEY = "NetworkToOpenLocation"
     val COMMA_DELIMITED = ","
     val SPACE_DELIMITED = " "
 }

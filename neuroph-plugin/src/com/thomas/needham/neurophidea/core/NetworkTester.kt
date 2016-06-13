@@ -28,7 +28,7 @@ import com.intellij.openapi.ui.Messages
 import com.intellij.util.PlatformIcons
 import com.thomas.needham.neurophidea.Constants.NETWORK_TO_TEST_LOCATION_KEY
 import com.thomas.needham.neurophidea.Constants.COMMA_DELIMITED
-import com.thomas.needham.neurophidea.actions.OpenExistingNetworkAction
+import com.thomas.needham.neurophidea.actions.OpenExistingNetworkConfigurationAction
 import com.thomas.needham.neurophidea.actions.ShowTestNetworkFormAction
 import com.thomas.needham.neurophidea.actions.ShowTrainNetworkFormAction
 import com.thomas.needham.neurophidea.datastructures.NetworkConfiguration
@@ -90,12 +90,12 @@ class NetworkTester {
         }
         catch (ioe: IOException){
             ioe.printStackTrace(System.err)
-            Messages.showErrorDialog(OpenExistingNetworkAction.project,"Error Reading Network From file", "Error")
+            Messages.showErrorDialog(OpenExistingNetworkConfigurationAction.project,"Error Reading Network From file", "Error")
             return null
         }
         catch (fnfe: FileNotFoundException){
             fnfe.printStackTrace(System.err)
-            Messages.showErrorDialog(OpenExistingNetworkAction.project, "No Network Found at: ${ShowTestNetworkFormAction.properties.getValue(NETWORK_TO_TEST_LOCATION_KEY, "")}", "Error")
+            Messages.showErrorDialog(OpenExistingNetworkConfigurationAction.project, "No Network Found at: ${ShowTestNetworkFormAction.properties.getValue(NETWORK_TO_TEST_LOCATION_KEY, "")}", "Error")
             return null
         }
     }

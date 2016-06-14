@@ -7,11 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bf29350-129e-4cfc-8762-78cb4578196f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TrainTest.conf.nnet" afterPath="$PROJECT_DIR$/../TrainTest.conf.nnet" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/NetworkTrainer.kt" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/NetworkTrainer.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/weights/NetworkWeightsForm.java" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/weights/NetworkWeightsForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowNetworkWeightsFormAction.kt" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowNetworkWeightsFormAction.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/weights/NetworkWeightsFormImplementation.kt" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/weights/NetworkWeightsFormImplementation.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/weights/SaveNetworkWeightsButtonActionListener.kt" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/weights/SaveNetworkWeightsButtonActionListener.kt" />
     </list>
     <ignored path="neuroph-plugin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,7 +34,7 @@
       <file leaf-file-name="OpenNetworkButtonActionListener.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/open/OpenNetworkButtonActionListener.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
+            <state relative-caret-position="1050">
               <caret line="46" column="35" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
               <folding>
                 <element signature="e#51#497#0" expanded="true" />
@@ -47,11 +46,32 @@
       <file leaf-file-name="NetworkWeightsFormImplementation.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/weights/NetworkWeightsFormImplementation.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="76" column="57" selection-start-line="76" selection-start-column="57" selection-end-line="76" selection-end-column="57" />
+            <state relative-caret-position="210">
+              <caret line="79" column="56" selection-start-line="79" selection-start-column="56" selection-end-line="79" selection-end-column="56" />
               <folding>
+                <element signature="n#!!doc" expanded="true" />
                 <element signature="e#1261#1578#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IdeRepaintManager.class" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA 162.426.1/lib/idea.jar!/com/intellij/ide/IdeRepaintManager.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1320">
+              <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Utils.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/Utils.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="32" column="164" selection-start-line="32" selection-start-column="164" selection-end-line="32" selection-end-column="164" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -59,31 +79,21 @@
       <file leaf-file-name="SaveNetworkWeightsButtonActionListener.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/weights/SaveNetworkWeightsButtonActionListener.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+            <state relative-caret-position="-630">
+              <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
               <folding>
-                <element signature="e#54#466#0" expanded="true" />
-                <element signature="e#828#1550#1" expanded="false" />
+                <element signature="e#1139#1551#0" expanded="true" />
+                <element signature="e#1913#2635#1" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NetworkTrainer.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/NetworkTrainer.kt">
+      <file leaf-file-name="DownloadNeurophAction.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/DownloadNeurophAction.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1056">
-              <caret line="160" column="35" selection-start-line="160" selection-start-column="35" selection-end-line="160" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NetworkTester.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/NetworkTester.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2964">
-              <caret line="49" column="6" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="22" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -92,8 +102,8 @@
       <file leaf-file-name="NetworkWeightsForm.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/weights/NetworkWeightsForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="548">
-              <caret line="65" column="84" selection-start-line="65" selection-start-column="84" selection-end-line="65" selection-end-column="84" />
+            <state relative-caret-position="510">
+              <caret line="39" column="24" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -101,11 +111,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IdeEventQueue.class" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA 162.426.1/lib/idea.jar!/com/intellij/ide/IdeEventQueue.class">
+      <file leaf-file-name="ShowNetworkWeightsFormAction.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowNetworkWeightsFormAction.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="127" column="48" selection-start-line="127" selection-start-column="48" selection-end-line="127" selection-end-column="48" />
+            <state relative-caret-position="0">
+              <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
+              <folding>
+                <element signature="e#1133#1599#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OpenNetworkConsumer.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/OpenNetworkConsumer.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="690">
+              <caret line="52" column="76" selection-start-line="52" selection-start-column="76" selection-end-line="52" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -114,7 +136,7 @@
       <file leaf-file-name="TestNetworkForm.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/test/TestNetworkForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
+            <state relative-caret-position="1590">
               <caret line="79" column="84" selection-start-line="79" selection-start-column="52" selection-end-line="79" selection-end-column="84" />
               <folding />
             </state>
@@ -192,11 +214,11 @@
         <option value="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/open/OpenNetworkForm.java" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowNetworkOutputFormAction.kt" />
-        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowNetworkWeightsFormAction.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/open/OpenNetworkButtonActionListener.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/NetworkTrainer.kt" />
-        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/weights/SaveNetworkWeightsButtonActionListener.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/weights/NetworkWeightsForm.java" />
+        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/weights/SaveNetworkWeightsButtonActionListener.kt" />
+        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowNetworkWeightsFormAction.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/weights/NetworkWeightsFormImplementation.kt" />
       </list>
     </option>
@@ -261,61 +283,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="neuroph-plugin">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="neuroph-plugin">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="com/thomas/needham/neurophidea">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="neuroph-plugin">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="com/thomas/needham/neurophidea">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="exceptions">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -712,7 +679,62 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="neuroph-plugin">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="neuroph-plugin">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="com/thomas/needham/neurophidea">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="neuroph-plugin">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="com/thomas/needham/neurophidea">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="exceptions">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1135,18 +1157,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/weights/SaveNetworkWeightsButtonActionListener.kt</url>
-          <line>53</line>
-          <properties />
-          <option name="timeStamp" value="83" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="84" />
+      <option name="time" value="85" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1155,21 +1169,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/output/NetworkOutputForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/output/NetworkOutputFormImplementation.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/NeurophMenuAction.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="269">
@@ -1181,7 +1180,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="24" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1242,7 +1240,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="29">
           <caret line="47" column="6" selection-start-line="47" selection-start-column="6" selection-end-line="47" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1250,7 +1247,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="45" column="6" selection-start-line="45" selection-start-column="6" selection-end-line="45" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1258,7 +1254,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="837">
           <caret line="65" column="35" selection-start-line="65" selection-start-column="35" selection-end-line="65" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1361,16 +1356,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/OpenNetworkConsumer.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="52" column="76" selection-start-line="52" selection-start-column="76" selection-end-line="52" selection-end-column="76" />
-          <folding>
-            <element signature="e#1135#1628#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/open/OpenNetworkForm.form">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1396,17 +1381,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1530">
           <caret line="81" column="49" selection-start-line="81" selection-start-column="49" selection-end-line="81" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowNetworkWeightsFormAction.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="36" column="89" selection-start-line="36" selection-start-column="89" selection-end-line="36" selection-end-column="89" />
-          <folding>
-            <element signature="e#48#514#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1430,9 +1404,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="32" column="74" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="74" />
-          <folding>
-            <element signature="e#51#839#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1440,7 +1411,131 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/kotlin-runtime-sources.jar!/kotlin/Array.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/neuroph-2.6.jar!/org/neuroph/core/NeuralNetwork.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/NetworkTester.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="49" column="6" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/NetworkTrainer.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3360">
+          <caret line="160" column="35" selection-start-line="160" selection-start-column="35" selection-end-line="160" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/neuroph-2.6.jar!/org/neuroph/core/Layer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/neuroph-2.6.jar!/org/neuroph/core/Neuron.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="154" column="5" selection-start-line="154" selection-start-column="5" selection-end-line="154" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA 162.426.1/lib/idea.jar!/com/intellij/ide/IdeEventQueue.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3780">
+          <caret line="127" column="48" selection-start-line="127" selection-start-column="48" selection-end-line="127" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/test/TestNetworkForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1590">
+          <caret line="79" column="84" selection-start-line="79" selection-start-column="52" selection-end-line="79" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/open/OpenNetworkButtonActionListener.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="46" column="35" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
+          <folding>
+            <element signature="e#51#497#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA 162.426.1/lib/idea.jar!/com/intellij/ide/IdeRepaintManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1320">
+          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowNetworkWeightsFormAction.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
+          <folding>
+            <element signature="e#1133#1599#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/OpenNetworkConsumer.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="52" column="76" selection-start-line="52" selection-start-column="76" selection-end-line="52" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/weights/NetworkWeightsForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="39" column="24" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/DownloadNeurophAction.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="22" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/weights/SaveNetworkWeightsButtonActionListener.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-630">
+          <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
+          <folding>
+            <element signature="e#1139#1551#0" expanded="true" />
+            <element signature="e#1913#2635#1" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1452,111 +1547,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/kotlin-runtime-sources.jar!/kotlin/Array.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/open/OpenNetworkButtonActionListener.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="46" column="35" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
-          <folding>
-            <element signature="e#51#497#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/neuroph-2.6.jar!/org/neuroph/core/NeuralNetwork.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-          <folding>
-            <element signature="e#2582#2583#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/NetworkTester.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2964">
-          <caret line="49" column="6" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/NetworkTrainer.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1056">
-          <caret line="160" column="35" selection-start-line="160" selection-start-column="35" selection-end-line="160" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/neuroph-2.6.jar!/org/neuroph/core/Layer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-          <folding>
-            <element signature="e#1277#1278#0" expanded="true" />
-            <element signature="e#1312#1313#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/neuroph-2.6.jar!/org/neuroph/core/Neuron.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="154" column="5" selection-start-line="154" selection-start-column="5" selection-end-line="154" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA 162.426.1/lib/idea.jar!/com/intellij/ide/IdeEventQueue.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="127" column="48" selection-start-line="127" selection-start-column="48" selection-end-line="127" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/test/TestNetworkForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="79" column="84" selection-start-line="79" selection-start-column="52" selection-end-line="79" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/weights/NetworkWeightsForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="65" column="84" selection-start-line="65" selection-start-column="84" selection-end-line="65" selection-end-column="84" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/weights/SaveNetworkWeightsButtonActionListener.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding>
-            <element signature="e#54#466#0" expanded="true" />
-            <element signature="e#828#1550#1" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/weights/NetworkWeightsFormImplementation.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="76" column="57" selection-start-line="76" selection-start-column="57" selection-end-line="76" selection-end-column="57" />
+        <state relative-caret-position="210">
+          <caret line="79" column="56" selection-start-line="79" selection-start-column="56" selection-end-line="79" selection-end-column="56" />
           <folding>
+            <element signature="n#!!doc" expanded="true" />
             <element signature="e#1261#1578#0" expanded="true" />
           </folding>
         </state>

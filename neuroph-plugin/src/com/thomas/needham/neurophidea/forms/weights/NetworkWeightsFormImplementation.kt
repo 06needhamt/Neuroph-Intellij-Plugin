@@ -73,13 +73,18 @@ fun NetworkWeightsForm.CreateFields() : Array<Array<JTextField?>>? {
     val inherit : (Int) -> JTextField = { i ->
         JTextField()
     }
-    var textFields : Array<Array<JTextField?>>? = null
+    val inheritArray : (Int) -> Array<JTextField?> = { size ->
+        arrayOfNulls<JTextField?>(size)
+    }
+    val textFields : Array<Array<JTextField?>>? = Array<Array<JTextField?>>(this.weights.size,inheritArray)
     this.inner.layout = GridLayout(this.weights.size + 1, 0, 5, 5)
     for (i in 0..this.weights.size - 1) {
-        textFields = Utils.array2d<JTextField?>(this.weights.size, this.weights[i].size, inherit)
+        textFields!![i] = Array<JTextField?>(this.weights[i].size, inherit)
         for (j in 0..this.weights[i].size - 1) {
-            textFields[i][j] = JTextField(this.weights[i][j].toString())
-            this.inner.add(textFields[i][j], GridConstraints(j, i, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false))
+            textFields[i][j] = JTextField()
+            textFields[i][j]?.name = "txtWeight${i + j}"
+            textFields[i][j]?.text = this.weights[i][j].toString()
+            this.inner.add(textFields[i][j], GridConstraints(i, j, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false))
 
         }
     }

@@ -24,13 +24,16 @@ SOFTWARE.
 package com.thomas.needham.neurophidea.forms.weights;
 
 import com.intellij.uiDesigner.core.GridLayoutManager;
+import com.thomas.needham.neurophidea.forms.test.NetworkResultsBrowseActionListener;
 import com.thomas.needham.neurophidea.forms.test.TestNetworkFormImplementationKt;
 import org.jetbrains.annotations.NotNull;
 import org.neuroph.core.NeuralNetwork;
 
+import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 import java.awt.BorderLayout;
 import java.awt.Insets;
@@ -44,6 +47,9 @@ public class NetworkWeightsForm extends JFrame {
     public JPanel inner;
     public NeuralNetwork network;
     public String path;
+    public double[][] weights = null;
+    public JTextField[][] fields = null;
+    public JButton saveButton = null;
 
     public NetworkWeightsForm(String path, @NotNull NeuralNetwork network) {
         super("Edit Network Weights");
@@ -55,7 +61,9 @@ public class NetworkWeightsForm extends JFrame {
         int x = (int) ((t.getScreenSize().getWidth() - (double) this.getWidth()) / 2.0D);
         int y = (int) ((t.getScreenSize().getHeight() - (double) this.getHeight()) / 2.0D);
         this.setLocation(x, y);
-
+        this.weights = NetworkWeightsFormImplementationKt.GetNetworkWeights(this);
+        this.fields = NetworkWeightsFormImplementationKt.CreateFields(this);
+        this.saveButton = NetworkWeightsFormImplementationKt.CreateSaveButton(this);
         this.pack();
         this.setVisible(true);
     }

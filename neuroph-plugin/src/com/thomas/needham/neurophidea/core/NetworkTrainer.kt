@@ -159,6 +159,7 @@ class NetworkTrainer {
             outfile.createNewFile()
         }
         network?.learn(trainingSet)
+        network?.calculate()
         network?.save(networkPath + ".nnet")
         return network
     }

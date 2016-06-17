@@ -21,20 +21,39 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea.designer
+package com.thomas.needham.neurophidea.designer.editor
 
-import com.intellij.lang.Language
+import com.intellij.openapi.ui.Messages
 import com.intellij.openapi.vfs.VirtualFile
-import com.intellij.psi.FileViewProvider
-import com.intellij.psi.FileViewProviderFactory
-import com.intellij.psi.PsiManager
+import com.thomas.needham.neurophidea.actions.InitialisationAction
+import org.neuroph.core.NeuralNetwork
+import java.io.FileInputStream
+import java.io.FileNotFoundException
+import java.io.IOException
+import java.io.ObjectInputStream
 
 /**
  * Created by Thomas Needham on 09/06/2016.
  */
-class NnetFileViewProvider : FileViewProviderFactory {
-
-    override fun createFileViewProvider(p0 : VirtualFile, p1 : Language?, p2 : PsiManager, p3 : Boolean) : FileViewProvider {
-        throw UnsupportedOperationException()
+class NnetViewer {
+    val file : VirtualFile?
+    constructor(file: VirtualFile?){
+        this.file = file
+    }
+    fun LoadNetwork() : NeuralNetwork?{
+        try {
+            val fis : FileInputStream? = file?.inputStream as FileInputStream?
+            val ois : ObjectInputStream? = ObjectInputStream(fis)
+            return ois?.readObject() as NeuralNetwork?
+        }
+        catch(ioe: IOException){
+            ioe.printStackTrace(System.err)
+            Messages.showErrorDialog(InitialisationAction.project,"Error Loading Network From File", "Error")
+        }
+        catch(fnfe: FileNotFoundException){
+            fnfe.printStackTrace(System.err)
+            Messages.showErrorDialog(InitialisationAction.project,"No network found in file: ${file?.path}","Error")
+        }
+        return null
     }
 }

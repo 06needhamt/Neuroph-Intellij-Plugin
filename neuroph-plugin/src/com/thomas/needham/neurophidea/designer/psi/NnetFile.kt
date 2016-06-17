@@ -21,44 +21,30 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea.designer
+package com.thomas.needham.neurophidea.designer.psi
 
+import com.intellij.extapi.psi.PsiFileBase
+import com.intellij.lang.Language
 import com.intellij.openapi.fileTypes.FileType
-import com.intellij.openapi.vfs.VirtualFile
-import com.intellij.util.PlatformIcons
-import javax.swing.Icon
+
+import com.intellij.psi.FileViewProvider
+import com.thomas.needham.neurophidea.designer.psi.NnetFileType
 
 /**
  * Created by Thomas Needham on 09/06/2016.
  */
-class NnetFileType : FileType {
-
-    override fun getIcon() : Icon? {
-        return PlatformIcons.FILE_ICON
+class NnetFile : PsiFileBase {
+    companion object Data{
+        var fileProvider : FileViewProvider? = null
+        var fileLanguage : Language? = null
+        var fileTy : NnetFileType? = null
     }
-
-    override fun getName() : String {
-        return "Neuroph Neural Network File"
+    constructor(fileViewProvider : FileViewProvider, language : Language) : super(fileViewProvider,language){
+        fileProvider = fileViewProvider
+        fileLanguage = language
     }
-
-    override fun isBinary() : Boolean {
-        return true
-    }
-
-    override fun isReadOnly() : Boolean {
-        return false
-    }
-
-    override fun getDefaultExtension() : String {
-        return "nnet"
-    }
-
-    override fun getCharset(p0 : VirtualFile, p1 : ByteArray) : String? {
-        return null
-    }
-
-    override fun getDescription() : String {
-        return "Contains all information required to construct a neural network" +
-                "using the Neuroph framework"
+    override fun getFileType() : FileType {
+        fileTy = NnetFileType()
+        return fileTy as FileType
     }
 }

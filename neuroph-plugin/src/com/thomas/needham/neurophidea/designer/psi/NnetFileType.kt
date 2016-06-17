@@ -21,39 +21,44 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea.designer
+package com.thomas.needham.neurophidea.designer.psi
 
-import com.intellij.openapi.ui.Messages
+import com.intellij.openapi.fileTypes.FileType
 import com.intellij.openapi.vfs.VirtualFile
-import com.thomas.needham.neurophidea.actions.InitialisationAction
-import org.neuroph.core.NeuralNetwork
-import java.io.FileInputStream
-import java.io.FileNotFoundException
-import java.io.IOException
-import java.io.ObjectInputStream
+import com.intellij.util.PlatformIcons
+import javax.swing.Icon
 
 /**
  * Created by Thomas Needham on 09/06/2016.
  */
-class NnetViewer {
-    val file : VirtualFile?
-    constructor(file: VirtualFile?){
-        this.file = file
+class NnetFileType : FileType {
+
+    override fun getIcon() : Icon? {
+        return PlatformIcons.FILE_ICON
     }
-    fun LoadNetwork() : NeuralNetwork?{
-        try {
-            val fis : FileInputStream? = file?.inputStream as FileInputStream?
-            val ois : ObjectInputStream? = ObjectInputStream(fis)
-            return ois?.readObject() as NeuralNetwork?
-        }
-        catch(ioe: IOException){
-            ioe.printStackTrace(System.err)
-            Messages.showErrorDialog(InitialisationAction.project,"Error Loading Network From File", "Error")
-        }
-        catch(fnfe: FileNotFoundException){
-            fnfe.printStackTrace(System.err)
-            Messages.showErrorDialog(InitialisationAction.project,"No network found in file: ${file?.path}","Error")
-        }
+
+    override fun getName() : String {
+        return "Neuroph Neural Network File"
+    }
+
+    override fun isBinary() : Boolean {
+        return true
+    }
+
+    override fun isReadOnly() : Boolean {
+        return false
+    }
+
+    override fun getDefaultExtension() : String {
+        return "nnet"
+    }
+
+    override fun getCharset(p0 : VirtualFile, p1 : ByteArray) : String? {
         return null
+    }
+
+    override fun getDescription() : String {
+        return "Contains all information required to construct a neural network" +
+                "using the Neuroph framework"
     }
 }

@@ -21,20 +21,16 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea.designer
+package com.thomas.needham.neurophidea.designer.editor
 
-import com.intellij.lang.Language
-import com.intellij.openapi.vfs.VirtualFile
-import com.intellij.psi.FileViewProvider
-import com.intellij.psi.FileViewProviderFactory
-import com.intellij.psi.PsiManager
+import com.intellij.openapi.editor.Editor
+import com.intellij.openapi.fileEditor.NavigatableFileEditor
+import org.jetbrains.annotations.NotNull
 
 /**
- * Created by Thomas Needham on 09/06/2016.
+ * Created by thoma on 17/06/2016.
  */
-class NnetFileViewProvider : FileViewProviderFactory {
-
-    override fun createFileViewProvider(p0 : VirtualFile, p1 : Language?, p2 : PsiManager, p3 : Boolean) : FileViewProvider {
-        throw UnsupportedOperationException()
-    }
+interface  NnetEditor : NavigatableFileEditor{
+    @NotNull
+    fun getEditor() : Editor?
 }

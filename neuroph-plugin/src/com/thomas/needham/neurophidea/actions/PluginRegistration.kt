@@ -26,9 +26,13 @@ package com.thomas.needham.neurophidea.actions
 import com.intellij.openapi.actionSystem.ActionManager
 import com.intellij.openapi.actionSystem.DefaultActionGroup
 import com.intellij.openapi.components.ApplicationComponent
+import com.intellij.openapi.fileTypes.FileTypeManager
+import com.intellij.openapi.fileTypes.impl.FileTypeManagerImpl
 import com.thomas.needham.neurophidea.Constants.INITIALISATION_ACTION
 import com.thomas.needham.neurophidea.Constants.MENU_ACTION
 import com.thomas.needham.neurophidea.Constants.WINDOW_MENU_ACTION
+import com.thomas.needham.neurophidea.designer.psi.DataSetFileType
+import com.thomas.needham.neurophidea.designer.psi.NnetFileType
 
 /**
  * Created by Thomas Needham on 25/05/2016.
@@ -36,6 +40,7 @@ import com.thomas.needham.neurophidea.Constants.WINDOW_MENU_ACTION
 class PluginRegistration : ApplicationComponent {
     val actionManager = ActionManager.getInstance()
     val init = InitialisationAction()
+    val fileManager = FileTypeManagerImpl.getInstance()
     //val menu = MenuAction()
 
     override fun getComponentName() : String {
@@ -50,6 +55,8 @@ class PluginRegistration : ApplicationComponent {
 
     override fun initComponent() {
         println("Plugin Loaded")
+        fileManager.registerFileType(NnetFileType(),*arrayOf("nnet"))
+        fileManager.registerFileType(DataSetFileType(),*arrayOf("csv","tset"))
         actionManager.registerAction(INITIALISATION_ACTION, init)
         //actionManager.registerAction(MENU_ACTION,menu)
         val defaultActionGroup : DefaultActionGroup? = actionManager.getAction(WINDOW_MENU_ACTION) as DefaultActionGroup?

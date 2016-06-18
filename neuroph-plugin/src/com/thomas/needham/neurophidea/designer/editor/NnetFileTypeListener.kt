@@ -21,13 +21,23 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea.designer
+package com.thomas.needham.neurophidea.designer.editor
 
-import com.intellij.lang.Language
+import com.intellij.openapi.fileTypes.FileTypeEvent
+import com.intellij.openapi.fileTypes.FileTypeListener
 
 /**
- * Created by Thomas Needham on 09/06/2016.
+ * Created by thoma on 17/06/2016.
  */
-class NnetLanguage(ID : String, vararg mimeTypes : String?) : Language(ID, *mimeTypes) {
-
+class NnetFileTypeListener : FileTypeListener.Adapter {
+    val component: NnetEditorComponent
+    constructor(component : NnetEditorComponent) : super(){
+        this.component = component
+    }
+    override fun fileTypesChanged(event : FileTypeEvent) {
+        super.fileTypesChanged(event)
+        NnetEditorComponent.assertThread()
+        component.updateValidProperty()
+        component.updateHighlighters()
+    }
 }

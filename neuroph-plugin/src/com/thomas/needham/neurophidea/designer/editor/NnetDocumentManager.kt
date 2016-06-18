@@ -23,31 +23,36 @@ SOFTWARE.
  */
 package com.thomas.needham.neurophidea.designer.editor
 
+import com.intellij.openapi.editor.Document
+import com.intellij.openapi.fileEditor.impl.FileDocumentManagerImpl
+import com.intellij.openapi.project.ProjectManager
+import com.intellij.openapi.vfs.VirtualFile
+import com.intellij.openapi.vfs.VirtualFileManager
 import com.intellij.openapi.application.ApplicationManager
-import com.intellij.openapi.editor.event.DocumentAdapter
-import com.intellij.openapi.editor.event.DocumentEvent
+import com.intellij.openapi.editor.ex.DocumentEx
+import com.intellij.openapi.fileEditor.FileDocumentManager
+import com.intellij.psi.SingleRootFileViewProvider
 
 /**
- * Created by thoma on 17/06/2016.
+ * Created by thoma on 18/06/2016.
  */
-class NnetDocumentListener : DocumentAdapter, Runnable {
-    var updateScheduled : Boolean = false
-    var component : NnetEditorComponent? = null
-    private val lambda : () -> Unit = {
-        updateScheduled = false
-       this.component?.updateModifiedProperty()
+class NnetDocumentManager : FileDocumentManagerImpl {
+    companion object Instance{
+        fun getInstance() : FileDocumentManager {
+            return ApplicationManager.getApplication().getComponent(NnetDocumentManager::class.java)
+        }
     }
-    constructor(component : NnetEditorComponent){
-        this.component = component
+    constructor(p0 : VirtualFileManager, p1 : ProjectManager) : super(p0, p1){
+
     }
-    override fun run() {
-        lambda()
-    }
-    override fun documentChanged(e : DocumentEvent?) {
-        super.documentChanged(e)
-        if(!updateScheduled){
-            ApplicationManager.getApplication().invokeLater(this)
-            updateScheduled = true
+
+    override fun getDocument(p0 : VirtualFile) : Document? {
+        ApplicationManager.getApplication().assertReadAccessAllowed();
+        val document = getCachedDocument(p0) as DocumentEx?;
+        if (!p0.isValid || p0.isDirectory || SingleRootFileViewProvider.isTooLargeForContentLoading(p0)) {
+            return null;
+        } else {
+            return document
         }
     }
 }

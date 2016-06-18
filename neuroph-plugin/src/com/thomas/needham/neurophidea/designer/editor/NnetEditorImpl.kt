@@ -1,3 +1,26 @@
+/*
+The MIT License (MIT)
+
+Copyright (c) 2016 Tom Needham
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+ */
 package com.thomas.needham.neurophidea.designer.editor
 
 import com.intellij.codeHighlighting.BackgroundEditorHighlighter
@@ -7,6 +30,9 @@ import com.intellij.openapi.editor.ex.EditorEx
 import com.intellij.openapi.editor.highlighter.EditorHighlighterFactory
 import com.intellij.openapi.fileEditor.FileEditorLocation
 import com.intellij.openapi.fileEditor.FileEditorState
+import com.intellij.openapi.fileEditor.OpenFileDescriptor
+import com.intellij.openapi.fileEditor.TextEditor
+import com.intellij.openapi.fileEditor.TextEditorLocation
 import com.intellij.openapi.fileEditor.impl.text.AsyncEditorLoader
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.util.Key
@@ -41,7 +67,8 @@ open class NnetEditorImpl : UserDataHolderBase, NnetEditor{
         val highLighter = EditorHighlighterFactory.getInstance().createEditorHighlighter(file!!,scheme,project)
         val editor : EditorEx? = getEditor() as EditorEx
         highLighter.setText(editor?.document?.immutableCharSequence!! as String)
-        return { editor : EditorEx -> editor.highlighter = highLighter } as Runnable
+        val run : Runnable = { editor : EditorEx -> editor.highlighter = highLighter } as Runnable
+        return run
     }
     private fun CreateEditorComponent(project : Project, file : VirtualFile) : NnetEditorComponent? {
         return NnetEditorComponent(project,file,this)
@@ -76,19 +103,19 @@ open class NnetEditorImpl : UserDataHolderBase, NnetEditor{
     }
 
     override fun getBackgroundHighlighter() : BackgroundEditorHighlighter? {
-        throw UnsupportedOperationException()
+        return null
     }
 
     override fun isValid() : Boolean {
-        throw UnsupportedOperationException()
+        return component?.isComponentValid!!
     }
 
     override fun isModified() : Boolean {
-        throw UnsupportedOperationException()
+       return component?.isComponentModified!!
     }
 
     override fun addPropertyChangeListener(p0 : PropertyChangeListener) {
-        throw UnsupportedOperationException()
+        changeSupport?.addPropertyChangeListener(p0)
     }
 
     override fun selectNotify() {
@@ -96,19 +123,19 @@ open class NnetEditorImpl : UserDataHolderBase, NnetEditor{
     }
 
     override fun getCurrentLocation() : FileEditorLocation? {
-        throw UnsupportedOperationException()
+        return TextEditorLocation(getEditor()?.caretModel?.logicalPosition!!,this as TextEditor)
     }
 
     override fun removePropertyChangeListener(p0 : PropertyChangeListener) {
-        throw UnsupportedOperationException()
+        changeSupport?.removePropertyChangeListener(p0)
     }
 
     override fun navigateTo(p0 : Navigatable) {
-        throw UnsupportedOperationException()
+        (p0 as OpenFileDescriptor).navigateIn(getEditor()!!)
     }
 
     override fun canNavigateTo(p0 : Navigatable) : Boolean {
-        throw UnsupportedOperationException()
+        return p0 is OpenFileDescriptor && ((p0 as OpenFileDescriptor).line != 1 || (p0 as OpenFileDescriptor).offset != 0)
     }
 
     override fun <T : Any?> putUserData(p0 : Key<T>, p1 : T?) {
@@ -124,5 +151,9 @@ open class NnetEditorImpl : UserDataHolderBase, NnetEditor{
     }
     fun firePropertyChange(propertyName: String, oldValue: Any?, newValue: Any?) {
         changeSupport?.firePropertyChange(propertyName, oldValue, newValue);
+    }
+
+    override fun toString() : String {
+        return "Nnet Editor Implementation"
     }
 }

@@ -54,9 +54,12 @@ SOFTWARE. -->
 
         <moduleBuilder builderClass="com.thomas.needham.neurophidea.project.NeurophModuleBuilder">
         </moduleBuilder>
-        <fileType.fileViewProviderFactory filetype="nnet" implementationClass="com.thomas.needham.neurophidea.designer.editor.NnetFileViewProvider">
 
+        <fileType.fileViewProviderFactory filetype="nnet" implementationClass="com.thomas.needham.neurophidea.designer.editor.NnetFileViewProvider">
         </fileType.fileViewProviderFactory>
+
+        <fileEditorProvider implementation="com.thomas.needham.neurophidea.designer.editor.NnetFileEditorProvider">
+        </fileEditorProvider>
         <!-- Add your extensions here -->
     </extensions>
 
@@ -117,6 +120,9 @@ SOFTWARE. -->
     <application-components>
         <component>
             <implementation-class>com.thomas.needham.neurophidea.actions.PluginRegistration</implementation-class>
+        </component>
+        <component>
+            <implementation-class>com.thomas.needham.neurophidea.designer.editor.NnetDocumentManager</implementation-class>
         </component>
     </application-components>
 </idea-plugin>

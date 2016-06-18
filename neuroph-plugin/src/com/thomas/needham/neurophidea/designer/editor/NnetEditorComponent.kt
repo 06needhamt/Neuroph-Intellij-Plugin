@@ -1,3 +1,26 @@
+/*
+The MIT License (MIT)
+
+Copyright (c) 2016 Tom Needham
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+ */
 package com.thomas.needham.neurophidea.designer.editor
 
 import com.intellij.openapi.Disposable
@@ -16,6 +39,7 @@ import com.intellij.openapi.editor.impl.EditorImpl
 import com.intellij.openapi.fileEditor.FileDocumentManager
 import com.intellij.openapi.fileEditor.FileEditor
 import com.intellij.openapi.fileEditor.impl.EditorHistoryManager
+import com.intellij.openapi.fileEditor.impl.FileDocumentManagerImpl
 import com.intellij.openapi.fileEditor.impl.text.FileDropHandler
 import com.intellij.openapi.fileEditor.impl.text.TextEditorProvider
 import com.intellij.openapi.fileTypes.FileTypeManager
@@ -56,7 +80,7 @@ class NnetEditorComponent : JBLoadingPanel, DataProvider{
         this.project = project
         this.file = file
         this.nnetEditor = editor
-        this.document = FileDocumentManager.getInstance().getDocument(file!!)
+        this.document = NnetDocumentManager.getInstance().getDocument(file!!)
         LOG.assertTrue(this.document != null)
         documentListener = NnetDocumentListener(this)
         document?.addDocumentListener(documentListener)
@@ -73,19 +97,19 @@ class NnetEditorComponent : JBLoadingPanel, DataProvider{
     }
 
     private fun isEditorValidImpl() : Boolean {
-        return FileDocumentManager.getInstance().getDocument(file!!) != null
+        return NnetDocumentManager.getInstance().getDocument(file!!) != null
     }
 
     @NotNull
     private fun createEditor() : Editor? {
-        var e : Editor? = EditorFactory.getInstance().createEditor(document!!,project)
-        (editor?.markupModel as EditorMarkupModel).isErrorStripeVisible = true
-        (editor as EditorEx).gutterComponentEx.setForceShowRightFreePaintersArea(true)
-        editor.setFile(file)
-        editor.contextMenuGroupId = IdeActions.GROUP_EDITOR_POPUP
-        (editor as EditorImpl).dropHandler = FileDropHandler(editor)
-        NnetFileEditorProvider.putNnetEditor(editor ,nnetEditor)
-        return editor
+        val e : Editor? = EditorFactory.getInstance().createEditor(document!!,project)
+        (e?.markupModel as EditorMarkupModel).isErrorStripeVisible = true
+        (e as EditorEx).gutterComponentEx.setForceShowRightFreePaintersArea(true)
+        e.setFile(file)
+        e.contextMenuGroupId = IdeActions.GROUP_EDITOR_POPUP
+        (e as EditorImpl).dropHandler = FileDropHandler(e)
+        NnetFileEditorProvider.putNnetEditor(e ,nnetEditor)
+        return e
     }
 
     override fun getData(p0 : String?) : Any? {
@@ -98,7 +122,7 @@ class NnetEditorComponent : JBLoadingPanel, DataProvider{
         nnetEditor?.firePropertyChange(FileEditor.PROP_MODIFIED, oldModified, isComponentModified)
     }
     private fun isModifiedImpl() : Boolean{
-        return FileDocumentManager.getInstance().isFileModified(file!!);
+        return NnetDocumentManager.getInstance().isFileModified(file!!);
     }
 
     fun updateValidProperty() {

@@ -38,4 +38,8 @@ object Predicates {
     @JvmStatic val EqualToOrLessThan : (Int,Int) -> Boolean = { a,b ->
         a <= b
     }
+
+    @JvmStatic val MoreThan : (Int, Int) -> Boolean = { a,b ->
+        a > b
+    }
 }

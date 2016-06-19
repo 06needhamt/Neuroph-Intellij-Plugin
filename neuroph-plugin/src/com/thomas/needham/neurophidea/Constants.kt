@@ -47,6 +47,10 @@ object Constants {
     val LAST_USED_NEUROPH_HOME = "LastUsedNeurophHomeLocation"
     val SDK_NAME = "NEUROPH_SDK"
     val NETWORK_TO_OPEN_LOCATION_KEY = "NetworkToOpenLocation"
+    val DOCUMENT_HARD_REF_KEY = "HARD_REF_TO_DOCUMENT_KEY"
+    val LINE_KEY = "LINE_SEPARATOR_KEY"
+    val FILE_KEY = "FILE_KEY"
+    val RECOMPUTE_FILE_TYPE = "Must recompute file type"
     val COMMA_DELIMITED = ","
     val SPACE_DELIMITED = " "
 }

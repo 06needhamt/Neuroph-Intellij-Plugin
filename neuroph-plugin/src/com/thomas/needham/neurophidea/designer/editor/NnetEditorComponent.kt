@@ -70,7 +70,7 @@ class NnetEditorComponent : JBLoadingPanel, DataProvider{
     val busConnection : MessageBusConnection?
 
     companion object Log{
-        val LOG : Logger = Logger.getInstance("#com.thomas.needham.neurophidea.designer.editor.NnetEditorComponent")
+        @JvmStatic val LOG : Logger = Logger.getInstance("#com.thomas.needham.neurophidea.designer.editor.NnetEditorComponent")
         @JvmStatic val assertThread : () -> Unit = {
             ApplicationManager.getApplication().assertIsDispatchThread()
         }

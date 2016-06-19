@@ -156,4 +156,8 @@ open class NnetEditorImpl : UserDataHolderBase, NnetEditor{
     override fun toString() : String {
         return "Nnet Editor Implementation"
     }
+
+    fun updateModifiedProperty() {
+        component?.updateModifiedProperty()
+    }
 }

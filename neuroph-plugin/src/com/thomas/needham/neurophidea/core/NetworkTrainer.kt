@@ -40,16 +40,48 @@ import com.thomas.needham.neurophidea.exceptions.UnknownTransferFunctionExceptio
 import org.neuroph.core.NeuralNetwork
 import org.neuroph.core.learning.SupervisedTrainingElement
 import org.neuroph.core.learning.TrainingSet
+import org.neuroph.nnet.Adaline
+import org.neuroph.nnet.BAM
+import org.neuroph.nnet.CompetitiveNetwork
+import org.neuroph.nnet.Hopfield
+import org.neuroph.nnet.Instar
+import org.neuroph.nnet.Kohonen
+import org.neuroph.nnet.MaxNet
 import org.neuroph.nnet.MultiLayerPerceptron
+import org.neuroph.nnet.NeuroFuzzyPerceptron
+import org.neuroph.nnet.Neuroph
+import org.neuroph.nnet.Outstar
 import org.neuroph.nnet.Perceptron
+import org.neuroph.nnet.RbfNetwork
+import org.neuroph.nnet.SupervisedHebbianNetwork
+import org.neuroph.nnet.UnsupervisedHebbianNetwork
+import org.neuroph.nnet.learning.AntiHebbianLearning
 import org.neuroph.nnet.learning.BackPropagation
+import org.neuroph.nnet.learning.BinaryDeltaRule
+import org.neuroph.nnet.learning.BinaryHebbianLearning
+import org.neuroph.nnet.learning.CompetitiveLearning
 import org.neuroph.nnet.learning.DynamicBackPropagation
+import org.neuroph.nnet.learning.GeneralizedHebbianLearning
+import org.neuroph.nnet.learning.HopfieldLearning
+import org.neuroph.nnet.learning.InstarLearning
+import org.neuroph.nnet.learning.KohonenLearning
+import org.neuroph.nnet.learning.LMS
+import org.neuroph.nnet.learning.MomentumBackpropagation
+import org.neuroph.nnet.learning.OjaLearning
+import org.neuroph.nnet.learning.OutstarLearning
+import org.neuroph.nnet.learning.PerceptronLearning
+import org.neuroph.nnet.learning.ResilientPropagation
+import org.neuroph.nnet.learning.SigmoidDeltaRule
+import org.neuroph.nnet.learning.SimulatedAnnealingLearning
+import org.neuroph.nnet.learning.SupervisedHebbianLearning
+import org.neuroph.nnet.learning.UnsupervisedHebbianLearning
 import org.neuroph.util.TransferFunctionType
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileNotFoundException
 import java.io.IOException
 import java.io.ObjectInputStream
+import java.util.*
 
 /**
  * Created by Thomas Needham on 30/05/2016.
@@ -132,22 +164,58 @@ class NetworkTrainer {
     fun TrainNetwork() : NeuralNetwork?{
         var function : TransferFunctionType? = null
         when (networkConfiguration?.networkTransferFunction){
-            TransferFunctions.Functions.SIGMOID -> function = TransferFunctionType.SIGMOID
             TransferFunctions.Functions.GAUSSIAN -> function = TransferFunctionType.GAUSSIAN
+            TransferFunctions.Functions.LINEAR -> function = TransferFunctionType.LINEAR
+            TransferFunctions.Functions.LOG -> function = TransferFunctionType.LOG
+            TransferFunctions.Functions.RAMP -> function = TransferFunctionType.RAMP
+            TransferFunctions.Functions.SGN -> function = TransferFunctionType.SGN
+            TransferFunctions.Functions.SIGMOID -> function = TransferFunctionType.SIGMOID
+            TransferFunctions.Functions.STEP -> function = TransferFunctionType.STEP
+            TransferFunctions.Functions.TANH -> function = TransferFunctionType.TANH
+            TransferFunctions.Functions.TRAPEZOID -> function = TransferFunctionType.TRAPEZOID
             else -> UnknownTransferFunctionException("Unknown Transfer Function: ${TransferFunctions.GetClassName(networkConfiguration?.networkTransferFunction!!)}")
-            //TODO add more transfer functions
         }
         when (networkConfiguration?.networkType){
-            NetworkTypes.Types.PERCEPTRON -> network = Perceptron(inputSize,outputSize,function)
+            NetworkTypes.Types.ADALINE -> network = Adaline(inputSize)
+            NetworkTypes.Types.BAM -> BAM(inputSize,outputSize)
+            NetworkTypes.Types.COMPETITIVE_NETWORK -> network = CompetitiveNetwork(inputSize,outputSize)
+            NetworkTypes.Types.HOPFIELD -> network = Hopfield(inputSize + outputSize)
+            NetworkTypes.Types.INSTAR -> network = Instar(inputSize)
+            NetworkTypes.Types.KOHONEN -> network = Kohonen(inputSize,outputSize)
+            NetworkTypes.Types.MAX_NET -> network = MaxNet(inputSize + outputSize)
             NetworkTypes.Types.MULTI_LAYER_PERCEPTRON -> network = MultiLayerPerceptron(networkConfiguration?.networkLayers?.toList(),function)
+            NetworkTypes.Types.NEURO_FUZZY_PERCEPTRON -> network = NeuroFuzzyPerceptron(inputSize, Vector<Int>(inputSize), outputSize)
+            NetworkTypes.Types.NEUROPH -> network = Perceptron(inputSize,outputSize,function)
+            NetworkTypes.Types.OUTSTAR -> network = Outstar(outputSize)
+            NetworkTypes.Types.PERCEPTRON -> network = Perceptron(inputSize,outputSize,function)
+            NetworkTypes.Types.RBF_NETWORK -> network = RbfNetwork(inputSize,inputSize,outputSize)
+            NetworkTypes.Types.SUPERVISED_HEBBIAN_NETWORK -> network = SupervisedHebbianNetwork(inputSize,outputSize,function)
+            NetworkTypes.Types.UNSUPERVISED_HEBBIAN_NETWORK -> network = UnsupervisedHebbianNetwork(inputSize,outputSize,function)
             else -> UnknownNetworkTypeException("Unknown Network Type: ${NetworkTypes.GetClassName(networkConfiguration?.networkType!!)}")
             //TODO add more network types
         }
         when (networkConfiguration?.networkLearningRule){
+            LearningRules.Rules.ANTI_HEBBAN_LEARNING -> network?.learningRule = AntiHebbianLearning()
             LearningRules.Rules.BACK_PROPAGATION -> network?.learningRule = BackPropagation()
+            LearningRules.Rules.BINARY_DELTA_RULE -> network?.learningRule = BinaryDeltaRule()
+            LearningRules.Rules.BINARY_HEBBIAN_LEARNING -> network?.learningRule = BinaryHebbianLearning()
+            LearningRules.Rules.COMPETITIVE_LEARNING -> network?.learningRule = CompetitiveLearning()
             LearningRules.Rules.DYNAMIC_BACK_PROPAGATION -> network?.learningRule = DynamicBackPropagation()
+            LearningRules.Rules.GENERALIZED_HEBBIAN_LEARNING -> network?.learningRule = GeneralizedHebbianLearning()
+            LearningRules.Rules.HOPFIELD_LEARNING -> network?.learningRule = HopfieldLearning()
+            LearningRules.Rules.INSTAR_LEARNING -> network?.learningRule = InstarLearning()
+            LearningRules.Rules.KOHONEN_LEARNING -> network?.learningRule = KohonenLearning()
+            LearningRules.Rules.LMS -> network?.learningRule = LMS()
+            LearningRules.Rules.MOMENTUM_BACK_PROPAGATION -> network?.learningRule = MomentumBackpropagation()
+            LearningRules.Rules.OJA_LEARNING -> network?.learningRule = OjaLearning()
+            LearningRules.Rules.OUTSTAR_LEARNING -> network?.learningRule = OutstarLearning()
+            LearningRules.Rules.PERCEPTRON_LEARNING -> network?.learningRule = PerceptronLearning()
+            LearningRules.Rules.RESILIENT_PROPAGATION -> network?.learningRule = ResilientPropagation()
+            LearningRules.Rules.SIGMOID_DELTA_RULE -> network?.learningRule = SigmoidDeltaRule()
+            LearningRules.Rules.SIMULATED_ANNEALING_LEARNING -> network?.learningRule = SimulatedAnnealingLearning(network)
+            LearningRules.Rules.SUPERVISED_HEBBIAN_LEARNING -> network?.learningRule = SupervisedHebbianLearning()
+            LearningRules.Rules.UNSUPERVISED_HEBBIAN_LEARNING -> network?.learningRule = UnsupervisedHebbianLearning()
             else -> UnknownLearningRuleException("Unknown Learning Rule: ${LearningRules.GetClassName(networkConfiguration?.networkLearningRule!!)}")
-            //TODO add more learning rules
         }
         if(trainingSet == null) {
             Messages.showErrorDialog("Invalid Training Set","Error")

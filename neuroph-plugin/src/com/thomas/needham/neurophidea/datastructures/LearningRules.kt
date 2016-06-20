@@ -35,6 +35,7 @@ class LearningRules : Serializable {
         BACK_PROPAGATION("Back Propagation"),
         DYNAMIC_BACK_PROPAGATION("Dynamic Back Propagation"),
         ANTI_HEBBAN_LEARNING("Anti Hebbian Learning"),
+        BINARY_DELTA_RULE("Binary Delta Rule"),
         BINARY_HEBBIAN_LEARNING("Binary Hebbian Learning"),
         COMPETITIVE_LEARNING("Competitive Learning"),
         GENERALIZED_HEBBIAN_LEARNING("Generalized Hebbian Learning"),
@@ -54,13 +55,13 @@ class LearningRules : Serializable {
     }
 
     companion object Names {
-        @JvmStatic val classNames = arrayOf("BackPropagation", "DynamicBackPropagation", "AntiHebbianLearning",
+        @JvmStatic val classNames = arrayOf("BackPropagation", "DynamicBackPropagation", "AntiHebbianLearning", "BinaryDeltaRule",
                 "BinaryHebbianLearning", "CompetitiveLearning", "GeneralizedHebbianLearning", "HopfieldLearning",
                 "InstarLearning", "KohonenLearning", "LMS", "MomentumBackPropagation", "OjaLearning", "OutstarLearning",
                 "PerceptronLearning", "ResilientPropagation", "SigmoidDeltaRule", "SimulatedAnnealingLearning",
                 "SupervisedHebbianLearning", "UnsupervisedHebbianLearning")
 
-        @JvmStatic val friendlyNames = arrayOf("Back Propagation", "Dynamic Back Propagation", "Anti Hebbian Learning",
+        @JvmStatic val friendlyNames = arrayOf("Back Propagation", "Dynamic Back Propagation", "Anti Hebbian Learning", "Binary Delta Rule",
                 "Binary Hebbian Learning", "Competitive Learning", "Generalized Hebbian Learning", "Hopfield Learning",
                 "Instar Learning", "Kohonen Learning", "LMS", "Momentum Back Propagation", "Oja Learning", "Outstar Learning",
                 "Perceptron Learning", "Resilient Propagation", "Sigmoid Delta Rule", "Simulated Annealing Learning",

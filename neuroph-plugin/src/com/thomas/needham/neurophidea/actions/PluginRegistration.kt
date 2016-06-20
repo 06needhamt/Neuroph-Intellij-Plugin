@@ -26,12 +26,14 @@ package com.thomas.needham.neurophidea.actions
 import com.intellij.openapi.actionSystem.ActionManager
 import com.intellij.openapi.actionSystem.DefaultActionGroup
 import com.intellij.openapi.components.ApplicationComponent
+import com.intellij.openapi.fileTypes.BinaryFileTypeDecompilers
 import com.intellij.openapi.fileTypes.FileTypeManager
 import com.intellij.openapi.fileTypes.impl.FileTypeManagerImpl
 import com.thomas.needham.neurophidea.Constants.INITIALISATION_ACTION
 import com.thomas.needham.neurophidea.Constants.MENU_ACTION
 import com.thomas.needham.neurophidea.Constants.WINDOW_MENU_ACTION
 import com.thomas.needham.neurophidea.designer.psi.DataSetFileType
+import com.thomas.needham.neurophidea.designer.psi.NnetDecompiler
 import com.thomas.needham.neurophidea.designer.psi.NnetFileType
 
 /**
@@ -57,6 +59,7 @@ class PluginRegistration : ApplicationComponent {
         println("Plugin Loaded")
         fileManager.registerFileType(NnetFileType(),*arrayOf("nnet"))
         fileManager.registerFileType(DataSetFileType(),*arrayOf("csv","tset"))
+        BinaryFileTypeDecompilers.INSTANCE.addExplicitExtension(fileManager.getFileTypeByExtension("nnet"),NnetDecompiler())
         actionManager.registerAction(INITIALISATION_ACTION, init)
         //actionManager.registerAction(MENU_ACTION,menu)
         val defaultActionGroup : DefaultActionGroup? = actionManager.getAction(WINDOW_MENU_ACTION) as DefaultActionGroup?

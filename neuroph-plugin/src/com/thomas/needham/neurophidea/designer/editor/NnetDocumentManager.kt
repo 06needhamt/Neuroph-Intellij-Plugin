@@ -521,17 +521,17 @@ class NnetDocumentManager : FileDocumentManager, VirtualFileListener, ProjectMan
         } else {
             val text : String = LoadTextUtil.loadText(p0) as String
             synchronized(LOCK!!, {
-                document = getCachedDocument(p0) as DocumentEx
+                document = getCachedDocument(p0) as DocumentEx?
                 if (document != null) return document
                 document = createDocument(text, p0) as DocumentEx
                 document?.modificationStamp = p0.modificationStamp
                 val type : FileType = p0.fileType
-                document?.setReadOnly(!p0.isWritable) as DocumentEx
+                document?.setReadOnly(!p0.isWritable)
                 if (p0 is LightVirtualFile) {
                     registerDocument(document!!, p0)
                 } else {
-                    cacheDocument(p0, document as DocumentEx)
-                    document?.putUserData(FILE_KEY, p0) as DocumentEx
+                    cacheDocument(p0, document!!)
+                    document?.putUserData(FILE_KEY, p0)
                 }
                 if (!(p0 is LightVirtualFile || p0.fileSystem is NonPhysicalFileSystem)) {
                     document?.addDocumentListener(object : DocumentAdapter() {
@@ -698,23 +698,26 @@ class NnetDocumentManager : FileDocumentManager, VirtualFileListener, ProjectMan
     fun multiCast(method : Method?, args : Array<out Any>?) {
         val arguments = ParseArguments(args)
         try {
-            method?.invoke(messageBus?.syncPublisher(AppTopics.FILE_DOCUMENT_SYNC), arguments[0] as VirtualFile)
+            method?.invoke(messageBus?.syncPublisher(AppTopics.FILE_DOCUMENT_SYNC), arguments[0] as VirtualFile?)
         } catch(cce : ClassCastException) {
             LOG.error("Arguments ${Arrays.toString(args)}", cce)
         } catch (e : Exception) {
-            unwrapAndRethrow(e)
+            unwrapAndRethrow(e) //uncomment when debugging
+            e.printStackTrace(System.err)
         }
         for (listener : FileDocumentManagerListener? in getListeners()) {
             try {
                 method?.invoke(listener, arguments)
             } catch(e : Exception) {
-                unwrapAndRethrow(e)
+                unwrapAndRethrow(e) //uncomment when debugging
+                e.printStackTrace(System.err)
             }
         }
         try {
-            method?.invoke(trailingSpaceStripper, arguments[0] as VirtualFile)
+            method?.invoke(trailingSpaceStripper, arguments[0] as VirtualFile?)
         } catch(e : Exception) {
-            unwrapAndRethrow(e)
+            unwrapAndRethrow(e) //uncomment when debugging
+            e.printStackTrace(System.err)
         }
     }
 

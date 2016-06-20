@@ -124,5 +124,8 @@ SOFTWARE. -->
         <component>
             <implementation-class>com.thomas.needham.neurophidea.designer.editor.NnetDocumentManager</implementation-class>
         </component>
+        <component>
+            <implementation-class>com.thomas.needham.neurophidea.designer.psi.NnetDecompiler</implementation-class>
+        </component>
     </application-components>
 </idea-plugin>

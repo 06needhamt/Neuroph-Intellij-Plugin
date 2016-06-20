@@ -27,6 +27,7 @@ import com.intellij.openapi.ui.Messages
 import com.intellij.openapi.vfs.VirtualFile
 import com.thomas.needham.neurophidea.actions.InitialisationAction
 import org.neuroph.core.NeuralNetwork
+import java.io.File
 import java.io.FileInputStream
 import java.io.FileNotFoundException
 import java.io.IOException
@@ -42,7 +43,8 @@ class NnetViewer {
     }
     fun LoadNetwork() : NeuralNetwork?{
         try {
-            val fis : FileInputStream? = file?.inputStream as FileInputStream?
+            val f = File(file?.path)
+            val fis : FileInputStream? = f.inputStream()
             val ois : ObjectInputStream? = ObjectInputStream(fis)
             return ois?.readObject() as NeuralNetwork?
         }

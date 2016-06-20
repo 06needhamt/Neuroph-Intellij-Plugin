@@ -696,8 +696,9 @@ class NnetDocumentManager : FileDocumentManager, VirtualFileListener, ProjectMan
 
     @SuppressWarnings("OverlyBroadCatchBlock")
     fun multiCast(method : Method?, args : Array<out Any>?) {
+        val arguments = ParseArguments(args)
         try {
-            method?.invoke(messageBus?.syncPublisher(AppTopics.FILE_DOCUMENT_SYNC), args)
+            method?.invoke(messageBus?.syncPublisher(AppTopics.FILE_DOCUMENT_SYNC), arguments[0] as VirtualFile)
         } catch(cce : ClassCastException) {
             LOG.error("Arguments ${Arrays.toString(args)}", cce)
         } catch (e : Exception) {
@@ -705,16 +706,32 @@ class NnetDocumentManager : FileDocumentManager, VirtualFileListener, ProjectMan
         }
         for (listener : FileDocumentManagerListener? in getListeners()) {
             try {
-                method?.invoke(listener, args)
+                method?.invoke(listener, arguments)
             } catch(e : Exception) {
                 unwrapAndRethrow(e)
             }
         }
         try {
-            method?.invoke(trailingSpaceStripper, args)
+            method?.invoke(trailingSpaceStripper, arguments[0] as VirtualFile)
         } catch(e : Exception) {
             unwrapAndRethrow(e)
         }
+    }
+
+    private fun ParseArguments(args : Array<out Any>?) : Array<Any?> {
+        val init : (Int) -> Any? = {
+            Any()
+        }
+        val arguments = Array<Any?>(args?.size!!,init)
+        for(i in 0..args?.size!! - 1){
+            if(i == 0) {
+                arguments[i] = args!![i] as VirtualFile?
+            }
+            else {
+                arguments[i] = args!![i]
+            }
+        }
+        return arguments
     }
 
     private fun getListeners() : Array<out FileDocumentManagerListener?> {

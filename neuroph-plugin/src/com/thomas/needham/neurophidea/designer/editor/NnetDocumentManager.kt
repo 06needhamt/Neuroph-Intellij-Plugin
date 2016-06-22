@@ -698,7 +698,13 @@ class NnetDocumentManager : FileDocumentManager, VirtualFileListener, ProjectMan
     fun multiCast(method : Method?, args : Array<out Any>?) {
         val arguments = ParseArguments(args)
         try {
-            method?.invoke(messageBus?.syncPublisher(AppTopics.FILE_DOCUMENT_SYNC), arguments[0] as VirtualFile?)
+            if(method?.parameterCount == 1)
+                method?.invoke(messageBus?.syncPublisher(AppTopics.FILE_DOCUMENT_SYNC), arguments[0] as VirtualFile?)
+            else if(method?.parameterCount == 2)
+                method?.invoke(messageBus?.syncPublisher(AppTopics.FILE_DOCUMENT_SYNC), arguments[0] as VirtualFile?, arguments[1] as Document?)
+            else
+                method?.invoke(messageBus?.syncPublisher(AppTopics.FILE_DOCUMENT_SYNC), *arguments)
+
         } catch(cce : ClassCastException) {
             LOG.error("Arguments ${Arrays.toString(args)}", cce)
         } catch (e : Exception) {
@@ -714,7 +720,12 @@ class NnetDocumentManager : FileDocumentManager, VirtualFileListener, ProjectMan
             }
         }
         try {
-            method?.invoke(trailingSpaceStripper, arguments[0] as VirtualFile?)
+            if(method?.parameterCount == 1)
+                method?.invoke(messageBus?.syncPublisher(AppTopics.FILE_DOCUMENT_SYNC), arguments[0] as VirtualFile?)
+            else if(method?.parameterCount == 2)
+                method?.invoke(messageBus?.syncPublisher(AppTopics.FILE_DOCUMENT_SYNC), arguments[0] as VirtualFile?, arguments[1] as Document?)
+            else
+                method?.invoke(messageBus?.syncPublisher(AppTopics.FILE_DOCUMENT_SYNC), *arguments)
         } catch(e : Exception) {
             unwrapAndRethrow(e) //uncomment when debugging
             e.printStackTrace(System.err)

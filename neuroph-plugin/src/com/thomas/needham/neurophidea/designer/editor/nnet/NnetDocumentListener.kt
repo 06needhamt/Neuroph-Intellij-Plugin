@@ -21,44 +21,33 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea.designer.psi
+package com.thomas.needham.neurophidea.designer.editor.nnet
 
-import com.intellij.openapi.fileTypes.FileType
-import com.intellij.openapi.vfs.VirtualFile
-import com.intellij.util.PlatformIcons
-import javax.swing.Icon
+import com.intellij.openapi.application.ApplicationManager
+import com.intellij.openapi.editor.event.DocumentAdapter
+import com.intellij.openapi.editor.event.DocumentEvent
 
 /**
- * Created by Thomas Needham on 09/06/2016.
+ * Created by thoma on 17/06/2016.
  */
-class NnetFileType : FileType {
-
-    override fun getIcon() : Icon? {
-        return PlatformIcons.FILE_ICON
+class NnetDocumentListener : DocumentAdapter, Runnable {
+    var updateScheduled : Boolean = false
+    var component : NnetEditorComponent? = null
+    private val lambda : () -> Unit = {
+        updateScheduled = false
+       this.component?.updateModifiedProperty()
     }
-
-    override fun getName() : String {
-        return "Neuroph Neural Network File"
+    constructor(component : NnetEditorComponent){
+        this.component = component
     }
-
-    override fun isBinary() : Boolean {
-        return true
+    override fun run() {
+        lambda()
     }
-
-    override fun isReadOnly() : Boolean {
-        return false
-    }
-
-    override fun getDefaultExtension() : String {
-        return "nnet"
-    }
-
-    override fun getCharset(p0 : VirtualFile, p1 : ByteArray) : String? {
-        return null
-    }
-
-    override fun getDescription() : String {
-        return "Contains all information required to construct a neural network" +
-                "using the Neuroph framework"
+    override fun documentChanged(e : DocumentEvent?) {
+        super.documentChanged(e)
+        if(!updateScheduled){
+            ApplicationManager.getApplication().invokeLater(this)
+            updateScheduled = true
+        }
     }
 }

@@ -1,4 +1,4 @@
-package com.thomas.needham.neurophidea.designer.editor
+package com.thomas.needham.neurophidea.designer.editor.nnet
 
 import org.jetbrains.annotations.Nullable
 import java.lang.reflect.InvocationHandler

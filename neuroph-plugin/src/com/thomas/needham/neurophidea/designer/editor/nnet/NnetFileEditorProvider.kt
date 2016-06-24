@@ -21,7 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea.designer.editor
+package com.thomas.needham.neurophidea.designer.editor.nnet
 
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.fileEditor.FileEditor
@@ -34,7 +34,7 @@ import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.openapi.diagnostic.Logger
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.fileEditor.AsyncFileEditorProvider
-import com.thomas.needham.neurophidea.designer.psi.NnetFileType
+import com.thomas.needham.neurophidea.designer.psi.nnet.NnetFileType
 import org.jetbrains.annotations.NonNls
 
 /**
@@ -43,7 +43,7 @@ import org.jetbrains.annotations.NonNls
 class NnetFileEditorProvider : FileEditorProvider {
 
     companion object Data {
-        @JvmStatic val LOG = Logger.getInstance("#com.thomas.needham.neurophidea.designer.editor.NnetFileEditorProvider")
+        @JvmStatic val LOG = Logger.getInstance("#com.thomas.needham.neurophidea.designer.editor.nnet.NnetFileEditorProvider")
         @JvmStatic val NNET_EDITOR_KEY : Key<NnetEditor> = Key.create("nnetEditor")
         @JvmStatic @NonNls val TYPE_ID : String = "nnet-editor"
         @JvmStatic @NonNls val LINE_ATTR : String = "line"

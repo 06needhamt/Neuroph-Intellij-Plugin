@@ -21,7 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea.designer.editor
+package com.thomas.needham.neurophidea.designer.editor.snnet
 
 import com.intellij.AppTopics
 import com.intellij.CommonBundle
@@ -30,21 +30,14 @@ import com.intellij.diff.DiffContentFactory
 import com.intellij.diff.DiffManager
 import com.intellij.diff.requests.SimpleDiffRequest
 import com.intellij.diff.util.DiffUserDataKeys
-
-import com.intellij.openapi.actionSystem.AnAction
-import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.application.AccessToken
-import com.intellij.openapi.editor.Document
-import com.intellij.openapi.fileEditor.impl.FileDocumentManagerImpl
-import com.intellij.openapi.project.ProjectManager
-import com.intellij.openapi.vfs.VirtualFile
-import com.intellij.openapi.vfs.VirtualFileManager
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.application.TransactionGuard
 import com.intellij.openapi.application.TransactionGuardImpl
 import com.intellij.openapi.command.CommandProcessor
 import com.intellij.openapi.command.UndoConfirmationPolicy
 import com.intellij.openapi.diagnostic.Logger
+import com.intellij.openapi.editor.Document
 import com.intellij.openapi.editor.EditorFactory
 import com.intellij.openapi.editor.event.DocumentAdapter
 import com.intellij.openapi.editor.event.DocumentEvent
@@ -55,13 +48,13 @@ import com.intellij.openapi.extensions.Extensions
 import com.intellij.openapi.fileEditor.FileDocumentManager
 import com.intellij.openapi.fileEditor.FileDocumentManagerListener
 import com.intellij.openapi.fileEditor.FileDocumentSynchronizationVetoer
-import com.intellij.openapi.fileEditor.FileEditor
 import com.intellij.openapi.fileEditor.FileEditorManager
 import com.intellij.openapi.fileEditor.impl.LoadTextUtil
 import com.intellij.openapi.fileTypes.FileType
 import com.intellij.openapi.fileTypes.UnknownFileType
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.project.ProjectLocator
+import com.intellij.openapi.project.ProjectManager
 import com.intellij.openapi.project.ProjectManagerListener
 import com.intellij.openapi.project.ProjectUtil
 import com.intellij.openapi.project.ex.ProjectEx
@@ -70,15 +63,16 @@ import com.intellij.openapi.ui.DialogWrapper
 import com.intellij.openapi.ui.Messages
 import com.intellij.openapi.util.Comparing
 import com.intellij.openapi.util.Key
-import com.intellij.openapi.util.Pair
 import com.intellij.openapi.util.io.FileUtilRt
 import com.intellij.openapi.util.text.StringUtil
 import com.intellij.openapi.vfs.NonPhysicalFileSystem
 import com.intellij.openapi.vfs.ReadonlyStatusHandler
 import com.intellij.openapi.vfs.SafeWriteRequestor
+import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.openapi.vfs.VirtualFileCopyEvent
 import com.intellij.openapi.vfs.VirtualFileEvent
 import com.intellij.openapi.vfs.VirtualFileListener
+import com.intellij.openapi.vfs.VirtualFileManager
 import com.intellij.openapi.vfs.VirtualFileMoveEvent
 import com.intellij.openapi.vfs.VirtualFilePropertyEvent
 import com.intellij.openapi.vfs.newvfs.NewVirtualFileSystem
@@ -92,12 +86,9 @@ import com.intellij.ui.components.JBScrollPane
 import com.intellij.util.containers.ContainerUtil
 import com.intellij.util.messages.MessageBus
 import com.thomas.needham.neurophidea.Constants
-import org.jetbrains.annotations.NotNull
-import com.thomas.needham.neurophidea.Constants.DOCUMENT_HARD_REF_KEY
-import com.thomas.needham.neurophidea.Constants.LINE_KEY
 import com.thomas.needham.neurophidea.Predicates
 import com.thomas.needham.neurophidea.exceptions.SaveVetoException
-import org.jetbrains.annotations.TestOnly
+import org.jetbrains.annotations.NotNull
 import java.awt.BorderLayout
 import java.awt.Dimension
 import java.awt.event.ActionEvent
@@ -117,28 +108,28 @@ import javax.swing.ScrollPaneConstants
 import javax.swing.SwingConstants
 
 /**
- * Created by thoma on 18/06/2016.
+ * Created by thoma on 24/06/2016.
  */
-class NnetDocumentManager : FileDocumentManager, VirtualFileListener, ProjectManagerListener, SafeWriteRequestor {
+class SnnetDocumentManager : FileDocumentManager, VirtualFileListener, ProjectManagerListener, SafeWriteRequestor {
     val unsavedDocuments : MutableSet<Document?> = ContainerUtil.newConcurrentSet<Document?>()
     val messageBus : MessageBus?
     val documentManagerListener : FileDocumentManagerListener?
     val virtualFileManager : VirtualFileManager?
     val projectManager : ProjectManager?
     val trailingSpaceStripper = TrailingSpacesStripper()
-    val documentCache : MutableMap<VirtualFile,Document>?
+    val documentCache : MutableMap<VirtualFile, Document>?
     var onClose = false;
 
     companion object Data {
         @JvmStatic val LOG = Logger.getInstance("#com.thomas.needham.neurophidea.designer.editor")
-        @JvmStatic val HARD_REF_TO_DOCUMENT_KEY : Key<Document> = Key.create<Document>(DOCUMENT_HARD_REF_KEY)
-        @JvmStatic val LINE_SEPARATOR_KEY : Key<String> = Key.create<String>(LINE_KEY)
+        @JvmStatic val HARD_REF_TO_DOCUMENT_KEY : Key<Document> = Key.create<Document>(Constants.DOCUMENT_HARD_REF_KEY)
+        @JvmStatic val LINE_SEPARATOR_KEY : Key<String> = Key.create<String>(Constants.LINE_KEY)
         @JvmStatic val FILE_KEY : Key<VirtualFile> = Key.create<VirtualFile>(Constants.FILE_KEY);
         @JvmStatic val RECOMPUTE_FILE_TYPE = Key.create<Boolean>(Constants.RECOMPUTE_FILE_TYPE)
         @JvmStatic val LOCK : Any? = Any()
         @JvmName("getInstanceKt")
         @JvmStatic fun getInstance() : FileDocumentManager {
-            return ApplicationManager.getApplication().getComponent(NnetDocumentManager::class.java)
+            return ApplicationManager.getApplication().getComponent(SnnetDocumentManager::class.java)
         }
 
         @JvmStatic fun unwrapAndRethrow(e : Exception) {
@@ -190,8 +181,8 @@ class NnetDocumentManager : FileDocumentManager, VirtualFileListener, ProjectMan
             for(project: Project? in ProjectManager.getInstance().openProjects) {
                 val fileEditorManager : FileEditorManager? = FileEditorManager.getInstance(project!!)
                 for (i in 0..fileEditorManager?.getAllEditors(file)?.size!! step 1) {
-                    if (fileEditorManager?.allEditors!![i] is NnetEditorImpl) {
-                        (fileEditorManager?.allEditors!![i] as NnetEditorImpl).updateModifiedProperty()
+                    if (fileEditorManager?.allEditors!![i] is SnnetEditorImpl) {
+                        (fileEditorManager?.allEditors!![i] as SnnetEditorImpl).updateModifiedProperty()
                     }
                 }
             }
@@ -222,7 +213,7 @@ class NnetDocumentManager : FileDocumentManager, VirtualFileListener, ProjectMan
         this.projectManager?.addProjectManagerListener(this)
         this.documentCache = ContainerUtil.createConcurrentWeakValueMap()
         this.messageBus = ApplicationManager.getApplication().messageBus
-        val handler = NnetInvocationHandler(this)
+        val handler = SnnetInvocationHandler(this)
         val classLoader : ClassLoader = FileDocumentManagerListener::class.java.classLoader
         this.documentManagerListener = (Proxy.newProxyInstance(classLoader,
                 arrayOf<Class<*>>(FileDocumentManagerListener::class.java as Class<*>) as Array<out Class<*>>,
@@ -241,7 +232,7 @@ class NnetDocumentManager : FileDocumentManager, VirtualFileListener, ProjectMan
         (TransactionGuard.getInstance() as TransactionGuardImpl).assertWriteActionAllowed()
         documentManagerListener?.beforeAllDocumentsSaving()
         if(unsavedDocuments.isEmpty()) return
-        val failedToSaveMap : MutableMap<Document,IOException> = HashMap<Document,IOException>()
+        val failedToSaveMap : MutableMap<Document, IOException> = HashMap<Document, IOException>()
         val vector : MutableSet<Document> = HashSet<Document>()
         while(true){
             var count = 0
@@ -288,19 +279,19 @@ class NnetDocumentManager : FileDocumentManager, VirtualFileListener, ProjectMan
                         if(onClose) "cannot.save.files.dialog.ignore.changes" else "cannot.save.files.dialog.revert.changes"))
                 myOKAction.putValue(DEFAULT_ACTION,null)
                 if(!onClose){
-                    myCancelAction.putValue(Action.NAME,CommonBundle.getCloseButtonText())
+                    myCancelAction.putValue(Action.NAME, CommonBundle.getCloseButtonText())
                 }
             }
             override fun createCenterPanel() : JComponent? {
-                val panel : JPanel = JPanel(BorderLayout(0,5))
-                panel.add(JLabel(UIBundle.message("cannot.save.files.dialog.message")),BorderLayout.NORTH)
+                val panel : JPanel = JPanel(BorderLayout(0, 5))
+                panel.add(JLabel(UIBundle.message("cannot.save.files.dialog.message")), BorderLayout.NORTH)
                 val area : JTextPane? = JTextPane()
                 area?.text = text
                 area?.isEditable = false
                 area?.minimumSize = Dimension(area?.minimumSize?.width!!, 50)
                 panel.add(JBScrollPane(area, ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS,
                         ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER)
-                        ,BorderLayout.CENTER)
+                        , BorderLayout.CENTER)
                 return panel
             }
 
@@ -326,7 +317,7 @@ class NnetDocumentManager : FileDocumentManager, VirtualFileListener, ProjectMan
             if(!vector?.maySaveDocument(doc,b)!!)
                 throw SaveVetoException()
         }
-        val token : AccessToken? = ApplicationManager.getApplication().acquireWriteActionLock(NnetDocumentManager::class.java)
+        val token : AccessToken? = ApplicationManager.getApplication().acquireWriteActionLock(SnnetDocumentManager::class.java)
         try{
             doSaveDocumentInWriteAction(doc,file)
         }
@@ -343,7 +334,7 @@ class NnetDocumentManager : FileDocumentManager, VirtualFileListener, ProjectMan
         if(!file.equals(getFile(doc))){
             registerDocument(doc as DocumentEx, file as LightVirtualFile)
         }
-        if(!isSaveNeeded(doc,file)){
+        if(!isSaveNeeded(doc, file)){
             if(doc is DocumentEx){
                 doc.modificationStamp = file.modificationStamp
             }
@@ -517,9 +508,9 @@ class NnetDocumentManager : FileDocumentManager, VirtualFileListener, ProjectMan
         ApplicationManager.getApplication().assertReadAccessAllowed();
         var document = getCachedDocument(p0) as DocumentEx?;
         if (!p0.isValid || p0.isDirectory || SingleRootFileViewProvider.isTooLargeForContentLoading(p0)) {
-            return null;
+            return null
         } else {
-            val text : String = LoadTextUtil.loadText(p0) as String
+            val text : CharSequence = LoadTextUtil.loadText(p0)
             synchronized(LOCK!!, {
                 document = getCachedDocument(p0) as DocumentEx?
                 if (document != null) return document
@@ -615,7 +606,7 @@ class NnetDocumentManager : FileDocumentManager, VirtualFileListener, ProjectMan
         if(VirtualFile.PROP_WRITABLE.equals(p0.propertyName)){
             val doc : Document? = getCachedDocument(file!!)
             if(doc != null){
-                ApplicationManager.getApplication().runWriteAction(object : ExternalChangeAction{
+                ApplicationManager.getApplication().runWriteAction(object : ExternalChangeAction {
                     override fun run() {
                         doc.setReadOnly(!file.isWritable)
                     }
@@ -794,4 +785,3 @@ class NnetDocumentManager : FileDocumentManager, VirtualFileListener, ProjectMan
         documentCache?.remove(file)
     }
 }
-

@@ -33,8 +33,9 @@ import com.thomas.needham.neurophidea.Constants.INITIALISATION_ACTION
 import com.thomas.needham.neurophidea.Constants.MENU_ACTION
 import com.thomas.needham.neurophidea.Constants.WINDOW_MENU_ACTION
 import com.thomas.needham.neurophidea.designer.psi.DataSetFileType
-import com.thomas.needham.neurophidea.designer.psi.NnetDecompiler
-import com.thomas.needham.neurophidea.designer.psi.NnetFileType
+import com.thomas.needham.neurophidea.designer.editor.nnet.NnetDecompiler
+import com.thomas.needham.neurophidea.designer.psi.nnet.NnetFileType
+import com.thomas.needham.neurophidea.designer.psi.snnet.SnnetFileType
 
 /**
  * Created by Thomas Needham on 25/05/2016.
@@ -58,8 +59,9 @@ class PluginRegistration : ApplicationComponent {
     override fun initComponent() {
         println("Plugin Loaded")
         fileManager.registerFileType(NnetFileType(),*arrayOf("nnet"))
-        fileManager.registerFileType(DataSetFileType(),*arrayOf("csv","tset"))
-        BinaryFileTypeDecompilers.INSTANCE.addExplicitExtension(fileManager.getFileTypeByExtension("nnet"),NnetDecompiler())
+        fileManager.registerFileType(SnnetFileType(),*arrayOf("snnet"))
+        fileManager.registerFileType(DataSetFileType(),*arrayOf("tset"))
+        BinaryFileTypeDecompilers.INSTANCE.addExplicitExtension(fileManager.getFileTypeByExtension("nnet"), NnetDecompiler())
         actionManager.registerAction(INITIALISATION_ACTION, init)
         //actionManager.registerAction(MENU_ACTION,menu)
         val defaultActionGroup : DefaultActionGroup? = actionManager.getAction(WINDOW_MENU_ACTION) as DefaultActionGroup?

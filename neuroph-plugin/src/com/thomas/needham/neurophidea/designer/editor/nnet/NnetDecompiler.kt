@@ -21,13 +21,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea.designer.psi
+package com.thomas.needham.neurophidea.designer.editor.nnet
 
 import com.intellij.openapi.fileTypes.BinaryFileDecompiler
 import com.intellij.openapi.ui.Messages
 import com.intellij.openapi.vfs.VirtualFile
 import com.thomas.needham.neurophidea.actions.InitialisationAction
-import com.thomas.needham.neurophidea.designer.editor.NnetViewer
+import com.thomas.needham.neurophidea.designer.editor.nnet.NnetViewer
 import org.neuroph.core.NeuralNetwork
 import org.neuroph.core.transfer.Gaussian
 import org.neuroph.core.transfer.Linear
@@ -116,8 +116,9 @@ class NnetDecompiler : BinaryFileDecompiler {
                     is Trapezoid -> result += Trapezoid::class.java.simpleName + "\n"
                     else -> result += "Unknown" + "\n"
                 }
-                for(i in 0..network?.layers?.size!! - 1){
-                    if(i == network?.layers?.size!! - 1)
+                result += "Layers: "
+                for(i in 0..network?.layers?.size!! - 1) {
+                    if (i == network?.layers?.size!! - 1)
                         result += (network?.layers!![i]?.neuronsCount!! - 1).toString()
                     else
                         result += (network?.layers!![i]?.neuronsCount!! - 1).toString() + ","

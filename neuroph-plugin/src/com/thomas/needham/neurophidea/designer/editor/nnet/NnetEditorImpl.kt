@@ -21,7 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea.designer.editor
+package com.thomas.needham.neurophidea.designer.editor.nnet
 
 import com.intellij.codeHighlighting.BackgroundEditorHighlighter
 import com.intellij.openapi.editor.Editor
@@ -48,7 +48,7 @@ import com.intellij.ui.components.JBLoadingPanel
 /**
  * Created by thoma on 17/06/2016.
  */
-open class NnetEditorImpl : UserDataHolderBase, NnetEditor{
+open class NnetEditorImpl : UserDataHolderBase, NnetEditor {
     val project : Project?
     val changeSupport : PropertyChangeSupport?
     @NotNull val component : NnetEditorComponent?
@@ -71,7 +71,7 @@ open class NnetEditorImpl : UserDataHolderBase, NnetEditor{
         return run
     }
     private fun CreateEditorComponent(project : Project, file : VirtualFile) : NnetEditorComponent? {
-        return NnetEditorComponent(project,file,this)
+        return NnetEditorComponent(project, file, this)
     }
 
     override fun getEditor() : Editor? {
@@ -83,11 +83,11 @@ open class NnetEditorImpl : UserDataHolderBase, NnetEditor{
     }
 
     override fun setState(p0 : FileEditorState) {
-        throw UnsupportedOperationException()
+
     }
 
     override fun getComponent() : JComponent {
-        return component!!;
+        return component!!
     }
 
     override fun getPreferredFocusedComponent() : JComponent? {
@@ -123,7 +123,7 @@ open class NnetEditorImpl : UserDataHolderBase, NnetEditor{
     }
 
     override fun getCurrentLocation() : FileEditorLocation? {
-        return TextEditorLocation(getEditor()?.caretModel?.logicalPosition!!,this as TextEditor)
+        return TextEditorLocation(getEditor()?.caretModel?.logicalPosition!!, this as TextEditor)
     }
 
     override fun removePropertyChangeListener(p0 : PropertyChangeListener) {

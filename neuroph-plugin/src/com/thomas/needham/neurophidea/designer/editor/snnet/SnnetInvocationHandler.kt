@@ -21,23 +21,25 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea.designer.editor
+package com.thomas.needham.neurophidea.designer.editor.snnet
 
-import com.intellij.openapi.project.DumbService
+import org.jetbrains.annotations.Nullable
+import java.lang.reflect.InvocationHandler
+import java.lang.reflect.Method
 
 /**
- * Created by thoma on 17/06/2016.
+ * Created by thoma on 24/06/2016.
  */
-class NnetDumbModeListener : DumbService.DumbModeListener {
-    val component : NnetEditorComponent
-    constructor(component : NnetEditorComponent){
-        this.component = component
-    }
-    override fun enteredDumbMode() {
-        component.updateHighlighters()
-    }
 
-    override fun exitDumbMode() {
-        component.updateHighlighters()
+class SnnetInvocationHandler : InvocationHandler {
+    val documentManager : SnnetDocumentManager
+    constructor(documentManager : SnnetDocumentManager){
+        this.documentManager = documentManager
+    }
+    @Nullable
+    @Throws(Throwable::class)
+    override fun invoke(proxy : Any?, method : Method?, args : Array<out Any>?) : Any? {
+        documentManager.multiCast(method,args)
+        return null
     }
 }

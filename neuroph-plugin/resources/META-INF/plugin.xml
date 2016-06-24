@@ -55,10 +55,16 @@ SOFTWARE. -->
         <moduleBuilder builderClass="com.thomas.needham.neurophidea.project.NeurophModuleBuilder">
         </moduleBuilder>
 
-        <fileType.fileViewProviderFactory filetype="nnet" implementationClass="com.thomas.needham.neurophidea.designer.editor.NnetFileViewProvider">
+        <fileType.fileViewProviderFactory filetype="nnet" implementationClass="com.thomas.needham.neurophidea.designer.editor.nnet.NnetFileViewProvider">
         </fileType.fileViewProviderFactory>
 
-        <fileEditorProvider implementation="com.thomas.needham.neurophidea.designer.editor.NnetFileEditorProvider">
+        <fileEditorProvider implementation="com.thomas.needham.neurophidea.designer.editor.nnet.NnetFileEditorProvider">
+        </fileEditorProvider>
+
+        <fileType.fileViewProviderFactory filetype="snnet" implementationClass="com.thomas.needham.neurophidea.designer.editor.snnet.SnnetFileViewProvider">
+        </fileType.fileViewProviderFactory>
+        
+        <fileEditorProvider implementation="com.thomas.needham.neurophidea.designer.editor.snnet.SnnetFileEditorProvider">
         </fileEditorProvider>
         <!-- Add your extensions here -->
     </extensions>
@@ -122,10 +128,13 @@ SOFTWARE. -->
             <implementation-class>com.thomas.needham.neurophidea.actions.PluginRegistration</implementation-class>
         </component>
         <component>
-            <implementation-class>com.thomas.needham.neurophidea.designer.editor.NnetDocumentManager</implementation-class>
+            <implementation-class>com.thomas.needham.neurophidea.designer.editor.nnet.NnetDocumentManager</implementation-class>
         </component>
         <component>
-            <implementation-class>com.thomas.needham.neurophidea.designer.psi.NnetDecompiler</implementation-class>
+            <implementation-class>com.thomas.needham.neurophidea.designer.editor.nnet.NnetDecompiler</implementation-class>
+        </component>
+        <component>
+            <implementation-class>com.thomas.needham.neurophidea.designer.editor.snnet.SnnetDocumentManager</implementation-class>
         </component>
     </application-components>
 </idea-plugin>

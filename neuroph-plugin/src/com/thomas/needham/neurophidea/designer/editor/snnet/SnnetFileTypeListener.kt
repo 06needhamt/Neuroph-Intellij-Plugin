@@ -21,33 +21,26 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea.designer.editor
+package com.thomas.needham.neurophidea.designer.editor.snnet
 
-import com.intellij.openapi.application.ApplicationManager
-import com.intellij.openapi.editor.event.DocumentAdapter
-import com.intellij.openapi.editor.event.DocumentEvent
+import com.intellij.openapi.fileTypes.FileTypeEvent
+import com.intellij.openapi.fileTypes.FileTypeListener
+import com.thomas.needham.neurophidea.designer.editor.nnet.NnetEditorComponent
 
 /**
- * Created by thoma on 17/06/2016.
+ * Created by thoma on 24/06/2016.
  */
-class NnetDocumentListener : DocumentAdapter, Runnable {
-    var updateScheduled : Boolean = false
-    var component : NnetEditorComponent? = null
-    private val lambda : () -> Unit = {
-        updateScheduled = false
-       this.component?.updateModifiedProperty()
-    }
-    constructor(component : NnetEditorComponent){
+class SnnetFileTypeListener : FileTypeListener.Adapter {
+    val component : SnnetEditorComponent
+
+    constructor(component : SnnetEditorComponent) : super() {
         this.component = component
     }
-    override fun run() {
-        lambda()
-    }
-    override fun documentChanged(e : DocumentEvent?) {
-        super.documentChanged(e)
-        if(!updateScheduled){
-            ApplicationManager.getApplication().invokeLater(this)
-            updateScheduled = true
-        }
+
+    override fun fileTypesChanged(event : FileTypeEvent) {
+        super.fileTypesChanged(event)
+        NnetEditorComponent.assertThread()
+        component.updateValidProperty()
+        component.updateHighlighters()
     }
 }

@@ -21,19 +21,19 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea.designer.psi
+package com.thomas.needham.neurophidea.designer.psi.snnet
 
 import com.intellij.extapi.psi.PsiFileBase
 import com.intellij.lang.Language
 import com.intellij.openapi.fileTypes.FileType
-
 import com.intellij.psi.FileViewProvider
-import com.thomas.needham.neurophidea.designer.psi.NnetFileType
+import com.thomas.needham.neurophidea.designer.psi.nnet.NnetFileType
 
 /**
- * Created by Thomas Needham on 09/06/2016.
+ * Created by thoma on 24/06/2016.
  */
-class NnetFile : PsiFileBase {
+
+class SnnetFile : PsiFileBase {
     companion object Data{
         var fileProvider : FileViewProvider? = null
         var fileLanguage : Language? = null

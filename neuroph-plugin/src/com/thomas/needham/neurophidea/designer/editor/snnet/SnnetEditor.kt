@@ -21,16 +21,17 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea.designer.editor
+package com.thomas.needham.neurophidea.designer.editor.snnet
 
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.fileEditor.NavigatableFileEditor
 import org.jetbrains.annotations.NotNull
 
 /**
- * Created by thoma on 17/06/2016.
+ * Created by thoma on 23/06/2016.
  */
-interface  NnetEditor : NavigatableFileEditor{
+
+interface  SnnetEditor : NavigatableFileEditor {
     @NotNull
     fun getEditor() : Editor?
 }

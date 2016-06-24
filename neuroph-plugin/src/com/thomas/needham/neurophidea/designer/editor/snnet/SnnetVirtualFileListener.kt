@@ -21,7 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea.designer.editor
+package com.thomas.needham.neurophidea.designer.editor.snnet
 
 import com.intellij.openapi.util.Comparing
 import com.intellij.openapi.vfs.VirtualFile
@@ -29,13 +29,14 @@ import com.intellij.openapi.vfs.VirtualFileAdapter
 import com.intellij.openapi.vfs.VirtualFileEvent
 import com.intellij.openapi.vfs.VirtualFilePropertyEvent
 import com.intellij.util.FileContentUtilCore
+import com.thomas.needham.neurophidea.designer.editor.nnet.NnetEditorComponent
 
 /**
- * Created by thoma on 17/06/2016.
+ * Created by thoma on 24/06/2016.
  */
-class NnetVirtualFileListener : VirtualFileAdapter {
-    val component : NnetEditorComponent
-    constructor(component : NnetEditorComponent) : super(){
+class SnnetVirtualFileListener : VirtualFileAdapter {
+    val component : SnnetEditorComponent
+    constructor(component : SnnetEditorComponent) : super(){
         this.component = component
     }
 
@@ -44,8 +45,8 @@ class NnetVirtualFileListener : VirtualFileAdapter {
         if(VirtualFile.PROP_NAME.equals(event.propertyName)){
             component.updateValidProperty()
             if(Comparing.equal<VirtualFile>(event.file,component.file)
-            && FileContentUtilCore.FORCE_RELOAD_REQUESTOR.equals(event.requestor)
-            || !Comparing.equal<Any?>(event.oldValue,event.newValue)){
+                    && FileContentUtilCore.FORCE_RELOAD_REQUESTOR.equals(event.requestor)
+                    || !Comparing.equal<Any?>(event.oldValue,event.newValue)){
                 component.updateHighlighters()
             }
         }

@@ -21,7 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea.designer.editor
+package com.thomas.needham.neurophidea.designer.editor.nnet
 
 import com.intellij.openapi.Disposable
 import com.intellij.openapi.actionSystem.DataProvider
@@ -57,7 +57,7 @@ import java.awt.LayoutManager
 /**
  * Created by thoma on 17/06/2016.
  */
-class NnetEditorComponent : JBLoadingPanel, DataProvider{
+class NnetEditorComponent : JBLoadingPanel, DataProvider {
     val project : Project?
     @NotNull val file : VirtualFile?
     val nnetEditor : NnetEditorImpl?
@@ -70,7 +70,7 @@ class NnetEditorComponent : JBLoadingPanel, DataProvider{
     val busConnection : MessageBusConnection?
 
     companion object Log{
-        @JvmStatic val LOG : Logger = Logger.getInstance("#com.thomas.needham.neurophidea.designer.editor.NnetEditorComponent")
+        @JvmStatic val LOG : Logger = Logger.getInstance("#com.thomas.needham.neurophidea.designer.editor.nnet.NnetEditorComponent")
         @JvmStatic val assertThread : () -> Unit = {
             ApplicationManager.getApplication().assertIsDispatchThread()
         }
@@ -92,7 +92,7 @@ class NnetEditorComponent : JBLoadingPanel, DataProvider{
         fileListener = NnetVirtualFileListener(this)
         this.file?.fileSystem?.addVirtualFileListener(fileListener)
         busConnection = project?.messageBus?.connect()
-        busConnection?.subscribe(FileTypeManager.TOPIC,NnetFileTypeListener(this))
+        busConnection?.subscribe(FileTypeManager.TOPIC, NnetFileTypeListener(this))
         busConnection?.subscribe(DumbService.DUMB_MODE, NnetDumbModeListener(this))
     }
 

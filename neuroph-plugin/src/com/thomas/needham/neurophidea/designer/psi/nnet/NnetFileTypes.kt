@@ -1,4 +1,4 @@
-package com.thomas.needham.neurophidea.designer.psi
+package com.thomas.needham.neurophidea.designer.psi.nnet
 
 import com.intellij.openapi.fileTypes.FileType
 import com.intellij.openapi.fileTypes.FileTypeManager
@@ -13,6 +13,5 @@ class NnetFileTypes : FileTypes {
     }
     companion object FileTypes {
         @JvmStatic val NEURAL_NETWORK : FileType = FileTypeManager.getInstance().getFileTypeByExtension("nnet")
-        @JvmStatic val DATA_SET : FileType = FileTypeManager.getInstance().getFileTypeByExtension("tset")
     }
 }

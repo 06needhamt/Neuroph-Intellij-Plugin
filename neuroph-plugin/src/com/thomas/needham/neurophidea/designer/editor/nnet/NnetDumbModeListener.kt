@@ -21,23 +21,23 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea.designer.editor
+package com.thomas.needham.neurophidea.designer.editor.nnet
 
-import com.intellij.openapi.fileTypes.FileTypeEvent
-import com.intellij.openapi.fileTypes.FileTypeListener
+import com.intellij.openapi.project.DumbService
 
 /**
  * Created by thoma on 17/06/2016.
  */
-class NnetFileTypeListener : FileTypeListener.Adapter {
-    val component: NnetEditorComponent
-    constructor(component : NnetEditorComponent) : super(){
+class NnetDumbModeListener : DumbService.DumbModeListener {
+    val component : NnetEditorComponent
+    constructor(component : NnetEditorComponent){
         this.component = component
     }
-    override fun fileTypesChanged(event : FileTypeEvent) {
-        super.fileTypesChanged(event)
-        NnetEditorComponent.assertThread()
-        component.updateValidProperty()
+    override fun enteredDumbMode() {
+        component.updateHighlighters()
+    }
+
+    override fun exitDumbMode() {
         component.updateHighlighters()
     }
 }

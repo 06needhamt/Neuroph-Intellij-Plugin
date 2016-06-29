@@ -24,6 +24,7 @@ SOFTWARE.
 package com.thomas.needham.neurophidea.project
 
 import com.intellij.openapi.module.ModuleType
+import com.intellij.openapi.util.IconLoader
 import javax.swing.Icon
 
 /**
@@ -34,7 +35,7 @@ class NeurophModule : ModuleType<NeurophModuleBuilder>("Neuroph Project") {
         val INSTANCE : NeurophModule? = NeurophModule.INSTANCE
     }
     override fun getBigIcon() : Icon? {
-        return null
+        return IconLoader.getTransparentIcon(IconLoader.getIcon("/icon2.png"))
     }
 
     override fun createModuleBuilder() : NeurophModuleBuilder {
@@ -51,6 +52,6 @@ class NeurophModule : ModuleType<NeurophModuleBuilder>("Neuroph Project") {
     }
 
     override fun getNodeIcon(p0 : Boolean) : Icon? {
-        return null
+        return IconLoader.getTransparentIcon(IconLoader.getIcon("/icon2.png"))
     }
 }

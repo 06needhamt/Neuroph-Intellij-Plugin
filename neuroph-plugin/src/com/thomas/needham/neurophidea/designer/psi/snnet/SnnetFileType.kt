@@ -24,6 +24,7 @@ SOFTWARE.
 package com.thomas.needham.neurophidea.designer.psi.snnet
 
 import com.intellij.openapi.fileTypes.FileType
+import com.intellij.openapi.util.IconLoader
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.util.PlatformIcons
 import javax.swing.Icon
@@ -34,7 +35,7 @@ import javax.swing.Icon
 class SnnetFileType : FileType {
 
     override fun getIcon() : Icon? {
-        return PlatformIcons.FILE_ICON
+        return IconLoader.getTransparentIcon(IconLoader.getIcon("/icon2.png"))
     }
 
     override fun getName() : String {

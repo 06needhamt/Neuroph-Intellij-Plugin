@@ -47,6 +47,7 @@ import com.intellij.openapi.roots.ModifiableRootModel
 import com.intellij.openapi.roots.ModuleRootManager
 import com.intellij.openapi.roots.ModuleRootModel
 import com.intellij.openapi.roots.ui.configuration.ModulesProvider
+import com.intellij.openapi.util.IconLoader
 import com.intellij.openapi.util.Pair
 import com.intellij.openapi.util.text.StringUtil
 import com.intellij.openapi.vfs.VfsUtilCore
@@ -125,11 +126,11 @@ class NeurophModuleBuilder : JavaModuleBuilder, ModuleBuilderListener {
     }
 
     override fun getBigIcon() : Icon? {
-        return super.getBigIcon()
+        return IconLoader.getTransparentIcon(IconLoader.getIcon("/icon2.png"))
     }
 
     override fun getNodeIcon() : Icon? {
-        return super.getNodeIcon()
+        return IconLoader.getTransparentIcon(IconLoader.getIcon("/icon2.png"))
     }
 
     override fun getDescription() : String? {

@@ -29,6 +29,7 @@ import com.intellij.facet.FacetTypeId
 import com.intellij.openapi.module.JavaModuleType
 import com.intellij.openapi.module.Module
 import com.intellij.openapi.module.ModuleType
+import com.intellij.openapi.util.IconLoader
 import javax.swing.Icon
 
 /**
@@ -61,6 +62,6 @@ class NeurophFacetType : FacetType<NeurophFacet,NeurophFacetConfiguration> {
     }
 
     override fun getIcon() : Icon? {
-        return super.getIcon()
+        return IconLoader.getTransparentIcon(IconLoader.getIcon("/icon2.png"))
     }
 }

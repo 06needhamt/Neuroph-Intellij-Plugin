@@ -27,7 +27,6 @@ import com.intellij.extapi.psi.PsiFileBase
 import com.intellij.lang.Language
 import com.intellij.openapi.fileTypes.FileType
 import com.intellij.psi.FileViewProvider
-import com.thomas.needham.neurophidea.designer.psi.nnet.NnetFileType
 
 /**
  * Created by thoma on 24/06/2016.
@@ -37,14 +36,14 @@ class SnnetFile : PsiFileBase {
     companion object Data{
         var fileProvider : FileViewProvider? = null
         var fileLanguage : Language? = null
-        var fileTy : NnetFileType? = null
+        var fileTy : SnnetFileType? = null
     }
     constructor(fileViewProvider : FileViewProvider, language : Language) : super(fileViewProvider,language){
         fileProvider = fileViewProvider
         fileLanguage = language
     }
     override fun getFileType() : FileType {
-        fileTy = NnetFileType()
+        fileTy = SnnetFileType()
         return fileTy as FileType
     }
 }

@@ -24,7 +24,9 @@ class SnnetParser {
         var i = 0
         while(i < tokensList.size - 1){
             if(tokensList[i].type == SnnetTokenType.Types.PROPERTY && tokensList[i + 1].type == SnnetTokenType.Types.COLON){
-                //val prop = SnnetProperties.
+                val properties = SnnetProperties.getInstance()
+                properties.setValue(tokensList[i].value,tokensList[i + 2].value)
+                i += 3
             }
         }
         return true

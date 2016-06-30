@@ -68,17 +68,9 @@ class SnnetLexer {
     }
 
     private fun  TokensizeInput() : Boolean {
-        val builder : StringBuilder = StringBuilder()
-        for(ch: Char in inputString){
-            if(ch == ' ' || ch == '\n' || ch == ',' || ch == ';' || ch == ':'){
-                tokenStringList.add(builder.toString())
-                builder.setLength(0)
-                builder.append(ch)
-                tokenStringList.add(builder.toString())
-                builder.setLength(0)
-                continue
-            }
-            builder.append(ch)
+        val split = inputString.split(' ')
+        for(str: String in split){
+            tokenStringList.add(str)
         }
         return true
     }

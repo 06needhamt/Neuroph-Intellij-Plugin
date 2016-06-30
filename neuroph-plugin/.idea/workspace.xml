@@ -7,17 +7,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bf29350-129e-4cfc-8762-78cb4578196f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/Tuple2.kt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/parser/SnnetProperties.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/CompileSnnetFileAction.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/TestNetwork.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/TrainTest.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/about/AboutForm.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/create/CreateNetworkForm.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/export/ExportNetworkForm.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/open/OpenNetworkForm.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/output/NetworkOutputForm.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/test/TestNetworkForm.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkForm.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/weights/NetworkWeightsForm.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDKPanel.kt" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/TestNetwork.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/TrainTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/about/AboutForm.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/create/CreateNetworkForm.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/export/ExportNetworkForm.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/open/OpenNetworkForm.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/output/NetworkOutputForm.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/test/TestNetworkForm.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkForm.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/weights/NetworkWeightsForm.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDKPanel.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/neuroph-plugin.iml" afterPath="$PROJECT_DIR$/neuroph-plugin.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/DataSetFileType.kt" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/DataSetFileType.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/nnet/NnetFileType.kt" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/nnet/NnetFileType.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/SnnetFile.kt" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/SnnetFile.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/SnnetFileType.kt" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/SnnetFileType.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophModule.kt" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophModule.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophModuleBuilder.kt" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophModuleBuilder.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/facet/NeurophFacetType.kt" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/facet/NeurophFacetType.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/META-INF/plugin.xml" afterPath="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/lexer/SnnetLexer.kt" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/lexer/SnnetLexer.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/parser/SnnetParser.kt" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/parser/SnnetParser.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/parser/SnnetProperties.kt" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/parser/SnnetProperties.kt" />
     </list>
     <ignored path="neuroph-plugin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,35 +55,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SnnetLexer.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/lexer/SnnetLexer.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-810">
-              <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-              <folding>
-                <element signature="e#65#449#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SnnetProperties.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/parser/SnnetProperties.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="13" column="54" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="54" />
+            <state relative-caret-position="690">
+              <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
               <folding>
-                <element signature="e#66#129#0" expanded="true" />
+                <element signature="e#66#236#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NnetFileType.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/nnet/NnetFileType.kt">
+      <file leaf-file-name="CompileSnnetFileAction.kt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/CompileSnnetFileAction.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="37" column="37" selection-start-line="37" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state relative-caret-position="360">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="plugin.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3360">
+              <caret line="112" column="83" selection-start-line="112" selection-start-column="83" selection-end-line="112" selection-end-column="83" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SnnetLexer.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/lexer/SnnetLexer.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1860">
+              <caret line="72" column="36" selection-start-line="72" selection-start-column="36" selection-end-line="72" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -75,7 +100,7 @@
       <file leaf-file-name="DataSetFileType.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/DataSetFileType.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
+            <state relative-caret-position="300">
               <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
@@ -85,7 +110,7 @@
       <file leaf-file-name="SnnetFileType.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/SnnetFileType.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
+            <state relative-caret-position="360">
               <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
             </state>
@@ -95,7 +120,7 @@
       <file leaf-file-name="NeurophModule.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophModule.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
+            <state relative-caret-position="930">
               <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
               <folding />
             </state>
@@ -105,18 +130,18 @@
       <file leaf-file-name="NeurophModuleBuilder.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophModuleBuilder.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
+            <state relative-caret-position="2220">
               <caret line="133" column="0" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NeurophFacetType.kt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NeurophFacetType.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/facet/NeurophFacetType.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="481">
-              <caret line="60" column="35" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
+            <state relative-caret-position="1050">
+              <caret line="64" column="35" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -125,8 +150,8 @@
       <file leaf-file-name="SnnetParser.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/parser/SnnetParser.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="25" column="124" selection-start-line="25" selection-start-column="124" selection-end-line="25" selection-end-column="124" />
+            <state relative-caret-position="780">
+              <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
               <folding>
                 <element signature="e#66#236#0" expanded="true" />
               </folding>
@@ -141,11 +166,11 @@
       <list>
         <option value="Concept" />
         <option value="ApplicationComponent" />
-        <option value="Action" />
         <option value="Class" />
         <option value="Kotlin File" />
         <option value="Kotlin Object" />
         <option value="Kotlin Class" />
+        <option value="Action" />
       </list>
     </option>
   </component>
@@ -160,9 +185,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/NnetInvocationHandler.kt" />
-        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/Predicates.kt" />
-        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/exceptions/p.java" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/exceptions/p.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/exceptions/SaveVetoException.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/NnetViewer.kt" />
@@ -187,7 +209,6 @@
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetDocumentListener.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetDumbModeListener.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetFileEditorProvider.kt" />
-        <option value="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetFileViewProvider.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetInvocationHandler.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/PluginRegistration.kt" />
@@ -201,16 +222,20 @@
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/lexer/SnnetToken.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/Tuple.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/lexer/SnnetProperties.kt" />
-        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/lexer/SnnetLexer.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/Tuple3.kt" />
-        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/parser/SnnetProperties.kt" />
-        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/parser/SnnetParser.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/nnet/NnetFileType.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/DataSetFileType.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/SnnetFileType.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophModule.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophModuleBuilder.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/facet/NeurophFacetType.kt" />
+        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/lexer/SnnetLexer.kt" />
+        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/parser/SnnetParser.kt" />
+        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetCompiler.kt" />
+        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetCompilerDriver.kt" />
+        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/parser/SnnetProperties.kt" />
+        <option value="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
+        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/CompileSnnetFileAction.kt" />
       </list>
     </option>
   </component>
@@ -274,6 +299,62 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="neuroph-plugin">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="neuroph-plugin">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="com/thomas/needham/neurophidea">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="neuroph-plugin">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="com/thomas/needham/neurophidea">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="exceptions">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -720,28 +801,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="designer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="neuroph-plugin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="neuroph-plugin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="neurophidea" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="datastructures" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -878,62 +937,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="neuroph-plugin">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="neuroph-plugin">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="com/thomas/needham/neurophidea">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="neuroph-plugin">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="com/thomas/needham/neurophidea">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="exceptions">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1284,29 +1287,25 @@
     <option name="totallyTimeSpent" value="350000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1858" height="1002" extended-state="7" />
+    <frame x="-8" y="-8" width="1858" height="1002" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26812428" sideWeight="0.49054506" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24395858" sideWeight="0.51001114" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24626006" sideWeight="0.48998886" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32790697" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19632925" sideWeight="0.4940978" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32336017" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="ASM" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298109" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19300437" sideWeight="0.5059022" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19299221" sideWeight="0.5059022" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3118527" sideWeight="0.49666294" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1315,7 +1314,11 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988507" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3118527" sideWeight="0.49666294" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26812428" sideWeight="0.49054506" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24626006" sideWeight="0.48998886" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32336017" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1378,27 +1381,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetDocumentListener.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="32" column="27" selection-start-line="32" selection-start-column="27" selection-end-line="51" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetVirtualFileListener.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="36" column="9" selection-start-line="36" selection-start-column="1" selection-end-line="63" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetFileTypeListener.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="31" column="29" selection-start-line="31" selection-start-column="29" selection-end-line="41" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetDumbModeListener.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1581,15 +1563,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="12240">
           <caret line="512" column="35" selection-start-line="512" selection-start-column="35" selection-end-line="512" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1592">
-          <caret line="66" column="122" selection-start-line="66" selection-start-column="122" selection-end-line="66" selection-end-column="122" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1597,9 +1570,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
-          <folding>
-            <element signature="e#1144#1308#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1615,18 +1585,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="32" column="6" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/lexer/SnnetTokenType.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/lexer/SnnetTokenType.kt" />
     <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/Tuple2.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -1639,18 +1601,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
           <caret line="969" column="25" selection-start-line="969" selection-start-column="25" selection-end-line="969" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/lexer/SnnetToken.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/lexer/SnnetToken.kt" />
     <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/Tuple3.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -1659,46 +1613,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/parser/SnnetProperties.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="13" column="54" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="54" />
-          <folding>
-            <element signature="e#66#129#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/parser/SnnetParser.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="25" column="124" selection-start-line="25" selection-start-column="124" selection-end-line="25" selection-end-column="124" />
-          <folding>
-            <element signature="e#66#236#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/icon.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/icon.jpg" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/lang/Class.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
           <caret line="2266" column="23" selection-start-line="2266" selection-start-column="23" selection-end-line="2266" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/lexer/SnnetLexer.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-810">
-          <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-          <folding>
-            <element signature="e#65#449#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1706,10 +1625,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="175" column="0" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
-          <folding>
-            <element signature="e#5114#5115#0" expanded="true" />
-            <element signature="e#5166#5167#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1717,21 +1632,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="1092" column="45" selection-start-line="1092" selection-start-column="45" selection-end-line="1092" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/nnet/NnetFileType.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
+        <state relative-caret-position="330">
           <caret line="37" column="37" selection-start-line="37" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/DataSetFileType.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
+        <state relative-caret-position="300">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
@@ -1739,7 +1652,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/SnnetFileType.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
+        <state relative-caret-position="360">
           <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding />
         </state>
@@ -1747,7 +1660,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophModule.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
+        <state relative-caret-position="930">
           <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
           <folding />
         </state>
@@ -1755,7 +1668,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophModuleBuilder.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
+        <state relative-caret-position="2220">
           <caret line="133" column="0" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
           <folding />
         </state>
@@ -1763,8 +1676,54 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/facet/NeurophFacetType.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="60" column="35" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
+        <state relative-caret-position="1050">
+          <caret line="64" column="35" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/lexer/SnnetLexer.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1860">
+          <caret line="72" column="36" selection-start-line="72" selection-start-column="36" selection-end-line="72" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetCompiler.kt" />
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetCompilerDriver.kt" />
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/parser/SnnetParser.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+          <folding>
+            <element signature="e#66#236#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/parser/SnnetProperties.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
+          <folding>
+            <element signature="e#66#236#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3360">
+          <caret line="112" column="83" selection-start-line="112" selection-start-column="83" selection-end-line="112" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/CompileSnnetFileAction.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
         </state>
       </provider>

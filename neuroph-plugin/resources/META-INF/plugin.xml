@@ -108,6 +108,10 @@ SOFTWARE. -->
                     description="Manually Edit Network Weights">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt W"/>
             </action>
+            <action id="CompileSnnetFileAction" class="com.thomas.needham.neurophidea.actions.CompileSnnetFileAction"
+                    text="Compile Network Source File " description="Compiles The Currently Open Snnet File">
+                <keyboard-shortcut first-keystroke="ctrl alt M" keymap="$default"/>
+            </action>
             <action id="ShowAboutFromAction" class="com.thomas.needham.neurophidea.actions.ShowAboutFromAction"
                     text="About This Plugin" description="Shows Information about this plugin">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt ESCAPE"/>

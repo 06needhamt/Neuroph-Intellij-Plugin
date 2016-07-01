@@ -3,6 +3,7 @@ package com.thomas.needham.neurophidea.designer.psi.snnet.lexer
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.Messages
 import com.intellij.openapi.vfs.VirtualFile
+import com.thomas.needham.neurophidea.actions.CompileSnnetFileAction
 import com.thomas.needham.neurophidea.actions.InitialisationAction
 import java.io.BufferedReader
 import java.io.File
@@ -57,18 +58,18 @@ class SnnetLexer {
         }
         catch (ioe: IOException){
             ioe.printStackTrace(System.err)
-            Messages.showErrorDialog(null,"Error Loading Source From File: ${inputFile?.path}","Error")
+            Messages.showErrorDialog(CompileSnnetFileAction.project,"Error Loading Source From File: ${inputFile?.path}","Error")
             return false
         }
         catch(fnfe: FileNotFoundException){
             fnfe.printStackTrace(System.err)
-            Messages.showErrorDialog(null,"No Source Code Found in File: ${inputFile?.path}","Error")
+            Messages.showErrorDialog(CompileSnnetFileAction.project,"No Source Code Found in File: ${inputFile?.path}","Error")
             return false
         }
     }
 
     private fun  TokensizeInput() : Boolean {
-        val split = inputString.split(' ')
+        val split = inputString.split(' ','\r','\n')
         for(str: String in split){
             tokenStringList.add(str)
         }
@@ -77,18 +78,32 @@ class SnnetLexer {
 
     private fun GenerateTokens() : Boolean{
         var temp : String = ""
-        for(i in 0..tokenStringList.size - 1 ){
+        var i = 0
+        while(i < tokenStringList.size){
             if(tokenStringList[i].startsWith("\"") && !tokenStringList[i].endsWith("\"")){
-                while(!temp.endsWith("\"")){
-                    temp += tokenStringList[i]
-                    continue
+                try {
+                    while (!temp.endsWith("\"")) {
+                        temp += tokenStringList[i]
+                        if(!temp.endsWith("\""))
+                            temp += " "
+                        i++
+                    }
+                    tokenList.add(SnnetToken(temp))
+                    temp = ""
                 }
-                tokenList.add(SnnetToken(temp))
-                temp = ""
+                catch(iobe: IndexOutOfBoundsException){
+                    iobe.printStackTrace()
+                    Messages.showErrorDialog(CompileSnnetFileAction.project,"COMPILE ERROR Unterminated String Literal","ERROR")
+                    return false
+                }
             }
             else {
                 tokenList.add(SnnetToken(tokenStringList[i]))
+                i++
             }
+        }
+        tokenList.removeAll { e ->
+            e.value.equals("")
         }
         return true
     }

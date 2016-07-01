@@ -65,8 +65,9 @@ class CompileSnnetFileAction : AnAction() {
             Messages.showErrorDialog(project, "Error Parsing File ${file?.path}", "Error")
             return
         }
+        val path = file?.path?.substring(0,file.path.length - file.name.length) + "Compiled.conf"
         val generator = SnnetGenerator(parser.properties)
-        generator.SaveNetwork(projectDirectory + "/Compiled.conf")
-        Messages.showOkCancelDialog(project,"Network Successfully Compiled To ${File("Compiled.conf").absolutePath}", "Success",PlatformIcons.CHECK_ICON)
+        generator.SaveNetwork(path)
+        Messages.showOkCancelDialog(project,"Network Successfully Compiled To ${path}", "Success",PlatformIcons.CHECK_ICON)
     }
 }

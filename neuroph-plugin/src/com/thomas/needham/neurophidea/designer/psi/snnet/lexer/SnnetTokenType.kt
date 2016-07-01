@@ -21,44 +21,19 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea.designer.psi
-
-import com.intellij.openapi.fileTypes.FileType
-import com.intellij.openapi.util.IconLoader
-import com.intellij.openapi.vfs.VirtualFile
-import com.intellij.util.PlatformIcons
-import javax.swing.Icon
+package com.thomas.needham.neurophidea.designer.psi.snnet.lexer
 
 /**
- * Created by thoma on 15/06/2016.
+ * Created by thoma on 24/06/2016.
  */
-class DataSetFileType : FileType {
-    override fun getIcon() : Icon? {
-        return IconLoader.getTransparentIcon(IconLoader.getIcon("/icon2.png"))
-    }
-
-    override fun getName() : String {
-        return "Neural Network Training / Testing Set"
-    }
-
-    override fun isBinary() : Boolean {
-        return false
-    }
-
-    override fun isReadOnly() : Boolean {
-        return false
-    }
-
-    override fun getDefaultExtension() : String {
-        return "csv"
-    }
-
-    override fun getCharset(p0 : VirtualFile, p1 : ByteArray) : String? {
-        throw UnsupportedOperationException()
-    }
-
-    override fun getDescription() : String {
-        return "Comma Separated Data Set Used For" +
-                "Training and Testing Neural Networks"
+class SnnetTokenType {
+    enum class Types(value: Int){
+        PROPERTY(0b00000000),
+        COLON(0b00000001),
+        COMMA(0b00000010),
+        SEMI_COLON(0b00000100),
+        STRING_LITERAL(0b00001000),
+        NUMERIC_LITERAL(0b00010000),
+        NEW_LINE(0b00100000);
     }
 }

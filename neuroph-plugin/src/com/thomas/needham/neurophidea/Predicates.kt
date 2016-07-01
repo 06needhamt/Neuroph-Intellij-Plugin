@@ -42,4 +42,12 @@ object Predicates {
     @JvmStatic val MoreThan : (Int, Int) -> Boolean = { a,b ->
         a > b
     }
+
+    @JvmStatic val StringInherit : (Int) -> String = {
+        ""
+    }
+
+    @JvmStatic val IntInherit : (Int) -> Int = {
+        0
+    }
 }

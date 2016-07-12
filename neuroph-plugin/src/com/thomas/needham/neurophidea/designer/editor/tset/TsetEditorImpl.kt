@@ -20,18 +20,20 @@ import javax.swing.JComponent
 class TsetEditorImpl : UserDataHolderBase, TsetEditor {
     val project : Project?
     val changeSupport : PropertyChangeSupport?
-    @NotNull val component : ?
+    @NotNull val component : TsetEditorComponent?
     @NotNull val file: VirtualFile?
     val asyncLoader : AsyncEditorLoader? = null
 
-    constructor(@NotNull project: Project?, @NotNull file: VirtualFile?, provider: ?) : super(){
+    constructor(@NotNull project: Project?, @NotNull file: VirtualFile?, provider: TsetFileEditorProvider?) : super(){
         this.project = project
         this.file = file
         this.changeSupport = PropertyChangeSupport(this)
         this.component = CreateEditorComponent(project!!,file!!)
     }
 
-    private fun  CreateEditorComponent(project : Project, file : VirtualFile) : ? {
+    private fun  CreateEditorComponent(project : Project, file : VirtualFile) : TsetEditorComponent {
+        throw UnsupportedOperationException("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 
     override fun getEditor() : Editor {

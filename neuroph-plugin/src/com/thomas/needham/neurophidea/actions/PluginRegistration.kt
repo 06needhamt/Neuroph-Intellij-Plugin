@@ -32,7 +32,7 @@ import com.intellij.openapi.fileTypes.impl.FileTypeManagerImpl
 import com.thomas.needham.neurophidea.Constants.INITIALISATION_ACTION
 import com.thomas.needham.neurophidea.Constants.MENU_ACTION
 import com.thomas.needham.neurophidea.Constants.WINDOW_MENU_ACTION
-import com.thomas.needham.neurophidea.designer.psi.DataSetFileType
+import com.thomas.needham.neurophidea.designer.psi.tset.TsetFileType
 import com.thomas.needham.neurophidea.designer.editor.nnet.NnetDecompiler
 import com.thomas.needham.neurophidea.designer.psi.nnet.NnetFileType
 import com.thomas.needham.neurophidea.designer.psi.snnet.SnnetFileType
@@ -60,7 +60,7 @@ class PluginRegistration : ApplicationComponent {
         println("Plugin Loaded")
         fileManager.registerFileType(NnetFileType(),*arrayOf("nnet"))
         fileManager.registerFileType(SnnetFileType(),*arrayOf("snnet"))
-        fileManager.registerFileType(DataSetFileType(),*arrayOf("tset"))
+        fileManager.registerFileType(TsetFileType(),*arrayOf("tset"))
         BinaryFileTypeDecompilers.INSTANCE.addExplicitExtension(fileManager.getFileTypeByExtension("nnet"), NnetDecompiler())
         actionManager.registerAction(INITIALISATION_ACTION, init)
         //actionManager.registerAction(MENU_ACTION,menu)

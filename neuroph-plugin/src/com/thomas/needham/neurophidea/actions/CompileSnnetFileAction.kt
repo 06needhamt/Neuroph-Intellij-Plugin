@@ -32,9 +32,10 @@ import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.Messages
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.util.PlatformIcons
-import com.thomas.needham.neurophidea.designer.psi.snnet.generator.SnnetGenerator
-import com.thomas.needham.neurophidea.designer.psi.snnet.lexer.SnnetLexer
-import com.thomas.needham.neurophidea.designer.psi.snnet.parser.SnnetParser
+import com.thomas.needham.neurophidea.Tuple3
+import com.thomas.needham.neurophidea.designer.psi.snnet.compiler.generator.SnnetGenerator
+import com.thomas.needham.neurophidea.designer.psi.snnet.compiler.lexer.SnnetLexer
+import com.thomas.needham.neurophidea.designer.psi.snnet.compiler.parser.SnnetParser
 import java.io.File
 
 /**
@@ -56,13 +57,25 @@ class CompileSnnetFileAction : AnAction() {
         val file = FileDocumentManager.getInstance().getFile(doc!!)
         val lexer = SnnetLexer(file)
         if(!lexer.Start()){
-            Messages.showErrorDialog(project, "Error Compiling File ${file?.path}", "Error")
+            Messages.showErrorDialog(project, "Error Lexing File ${file?.path}", "Error")
             return
         }
         val tokens = lexer.tokenList
         val parser = SnnetParser(tokens)
         if(!parser.Start()){
             Messages.showErrorDialog(project, "Error Parsing File ${file?.path}", "Error")
+            return
+        }
+        var failed = false
+        var names = ""
+        for(prop: Tuple3<*, *, *> in parser.properties.properties!!){
+            if(prop.valueZ == null){
+                failed = true
+                names += prop.valueY as String + ", "
+            }
+        }
+        if(failed){
+            Messages.showErrorDialog(project,"Error Compiling file ${file?.path} The following Properties are not set ${names}","ERROR")
             return
         }
         val path = file?.path?.substring(0,file.path.length - file.name.length) + "Compiled.conf"

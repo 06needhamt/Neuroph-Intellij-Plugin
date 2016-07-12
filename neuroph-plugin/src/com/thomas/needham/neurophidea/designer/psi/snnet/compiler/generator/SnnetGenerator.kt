@@ -21,7 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea.designer.psi.snnet.generator
+package com.thomas.needham.neurophidea.designer.psi.snnet.compiler.generator
 
 import com.intellij.openapi.ui.Messages
 import com.thomas.needham.neurophidea.Tuple3
@@ -30,7 +30,7 @@ import com.thomas.needham.neurophidea.datastructures.LearningRules
 import com.thomas.needham.neurophidea.datastructures.NetworkConfiguration
 import com.thomas.needham.neurophidea.datastructures.NetworkTypes
 import com.thomas.needham.neurophidea.datastructures.TransferFunctions
-import com.thomas.needham.neurophidea.designer.psi.snnet.parser.SnnetProperties
+import com.thomas.needham.neurophidea.designer.psi.snnet.compiler.parser.SnnetProperties
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.FileOutputStream

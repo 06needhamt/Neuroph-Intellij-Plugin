@@ -21,7 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea.designer.psi
+package com.thomas.needham.neurophidea.designer.psi.tset
 
 import com.intellij.openapi.fileTypes.FileType
 import com.intellij.openapi.util.IconLoader
@@ -32,17 +32,17 @@ import javax.swing.Icon
 /**
  * Created by thoma on 15/06/2016.
  */
-class DataSetFileType : FileType {
+class TsetFileType : FileType {
     override fun getIcon() : Icon? {
         return IconLoader.getTransparentIcon(IconLoader.getIcon("/icon2.png"))
     }
 
     override fun getName() : String {
-        return "Neural Network Training / Testing Set"
+        return "Neuroph Training / Testing Set"
     }
 
     override fun isBinary() : Boolean {
-        return false
+        return true
     }
 
     override fun isReadOnly() : Boolean {
@@ -50,7 +50,7 @@ class DataSetFileType : FileType {
     }
 
     override fun getDefaultExtension() : String {
-        return "csv"
+        return "tset"
     }
 
     override fun getCharset(p0 : VirtualFile, p1 : ByteArray) : String? {
@@ -58,7 +58,6 @@ class DataSetFileType : FileType {
     }
 
     override fun getDescription() : String {
-        return "Comma Separated Data Set Used For" +
-                "Training and Testing Neural Networks"
+        return "Data Set Used For Training and Testing Neural Networks"
     }
 }

@@ -21,12 +21,12 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea.designer.psi.snnet.parser
+package com.thomas.needham.neurophidea.designer.psi.snnet.compiler.parser
 
 import com.intellij.openapi.ui.Messages
 import com.thomas.needham.neurophidea.actions.CompileSnnetFileAction
-import com.thomas.needham.neurophidea.designer.psi.snnet.lexer.SnnetToken
-import com.thomas.needham.neurophidea.designer.psi.snnet.lexer.SnnetTokenType
+import com.thomas.needham.neurophidea.designer.psi.snnet.compiler.lexer.SnnetToken
+import com.thomas.needham.neurophidea.designer.psi.snnet.compiler.lexer.SnnetTokenType
 import java.util.*
 
 /**

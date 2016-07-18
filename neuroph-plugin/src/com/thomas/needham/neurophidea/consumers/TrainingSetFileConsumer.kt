@@ -27,7 +27,7 @@ import com.intellij.ide.util.PropertiesComponent
 import com.intellij.openapi.ui.Messages
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.util.Consumer
-import com.thomas.needham.neurophidea.Constants
+import com.thomas.needham.neurophidea.Constants.VERSION_KEY
 import com.thomas.needham.neurophidea.Constants.TRAINING_SET_LOCATION_KEY
 import com.thomas.needham.neurophidea.actions.ShowCreateNetworkFormAction
 import com.thomas.needham.neurophidea.forms.create.CreateTrainingSetBrowseButtonActionListener
@@ -42,7 +42,7 @@ class TrainingSetFileConsumer : Consumer<VirtualFile?> {
     }
     companion object Data{
         @JvmStatic var properties = PropertiesComponent.getInstance()
-        @JvmStatic var version = properties.getValue(Constants.VERSION_KEY)
+        @JvmStatic var version = properties.getValue(VERSION_KEY)
         @JvmStatic var path : String? = ""
     }
 

@@ -25,7 +25,6 @@ package com.thomas.needham.neurophidea.core
 
 import com.intellij.ide.util.PropertiesComponent
 import com.intellij.openapi.ui.Messages
-import com.thomas.needham.neurophidea.Constants
 import com.thomas.needham.neurophidea.Constants.NETWORK_TO_TRAIN_LOCATION_KEY
 import com.thomas.needham.neurophidea.actions.OpenExistingNetworkConfigurationAction
 import com.thomas.needham.neurophidea.datastructures.NetworkConfiguration

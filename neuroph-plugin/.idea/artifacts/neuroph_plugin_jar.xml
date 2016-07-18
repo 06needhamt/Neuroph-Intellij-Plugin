@@ -3,14 +3,124 @@
     <output-path>$PROJECT_DIR$/out/artifacts/neuroph_plugin_jar</output-path>
     <root id="archive" name="neuroph-plugin.jar">
       <element id="module-output" name="neuroph-plugin" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/lib/kotlin-runtime.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/lib/kotlin-reflect.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/KotlinMath.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/neuroph-2.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/kotlin-reflect.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/kotlin-runtime.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/JOCL-0.1.3a-beta.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/encog-engine-2.5.0.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/kotlin-runtime-sources.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/mysql-connector-java-5.1.17-bin.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/lib/KotlinMath.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.8.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.8.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/abeilleformbuilder-3.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ant-1.9.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ant-antlr-1.9.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ant-junit-1.9.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ant-launcher-1.9.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-anim-1.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-awt-util-1.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-bridge-1.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-codec-1.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-css-1.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-dom-1.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-ext-1.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-extension-1.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-gui-util-1.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-gvt-1.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-parser-1.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-script-1.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-svg-dom-1.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-svggen-1.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-swing-1.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-transcoder-1.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-util-1.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-xml-1.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/bsf-2.4.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/commons-cli-1.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/commons-logging-1.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/cssbuilder-1.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/cssparser-0.9.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/easyb-ast-1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/easyb-core-1.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/filters-2.0.235.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/flamingo-4.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/flamingobuilder-0.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/forms-1.2.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/formsrt-2.1.0M1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gant-1.9.11_groovy-2.3.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gfxbuilder-core-0.8.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gfxbuilder-svg-0.8.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gfxbuilder-swingx-0.8.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gmock-0.8.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gpars-1.2.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/grengine-1.0.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-2.4.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-ant-2.4.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-bsf-2.4.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-console-2.4.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-docgenerator-2.4.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-groovydoc-2.4.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-groovysh-2.4.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-jmx-2.4.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-json-2.4.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-jsr223-2.4.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-nio-2.4.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-servlet-2.4.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-sql-2.4.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-swing-2.4.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-templates-2.4.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-test-2.4.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-testng-2.4.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-xml-2.4.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovyserv-1.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/hamcrest-core-1.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ivy-2.4.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jacob-1.14.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jansi-1.11.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jcommander-1.47.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jcsp-1.1-rc5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jide-oss-3.4.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jidebuilder-6.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jline-2.12.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jna-4.1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jsilhouette-geom-0.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jsp-api-2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jsr166y-1.7.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/junit-4.12.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/macwidgetsbuilder-0.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/mac_widgets-0.9.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/multiverse-core-0.7.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/netty-all-4.0.27.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/qdox-1.12.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/sac-1.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-1.6.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-ie-6-tlb-1.6.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-office-2K3-tlb-1.6.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-sapi-tlb-1.6.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-scripting-tlb-1.6.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-wbem-tlb-1.6.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-wsh-tlb-1.6.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/servlet-api-2.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/spock-core-1.0-groovy-2.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/svg-salamander-1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swing-worker-1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-action-1.6.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-autocomplete-1.6.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-beaninfo-1.6.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-common-1.6.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-core-1.6.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-graphics-1.6.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-painters-1.6.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-plaf-1.6.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingxbuilder-0.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/testng-6.8.13.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/timingframework-1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/trident-7.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/tridentbuilder-0.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/xml-apis-ext-1.3.04.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/xmlpull-1.1.3.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/xstream-1.4.7.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

@@ -50,7 +50,7 @@ class SaveNetworkButtonActionListener : ActionListener {
         var outputDirectory = ""
         var configurationOutputPath = ""
         var networkFileOutputPath = ""
-        var codeFileOutputPath = ""
+        var javaCodeFileOutputPath = ""
     }
     override fun actionPerformed(e : ActionEvent?) {
         if(!CheckInput()){
@@ -67,7 +67,7 @@ class SaveNetworkButtonActionListener : ActionListener {
         outputDirectory = network?.networkOutputPath!!
         configurationOutputPath = outputDirectory + "/" + network?.networkName + ".conf"
         networkFileOutputPath = outputDirectory + "/" + network?.networkName + ".nnet"
-        codeFileOutputPath = outputDirectory + "/" + network?.networkName + ".java"
+        javaCodeFileOutputPath = outputDirectory + "/" + network?.networkName + ".java"
         if(!WriteNetworkToFile()){
             Messages.showErrorDialog(ShowCreateNetworkFormAction.project,"Error writing network configuration to file",
                     "Error")

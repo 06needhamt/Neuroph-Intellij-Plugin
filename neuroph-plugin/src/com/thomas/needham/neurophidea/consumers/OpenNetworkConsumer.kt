@@ -26,7 +26,6 @@ package com.thomas.needham.neurophidea.consumers
 import com.intellij.ide.util.PropertiesComponent
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.util.Consumer
-import com.thomas.needham.neurophidea.Constants
 import com.thomas.needham.neurophidea.Constants.VERSION_KEY
 import com.thomas.needham.neurophidea.Constants.NETWORK_TO_OPEN_LOCATION_KEY
 import com.thomas.needham.neurophidea.forms.create.CreateTrainingSetBrowseButtonActionListener
@@ -50,7 +49,7 @@ class OpenNetworkConsumer : Consumer<VirtualFile?> {
         for (ext : String in OpenNetworkBrowseButtonActionListener.allowedFileTypes) {
             if (p0?.extension?.equals(ext)!!) {
                 path = p0?.path
-                properties.setValue(Constants.NETWORK_TO_OPEN_LOCATION_KEY, path)
+                properties.setValue(NETWORK_TO_OPEN_LOCATION_KEY, path)
                 return
             }
         }

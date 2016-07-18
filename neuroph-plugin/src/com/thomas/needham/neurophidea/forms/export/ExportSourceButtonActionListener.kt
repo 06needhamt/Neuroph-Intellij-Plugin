@@ -26,11 +26,13 @@ package com.thomas.needham.neurophidea.forms.export
 import com.intellij.ide.util.PropertiesComponent
 import com.intellij.openapi.ui.Messages
 import com.intellij.util.PlatformIcons
-import com.thomas.needham.neurophidea.core.NetworkCodeGenerator
+import com.thomas.needham.neurophidea.core.JavaNetworkCodeGenerator
 import com.thomas.needham.neurophidea.datastructures.NetworkConfiguration
 import com.thomas.needham.neurophidea.Constants.NETWORK_TO_EXPORT_LOCATION_KEY
 import com.thomas.needham.neurophidea.Constants.SOURCE_TO_EXPORT_LOCATION_KEY
 import com.thomas.needham.neurophidea.actions.ShowExportNetworkFormAction
+import com.thomas.needham.neurophidea.core.GroovyNetworkCodeGenerator
+import com.thomas.needham.neurophidea.core.ICodeGenerator
 import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
 import java.io.BufferedWriter
@@ -48,13 +50,13 @@ import java.io.ObjectInputStream
 class ExportSourceButtonActionListener : ActionListener {
     var formInstance : ExportNetworkForm? = null
     var network : NetworkConfiguration? = null
-    var codeGenerator : NetworkCodeGenerator? = null
+    var codeGenerator : ICodeGenerator? = null
     companion object Data{
         val properties = PropertiesComponent.getInstance()
         var inputPath = ""
         var outputPath = ""
         val defaultPath = ""
-        val allowedFileTypes = arrayOf("java")
+        val allowedFileTypes = arrayOf("java", "groovy")
         val getNetwork : (String) -> NetworkConfiguration? = { path ->
             try {
                 val file = File(path)
@@ -96,13 +98,36 @@ class ExportSourceButtonActionListener : ActionListener {
         }
     }
     override fun actionPerformed(e : ActionEvent?) {
+        val language = formInstance?.cmbLanguage?.selectedItem as String
         inputPath = properties.getValue(NETWORK_TO_EXPORT_LOCATION_KEY,defaultPath)
         network = getNetwork(inputPath)
-        outputPath = properties.getValue(SOURCE_TO_EXPORT_LOCATION_KEY,defaultPath) + "/" + "${network?.networkName}.java"
-        codeGenerator = NetworkCodeGenerator(network, outputPath)
-        if(codeGenerator == null)
-            return
-        sourceCode = codeGenerator?.GenerateCode()!!
+        when(language){
+            "Java" -> {
+                outputPath = properties.getValue(SOURCE_TO_EXPORT_LOCATION_KEY,defaultPath) + "/" + "${network?.networkName}.java"
+                codeGenerator = JavaNetworkCodeGenerator(network, outputPath)
+                if(codeGenerator == null)
+                    return
+                sourceCode = (codeGenerator as JavaNetworkCodeGenerator).GenerateCode()
+            }
+            "Groovy" -> {
+                outputPath = properties.getValue(SOURCE_TO_EXPORT_LOCATION_KEY,defaultPath) + "/" + "${network?.networkName}.groovy"
+                codeGenerator = GroovyNetworkCodeGenerator(network, outputPath)
+                if(codeGenerator == null)
+                    return
+                sourceCode = (codeGenerator as GroovyNetworkCodeGenerator).GenerateCode()
+            }
+            "Kotlin" -> {
+                Messages.showErrorDialog(ShowExportNetworkFormAction.project,"Kotlin Code Generator Not Implemented Yet", "Not Implemented")
+                return
+            }
+            "Scala" -> {
+                Messages.showErrorDialog(ShowExportNetworkFormAction.project,"Scala Code Generator Not Implemented Yet", "Not Implemented")
+                return
+            }
+            else -> {
+                throw UnsupportedOperationException("Invalid Language Selected: ${language}")
+            }
+        }
         writeCode(sourceCode)
         Messages.showOkCancelDialog(ShowExportNetworkFormAction.project,"Source code successfully written to file", "Success", PlatformIcons.COPY_ICON)
     }

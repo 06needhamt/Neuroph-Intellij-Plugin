@@ -28,7 +28,7 @@ import com.intellij.openapi.fileChooser.FileChooser
 import com.intellij.openapi.fileChooser.FileChooserDescriptor
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.util.Consumer
-import com.thomas.needham.neurophidea.Constants
+import com.thomas.needham.neurophidea.Constants.SOURCE_TO_EXPORT_LOCATION_KEY
 import com.thomas.needham.neurophidea.actions.ShowExportNetworkFormAction
 import com.thomas.needham.neurophidea.consumers.ExportNetworkConsumer
 import com.thomas.needham.neurophidea.consumers.ExportSourceConsumer
@@ -42,16 +42,16 @@ class ExportSourceBrowseButtonActionListener : ActionListener {
     var formInstance : ExportNetworkForm? = null
     companion object Data{
         val defaultPath = ""
-        val allowedFileTypes = arrayOf("java")
+        val allowedFileTypes = arrayOf("java", "groovy")
         val fileDescriptor = FileChooserDescriptor(false, true, false, false, false, false)
         val consumer : ExportSourceConsumer? = ExportSourceConsumer()
         val properties = PropertiesComponent.getInstance()
         var chosenPath = ""
     }
     override fun actionPerformed(e : ActionEvent?) {
-        properties?.setValue(Constants.SOURCE_TO_EXPORT_LOCATION_KEY, defaultPath)
+        properties?.setValue(SOURCE_TO_EXPORT_LOCATION_KEY, defaultPath)
         FileChooser.chooseFile(fileDescriptor, ShowExportNetworkFormAction.project,null, consumer as Consumer<VirtualFile?>)
-        chosenPath = properties.getValue(Constants.SOURCE_TO_EXPORT_LOCATION_KEY, defaultPath)
+        chosenPath = properties.getValue(SOURCE_TO_EXPORT_LOCATION_KEY, defaultPath)
         formInstance?.txtSourceCodePath?.text = chosenPath
     }
 }

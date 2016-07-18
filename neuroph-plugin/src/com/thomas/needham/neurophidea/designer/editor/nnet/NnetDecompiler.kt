@@ -27,7 +27,7 @@ import com.intellij.openapi.fileTypes.BinaryFileDecompiler
 import com.intellij.openapi.ui.Messages
 import com.intellij.openapi.vfs.VirtualFile
 import com.thomas.needham.neurophidea.actions.InitialisationAction
-import com.thomas.needham.neurophidea.designer.editor.nnet.NnetViewer
+import com.thomas.needham.neurophidea.designer.editor.nnet.NnetLoader
 import org.neuroph.core.NeuralNetwork
 import org.neuroph.core.transfer.Gaussian
 import org.neuroph.core.transfer.Linear
@@ -67,13 +67,13 @@ import java.io.IOException
  * Created by thoma on 20/06/2016.
  */
 class NnetDecompiler : BinaryFileDecompiler {
-    var networkLoader : NnetViewer? = null
+    var networkLoader : NnetLoader? = null
     var network : NeuralNetwork? = null
 
     override fun decompile(p0 : VirtualFile?) : CharSequence {
         try {
             if (p0?.isValid!!) {
-                networkLoader = NnetViewer(p0)
+                networkLoader = NnetLoader(p0)
                 network = networkLoader?.LoadNetwork()
                 if(network == null)
                     throw IOException("Error Loading Network From File: ${p0?.path}")

@@ -154,5 +154,6 @@ class SnnetEditorComponent : JBLoadingPanel, DataProvider {
 
     private fun updateStatusBar() {
         val statusBar : StatusBarEx? = WindowManager.getInstance().getStatusBar(project) as StatusBarEx
+        statusBar?.updateWidgets()
     }
 }

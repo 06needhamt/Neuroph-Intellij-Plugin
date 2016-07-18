@@ -21,39 +21,41 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea.consumers
+package com.thomas.needham.neurophidea.designer.editor.nnet
 
-import com.intellij.ide.util.PropertiesComponent
 import com.intellij.openapi.ui.Messages
 import com.intellij.openapi.vfs.VirtualFile
-import com.intellij.util.Consumer
-import com.thomas.needham.neurophidea.Constants.VERSION_KEY
-import com.thomas.needham.neurophidea.Constants.TRAINING_SET_LOCATION_KEY
-import com.thomas.needham.neurophidea.actions.ShowCreateNetworkFormAction
-import com.thomas.needham.neurophidea.forms.create.CreateTrainingSetBrowseButtonActionListener
+import com.thomas.needham.neurophidea.actions.InitialisationAction
+import org.neuroph.core.NeuralNetwork
+import java.io.File
+import java.io.FileInputStream
+import java.io.FileNotFoundException
+import java.io.IOException
+import java.io.ObjectInputStream
 
 /**
- * Created by Thomas Needham on 26/05/2016.
+ * Created by Thomas Needham on 09/06/2016.
  */
-class TrainingSetFileConsumer : Consumer<VirtualFile?> {
-
-    constructor(){
-
+class NnetLoader {
+    val file : VirtualFile?
+    constructor(file: VirtualFile?){
+        this.file = file
     }
-    companion object Data{
-        @JvmStatic var properties = PropertiesComponent.getInstance()
-        @JvmStatic var version = properties.getValue(VERSION_KEY)
-        @JvmStatic var path : String? = ""
-    }
-
-    override fun consume(p0 : VirtualFile?) {
-        for(ext : String in CreateTrainingSetBrowseButtonActionListener.allowedFileTypes){
-            if(p0?.extension?.equals(ext)!!){
-                path = p0?.path
-                properties.setValue(TRAINING_SET_LOCATION_KEY, path)
-                return
-            }
+    fun LoadNetwork() : NeuralNetwork?{
+        try {
+            val f = File(file?.path)
+            val fis : FileInputStream? = f.inputStream()
+            val ois : ObjectInputStream? = ObjectInputStream(fis)
+            return ois?.readObject() as NeuralNetwork?
         }
-        Messages.showErrorDialog(ShowCreateNetworkFormAction.project,"Invalid training data selected","Error")
+        catch(ioe: IOException){
+            ioe.printStackTrace(System.err)
+            Messages.showErrorDialog(InitialisationAction.project,"Error Loading Network From File", "Error")
+        }
+        catch(fnfe: FileNotFoundException){
+            fnfe.printStackTrace(System.err)
+            Messages.showErrorDialog(InitialisationAction.project,"No network found in file: ${file?.path}","Error")
+        }
+        return null
     }
 }

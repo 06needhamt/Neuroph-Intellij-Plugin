@@ -42,7 +42,7 @@ class ExportNetworkBrowseButtonActionListener : ActionListener {
     var formInstance : ExportNetworkForm? = null
     companion object Data{
         val defaultPath = ""
-        val allowedFileTypes = arrayOf("conf","nnet")
+        val allowedFileTypes = arrayOf("conf")
         val fileDescriptor = FileChooserDescriptor(true, false, false, false, false, false)
         val consumer : ExportNetworkConsumer? = ExportNetworkConsumer()
         val properties = PropertiesComponent.getInstance()

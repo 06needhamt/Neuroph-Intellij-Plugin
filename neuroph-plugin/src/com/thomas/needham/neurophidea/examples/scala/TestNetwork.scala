@@ -36,10 +36,9 @@ import org.neuroph.util.TransferFunctionType
 
 import org.neuroph.nnet.MultiLayerPerceptron
 import org.neuroph.nnet.learning.BackPropagation
-import org.neuroph.core.transfer.Sigmoid
+import org.neuroph.core.transfer.Gaussian
 
-
-object TrainTest {
+object TestNetwork {
   var inputSize: Int = 8
   var outputSize: Int = 1
   var network: NeuralNetwork = _

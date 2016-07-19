@@ -33,6 +33,7 @@ import com.thomas.needham.neurophidea.Constants.SOURCE_TO_EXPORT_LOCATION_KEY
 import com.thomas.needham.neurophidea.actions.ShowExportNetworkFormAction
 import com.thomas.needham.neurophidea.core.GroovyNetworkCodeGenerator
 import com.thomas.needham.neurophidea.core.ICodeGenerator
+import com.thomas.needham.neurophidea.core.ScalaNetworkCodeGenerator
 import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
 import java.io.BufferedWriter
@@ -105,15 +106,13 @@ class ExportSourceButtonActionListener : ActionListener {
             "Java" -> {
                 outputPath = properties.getValue(SOURCE_TO_EXPORT_LOCATION_KEY,defaultPath) + "/" + "${network?.networkName}.java"
                 codeGenerator = JavaNetworkCodeGenerator(network, outputPath)
-                if(codeGenerator == null)
-                    return
+                if(codeGenerator == null) return
                 sourceCode = (codeGenerator as JavaNetworkCodeGenerator).GenerateCode()
             }
             "Groovy" -> {
                 outputPath = properties.getValue(SOURCE_TO_EXPORT_LOCATION_KEY,defaultPath) + "/" + "${network?.networkName}.groovy"
                 codeGenerator = GroovyNetworkCodeGenerator(network, outputPath)
-                if(codeGenerator == null)
-                    return
+                if(codeGenerator == null) return
                 sourceCode = (codeGenerator as GroovyNetworkCodeGenerator).GenerateCode()
             }
             "Kotlin" -> {
@@ -121,8 +120,10 @@ class ExportSourceButtonActionListener : ActionListener {
                 return
             }
             "Scala" -> {
-                Messages.showErrorDialog(ShowExportNetworkFormAction.project,"Scala Code Generator Not Implemented Yet", "Not Implemented")
-                return
+                outputPath = properties.getValue(SOURCE_TO_EXPORT_LOCATION_KEY, defaultPath) + "/" + "${network?.networkName}.scala"
+                codeGenerator = ScalaNetworkCodeGenerator(network, outputPath)
+                if(codeGenerator == null) return
+                sourceCode = (codeGenerator as ScalaNetworkCodeGenerator).GenerateCode()
             }
             else -> {
                 throw UnsupportedOperationException("Invalid Language Selected: ${language}")

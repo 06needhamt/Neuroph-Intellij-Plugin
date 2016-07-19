@@ -21,7 +21,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 package com.thomas.needham.neurophidea.examples.scala
-
 import java.io.BufferedReader
 import java.io.BufferedWriter
 import java.io.File
@@ -37,7 +36,6 @@ import org.neuroph.util.TransferFunctionType
 import org.neuroph.nnet.MultiLayerPerceptron
 import org.neuroph.nnet.learning.BackPropagation
 import org.neuroph.core.transfer.Sigmoid
-
 
 object TrainTest {
   var inputSize: Int = 8
@@ -58,43 +56,38 @@ object TrainTest {
     }
     val network = new MultiLayerPerceptron(list, TransferFunctionType.SIGMOID)
     trainingSet = new TrainingSet[SupervisedTrainingElement](inputSize, outputSize)
-    trainingSet = TrainingSet.createFromFile("D:/GitHub/NeuralNetworkTest/Classroom Occupation Data.csv",
-      inputSize, outputSize, ",").asInstanceOf[TrainingSet[SupervisedTrainingElement]]
-    val learningRule = new BackPropagation()
-    network.setLearningRule(learningRule)
-    network.learn(trainingSet)
-    network.save("D:/GitHub/Neuroph-Intellij-Plugin/TrainTest.nnet")
-  }
+    trainingSet = TrainingSet.createFromFile("D:/GitHub/NeuralNetworkTest/Classroom Occupation Data.csv", inputSize, outputSize, ",").asInstanceOf[TrainingSet[SupervisedTrainingElement]]
 
-  def testNetwork() {
-    var input = ""
-    val fromKeyboard = new BufferedReader(new InputStreamReader(System.in))
-    val testValues = new util.ArrayList[Double]()
-    var testValuesDouble: Array[Double] = null
-    do {
-      try {
-        println("Enter test values or \"\": ")
-        input = fromKeyboard.readLine()
-        if (input == "") {
-          //break
+    def testNetwork() {
+      var input = ""
+      val fromKeyboard = new BufferedReader(new InputStreamReader(System.in))
+      val testValues = new util.ArrayList[Double]()
+      var testValuesDouble: Array[Double] = null
+      do {
+        try {
+          println("Enter test values or \"\": ")
+          input = fromKeyboard.readLine()
+          if (input == "") {
+            //break
+          }
+          input = input.replace(" ", "")
+          val stringVals = input.split(",")
+          testValues.clear()
+          for (value <- stringVals) {
+            testValues.add(value.toDouble)
+          }
+        } catch {
+          case ioe: IOException => ioe.printStackTrace(System.err)
+          case nfe: NumberFormatException => nfe.printStackTrace(System.err)
         }
-        input = input.replace(" ", "")
-        val stringVals = input.split(",")
-        testValues.clear()
-        for (value <- stringVals) {
-          testValues.add(value.toDouble)
+        testValuesDouble = Array.ofDim[Double](testValues.size)
+        for (t <- testValuesDouble.indices) {
+          testValuesDouble(t) = testValues.get(t).doubleValue()
         }
-      } catch {
-        case ioe: IOException => ioe.printStackTrace(System.err)
-        case nfe: NumberFormatException => nfe.printStackTrace(System.err)
-      }
-      testValuesDouble = Array.ofDim[Double](testValues.size)
-      for (t <- testValuesDouble.indices) {
-        testValuesDouble(t) = testValues.get(t).doubleValue()
-      }
-      network.setInput(testValuesDouble: _*)
-      network.calculate()
-    } while (input != "")
+        network.setInput(testValuesDouble: _*)
+        network.calculate()
+      } while (input != "")
+    }
   }
 
   def testNetworkAuto(setPath: String) {

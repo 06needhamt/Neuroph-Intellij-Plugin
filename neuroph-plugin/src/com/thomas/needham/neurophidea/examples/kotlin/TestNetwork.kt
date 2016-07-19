@@ -37,9 +37,9 @@ import org.neuroph.util.TransferFunctionType
 
 import org.neuroph.nnet.MultiLayerPerceptron
 import org.neuroph.nnet.learning.BackPropagation
-import org.neuroph.core.transfer.Sigmoid
+import org.neuroph.core.transfer.Gaussian
 
-object TrainTest {
+object TestNetwork {
     @JvmStatic var inputSize = 8
     @JvmStatic var outputSize = 1
     @JvmStatic var network : NeuralNetwork? = null
@@ -48,7 +48,7 @@ object TrainTest {
     @JvmStatic var layers = arrayOf(8, 8, 1)
 
     @JvmStatic fun loadNetwork() {
-        network = NeuralNetwork.load("D:/GitHub/Neuroph-Intellij-Plugin/TrainTest.nnet")
+        network = NeuralNetwork.load("D:/GitHub/Neuroph-Intellij-Plugin/TestNetwork.nnet")
     }
 
     @JvmStatic fun trainNetwork() {
@@ -57,13 +57,13 @@ object TrainTest {
             list.add(layer)
         }
 
-        val network = MultiLayerPerceptron(list, TransferFunctionType.SIGMOID);
+        val network = MultiLayerPerceptron(list, TransferFunctionType.GAUSSIAN);
         trainingSet = TrainingSet<SupervisedTrainingElement>(inputSize, outputSize)
         trainingSet = TrainingSet.createFromFile("D:/GitHub/NeuralNetworkTest/Classroom Occupation Data.csv", inputSize, outputSize, ",") as TrainingSet<SupervisedTrainingElement>?
         val learningRule = BackPropagation()
         network.learningRule = learningRule
         network.learn(trainingSet)
-        network.save("D:/GitHub/Neuroph-Intellij-Plugin/TrainTest.nnet")
+        network.save("D:/GitHub/Neuroph-Intellij-Plugin/TestNetwork.nnet")
     }
 
     @JvmStatic fun testNetwork() {

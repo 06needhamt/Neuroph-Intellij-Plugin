@@ -23,19 +23,17 @@ SOFTWARE.
 package com.thomas.needham.neurophidea.core
 
 import com.intellij.ide.util.PropertiesComponent
-import com.thomas.needham.neurophidea.Constants
+import com.thomas.needham.neurophidea.Constants.VERSION_KEY
 import com.thomas.needham.neurophidea.datastructures.LearningRules
 import com.thomas.needham.neurophidea.datastructures.NetworkConfiguration
 import com.thomas.needham.neurophidea.datastructures.NetworkTypes
 import com.thomas.needham.neurophidea.datastructures.TransferFunctions
 import org.jetbrains.annotations.NotNull
-import org.neuroph.core.NeuralNetwork
-import org.neuroph.core.learning.TrainingSet
 
 /**
- * Created by thoma on 18/07/2016.
+ * Created by Thomas Needham on 19/07/2016.
  */
-class ScalaNetworkCodeGenerator : ICodeGenerator {
+class KotlinNetworkCodeGenerator : ICodeGenerator {
     val network : NetworkConfiguration?
     val outputPath : String
     var sourceOutput : String = ""
@@ -43,7 +41,7 @@ class ScalaNetworkCodeGenerator : ICodeGenerator {
 
     companion object Data{
         @JvmStatic var properties = PropertiesComponent.getInstance()
-        @JvmStatic var version = properties.getValue(Constants.VERSION_KEY)
+        @JvmStatic var version = properties.getValue(VERSION_KEY)
         @JvmStatic var path : String? = ""
         val coreImports = "import java.io.BufferedReader" + "\n" +
                 "import java.io.BufferedWriter" + "\n" +
@@ -51,12 +49,13 @@ class ScalaNetworkCodeGenerator : ICodeGenerator {
                 "import java.io.FileWriter" + "\n" +
                 "import java.io.IOException" + "\n" +
                 "import java.io.InputStreamReader" + "\n" +
-                "import java.util" + "\n" +
+                "import java.util.ArrayList" + "\n" +
+                "import java.util.logging.Level" + "\n" +
+                "import java.util.logging.Logger" + "\n" +
                 "import org.neuroph.core.NeuralNetwork" + "\n" +
                 "import org.neuroph.core.learning.SupervisedTrainingElement" + "\n" +
                 "import org.neuroph.core.learning.TrainingSet" + "\n" +
                 "import org.neuroph.util.TransferFunctionType" + "\n" + "\n"
-
         val getLayersString : (Array<Int>) -> String = { layers -> //Use Some Kotlin Sorcery to convert Array<Int> to comma delimited string
             var result = ""
             for(i in IntRange(0,layers.size - 1)) {
@@ -105,124 +104,130 @@ class ScalaNetworkCodeGenerator : ICodeGenerator {
     }
 
     private fun DefineTestNetworkAuto() : String {
-        val testNetworkAuto = "def testNetworkAuto(setPath: String) { \n" +
+        val testNetworkAuto = "@JvmStatic fun testNetworkAuto(setPath : String) { \n" +
                 "var total : Double = 0.0 \n" +
-                "val list = new util.ArrayList[Integer]() \n" +
-                "val outputLine = new util.ArrayList[String]() \n" +
-                "for (layer <- layers) { \n" +
+                "val list = ArrayList<Int>() \n" +
+                "val outputLine = ArrayList<String>() \n" +
+                "for (layer in layers) { \n" +
                 "list.add(layer) \n" +
                 "} \n" +
-                "testingSet = TrainingSet.createFromFile(setPath, inputSize, outputSize, \",\").asInstanceOf[TrainingSet[SupervisedTrainingElement]] \n" +
-                "val count = testingSet.elements().size \n" +
+                "\n" +
+                "testingSet = TrainingSet.createFromFile(setPath, inputSize, outputSize, \",\") as TrainingSet<SupervisedTrainingElement>? \n" +
+                "val count : Int = testingSet?.elements()?.size!! \n" +
                 "var averageDeviance = 0.0 \n" +
                 "var resultString = \"\" \n" +
                 "try { \n" +
-                "val file = new File(\"Results \" + setPath) \n" +
-                "val fw = new FileWriter(file) \n" +
-                "val bw = new BufferedWriter(fw) \n" +
-                "for (i <- 0 until testingSet.elements().size) { \n" +
-                "var expected: Double = 0.0 \n" +
-                "var calculated: Double = 0.0 \n" +
-                "network.setInput(testingSet.elementAt(i).getInput:_*) \n" +
-                "network.calculate() \n" +
-                "calculated = network.getOutput()(0) \n" +
-                "expected = testingSet.elementAt(i).getIdealArray()(0) \n" +
+                "val file = File(\"Results \" + setPath) \n" +
+                "val fw = FileWriter(file) \n" +
+                "val bw = BufferedWriter(fw) \n" +
+                "\n" +
+                "for (i in 0..testingSet?.elements()?.size!! - 1) { \n" +
+                "val expected : Double \n" +
+                "val calculated : Double \n" +
+                "network?.setInput(*testingSet?.elementAt(i)!!.input) \n" +
+                "network?.calculate() \n" +
+                "calculated = network?.output!![0] \n" +
+                "expected = testingSet?.elementAt(i)?.idealArray!![0] \n" +
                 "println(\"Calculated Output: \" + calculated) \n" +
                 "println(\"Expected Output: \" + expected) \n" +
                 "println(\"Deviance: \" + (calculated - expected)) \n" +
-                "averageDeviance += math.abs(math.abs(calculated) - math.abs(expected)) \n" +
-                "total += network.getOutput()(0) \n" +
+                "averageDeviance += Math.abs(Math.abs(calculated) - Math.abs(expected)) \n" +
+                "total += network?.output!![0] \n" +
                 "resultString = \"\" \n" +
-                "for (cols <- testingSet.elementAt(i).getInputArray.indices) { \n " +
-                "resultString += testingSet.elementAt(i).getInputArray()(cols) + \", \" \n" +
+                "for (cols in 0..testingSet?.elementAt(i)?.inputArray?.size!! - 1) { \n" +
+                "resultString += testingSet?.elementAt(i)?.inputArray!![cols].toString() + \", \" \n" +
                 "} \n" +
-                "for (t <- network.getOutput.indices) { \n" +
-                "resultString += network.getOutput()(t) + \", \" \n" +
+                "for (t in 0..network?.output!!.size - 1) { \n" +
+                "resultString += network?.output!![t].toString() + \", \" \n" +
                 "} \n" +
                 "resultString = resultString.substring(0, resultString.length - 2) \n" +
                 "resultString += \"\" \n" +
                 "bw.write(resultString) \n" +
                 "bw.flush() \n" +
-                "} \n" +
+                " \n" +
                 "println() \n" +
-                "println(\"Average: \" + total / count) \n" +
-                "println(\"Average Deviance % : \" + (averageDeviance / count) * 100) \n" +
+                "println(\"Average: \" + (total / count).toString()) \n" +
+                "println(\"Average Deviance % : \" + (averageDeviance / count * 100).toString()) \n" +
                 "bw.flush() \n" +
                 "bw.close() \n" +
-                "} catch { \n" +
-                "case ex: IOException => ex.printStackTrace() \n" +
                 "} \n" +
-                "} \n"
+                "} catch (ex : IOException) { \n" +
+                "ex.printStackTrace() \n" +
+                "} \n" +
+                "\n" +
+                "}"
         return testNetworkAuto
     }
 
     private fun DefineTestNetwork() : String {
-        val testNetwork = "def testNetwork() { \n" +
-                "var input = \"\"\n" +
-                "val fromKeyboard = new BufferedReader(new InputStreamReader(System.in)) \n" +
-                "val testValues = new util.ArrayList[Double]() \n" +
-                "var testValuesDouble: Array[Double] = null \n" +
+        val testNetwork = "@JvmStatic fun testNetwork() { \n" +
+                "var input = \"\" \n" +
+                "val fromKeyboard = BufferedReader(InputStreamReader(System.`in`)) \n" +
+                "val testValues = ArrayList<Double>() \n" +
+                "var testValuesDouble : DoubleArray \n" +
                 "do { \n" +
                 "try { \n" +
                 "println(\"Enter test values or \\\"\\\": \") \n" +
                 "input = fromKeyboard.readLine() \n" +
                 "if (input == \"\") { \n" +
-                "//break \n" +
+                "break \n" +
                 "} \n" +
                 "input = input.replace(\" \", \"\") \n" +
-                "val stringVals = input.split(\",\") \n" +
+                "val stringVals = input.split(\",\".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray() \n" +
                 "testValues.clear() \n" +
-                "for (value <- stringVals) { \n" +
-                "testValues.add(value.toDouble) \n" +
-                "}\n" +
-                "} catch { \n" +
-                "case ioe: IOException => ioe.printStackTrace(System.err) \n" +
-                "case nfe: NumberFormatException => nfe.printStackTrace(System.err) \n" +
+                "for (`val` in stringVals) { \n" +
+                "testValues.add(java.lang.Double.parseDouble(`val`)) \n" +
                 "} \n" +
-                "testValuesDouble = Array.ofDim[Double](testValues.size) \n" +
-                "for (t <- testValuesDouble.indices) { \n" +
-                "testValuesDouble(t) = testValues.get(t).doubleValue() \n" +
+                "} catch (ioe : IOException) { \n" +
+                "ioe.printStackTrace(System.err) \n" +
+                "} catch (nfe : NumberFormatException) { \n" +
+                "nfe.printStackTrace(System.err) \n" +
                 "} \n" +
-                "network.setInput(testValuesDouble:_*) \n" +
-                "network.calculate() \n" +
+                " \n" +
+                "testValuesDouble = DoubleArray(testValues.size) \n" +
+                "for (t in testValuesDouble.indices) { \n" +
+                "testValuesDouble[t] = testValues[t].toDouble() \n" +
+                "} \n" +
+                "network?.setInput(*testValuesDouble) \n" +
+                "network?.calculate() \n" +
                 "} while (input != \"\") \n" +
-                "} \n" +
-                "} \n"
+                "}"
         return testNetwork
     }
 
     private fun DefineTrainNetwork() : String {
-        val trainNetwork = "def trainNetwork() {\n" +
-                "val list = new util.ArrayList[Integer]()\n" +
-                "for (layer <- layers) {\n" +
-                "list.add(layer)\n" +
-                "}\n" +
-                "val network = new ${NetworkTypes.GetClassName(network?.networkType!!)}" +
-                "(list, TransferFunctionType.${network?.networkTransferFunction?.name})" + "\n" +
-                "trainingSet = new TrainingSet[SupervisedTrainingElement](inputSize, outputSize)\n" +
-                "trainingSet = TrainingSet.createFromFile(\"${network?.networkTrainingDataPath}\", inputSize, outputSize, \",\").asInstanceOf[TrainingSet[SupervisedTrainingElement]]\n"
-                "val learningRule = new ${LearningRules.GetClassName(network?.networkLearningRule!!)}()\n" +
-                "network.setLearningRule(learningRule)\n" +
-                "network.learn(trainingSet)\n" +
-                "network.save(\"${network?.networkOutputPath}" + "/" + "${network?.networkName}" + ".nnet\")" + "\n" +
-                "}" + "\n" +
-                "}" + "\n"
+        val trainNetwork = "@JvmStatic fun trainNetwork() { \n" +
+                "val list = ArrayList<Int>() \n" +
+                "for (layer in layers) { \n" +
+                "list.add(layer) \n" +
+                "} \n" +
+                " \n" +
+                "val network = ${NetworkTypes.GetClassName(network?.networkType!!)}" +
+                "(list, TransferFunctionType.${network?.networkTransferFunction?.name});" + "\n" +
+                "trainingSet = TrainingSet<SupervisedTrainingElement>(inputSize, outputSize) \n" +
+                "trainingSet = TrainingSet.createFromFile(\"${network?.networkTrainingDataPath}\", inputSize, outputSize, \",\") as TrainingSet<SupervisedTrainingElement>?" + "\n" +
+                "val learningRule = ${LearningRules.GetClassName(network?.networkLearningRule!!)}() \n" +
+                "network.learningRule = learningRule \n" +
+                "network.learn(trainingSet) \n" +
+                "network.save(\"${network?.networkOutputPath}" + "/" + "${network?.networkName}" + ".nnet\") \n" +
+                "}"
         return trainNetwork
     }
 
     private fun DefineLoadNetwork() : String {
-        val loadNetwork = "def loadNetwork() { \n " +
-                "network = NeuralNetwork.load(\"${network?.networkOutputPath + "/" + network?.networkName + ".nnet"}\")" + "\n" +                "}"
+        val loadNetwork = "@JvmStatic fun loadNetwork() { " + "\n" +
+                "network = NeuralNetwork.load(\"${network?.networkOutputPath + "/" + network?.networkName + ".nnet"}\")" + "\n" +
+                "}" + "\n"
         return loadNetwork
     }
 
     private fun DefineGlobalVariables() : String {
-        val variables = "  var inputSize : Int = ${network?.networkLayers?.first()} " +
-                "\n  var outputSize : Int = ${network?.networkLayers?.last()}" +
-                "\n  var network : NeuralNetwork = _" +
-                "\n  var trainingSet : TrainingSet[SupervisedTrainingElement] = _" +
-                "\n  var testingSet : TrainingSet[SupervisedTrainingElement] = _" +
-                "\n  var layers : Array[Int] = Array(${getLayersString(network?.networkLayers!!)})"
+        val variables = "@JvmStatic var inputSize = ${network?.networkLayers?.first()}" + "\n" +
+                "@JvmStatic var outputSize = ${network?.networkLayers?.last()}" + "\n" +
+                "@JvmStatic var network : NeuralNetwork? = null" + "\n" +
+                "@JvmStatic var trainingSet : TrainingSet<SupervisedTrainingElement>? = null" + "\n" +
+                "@JvmStatic var testingSet : TrainingSet<SupervisedTrainingElement>? = null" + "\n" +
+                "@JvmStatic var layers = arrayOf(${getLayersString(network?.networkLayers!!)})" + "\n"
         return variables
     }
 

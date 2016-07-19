@@ -33,6 +33,7 @@ import com.thomas.needham.neurophidea.Constants.SOURCE_TO_EXPORT_LOCATION_KEY
 import com.thomas.needham.neurophidea.actions.ShowExportNetworkFormAction
 import com.thomas.needham.neurophidea.core.GroovyNetworkCodeGenerator
 import com.thomas.needham.neurophidea.core.ICodeGenerator
+import com.thomas.needham.neurophidea.core.KotlinNetworkCodeGenerator
 import com.thomas.needham.neurophidea.core.ScalaNetworkCodeGenerator
 import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
@@ -116,8 +117,10 @@ class ExportSourceButtonActionListener : ActionListener {
                 sourceCode = (codeGenerator as GroovyNetworkCodeGenerator).GenerateCode()
             }
             "Kotlin" -> {
-                Messages.showErrorDialog(ShowExportNetworkFormAction.project,"Kotlin Code Generator Not Implemented Yet", "Not Implemented")
-                return
+                outputPath = properties.getValue(SOURCE_TO_EXPORT_LOCATION_KEY,defaultPath) + "/" + "${network?.networkName}.kt"
+                codeGenerator = KotlinNetworkCodeGenerator(network, outputPath)
+                if(codeGenerator == null) return
+                sourceCode = (codeGenerator as KotlinNetworkCodeGenerator).GenerateCode()
             }
             "Scala" -> {
                 outputPath = properties.getValue(SOURCE_TO_EXPORT_LOCATION_KEY, defaultPath) + "/" + "${network?.networkName}.scala"

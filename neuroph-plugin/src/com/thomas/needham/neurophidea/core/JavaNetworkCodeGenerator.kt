@@ -296,7 +296,7 @@ class JavaNetworkCodeGenerator : ICodeGenerator {
             NetworkTypes.Types.INSTAR -> imports += "import org.neuroph.nnet.Instar;" + "\n"
             NetworkTypes.Types.KOHONEN -> imports += "import org.neuroph.nnet.Kohonen;" + "\n"
             NetworkTypes.Types.MAX_NET -> imports += "import org.neuroph.nnet.MaxNet;" + "\n"
-            NetworkTypes.Types.NEUROPH -> imports += "import org.neuroph.nnet.Neuroph;" + "\n"
+            NetworkTypes.Types.NEUROPH -> imports += "import org.neuroph.nnet.Perceptron;" + "\n"
             NetworkTypes.Types.NEURO_FUZZY_PERCEPTRON -> imports += "import org.neuroph.nnet.NeuroFuzzyPerceptron;" + "\n"
             NetworkTypes.Types.OUTSTAR -> imports += "import org.neuroph.nnet.Outstar;" + "\n"
             NetworkTypes.Types.RBF_NETWORK -> imports += "import org.neuroph.nnet.RbfNetwork;" + "\n"

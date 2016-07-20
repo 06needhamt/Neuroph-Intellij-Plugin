@@ -1,3 +1,25 @@
+/* The MIT License (MIT)
+
+Copyright (c) 2016 Tom Needham
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
 package com.thomas.needham.neurophidea.examples.groovy
 
 import org.neuroph.core.NeuralNetwork;
@@ -5,12 +27,12 @@ import org.neuroph.core.learning.SupervisedTrainingElement;
 import org.neuroph.core.learning.TrainingSet;
 import org.neuroph.util.TransferFunctionType;
 
-import org.neuroph.nnet.MultiLayerPerceptron;
+import org.neuroph.nnet.Hopfield;
 import org.neuroph.nnet.learning.BackPropagation;
 import org.neuroph.core.transfer.Sigmoid;
 
 
-public class TrainTest {
+public class TestHopfield {
     static int inputSize = 8;
     static int outputSize = 1;
     static NeuralNetwork network;
@@ -19,7 +41,7 @@ public class TrainTest {
     static int[] layers = [8, 8, 1];
 
     static void loadNetwork() {
-        network = NeuralNetwork.load("D:/GitHub/Neuroph-Intellij-Plugin/TrainTest.nnet");
+        network = NeuralNetwork.load("D:/GitHub/Neuroph-Intellij-Plugin/TestHopfield.nnet");
     }
 
     static void trainNetwork() {
@@ -28,13 +50,13 @@ public class TrainTest {
             list.add(layer);
         }
 
-        network = new MultiLayerPerceptron(list, TransferFunctionType.SIGMOID);
+        network = new Hopfield(inputSize + outputSize);
         trainingSet = new TrainingSet<SupervisedTrainingElement>(inputSize, outputSize);
         trainingSet = TrainingSet.createFromFile("D:/GitHub/NeuralNetworkTest/Classroom Occupation Data.csv", inputSize, outputSize, ",");
         BackPropagation learningRule = new BackPropagation();
         network.setLearningRule(learningRule);
         network.learn(trainingSet);
-        network.save("D:/GitHub/Neuroph-Intellij-Plugin/TrainTest.nnet");
+        network.save("D:/GitHub/Neuroph-Intellij-Plugin/TestHopfield.nnet");
     }
 
     static void testNetwork() {
@@ -135,5 +157,6 @@ public class TrainTest {
             }
         }
     }
+
 }
 

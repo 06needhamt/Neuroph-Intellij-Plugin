@@ -1,4 +1,5 @@
-/* The MIT License (MIT)
+/*
+The MIT License (MIT)
 
 Copyright (c) 2016 Tom Needham
 
@@ -19,28 +20,38 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-*/
-package com.thomas.needham.neurophidea.examples.groovy
+ */
+package com.thomas.needham.neurophidea.examples.java;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.neuroph.core.NeuralNetwork;
 import org.neuroph.core.learning.SupervisedTrainingElement;
 import org.neuroph.core.learning.TrainingSet;
 import org.neuroph.util.TransferFunctionType;
 
-import org.neuroph.nnet.MultiLayerPerceptron;
+import org.neuroph.nnet.CompetitiveNetwork;
 import org.neuroph.nnet.learning.BackPropagation;
-import org.neuroph.core.transfer.Gaussian;
+import org.neuroph.core.transfer.Sigmoid;
 
-public class TestNetwork {
+
+public class TestCompetitive {
     static int inputSize = 8;
     static int outputSize = 1;
     static NeuralNetwork network;
     static TrainingSet<SupervisedTrainingElement> trainingSet;
     static TrainingSet<SupervisedTrainingElement> testingSet;
-    static int[] layers = [8, 8, 1];
+    static int[] layers = {8, 8, 1};
 
     static void loadNetwork() {
-        network = NeuralNetwork.load("D:/GitHub/Neuroph-Intellij-Plugin/TestNetwork.nnet");
+        network = NeuralNetwork.load("D:/GitHub/Neuroph-Intellij-Plugin/TestCompetitive.nnet");
     }
 
     static void trainNetwork() {
@@ -49,13 +60,13 @@ public class TestNetwork {
             list.add(layer);
         }
 
-        network = new MultiLayerPerceptron(list, TransferFunctionType.GAUSSIAN);
+        network = new CompetitiveNetwork(inputSize, outputSize);
         trainingSet = new TrainingSet<SupervisedTrainingElement>(inputSize, outputSize);
         trainingSet = TrainingSet.createFromFile("D:/GitHub/NeuralNetworkTest/Classroom Occupation Data.csv", inputSize, outputSize, ",");
         BackPropagation learningRule = new BackPropagation();
         network.setLearningRule(learningRule);
         network.learn(trainingSet);
-        network.save("D:/GitHub/Neuroph-Intellij-Plugin/TestNetwork.nnet");
+        network.save("D:/GitHub/Neuroph-Intellij-Plugin/TestCompetitive.nnet");
     }
 
     static void testNetwork() {
@@ -63,12 +74,12 @@ public class TestNetwork {
         BufferedReader fromKeyboard = new BufferedReader(new InputStreamReader(System.in));
         ArrayList<Double> testValues = new ArrayList<Double>();
         double[] testValuesDouble;
-        Looper.loop {
+        do {
             try {
                 System.out.println("Enter test values or \"\": ");
                 input = fromKeyboard.readLine();
-                if (input == "") {
-                    return;
+                if (input.equals("")) {
+                    break;
                 }
                 input = input.replace(" ", "");
                 String[] stringVals = input.split(",");
@@ -87,7 +98,7 @@ public class TestNetwork {
             }
             network.setInput(testValuesDouble);
             network.calculate();
-        } until(input != "");
+        } while (!input.equals(""));
     }
 
     static void testNetworkAuto(String setPath) {
@@ -136,24 +147,8 @@ public class TestNetwork {
             System.out.println("Average Deviance % : " + (averageDeviance / count) * 100);
             bw.flush();
             bw.close();
-        }
-        catch (IOException ex) {
+        } catch (IOException ex) {
             ex.printStackTrace();
-        }
-    }
-
-    static class Looper {
-        private Closure code
-
-        static Looper loop(Closure code) {
-            new Looper(code: code);
-        }
-
-        void until(Closure test) {
-            code();
-            while (!test()) {
-                code();
-            }
         }
     }
 

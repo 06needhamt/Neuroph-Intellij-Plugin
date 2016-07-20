@@ -207,7 +207,7 @@ class GroovyNetworkCodeGenerator : ICodeGenerator {
                 "for(int layer : layers) { " + "\n" +
                 "list.add(layer);" + "\n" +
                 "}" + "\n" + "\n" +
-                "NeuralNetwork network = new ${NetworkTypes.GetClassName(network?.networkType!!)}" +
+                "network = new ${NetworkTypes.GetClassName(network?.networkType!!)}" +
                 "(list, TransferFunctionType.${network?.networkTransferFunction?.name});" + "\n" +
                 "trainingSet = new TrainingSet<SupervisedTrainingElement>(inputSize, outputSize);" + "\n" +
                 "trainingSet = TrainingSet.createFromFile(\"${network?.networkTrainingDataPath}\", inputSize, outputSize, \",\");" + "\n" +
@@ -230,7 +230,7 @@ class GroovyNetworkCodeGenerator : ICodeGenerator {
     private fun DefineGlobalVariables() : String {
         val variables = "static int inputSize = ${network?.networkLayers?.first()};" + "\n" +
                 "static int outputSize = ${network?.networkLayers?.last()};" + "\n" +
-                "static NeuralNetwork network;" + "\n" +
+                "static network;" + "\n" +
                 "static TrainingSet<SupervisedTrainingElement> trainingSet;" + "\n" +
                 "static TrainingSet<SupervisedTrainingElement> testingSet;" + "\n" +
                 "static int[] layers = [${getLayersString(network?.networkLayers!!)}];" + "\n"

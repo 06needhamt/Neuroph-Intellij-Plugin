@@ -57,7 +57,7 @@ public class TrainTest {
             list.add(layer);
         }
 
-        NeuralNetwork network = new MultiLayerPerceptron(list, TransferFunctionType.SIGMOID);
+        network = new MultiLayerPerceptron(list, TransferFunctionType.SIGMOID);
         trainingSet = new TrainingSet<SupervisedTrainingElement>(inputSize, outputSize);
         trainingSet = TrainingSet.createFromFile("D:/GitHub/NeuralNetworkTest/Classroom Occupation Data.csv", inputSize, outputSize, ",");
         BackPropagation learningRule = new BackPropagation();

@@ -28,7 +28,29 @@ import com.thomas.needham.neurophidea.datastructures.LearningRules
 import com.thomas.needham.neurophidea.datastructures.NetworkConfiguration
 import com.thomas.needham.neurophidea.datastructures.NetworkTypes
 import com.thomas.needham.neurophidea.datastructures.TransferFunctions
+import com.thomas.needham.neurophidea.exceptions.UnknownLearningRuleException
+import com.thomas.needham.neurophidea.exceptions.UnknownNetworkTypeException
 import org.jetbrains.annotations.NotNull
+import org.neuroph.nnet.learning.AntiHebbianLearning
+import org.neuroph.nnet.learning.BackPropagation
+import org.neuroph.nnet.learning.BinaryDeltaRule
+import org.neuroph.nnet.learning.BinaryHebbianLearning
+import org.neuroph.nnet.learning.CompetitiveLearning
+import org.neuroph.nnet.learning.DynamicBackPropagation
+import org.neuroph.nnet.learning.GeneralizedHebbianLearning
+import org.neuroph.nnet.learning.HopfieldLearning
+import org.neuroph.nnet.learning.InstarLearning
+import org.neuroph.nnet.learning.KohonenLearning
+import org.neuroph.nnet.learning.LMS
+import org.neuroph.nnet.learning.MomentumBackpropagation
+import org.neuroph.nnet.learning.OjaLearning
+import org.neuroph.nnet.learning.OutstarLearning
+import org.neuroph.nnet.learning.PerceptronLearning
+import org.neuroph.nnet.learning.ResilientPropagation
+import org.neuroph.nnet.learning.SigmoidDeltaRule
+import org.neuroph.nnet.learning.SimulatedAnnealingLearning
+import org.neuroph.nnet.learning.SupervisedHebbianLearning
+import org.neuroph.nnet.learning.UnsupervisedHebbianLearning
 
 /**
  * Created by Thomas Needham on 28/05/2016.
@@ -198,17 +220,64 @@ class JavaNetworkCodeGenerator : ICodeGenerator {
                             "for(int layer : layers) { " + "\n" +
                             "list.add(layer);" + "\n" +
                             "}" + "\n" + "\n" +
-                            "NeuralNetwork network = new ${NetworkTypes.GetClassName(network?.networkType!!)}" +
-                            "(list, TransferFunctionType.${network?.networkTransferFunction?.name});" + "\n" +
+                            CreateNetwork(network?.networkType!!) + "\n"
                             "trainingSet = new TrainingSet<SupervisedTrainingElement>(inputSize, outputSize);" + "\n" +
                             "trainingSet = TrainingSet.createFromFile(\"${network?.networkTrainingDataPath}\", inputSize, outputSize, \",\");" + "\n" +
-                            "${LearningRules.GetClassName(network?.networkLearningRule!!)} learningRule = " +
-                            "new ${LearningRules.GetClassName(network?.networkLearningRule!!)}();" + "\n" +
+                            CreateLearningRule(network?.networkLearningRule!!) + "\n"
                             "network.setLearningRule(learningRule);" + "\n" +
                             "network.learn(trainingSet);" + "\n" +
                             "network.save(\"${network?.networkOutputPath}" + "/" + "${network?.networkName}" + ".nnet\");" + "\n" +
                             "}" + "\n"
         return trainNetwork
+    }
+
+    private fun CreateLearningRule(networkLearningRule : LearningRules.Rules) : String {
+            when (networkLearningRule){
+                LearningRules.Rules.ANTI_HEBBAN_LEARNING -> return "new AntiHebbianLearning();"
+                LearningRules.Rules.BACK_PROPAGATION -> return "new BackPropagation();"
+                LearningRules.Rules.BINARY_DELTA_RULE -> return "new BinaryDeltaRule();"
+                LearningRules.Rules.BINARY_HEBBIAN_LEARNING -> return "new BinaryHebbianLearning();"
+                LearningRules.Rules.COMPETITIVE_LEARNING -> return "new CompetitiveLearning();"
+                LearningRules.Rules.DYNAMIC_BACK_PROPAGATION -> return "new DynamicBackPropagation();"
+                LearningRules.Rules.GENERALIZED_HEBBIAN_LEARNING -> return "new GeneralizedHebbianLearning();"
+                LearningRules.Rules.HOPFIELD_LEARNING -> return "new HopfieldLearning();"
+                LearningRules.Rules.INSTAR_LEARNING -> return "new InstarLearning();"
+                LearningRules.Rules.KOHONEN_LEARNING -> return "new KohonenLearning();"
+                LearningRules.Rules.LMS -> return "new LMS();"
+                LearningRules.Rules.MOMENTUM_BACK_PROPAGATION -> return "new MomentumBackpropagation();"
+                LearningRules.Rules.OJA_LEARNING -> return "new OjaLearning();"
+                LearningRules.Rules.OUTSTAR_LEARNING -> return "new OutstarLearning();"
+                LearningRules.Rules.PERCEPTRON_LEARNING -> return "new PerceptronLearning();"
+                LearningRules.Rules.RESILIENT_PROPAGATION -> return "new ResilientPropagation();"
+                LearningRules.Rules.SIGMOID_DELTA_RULE -> return "new SigmoidDeltaRule();"
+                LearningRules.Rules.SIMULATED_ANNEALING_LEARNING -> return "new SimulatedAnnealingLearning(network);"
+                LearningRules.Rules.SUPERVISED_HEBBIAN_LEARNING -> return "new SupervisedHebbianLearning();"
+                LearningRules.Rules.UNSUPERVISED_HEBBIAN_LEARNING -> return "new UnsupervisedHebbianLearning();"
+                else -> UnknownLearningRuleException("Unknown Learning Rule: ${LearningRules.GetClassName(NetworkTrainer.networkConfiguration?.networkLearningRule!!)}")
+            }
+        return ""
+    }
+
+    private fun CreateNetwork(networkType : NetworkTypes.Types) : String {
+        when(networkType){
+            NetworkTypes.Types.ADALINE -> return "NeuralNetwork network = new ${NetworkTypes.GetClassName(networkType)}" + "(inputSize);"
+            NetworkTypes.Types.BAM ->  return "NeuralNetwork network = new ${NetworkTypes.GetClassName(networkType)}" + "(inputSize, outputSize);"
+            NetworkTypes.Types.COMPETITIVE_NETWORK -> return "NeuralNetwork network = new ${NetworkTypes.GetClassName(networkType)}" + "(inputSize, outputSize);"
+            NetworkTypes.Types.HOPFIELD -> return "NeuralNetwork network = new ${NetworkTypes.GetClassName(networkType)}" + "(inputSize + outputSize);"
+            NetworkTypes.Types.INSTAR -> return "NeuralNetwork network = new ${NetworkTypes.GetClassName(networkType)}" + "(inputSize);"
+            NetworkTypes.Types.KOHONEN -> return "NeuralNetwork network = new ${NetworkTypes.GetClassName(networkType)}" + "(inputSize, outputSize);"
+            NetworkTypes.Types.MAX_NET -> return "NeuralNetwork network = new ${NetworkTypes.GetClassName(networkType)}" + "(inputSize, outputSize);"
+            NetworkTypes.Types.MULTI_LAYER_PERCEPTRON -> return "NeuralNetwork network = new ${NetworkTypes.GetClassName(networkType)}" + "(list, TransferFunctionType.${network?.networkTransferFunction?.name});"
+            NetworkTypes.Types.NEURO_FUZZY_PERCEPTRON -> return "NeuralNetwork network = new ${NetworkTypes.GetClassName(networkType)}" + "(inputSize, Vector<int>(inputSize), outputSize);"
+            NetworkTypes.Types.NEUROPH -> return "Perceptron(inputSize, outputSize, TransferFunctionType.${network?.networkTransferFunction?.name});"
+            NetworkTypes.Types.OUTSTAR -> return "NeuralNetwork network = new ${NetworkTypes.GetClassName(networkType)}" + "(outputSize);"
+            NetworkTypes.Types.PERCEPTRON -> return "NeuralNetwork network = new ${NetworkTypes.GetClassName(networkType)}" + "(inputSize, outputSize, TransferFunctionType.${network?.networkTransferFunction?.name});"
+            NetworkTypes.Types.RBF_NETWORK -> return "NeuralNetwork network = new ${NetworkTypes.GetClassName(networkType)}" + "(inputSize, inputSize, outputSize);"
+            NetworkTypes.Types.SUPERVISED_HEBBIAN_NETWORK -> return "NeuralNetwork network = new ${NetworkTypes.GetClassName(networkType)}" + "(inputSize, outputSize, TransferFunctionType.${network?.networkTransferFunction?.name});"
+            NetworkTypes.Types.UNSUPERVISED_HEBBIAN_NETWORK -> return "NeuralNetwork network = new ${NetworkTypes.GetClassName(networkType)}" + "(inputSize, outputSize, TransferFunctionType.${network?.networkTransferFunction?.name});"
+            else -> UnknownNetworkTypeException("Unknown Network Type: ${NetworkTypes.GetClassName(NetworkTrainer.networkConfiguration?.networkType!!)}")
+        }
+        return ""
     }
 
     private fun DefineLoadNetwork() : String {

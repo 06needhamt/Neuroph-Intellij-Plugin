@@ -220,10 +220,10 @@ class JavaNetworkCodeGenerator : ICodeGenerator {
                             "for(int layer : layers) { " + "\n" +
                             "list.add(layer);" + "\n" +
                             "}" + "\n" + "\n" +
-                            CreateNetwork(network?.networkType!!) + "\n"
+                            CreateNetwork(network?.networkType!!) + "\n" +
                             "trainingSet = new TrainingSet<SupervisedTrainingElement>(inputSize, outputSize);" + "\n" +
                             "trainingSet = TrainingSet.createFromFile(\"${network?.networkTrainingDataPath}\", inputSize, outputSize, \",\");" + "\n" +
-                            CreateLearningRule(network?.networkLearningRule!!) + "\n"
+                            CreateLearningRule(network?.networkLearningRule!!) + "\n" +
                             "network.setLearningRule(learningRule);" + "\n" +
                             "network.learn(trainingSet);" + "\n" +
                             "network.save(\"${network?.networkOutputPath}" + "/" + "${network?.networkName}" + ".nnet\");" + "\n" +

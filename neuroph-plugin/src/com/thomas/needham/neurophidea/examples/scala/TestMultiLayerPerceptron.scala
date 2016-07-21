@@ -40,7 +40,7 @@ import org.neuroph.nnet.learning.BackPropagation
 import org.neuroph.core.transfer.Sigmoid
 
 
-object TrainTest {
+object TestMultiLayerPerceptron {
   var inputSize: Int = 8
   var outputSize: Int = 1
   var network: NeuralNetwork = _
@@ -49,7 +49,7 @@ object TrainTest {
   var layers: Array[Int] = Array(8, 8, 1)
 
   def loadNetwork() {
-    network = NeuralNetwork.load("D:/GitHub/Neuroph-Intellij-Plugin/TrainTest.nnet")
+    network = NeuralNetwork.load("D:/GitHub/Neuroph-Intellij-Plugin/TestMultiLayerPerceptron.nnet")
   }
 
   def trainNetwork() {
@@ -63,7 +63,7 @@ object TrainTest {
     val learningRule = new BackPropagation();
     network.setLearningRule(learningRule)
     network.learn(trainingSet)
-    network.save("D:/GitHub/Neuroph-Intellij-Plugin/TrainTest.nnet")
+    network.save("D:/GitHub/Neuroph-Intellij-Plugin/TestMultiLayerPerceptron.nnet")
   }
 
   def testNetwork() {

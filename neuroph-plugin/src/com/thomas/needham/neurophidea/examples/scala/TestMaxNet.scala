@@ -35,12 +35,12 @@ import org.neuroph.core.learning.SupervisedTrainingElement
 import org.neuroph.core.learning.TrainingSet
 import org.neuroph.util.TransferFunctionType
 
-import org.neuroph.nnet.MultiLayerPerceptron
+import org.neuroph.nnet.MaxNet
 import org.neuroph.nnet.learning.BackPropagation
 import org.neuroph.core.transfer.Sigmoid
 
 
-object TrainTest {
+object TestMaxNet {
   var inputSize: Int = 8
   var outputSize: Int = 1
   var network: NeuralNetwork = _
@@ -49,7 +49,7 @@ object TrainTest {
   var layers: Array[Int] = Array(8, 8, 1)
 
   def loadNetwork() {
-    network = NeuralNetwork.load("D:/GitHub/Neuroph-Intellij-Plugin/TrainTest.nnet")
+    network = NeuralNetwork.load("D:/GitHub/Neuroph-Intellij-Plugin/TestMaxNet.nnet")
   }
 
   def trainNetwork() {
@@ -57,13 +57,13 @@ object TrainTest {
     for (layer <- layers) {
       list.add(layer)
     }
-    network = new MultiLayerPerceptron(list, TransferFunctionType.SIGMOID);
+    network = new MaxNet(inputSize + outputSize);
     trainingSet = new TrainingSet[SupervisedTrainingElement](inputSize, outputSize)
     trainingSet = TrainingSet.createFromFile("D:/GitHub/NeuralNetworkTest/Classroom Occupation Data.csv", inputSize, outputSize, ",").asInstanceOf[TrainingSet[SupervisedTrainingElement]]
     val learningRule = new BackPropagation();
     network.setLearningRule(learningRule)
     network.learn(trainingSet)
-    network.save("D:/GitHub/Neuroph-Intellij-Plugin/TrainTest.nnet")
+    network.save("D:/GitHub/Neuroph-Intellij-Plugin/TestMaxNet.nnet")
   }
 
   def testNetwork() {

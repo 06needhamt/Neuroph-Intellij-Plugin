@@ -353,12 +353,18 @@
     <pathelement location="C:/Users/thoma/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.8.jar"/>
   </path>
   <!-- Register Custom Compiler Taskdefs -->
-  <property name="javac2.home" value="C:/Program Files (x86)/JetBrains/IntelliJ IDEA Community Edition 2016.2/lib"/>
+  <property name="idea.home" value="C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 2016.2"/>
+    <property name="project.jdk.bin" value="${jdk.bin}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath"/>
+  <property name="project.jdk.home" value="${jdk.home}"/>
+  <!-- Register Custom Compiler Taskdefs -->
+  <property name="javac2.home" value="${idea.home}"/>
   <path id="javac2.classpath">
-    <pathelement location="${javac2.home}/javac2.jar"/>
-    <pathelement location="${javac2.home}/jdom.jar"/>
-    <pathelement location="${javac2.home}/asm-all.jar"/>
-    <pathelement location="${javac2.home}/jgoodies-forms.jar"/>
+    <pathelement location="${javac2.home}/lib/javac2.jar"/>
+    <pathelement location="${javac2.home}/lib/jdom.jar"/>
+    <pathelement location="${javac2.home}/lib/asm-all.jar"/>
+    <pathelement location="${javac2.home}/lib/jgoodies-forms.jar"/>
+    <pathelement location="${javac2.home}/lib/redist/forms_rt.jar"/>
   </path>
   <target name="register.custom.compilers">
     <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
@@ -451,7 +457,7 @@
   
   <target name="compile.module.neuroph-plugin.production" depends="register.custom.compilers" description="Compile module neuroph-plugin; production classes">
     <mkdir dir="${neuroph-plugin.output.dir}"/>
-    <groovyc destdir="${neuroph-plugin.output.dir}" fork="yes">
+    <groovyc destdir="${neuroph-plugin.output.dir}" fork="no">
       <src refid="neuroph-plugin.module.sourcepath"/>
       <classpath refid="neuroph-plugin.module.production.classpath"/>
       <patternset refid="excluded.from.compilation.neuroph-plugin"/>

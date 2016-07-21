@@ -28,6 +28,8 @@ import com.thomas.needham.neurophidea.datastructures.LearningRules
 import com.thomas.needham.neurophidea.datastructures.NetworkConfiguration
 import com.thomas.needham.neurophidea.datastructures.NetworkTypes
 import com.thomas.needham.neurophidea.datastructures.TransferFunctions
+import com.thomas.needham.neurophidea.exceptions.UnknownLearningRuleException
+import com.thomas.needham.neurophidea.exceptions.UnknownNetworkTypeException
 import org.jetbrains.annotations.NotNull
 
 /**
@@ -52,6 +54,7 @@ class KotlinNetworkCodeGenerator : ICodeGenerator {
                 "import java.util.ArrayList" + "\n" +
                 "import java.util.logging.Level" + "\n" +
                 "import java.util.logging.Logger" + "\n" +
+                "import java.util.Vector" + "\n" +
                 "import org.neuroph.core.NeuralNetwork" + "\n" +
                 "import org.neuroph.core.learning.SupervisedTrainingElement" + "\n" +
                 "import org.neuroph.core.learning.TrainingSet" + "\n" +
@@ -202,14 +205,13 @@ class KotlinNetworkCodeGenerator : ICodeGenerator {
                 "list.add(layer) \n" +
                 "} \n" +
                 " \n" +
-                "val network = ${NetworkTypes.GetClassName(network?.networkType!!)}" +
-                "(list, TransferFunctionType.${network?.networkTransferFunction?.name});" + "\n" +
+                CreateNetwork(network?.networkType!!) + "\n" +
                 "trainingSet = TrainingSet<SupervisedTrainingElement>(inputSize, outputSize) \n" +
                 "trainingSet = TrainingSet.createFromFile(\"${network?.networkTrainingDataPath}\", inputSize, outputSize, \",\") as TrainingSet<SupervisedTrainingElement>?" + "\n" +
-                "val learningRule = ${LearningRules.GetClassName(network?.networkLearningRule!!)}() \n" +
-                "network.learningRule = learningRule \n" +
-                "network.learn(trainingSet) \n" +
-                "network.save(\"${network?.networkOutputPath}" + "/" + "${network?.networkName}" + ".nnet\") \n" +
+                CreateLearningRule(network?.networkLearningRule!!) + "\n" +
+                "(network as NeuralNetwork).learningRule = learningRule \n" +
+                "(network as NeuralNetwork).learn(trainingSet) \n" +
+                "(network as NeuralNetwork).save(\"${network?.networkOutputPath}" + "/" + "${network?.networkName}" + ".nnet\") \n" +
                 "}"
         return trainNetwork
     }
@@ -236,7 +238,54 @@ class KotlinNetworkCodeGenerator : ICodeGenerator {
         braces++
         return classdef
     }
+    private fun CreateLearningRule(networkLearningRule : LearningRules.Rules) : String {
+        when (networkLearningRule){
+            LearningRules.Rules.ANTI_HEBBAN_LEARNING -> return "val learningRule = AntiHebbianLearning()"
+            LearningRules.Rules.BACK_PROPAGATION -> return "val learningRule = BackPropagation()"
+            LearningRules.Rules.BINARY_DELTA_RULE -> return  "val learningRule = BinaryDeltaRule()"
+            LearningRules.Rules.BINARY_HEBBIAN_LEARNING -> return "val learningRule = BinaryHebbianLearning()"
+            LearningRules.Rules.COMPETITIVE_LEARNING -> return "val learningRule = CompetitiveLearning()"
+            LearningRules.Rules.DYNAMIC_BACK_PROPAGATION -> return "val learningRule = DynamicBackPropagation()"
+            LearningRules.Rules.GENERALIZED_HEBBIAN_LEARNING -> return "val learningRule = GeneralizedHebbianLearning()"
+            LearningRules.Rules.HOPFIELD_LEARNING -> return "val learningRule = HopfieldLearning()"
+            LearningRules.Rules.INSTAR_LEARNING -> return "val learningRule = InstarLearning()"
+            LearningRules.Rules.KOHONEN_LEARNING -> return "val learningRule = KohonenLearning()"
+            LearningRules.Rules.LMS -> return "val learningRule = LMS()"
+            LearningRules.Rules.MOMENTUM_BACK_PROPAGATION -> return "val learningRule = MomentumBackpropagation()"
+            LearningRules.Rules.OJA_LEARNING -> return "val learningRule = OjaLearning()"
+            LearningRules.Rules.OUTSTAR_LEARNING -> return "val learningRule = OutstarLearning()"
+            LearningRules.Rules.PERCEPTRON_LEARNING -> return "val learningRule = PerceptronLearning()"
+            LearningRules.Rules.RESILIENT_PROPAGATION -> return "val learningRule = ResilientPropagation()"
+            LearningRules.Rules.SIGMOID_DELTA_RULE -> return "val learningRule = SigmoidDeltaRule()"
+            LearningRules.Rules.SIMULATED_ANNEALING_LEARNING -> return "val learningRule = SimulatedAnnealingLearning(network)"
+            LearningRules.Rules.SUPERVISED_HEBBIAN_LEARNING -> return "val learningRule = SupervisedHebbianLearning()"
+            LearningRules.Rules.UNSUPERVISED_HEBBIAN_LEARNING -> return "val learningRule = UnsupervisedHebbianLearning()"
+            else -> UnknownLearningRuleException("Unknown Learning Rule: ${LearningRules.GetClassName(NetworkTrainer.networkConfiguration?.networkLearningRule!!)}")
+        }
+        return ""
+    }
 
+    private fun CreateNetwork(networkType : NetworkTypes.Types) : String {
+        when(networkType){
+            NetworkTypes.Types.ADALINE -> return "network = ${NetworkTypes.GetClassName(networkType)}" + "(inputSize)"
+            NetworkTypes.Types.BAM ->  return "network = ${NetworkTypes.GetClassName(networkType)}" + "(inputSize, outputSize)"
+            NetworkTypes.Types.COMPETITIVE_NETWORK -> return "network = ${NetworkTypes.GetClassName(networkType)}" + "(inputSize, outputSize)"
+            NetworkTypes.Types.HOPFIELD -> return "network = ${NetworkTypes.GetClassName(networkType)}" + "(inputSize + outputSize)"
+            NetworkTypes.Types.INSTAR -> return "network = ${NetworkTypes.GetClassName(networkType)}" + "(inputSize)"
+            NetworkTypes.Types.KOHONEN -> return "network = ${NetworkTypes.GetClassName(networkType)}" + "(inputSize, outputSize)"
+            NetworkTypes.Types.MAX_NET -> return "network = ${NetworkTypes.GetClassName(networkType)}" + "(inputSize + outputSize)"
+            NetworkTypes.Types.MULTI_LAYER_PERCEPTRON -> return "network = ${NetworkTypes.GetClassName(networkType)}" + "(list, TransferFunctionType.${network?.networkTransferFunction?.name})"
+            NetworkTypes.Types.NEURO_FUZZY_PERCEPTRON -> return "network = ${NetworkTypes.GetClassName(networkType)}" + "(inputSize, Vector<Int>(inputSize), outputSize)"
+            NetworkTypes.Types.NEUROPH -> return "network = Perceptron(inputSize, outputSize, TransferFunctionType.${network?.networkTransferFunction?.name})"
+            NetworkTypes.Types.OUTSTAR -> return "network = ${NetworkTypes.GetClassName(networkType)}" + "(outputSize)"
+            NetworkTypes.Types.PERCEPTRON -> return "network = ${NetworkTypes.GetClassName(networkType)}" + "(inputSize, outputSize, TransferFunctionType.${network?.networkTransferFunction?.name})"
+            NetworkTypes.Types.RBF_NETWORK -> return "network = ${NetworkTypes.GetClassName(networkType)}" + "(inputSize, inputSize, outputSize)"
+            NetworkTypes.Types.SUPERVISED_HEBBIAN_NETWORK -> return "network = ${NetworkTypes.GetClassName(networkType)}" + "(inputSize, outputSize, TransferFunctionType.${network?.networkTransferFunction?.name})"
+            NetworkTypes.Types.UNSUPERVISED_HEBBIAN_NETWORK -> return "network = ${NetworkTypes.GetClassName(networkType)}" + "(inputSize, outputSize, TransferFunctionType.${network?.networkTransferFunction?.name})"
+            else -> UnknownNetworkTypeException("Unknown Network Type: ${NetworkTypes.GetClassName(NetworkTrainer.networkConfiguration?.networkType!!)}")
+        }
+        return ""
+    }
     private fun AddImports() : String {
         var imports = coreImports
         when (network?.networkType){

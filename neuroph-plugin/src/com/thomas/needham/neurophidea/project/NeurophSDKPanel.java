@@ -87,13 +87,12 @@ public class NeurophSDKPanel extends JFrame {
      */
     private void $$$setupUI$$$() {
         createUIComponents();
-        root = new JPanel();
-        root.setLayout(new BorderLayout(0, 0));
-        inner = new JPanel();
-        inner.setLayout(new GridLayoutManager(1, 2, new Insets(0, 0, 0, 0), -1, -1));
+        root = new javax.swing.JPanel();
+        root.setLayout(new java.awt.BorderLayout(0, 0));
+        inner = new javax.swing.JPanel();
+        inner.setLayout(new GridLayoutManager(1, 2, new java.awt.Insets(0, 0, 0, 0), -1, -1));
         root.add(inner, BorderLayout.CENTER);
-        final JLabel label1 = new JLabel();
-        label1.setText("Neuroph SDK");
+        final javax.swing.JLabel label1 = new javax.swing.JLabel();
         inner.add(label1, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         inner.add(cmbSDKVersion, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     }
@@ -101,7 +100,7 @@ public class NeurophSDKPanel extends JFrame {
     /**
      * @noinspection ALL
      */
-    public JComponent $$$getRootComponent$$$() {
+    public javax.swing.JComponent $$$getRootComponent$$$() {
         return root;
     }
 }

@@ -71,43 +71,37 @@ public class TrainNetworkForm extends JFrame {
      * @noinspection ALL
      */
     private void $$$setupUI$$$() {
-        root = new JPanel();
-        root.setLayout(new BorderLayout(0, 0));
-        inner = new JPanel();
-        inner.setLayout(new GridLayoutManager(4, 3, new Insets(5, 10, 0, 5), -1, -1));
+        root = new javax.swing.JPanel();
+        root.setLayout(new java.awt.BorderLayout(0, 0));
+        inner = new javax.swing.JPanel();
+        inner.setLayout(new GridLayoutManager(4, 3, new java.awt.Insets(5, 10, 0, 5), -1, -1));
         root.add(inner, BorderLayout.CENTER);
-        final JLabel label1 = new JLabel();
-        label1.setText("Network To Train");
+        final javax.swing.JLabel label1 = new javax.swing.JLabel();
         inner.add(label1, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        txtNetwork = new JTextField();
-        inner.add(txtNetwork, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
-        final JLabel label2 = new JLabel();
-        label2.setText("Training Set");
+        txtNetwork = new javax.swing.JTextField();
+        inner.add(txtNetwork, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, new java.awt.Dimension(150, -1), null, 0, false));
+        final javax.swing.JLabel label2 = new javax.swing.JLabel();
         inner.add(label2, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        final JLabel label3 = new JLabel();
-        label3.setText("Input Training Data");
+        final javax.swing.JLabel label3 = new javax.swing.JLabel();
         inner.add(label3, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        txtTrainingSet = new JTextField();
-        inner.add(txtTrainingSet, new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
-        btnBrowseNetwork = new JButton();
-        btnBrowseNetwork.setText("Browse");
+        txtTrainingSet = new javax.swing.JTextField();
+        inner.add(txtTrainingSet, new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, new java.awt.Dimension(150, -1), null, 0, false));
+        btnBrowseNetwork = new javax.swing.JButton();
         inner.add(btnBrowseNetwork, new GridConstraints(0, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        btnBrowseTrainingSet = new JButton();
-        btnBrowseTrainingSet.setText("Browse");
+        btnBrowseTrainingSet = new javax.swing.JButton();
         inner.add(btnBrowseTrainingSet, new GridConstraints(1, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        btnTrainNetwork = new JButton();
-        btnTrainNetwork.setText("Train Network");
+        btnTrainNetwork = new javax.swing.JButton();
         inner.add(btnTrainNetwork, new GridConstraints(3, 0, 1, 3, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        TrainingDataScrollPane = new JScrollPane();
+        TrainingDataScrollPane = new javax.swing.JScrollPane();
         inner.add(TrainingDataScrollPane, new GridConstraints(2, 1, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        txtInputData = new JTextPane();
+        txtInputData = new javax.swing.JTextPane();
         TrainingDataScrollPane.setViewportView(txtInputData);
     }
 
     /**
      * @noinspection ALL
      */
-    public JComponent $$$getRootComponent$$$() {
+    public javax.swing.JComponent $$$getRootComponent$$$() {
         return root;
     }
 }

@@ -74,43 +74,51 @@ public class TestNetworkForm extends JFrame {
      * @noinspection ALL
      */
     private void $$$setupUI$$$() {
-        root = new javax.swing.JPanel();
-        root.setLayout(new java.awt.BorderLayout(0, 0));
-        inner = new javax.swing.JPanel();
-        inner.setLayout(new GridLayoutManager(5, 3, new java.awt.Insets(5, 10, 0, 5), -1, -1));
+        root = new JPanel();
+        root.setLayout(new BorderLayout(0, 0));
+        inner = new JPanel();
+        inner.setLayout(new GridLayoutManager(5, 3, new Insets(5, 10, 0, 5), -1, -1));
         root.add(inner, BorderLayout.CENTER);
-        final javax.swing.JLabel label1 = new javax.swing.JLabel();
+        final JLabel label1 = new JLabel();
+        label1.setText("Network To Test");
         inner.add(label1, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        final javax.swing.JLabel label2 = new javax.swing.JLabel();
+        final JLabel label2 = new JLabel();
+        label2.setText("Testing Set");
         inner.add(label2, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        final javax.swing.JLabel label3 = new javax.swing.JLabel();
+        final JLabel label3 = new JLabel();
+        label3.setText("Testing Data");
         inner.add(label3, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        final javax.swing.JLabel label4 = new javax.swing.JLabel();
+        final JLabel label4 = new JLabel();
+        label4.setText("Results Output Path");
         inner.add(label4, new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        txtNetworkToTest = new javax.swing.JTextField();
-        inner.add(txtNetworkToTest, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, new java.awt.Dimension(150, -1), null, 0, false));
-        txtTestingSet = new javax.swing.JTextField();
-        inner.add(txtTestingSet, new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new java.awt.Dimension(150, -1), null, 0, false));
-        txtOutputPath = new javax.swing.JTextField();
-        inner.add(txtOutputPath, new GridConstraints(3, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new java.awt.Dimension(150, -1), null, 0, false));
-        btnBrowseNetwork = new javax.swing.JButton();
+        txtNetworkToTest = new JTextField();
+        inner.add(txtNetworkToTest, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        txtTestingSet = new JTextField();
+        inner.add(txtTestingSet, new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        txtOutputPath = new JTextField();
+        inner.add(txtOutputPath, new GridConstraints(3, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        btnBrowseNetwork = new JButton();
+        btnBrowseNetwork.setText("Browse");
         inner.add(btnBrowseNetwork, new GridConstraints(0, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        btnBrowseTestingSet = new javax.swing.JButton();
+        btnBrowseTestingSet = new JButton();
+        btnBrowseTestingSet.setText("Browse");
         inner.add(btnBrowseTestingSet, new GridConstraints(1, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        btnBrowseOutput = new javax.swing.JButton();
+        btnBrowseOutput = new JButton();
+        btnBrowseOutput.setText("Browse");
         inner.add(btnBrowseOutput, new GridConstraints(3, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        btnTestNetwork = new javax.swing.JButton();
+        btnTestNetwork = new JButton();
+        btnTestNetwork.setText("Test Network");
         inner.add(btnTestNetwork, new GridConstraints(4, 0, 1, 3, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        TrainingDataScrollPane = new javax.swing.JScrollPane();
+        TrainingDataScrollPane = new JScrollPane();
         inner.add(TrainingDataScrollPane, new GridConstraints(2, 1, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        txtTestingData = new javax.swing.JTextPane();
+        txtTestingData = new JTextPane();
         TrainingDataScrollPane.setViewportView(txtTestingData);
     }
 
     /**
      * @noinspection ALL
      */
-    public javax.swing.JComponent $$$getRootComponent$$$() {
+    public JComponent $$$getRootComponent$$$() {
         return root;
     }
 }

@@ -98,28 +98,31 @@ public class NetworkOutputForm extends JFrame {
      * @noinspection ALL
      */
     private void $$$setupUI$$$() {
-        root = new javax.swing.JPanel();
-        root.setLayout(new java.awt.BorderLayout(0, 0));
-        inner = new javax.swing.JPanel();
-        inner.setLayout(new GridLayoutManager(4, 8, new java.awt.Insets(5, 10, 0, 5), -1, -1));
+        root = new JPanel();
+        root.setLayout(new BorderLayout(0, 0));
+        inner = new JPanel();
+        inner.setLayout(new GridLayoutManager(4, 8, new Insets(5, 10, 0, 5), -1, -1));
         root.add(inner, BorderLayout.CENTER);
-        final javax.swing.JLabel label1 = new javax.swing.JLabel();
+        final JLabel label1 = new JLabel();
+        label1.setText("Expected Output");
         inner.add(label1, new GridConstraints(0, 0, 1, 2, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        final javax.swing.JLabel label2 = new javax.swing.JLabel();
+        final JLabel label2 = new JLabel();
+        label2.setText("Actual Output");
         inner.add(label2, new GridConstraints(0, 2, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        final javax.swing.JLabel label3 = new javax.swing.JLabel();
+        final JLabel label3 = new JLabel();
+        label3.setText("Difference");
         inner.add(label3, new GridConstraints(0, 3, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        expectedScrollPane = new javax.swing.JScrollPane();
+        expectedScrollPane = new JScrollPane();
         inner.add(expectedScrollPane, new GridConstraints(1, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        lstExpected = new javax.swing.JList();
+        lstExpected = new JList();
         expectedScrollPane.setViewportView(lstExpected);
-        actualScrollPane = new javax.swing.JScrollPane();
+        actualScrollPane = new JScrollPane();
         inner.add(actualScrollPane, new GridConstraints(1, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
-        lstActual = new javax.swing.JList();
+        lstActual = new JList();
         actualScrollPane.setViewportView(lstActual);
-        differenceScrollPane = new javax.swing.JScrollPane();
+        differenceScrollPane = new JScrollPane();
         inner.add(differenceScrollPane, new GridConstraints(1, 3, 1, 5, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
-        lstDifference = new javax.swing.JList();
+        lstDifference = new JList();
         differenceScrollPane.setViewportView(lstDifference);
         final Spacer spacer1 = new Spacer();
         inner.add(spacer1, new GridConstraints(0, 4, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
@@ -129,20 +132,23 @@ public class NetworkOutputForm extends JFrame {
         inner.add(spacer3, new GridConstraints(0, 6, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
         final Spacer spacer4 = new Spacer();
         inner.add(spacer4, new GridConstraints(0, 7, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
-        btnSaveOutput = new javax.swing.JButton();
+        btnSaveOutput = new JButton();
+        btnSaveOutput.setText("Save Output");
         inner.add(btnSaveOutput, new GridConstraints(3, 0, 1, 8, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        final javax.swing.JLabel label4 = new javax.swing.JLabel();
+        final JLabel label4 = new JLabel();
+        label4.setText("Save Location");
         inner.add(label4, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        txtSaveLocation = new javax.swing.JTextField();
-        inner.add(txtSaveLocation, new GridConstraints(2, 1, 1, 3, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, new java.awt.Dimension(150, -1), null, 0, false));
-        btnBrowseSaveLocation = new javax.swing.JButton();
+        txtSaveLocation = new JTextField();
+        inner.add(txtSaveLocation, new GridConstraints(2, 1, 1, 3, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        btnBrowseSaveLocation = new JButton();
+        btnBrowseSaveLocation.setText("Browse");
         inner.add(btnBrowseSaveLocation, new GridConstraints(2, 4, 1, 4, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     }
 
     /**
      * @noinspection ALL
      */
-    public javax.swing.JComponent $$$getRootComponent$$$() {
+    public JComponent $$$getRootComponent$$$() {
         return root;
     }
 }

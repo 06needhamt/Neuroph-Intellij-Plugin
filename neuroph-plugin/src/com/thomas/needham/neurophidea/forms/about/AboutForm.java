@@ -75,27 +75,35 @@ public class AboutForm extends JFrame {
      * @noinspection ALL
      */
     private void $$$setupUI$$$() {
-        root = new javax.swing.JPanel();
-        root.setLayout(new java.awt.BorderLayout(0, 0));
-        inner = new javax.swing.JPanel();
-        inner.setLayout(new GridLayoutManager(5, 1, new java.awt.Insets(5, 10, 0, 5), -1, -1));
+        root = new JPanel();
+        root.setLayout(new BorderLayout(0, 0));
+        inner = new JPanel();
+        inner.setLayout(new GridLayoutManager(5, 1, new Insets(5, 10, 0, 5), -1, -1));
         root.add(inner, BorderLayout.CENTER);
-        final javax.swing.JLabel label1 = new javax.swing.JLabel();
+        final JLabel label1 = new JLabel();
+        label1.setFont(new Font(label1.getFont().getName(), label1.getFont().getStyle(), 20));
+        label1.setText("Neuroph For IntelliJ");
         inner.add(label1, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final Spacer spacer1 = new Spacer();
         inner.add(spacer1, new GridConstraints(4, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_VERTICAL, 1, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
-        final javax.swing.JLabel label2 = new javax.swing.JLabel();
+        final JLabel label2 = new JLabel();
+        label2.setFont(new Font(label2.getFont().getName(), label2.getFont().getStyle(), 20));
+        label2.setText("Created By Thomas Needham 2016");
         inner.add(label2, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        lblVersion = new javax.swing.JLabel();
+        lblVersion = new JLabel();
+        lblVersion.setFont(new Font(lblVersion.getFont().getName(), lblVersion.getFont().getStyle(), 20));
+        lblVersion.setText("Version ");
         inner.add(lblVersion, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        lblRunningOn = new javax.swing.JLabel();
+        lblRunningOn = new JLabel();
+        lblRunningOn.setFont(new Font(lblRunningOn.getFont().getName(), lblRunningOn.getFont().getStyle(), 20));
+        lblRunningOn.setText("Running On ");
         inner.add(lblRunningOn, new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     }
 
     /**
      * @noinspection ALL
      */
-    public javax.swing.JComponent $$$getRootComponent$$$() {
+    public JComponent $$$getRootComponent$$$() {
         return root;
     }
 }

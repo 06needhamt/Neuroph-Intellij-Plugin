@@ -83,17 +83,17 @@ public class NetworkWeightsForm extends JFrame {
      * @noinspection ALL
      */
     private void $$$setupUI$$$() {
-        root = new javax.swing.JPanel();
-        root.setLayout(new java.awt.BorderLayout(0, 0));
-        inner = new javax.swing.JPanel();
-        inner.setLayout(new GridLayoutManager(1, 1, new java.awt.Insets(5, 10, 0, 5), -1, -1));
+        root = new JPanel();
+        root.setLayout(new BorderLayout(0, 0));
+        inner = new JPanel();
+        inner.setLayout(new GridLayoutManager(1, 1, new Insets(5, 10, 0, 5), -1, -1));
         root.add(inner, BorderLayout.CENTER);
     }
 
     /**
      * @noinspection ALL
      */
-    public javax.swing.JComponent $$$getRootComponent$$$() {
+    public JComponent $$$getRootComponent$$$() {
         return root;
     }
 }

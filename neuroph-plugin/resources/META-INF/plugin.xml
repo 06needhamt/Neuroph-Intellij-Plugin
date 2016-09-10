@@ -82,6 +82,9 @@ SOFTWARE. -->
                     text="Open Existing Network Configuration" description="Opens an existing network configuration created by this plugin">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt H"/>
             </action>
+            <action id="OpenExistingNetworkAction" class="com.thomas.needham.neurophidea.actions.OpenExistingNetworkAction"
+                    text="Open Existing Network" description="Opens An Existing Network">
+            </action>
             <action id="ExportNetworkToSourceCode"
                     class="com.thomas.needham.neurophidea.actions.ShowExportNetworkFormAction"
                     text="Export Network To Source Code" description="Exports A network to its java source code equivalent">
@@ -100,9 +103,6 @@ SOFTWARE. -->
                     description="Displays a Network&#39;s Output">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt D"/>
             </action>
-            <!--<action id="OpenExistingNetworkAction" class="com.thomas.needham.neurophidea.actions.OpenExistingNetworkAction"-->
-                    <!--text="Open Existing Network" description="Opens An Existing Network">-->
-            <!--</action> &lt;!&ndash; Uncomment To Debug Open Network Form &ndash;&gt;-->
             <action id="ShowNetworkWeightsFormAction"
                     class="com.thomas.needham.neurophidea.actions.ShowNetworkWeightsFormAction" text="Edit Network Weights"
                     description="Manually Edit Network Weights">
@@ -123,9 +123,9 @@ SOFTWARE. -->
         <!-- Add your actions here -->
         <action id="DownloadNeurophAction" class="com.thomas.needham.neurophidea.actions.DownloadNeurophAction"
                 text="Download Neuroph" description="Downloads A Neuroph SDK"/>
-        <action id="OpenExistingNetworkAction" class="com.thomas.needham.neurophidea.actions.OpenExistingNetworkAction"
-                text="Open Existing Network" description="Opens An Existing Network">
-        </action>
+        <!--<action id="OpenExistingNetworkAction" class="com.thomas.needham.neurophidea.actions.OpenExistingNetworkAction"-->
+                <!--text="Open Existing Network" description="Opens An Existing Network">-->
+        <!--</action>-->
     </actions>
     <application-components>
         <component>

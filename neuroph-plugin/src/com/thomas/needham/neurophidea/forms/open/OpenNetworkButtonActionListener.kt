@@ -2,7 +2,9 @@ package com.thomas.needham.neurophidea.forms.open
 
 import com.intellij.ide.util.PropertiesComponent
 import com.intellij.openapi.ui.Messages
+import com.intellij.util.PlatformIcons
 import com.thomas.needham.neurophidea.actions.InitialisationAction
+import com.thomas.needham.neurophidea.actions.OpenExistingNetworkAction
 import org.neuroph.core.NeuralNetwork
 import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
@@ -25,6 +27,7 @@ class OpenNetworkButtonActionListener  : ActionListener {
                 val file = File(path)
                 val fis = FileInputStream(file)
                 val ios = ObjectInputStream(fis)
+                Messages.showOkCancelDialog(OpenExistingNetworkAction.project,"Network Open","Success",PlatformIcons.COPY_ICON);
                 ios.readObject() as NeuralNetwork?
             }
             catch(ioe: IOException){
@@ -36,8 +39,8 @@ class OpenNetworkButtonActionListener  : ActionListener {
                 fnfe.printStackTrace(System.err)
                 Messages.showErrorDialog(InitialisationAction.project, "No Network Found In File","Error")
                 null
-
             }
+
         }
     }
     override fun actionPerformed(e : ActionEvent?) {

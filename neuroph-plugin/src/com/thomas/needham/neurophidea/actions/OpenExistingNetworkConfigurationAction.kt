@@ -34,7 +34,10 @@ import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.util.Consumer
 import com.thomas.needham.neurophidea.Constants.NETWORK_CONFIGURATION_TO_OPEN_LOCATION_KEY
 import com.thomas.needham.neurophidea.consumers.OpenNetworkConfigurationConsumer
+import com.thomas.needham.neurophidea.datastructures.LearningRules
 import com.thomas.needham.neurophidea.datastructures.NetworkConfiguration
+import com.thomas.needham.neurophidea.datastructures.NetworkTypes
+import com.thomas.needham.neurophidea.datastructures.TransferFunctions
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileNotFoundException
@@ -96,9 +99,13 @@ class OpenExistingNetworkConfigurationAction : AnAction() {
         createAction?.form?.isVisible = false
         createAction?.form?.txtNetworkName?.text = network?.networkName
         createAction?.form?.txtLayers?.text = getLayersString(network?.networkLayers!!)
+        createAction?.form?.cmbNetworkType?.selectedItem = NetworkTypes.friendlyNames[network?.networkType?.ordinal!!]
+        createAction?.form?.cmbLearningRule?.selectedItem = LearningRules.friendlyNames[network?.networkLearningRule?.ordinal!!]
+        createAction?.form?.cmbTransferFunction?.selectedItem = TransferFunctions.friendlyNames[network?.networkTransferFunction?.ordinal!!]
         createAction?.form?.txtTrainingData?.text = network?.networkTrainingDataPath
         createAction?.form?.txtTestingData?.text = network?.networkTestingDataPath
         createAction?.form?.txtNetworkOutputPath?.text = network?.networkOutputPath
+        createAction?.form?.repaint(Long.MAX_VALUE,0,0, createAction?.form?.width!!, createAction?.form?.height!!)
         createAction?.form?.isVisible = true
 
     }

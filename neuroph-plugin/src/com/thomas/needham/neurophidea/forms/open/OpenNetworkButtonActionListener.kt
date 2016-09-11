@@ -27,7 +27,7 @@ class OpenNetworkButtonActionListener  : ActionListener {
                 val file = File(path)
                 val fis = FileInputStream(file)
                 val ios = ObjectInputStream(fis)
-                Messages.showOkCancelDialog(OpenExistingNetworkAction.project,"Network Open","Success",PlatformIcons.COPY_ICON);
+                Messages.showOkCancelDialog(OpenExistingNetworkAction.project,"Network Open","Success",PlatformIcons.COPY_ICON)
                 ios.readObject() as NeuralNetwork?
             }
             catch(ioe: IOException){

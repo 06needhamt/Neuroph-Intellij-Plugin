@@ -3,6 +3,7 @@ package com.thomas.needham.neurophidea.actions
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.project.Project
+import com.intellij.openapi.ui.Messages
 import com.thomas.needham.neurophidea.forms.create.CreateNetworkForm
 import com.thomas.needham.neurophidea.forms.open.OpenNetworkForm
 
@@ -22,6 +23,8 @@ class OpenExistingNetworkAction : AnAction() {
         InitialisationAction.project = e.project
         InitialisationAction.projectDirectory = InitialisationAction.project?.basePath
         InitialisationAction.isOpen = InitialisationAction.project?.isOpen
+        Messages.showErrorDialog(project,"Feature is Not Currently Implemented","Not Implemented")
+        return
         form = OpenNetworkForm()
     }
 }

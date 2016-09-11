@@ -24,7 +24,6 @@ SOFTWARE.
 package com.thomas.needham.neurophidea.forms.create;
 
 import com.intellij.uiDesigner.core.*;
-import com.thomas.needham.neurophidea.forms.*;
 
 import javax.swing.*;
 import java.awt.*;

@@ -26,6 +26,7 @@ package com.thomas.needham.neurophidea.actions
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.project.Project
+import com.thomas.needham.neurophidea.datastructures.NetworkConfigurationFormData
 import com.thomas.needham.neurophidea.forms.create.CreateNetworkForm
 
 /**

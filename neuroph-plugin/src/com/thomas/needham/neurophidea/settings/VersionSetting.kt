@@ -141,10 +141,4 @@ class VersionSetting : Configurable {
             properties.setValue(LOCATION_KEY, locationTextBox.text)
         }
     }
-
-    override fun disposeUIResources() {
-        panel.remove(versionSelector)
-        panel.remove(versionLabel)
-        panel.isVisible = false
-    }
 }

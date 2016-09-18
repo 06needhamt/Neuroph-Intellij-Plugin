@@ -153,9 +153,9 @@ class NeurophModuleBuilder : JavaModuleBuilder, ModuleBuilderListener {
     }
 
     override fun createWizardSteps(wizardContext : WizardContext, modulesProvider : ModulesProvider) : Array<out ModuleWizardStep>? {
-//        val step = NeurophWizardStep(this)
-//        return arrayOf(step)
-        return super.createWizardSteps(wizardContext, modulesProvider)
+        val step = NeurophWizardStep(this)
+        return arrayOf(step)
+        //return super.createWizardSteps(wizardContext, modulesProvider)
     }
 
     fun setSdk(s: Sdk?) : Unit {

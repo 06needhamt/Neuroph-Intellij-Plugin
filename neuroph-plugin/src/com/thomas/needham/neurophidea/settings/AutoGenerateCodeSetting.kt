@@ -32,6 +32,7 @@ import javax.swing.JComponent
 import javax.swing.JPanel
 import com.thomas.needham.neurophidea.Constants.GENERATE_CODE_KEY
 import com.thomas.needham.neurophidea.Constants.GENERATE_JAVA_KEY
+import com.thomas.needham.neurophidea.Constants.GENERATE_GROOVY_KEY
 import com.thomas.needham.neurophidea.Constants.GENERATE_SCALA_KEY
 import com.thomas.needham.neurophidea.Constants.GENERATE_KOTLIN_KEY
 
@@ -41,6 +42,7 @@ import com.thomas.needham.neurophidea.Constants.GENERATE_KOTLIN_KEY
 class AutoGenerateCodeSetting : Configurable {
     var generate : Boolean = false
     var generateJava : Boolean = false
+    var generateGroovy : Boolean = false
     var generateScala : Boolean = false
     var generateKotlin : Boolean = false
     var properties : PropertiesComponent = PropertiesComponent.getInstance()
@@ -51,6 +53,7 @@ class AutoGenerateCodeSetting : Configurable {
         val insets = panel.insets
         val generateCheckBox : JCheckBox = JCheckBox("Regenerate Code On Change")
         val javaCheckBox : JCheckBox = JCheckBox("Generate Java Code")
+        val groovyCheckBox: JCheckBox = JCheckBox("Generate Groovy Code")
         val scalaCheckBox : JCheckBox = JCheckBox("Generate Scala Code")
         val kotlinCheckBox : JCheckBox = JCheckBox("Generate Kotlin Code")
         //val checkBoxGroupName : String = "CodeGenerationGroup"
@@ -67,6 +70,7 @@ class AutoGenerateCodeSetting : Configurable {
     override fun apply() {
         properties.setValue(GENERATE_CODE_KEY, generate)
         properties.setValue(GENERATE_JAVA_KEY, generateJava)
+        properties.setValue(GENERATE_GROOVY_KEY, generateGroovy)
         properties.setValue(GENERATE_SCALA_KEY, generateScala)
         properties.setValue(GENERATE_KOTLIN_KEY, generateKotlin)
     }
@@ -76,7 +80,9 @@ class AutoGenerateCodeSetting : Configurable {
         panel.add(generateCheckBox)
         javaCheckBox.setBounds(generateCheckBox.bounds.x + 50, generateCheckBox.bounds.y + 30, 200, 25)
         panel.add(javaCheckBox)
-        scalaCheckBox.setBounds(javaCheckBox.bounds.x, javaCheckBox.bounds.y + 30, 200, 25)
+        groovyCheckBox.setBounds(javaCheckBox.bounds.x, javaCheckBox.bounds.y + 30, 200, 25)
+        panel.add(groovyCheckBox)
+        scalaCheckBox.setBounds(groovyCheckBox.bounds.x, groovyCheckBox.bounds.y + 30, 200, 25)
         panel.add(scalaCheckBox)
         kotlinCheckBox.setBounds(scalaCheckBox.bounds.x, scalaCheckBox.bounds.y + 30, 200, 25)
         panel.add(kotlinCheckBox)
@@ -85,14 +91,17 @@ class AutoGenerateCodeSetting : Configurable {
             if (e.stateChange.and(ItemEvent.SELECTED) != 0) {
                 generate = true
                 javaCheckBox.isEnabled = true
+                groovyCheckBox.isEnabled = true
                 scalaCheckBox.isEnabled = true
                 kotlinCheckBox.isEnabled = true
             } else if (e.stateChange.and(ItemEvent.DESELECTED) != 0) {
                 generate = false
                 generateJava = false
+                generateGroovy = false
                 generateScala = false
                 generateKotlin = false
                 javaCheckBox.isEnabled = false
+                groovyCheckBox.isEnabled = false
                 scalaCheckBox.isEnabled = false
                 kotlinCheckBox.isEnabled = false
             }
@@ -105,6 +114,16 @@ class AutoGenerateCodeSetting : Configurable {
             } else if (e.stateChange.and(ItemEvent.DESELECTED) != 0) {
                 if (generate)
                     generateJava = false
+            }
+        }
+        groovyCheckBox.addItemListener { e ->
+            modified = true
+            if (e.stateChange.and(ItemEvent.SELECTED) != 0) {
+                if (generate)
+                    generateGroovy = true
+            } else if (e.stateChange.and(ItemEvent.DESELECTED) != 0) {
+                if (generate)
+                    generateGroovy = false
             }
         }
         scalaCheckBox.addItemListener { e ->
@@ -134,6 +153,7 @@ class AutoGenerateCodeSetting : Configurable {
         modified = false
         generate = properties.getBoolean(GENERATE_CODE_KEY, false)
         generateJava = properties.getBoolean(GENERATE_JAVA_KEY, false)
+        generateGroovy = properties.getBoolean(GENERATE_GROOVY_KEY, false)
         generateScala = properties.getBoolean(GENERATE_SCALA_KEY, false)
         generateKotlin = properties.getBoolean(GENERATE_KOTLIN_KEY, false)
     }

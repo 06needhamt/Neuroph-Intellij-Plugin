@@ -52,6 +52,7 @@ object Constants {
     val FILE_KEY = "FILE_KEY"
     val GENERATE_CODE_KEY = "ShouldGenerateCodeLocation"
     val GENERATE_JAVA_KEY = "ShouldGenerateJavaLocation"
+    val GENERATE_GROOVY_KEY = "ShouldGenerateGroovyLocation"
     val GENERATE_SCALA_KEY = "ShouldGenerateScalaLocation"
     val GENERATE_KOTLIN_KEY = "ShouldGenerateKotlinLocation"
     val RECOMPUTE_FILE_TYPE = "Must recompute file type"

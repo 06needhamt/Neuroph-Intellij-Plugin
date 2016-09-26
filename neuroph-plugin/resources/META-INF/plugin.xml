@@ -69,6 +69,7 @@ SOFTWARE. -->
         
         <fileEditorProvider implementation="com.thomas.needham.neurophidea.designer.editor.snnet.SnnetFileEditorProvider">
         </fileEditorProvider>
+
         <!-- Add your extensions here -->
     </extensions>
 
@@ -129,6 +130,10 @@ SOFTWARE. -->
         <!--<action id="OpenExistingNetworkAction" class="com.thomas.needham.neurophidea.actions.OpenExistingNetworkAction"-->
                 <!--text="Open Existing Network" description="Opens An Existing Network">-->
         <!--</action>-->
+        <action id="AutoGenerateCodeAction" class="com.thomas.needham.neurophidea.actions.AutoGenerateCodeAction"
+                text="Auto Generate Code Action" description="Regenerate Code For Neural Networks In Project">
+            <add-to-group group-id="BuildMenu" anchor="after" relative-to-action="Compile"/>
+        </action>
     </actions>
     <application-components>
         <component>

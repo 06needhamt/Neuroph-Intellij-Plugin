@@ -29,9 +29,11 @@ import com.intellij.openapi.components.ApplicationComponent
 import com.intellij.openapi.fileTypes.BinaryFileTypeDecompilers
 import com.intellij.openapi.fileTypes.FileTypeManager
 import com.intellij.openapi.fileTypes.impl.FileTypeManagerImpl
+import com.intellij.openapi.vfs.VirtualFileManager
 import com.thomas.needham.neurophidea.Constants.INITIALISATION_ACTION
 import com.thomas.needham.neurophidea.Constants.MENU_ACTION
 import com.thomas.needham.neurophidea.Constants.WINDOW_MENU_ACTION
+import com.thomas.needham.neurophidea.core.FileSaveListener
 import com.thomas.needham.neurophidea.designer.psi.tset.TsetFileType
 import com.thomas.needham.neurophidea.designer.editor.nnet.NnetDecompiler
 import com.thomas.needham.neurophidea.designer.psi.nnet.NnetFileType
@@ -44,6 +46,8 @@ class PluginRegistration : ApplicationComponent {
     val actionManager = ActionManager.getInstance()
     val init = InitialisationAction()
     val fileManager = FileTypeManagerImpl.getInstance()
+    val virtualFileManager = VirtualFileManager.getInstance()
+    val fileSaveListener = FileSaveListener();
     //val menu = MenuAction()
 
     override fun getComponentName() : String {
@@ -51,17 +55,19 @@ class PluginRegistration : ApplicationComponent {
     }
 
     override fun disposeComponent() {
-        println("Plugin Unloaded")
+        println("Plugin Unloaded: ${this.componentName}")
+        virtualFileManager.removeVirtualFileListener(fileSaveListener)
         actionManager.unregisterAction(MENU_ACTION)
         actionManager.unregisterAction(INITIALISATION_ACTION)
     }
 
     override fun initComponent() {
-        println("Plugin Loaded")
+        println("Plugin Loaded: ${this.componentName}")
         fileManager.registerFileType(NnetFileType(),*arrayOf("nnet"))
         fileManager.registerFileType(SnnetFileType(),*arrayOf("snnet"))
         fileManager.registerFileType(TsetFileType(),*arrayOf("tset"))
         BinaryFileTypeDecompilers.INSTANCE.addExplicitExtension(fileManager.getFileTypeByExtension("nnet"), NnetDecompiler())
+        virtualFileManager.addVirtualFileListener(fileSaveListener)
         actionManager.registerAction(INITIALISATION_ACTION, init)
         //actionManager.registerAction(MENU_ACTION,menu)
         val defaultActionGroup : DefaultActionGroup? = actionManager.getAction(WINDOW_MENU_ACTION) as DefaultActionGroup?

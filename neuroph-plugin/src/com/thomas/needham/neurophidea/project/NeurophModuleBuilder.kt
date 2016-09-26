@@ -154,8 +154,8 @@ class NeurophModuleBuilder : JavaModuleBuilder, ModuleBuilderListener {
 
     override fun createWizardSteps(wizardContext : WizardContext, modulesProvider : ModulesProvider) : Array<out ModuleWizardStep>? {
         val step = NeurophWizardStep(this)
-        //return arrayOf(step)
-        return super.createWizardSteps(wizardContext, modulesProvider)
+        return arrayOf(step)
+        //return super.createWizardSteps(wizardContext, modulesProvider) // Do Not Try To Get Steps From Superclass
     }
 
     fun setSdk(s: Sdk?) : Unit {
@@ -173,7 +173,7 @@ class NeurophModuleBuilder : JavaModuleBuilder, ModuleBuilderListener {
 
     override fun getAdditionalFields() : MutableList<WizardInputField<JComponent>>? {
         val field = NeurophWizardInputField()
-        //return listOf<WizardInputField<*>>(field) as MutableList<WizardInputField<JComponent>>
-        return super.getAdditionalFields()
+        return listOf<WizardInputField<*>>(field) as MutableList<WizardInputField<JComponent>>
+        //return super.getAdditionalFields() // Do Not Try To Get Steps From Superclass
     }
 }

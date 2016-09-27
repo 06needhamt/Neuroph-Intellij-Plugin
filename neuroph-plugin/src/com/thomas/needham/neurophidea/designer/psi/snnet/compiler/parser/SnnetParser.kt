@@ -81,6 +81,7 @@ class SnnetParser {
                             }
                             else{ // ERROR
                                 Messages.showErrorDialog(CompileSnnetFileAction.project, "COMPILE ERROR Found Unexpected Token ${tokensList[i].value}","Error")
+                                return false
                             }
                             if(i >= tokensList.size)
                                 break

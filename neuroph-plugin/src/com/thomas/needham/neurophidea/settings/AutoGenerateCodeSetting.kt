@@ -161,4 +161,13 @@ class AutoGenerateCodeSetting : Configurable {
     override fun getHelpTopic() : String {
         return ""
     }
+
+    override fun disposeUIResources() {
+        super.disposeUIResources()
+        panel.remove(kotlinCheckBox)
+        panel.remove(scalaCheckBox)
+        panel.remove(groovyCheckBox)
+        panel.remove(javaCheckBox)
+        panel.remove(generateCheckBox)
+    }
 }

@@ -1,0 +1,5 @@
+NetworkName : "Compiled Network"
+NetworkType : "MultiLayerPerceptron"
+NetworkLayers : 8, 8, 1;
+NetworkLearningRule : "BackPropagation"
+NetworkTransferFunction : "Gaussian"

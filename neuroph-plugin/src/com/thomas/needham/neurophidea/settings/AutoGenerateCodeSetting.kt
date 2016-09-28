@@ -24,8 +24,12 @@
 
 package com.thomas.needham.neurophidea.settings
 
+import com.intellij.ide.DataManager
 import com.intellij.ide.util.PropertiesComponent
+import com.intellij.openapi.actionSystem.DataConstants
+import com.intellij.openapi.actionSystem.DataContext
 import com.intellij.openapi.options.Configurable
+import com.intellij.openapi.project.Project
 import java.awt.event.ItemEvent
 import javax.swing.JCheckBox
 import javax.swing.JComponent
@@ -45,7 +49,7 @@ class AutoGenerateCodeSetting : Configurable {
     var generateGroovy : Boolean = false
     var generateScala : Boolean = false
     var generateKotlin : Boolean = false
-    var properties : PropertiesComponent = PropertiesComponent.getInstance()
+    var properties : PropertiesComponent = PropertiesComponent.getInstance(getProject.invoke())
 
     companion object Interface {
         var modified : Boolean = true
@@ -57,6 +61,11 @@ class AutoGenerateCodeSetting : Configurable {
         val scalaCheckBox : JCheckBox = JCheckBox("Generate Scala Code")
         val kotlinCheckBox : JCheckBox = JCheckBox("Generate Kotlin Code")
         //val checkBoxGroupName : String = "CodeGenerationGroup"
+        @JvmStatic val getProject : () -> Project? = {
+            val dataContext : DataContext = DataManager.getInstance().getDataContext()
+            val project : Project? = dataContext.getData(DataConstants.PROJECT) as Project?
+            project
+        }
     }
 
     override fun isModified() : Boolean {
@@ -76,7 +85,7 @@ class AutoGenerateCodeSetting : Configurable {
     }
 
     override fun createComponent() : JComponent {
-        generateCheckBox.setBounds(insets.left + 50, insets.top + 30, 100, 25)
+        generateCheckBox.setBounds(insets.left + 50, insets.top + 30, 200, 25)
         panel.add(generateCheckBox)
         javaCheckBox.setBounds(generateCheckBox.bounds.x + 50, generateCheckBox.bounds.y + 30, 200, 25)
         panel.add(javaCheckBox)

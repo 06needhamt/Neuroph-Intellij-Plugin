@@ -72,9 +72,9 @@ class AutoCodeGenerator {
         this.configs = GetConfigs(project?.baseDir?.children!!)
     }
 
-    private fun GetProject() : Project {
+    private fun GetProject() : Project? {
         val dataContext = DataManager.getInstance().getDataContext()
-        val project = dataContext.getData(DataConstants.PROJECT) as Project
+        val project : Project? = dataContext.getData(DataConstants.PROJECT) as Project?
         return project
     }
 

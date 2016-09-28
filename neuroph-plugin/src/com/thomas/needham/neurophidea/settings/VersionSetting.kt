@@ -22,10 +22,14 @@ SOFTWARE.
 */
 package com.thomas.needham.neurophidea.settings
 
+import com.intellij.ide.DataManager
 import com.intellij.ide.util.PropertiesComponent
+import com.intellij.openapi.actionSystem.DataConstants
+import com.intellij.openapi.actionSystem.DataContext
 import com.intellij.openapi.fileChooser.FileChooser
 import com.intellij.openapi.fileChooser.FileChooserDescriptor
 import com.intellij.openapi.options.Configurable
+import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.util.Consumer
 import com.thomas.needham.neurophidea.Constants.LOCATION_KEY
@@ -48,7 +52,7 @@ import javax.swing.JTextField
  * Created by Thomas Needham on 24/05/2016.
  */
 class VersionSetting : Configurable {
-    var properties : PropertiesComponent = PropertiesComponent.getInstance()
+    var properties : PropertiesComponent = PropertiesComponent.getInstance(getProject.invoke())
     val versions : ArrayList<String?> = ArrayList<String?>()
     var oldVersion : String = ""
     var oldPath : String = ""
@@ -64,6 +68,11 @@ class VersionSetting : Configurable {
         val locationLabel = JLabel("Neuroph.jar Location")
         val locationTextBox = JTextField()
         val locationBrowseButton = JButton("...")
+        @JvmStatic val getProject : () -> Project? = {
+            val dataContext : DataContext = DataManager.getInstance().getDataContext()
+            val project : Project? = dataContext.getData(DataConstants.PROJECT) as Project?
+            project
+        }
     }
 
     override fun isModified() : Boolean {

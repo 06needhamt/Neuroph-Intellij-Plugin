@@ -58,7 +58,7 @@ class AutoCodeGenerator {
     var scala : ScalaNetworkCodeGenerator? = null
     var groovy : GroovyNetworkCodeGenerator? = null
     var kotlin : KotlinNetworkCodeGenerator? = null
-    val configs : ArrayList<Tuple2<NetworkConfiguration?, String>?>
+    var configs : ArrayList<Tuple2<NetworkConfiguration?, String>?>? = null
 
     constructor(){
         project = InitialisationAction.project
@@ -69,7 +69,8 @@ class AutoCodeGenerator {
             projectDirectory = project?.basePath
             isOpen = project?.isOpen
         }
-        this.configs = GetConfigs(project?.baseDir?.children!!)
+        if(project?.baseDir?.children != null)
+            this.configs = GetConfigs(project?.baseDir?.children!!)
     }
 
     private fun GetProject() : Project? {
@@ -119,7 +120,9 @@ class AutoCodeGenerator {
     }
 
     fun GenerateCode() : Boolean{
-        for(conf: Tuple2<NetworkConfiguration?, String>? in configs){
+        if(configs == null)
+            return false
+        for(conf: Tuple2<NetworkConfiguration?, String>? in configs!!){
             if(conf != null){
                 val settings = GetGenerationSettings()
                 val path : String = conf.valueY?.substring(0 .. conf.valueY?.lastIndexOf('.')!!)!!

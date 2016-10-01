@@ -27,7 +27,7 @@ static TrainingSet<SupervisedTrainingElement> testingSet;
 static int[] layers = {8,8,1};
 
 static void loadNetwork() { 
-network = NeuralNetwork.load("C:/Users/thoma/IdeaProjects/untitled6/Compiled Network.nnet");
+network = NeuralNetwork.load("D:/GitHub/Neuroph-Intellij-Plugin/TestProject/Compiled Network.nnet");
 }
 
 static void trainNetwork() { 
@@ -42,7 +42,7 @@ trainingSet = TrainingSet.createFromFile("", inputSize, outputSize, ",");
 BackPropagation learningRule = new BackPropagation();
 network.setLearningRule(learningRule);
 network.learn(trainingSet);
-network.save("C:/Users/thoma/IdeaProjects/untitled6/Compiled Network.nnet");
+network.save("D:/GitHub/Neuroph-Intellij-Plugin/TestProject/Compiled Network.nnet");
 }
 
 static void testNetwork() { 

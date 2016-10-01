@@ -27,7 +27,7 @@ object Compiled Network {
 @JvmStatic var layers = arrayOf(8,8,1)
 
 @JvmStatic fun loadNetwork() { 
-network = NeuralNetwork.load("C:/Users/thoma/IdeaProjects/untitled6/Compiled Network.nnet")
+network = NeuralNetwork.load("D:/GitHub/Neuroph-Intellij-Plugin/TestProject/Compiled Network.nnet")
 }
 
 @JvmStatic fun trainNetwork() { 
@@ -42,7 +42,7 @@ trainingSet = TrainingSet.createFromFile("", inputSize, outputSize, ",") as Trai
 val learningRule = BackPropagation()
 (network as NeuralNetwork).learningRule = learningRule 
 (network as NeuralNetwork).learn(trainingSet) 
-(network as NeuralNetwork).save("C:/Users/thoma/IdeaProjects/untitled6/Compiled Network.nnet") 
+(network as NeuralNetwork).save("D:/GitHub/Neuroph-Intellij-Plugin/TestProject/Compiled Network.nnet") 
 }
 @JvmStatic fun testNetwork() { 
 var input = "" 

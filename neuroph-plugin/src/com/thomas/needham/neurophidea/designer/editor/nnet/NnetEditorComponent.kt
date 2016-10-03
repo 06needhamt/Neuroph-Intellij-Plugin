@@ -85,7 +85,7 @@ class NnetEditorComponent : JBLoadingPanel, DataProvider {
         documentListener = NnetDocumentListener(this)
         document?.addDocumentListener(documentListener)
         this.editor = createEditor()
-        this.add(editor.component, BorderLayout.CENTER)
+        this.add(this, BorderLayout.CENTER)
         isComponentModified = isModifiedImpl()
         isComponentValid = isEditorValidImpl()
         LOG.assertTrue(isComponentValid)

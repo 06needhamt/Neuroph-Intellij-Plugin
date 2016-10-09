@@ -21,7 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea.actions
+package com.thomas.needham.neurophidea
 
 import com.intellij.openapi.actionSystem.ActionManager
 import com.intellij.openapi.actionSystem.DefaultActionGroup
@@ -29,11 +29,15 @@ import com.intellij.openapi.components.ApplicationComponent
 import com.intellij.openapi.fileTypes.BinaryFileTypeDecompilers
 import com.intellij.openapi.fileTypes.FileTypeManager
 import com.intellij.openapi.fileTypes.impl.FileTypeManagerImpl
+import com.intellij.openapi.project.ProjectManager
+import com.intellij.openapi.project.ProjectManagerListener
 import com.intellij.openapi.vfs.VirtualFileManager
 import com.thomas.needham.neurophidea.Constants.INITIALISATION_ACTION
 import com.thomas.needham.neurophidea.Constants.MENU_ACTION
 import com.thomas.needham.neurophidea.Constants.WINDOW_MENU_ACTION
+import com.thomas.needham.neurophidea.actions.InitialisationAction
 import com.thomas.needham.neurophidea.core.FileSaveListener
+import com.thomas.needham.neurophidea.core.NeurophProjectManagerListener
 import com.thomas.needham.neurophidea.designer.psi.tset.TsetFileType
 import com.thomas.needham.neurophidea.designer.editor.nnet.NnetDecompiler
 import com.thomas.needham.neurophidea.designer.editor.tset.TsetDecompiler
@@ -46,10 +50,19 @@ import com.thomas.needham.neurophidea.designer.psi.snnet.SnnetFileType
 class PluginRegistration : ApplicationComponent {
     val actionManager = ActionManager.getInstance()
     val init = InitialisationAction()
-    val fileManager = FileTypeManagerImpl.getInstance()
+    val fileManager : FileTypeManagerImpl = FileTypeManagerImpl.getInstance() as FileTypeManagerImpl
     val virtualFileManager = VirtualFileManager.getInstance()
-    val fileSaveListener = FileSaveListener();
-    //val menu = MenuAction()
+    val fileSaveListener = FileSaveListener()
+    val projectListener = NeurophProjectManagerListener()
+    val nnetDecompiler = NnetDecompiler()
+    val tsetDecompiler = TsetDecompiler()
+    val nnetFileType = NnetFileType()
+    val snnetFileType = SnnetFileType()
+    val tsetFileType = TsetFileType()
+
+    companion object Data{
+        @JvmStatic var projectClosing = false
+    }
 
     override fun getComponentName() : String {
         return "Neuroph For Intellij"
@@ -60,20 +73,25 @@ class PluginRegistration : ApplicationComponent {
         virtualFileManager.removeVirtualFileListener(fileSaveListener)
         actionManager.unregisterAction(MENU_ACTION)
         actionManager.unregisterAction(INITIALISATION_ACTION)
+        BinaryFileTypeDecompilers.INSTANCE.removeExplicitExtension(fileManager.getFileTypeByExtension("nnet"),nnetDecompiler)
+        BinaryFileTypeDecompilers.INSTANCE.removeExplicitExtension(fileManager.getFileTypeByExtension("tset"),tsetDecompiler)
+        fileManager.unregisterFileType(nnetFileType)
+        fileManager.unregisterFileType(snnetFileType)
+        fileManager.unregisterFileType(tsetFileType)
+        ProjectManager.getInstance().removeProjectManagerListener(projectListener)
     }
 
     override fun initComponent() {
         println("Plugin Loaded: ${this.componentName}")
-        fileManager.registerFileType(NnetFileType(),*arrayOf("nnet"))
-        fileManager.registerFileType(SnnetFileType(),*arrayOf("snnet"))
-        fileManager.registerFileType(TsetFileType(),*arrayOf("tset"))
-        BinaryFileTypeDecompilers.INSTANCE.addExplicitExtension(fileManager.getFileTypeByExtension("nnet"), NnetDecompiler())
-        BinaryFileTypeDecompilers.INSTANCE.addExplicitExtension(fileManager.getFileTypeByExtension("tset"), TsetDecompiler())
+        fileManager.registerFileType(nnetFileType,*arrayOf("nnet"))
+        fileManager.registerFileType(snnetFileType,*arrayOf("snnet"))
+        fileManager.registerFileType(tsetFileType,*arrayOf("tset"))
+        BinaryFileTypeDecompilers.INSTANCE.addExplicitExtension(fileManager.getFileTypeByExtension("nnet"), nnetDecompiler)
+        BinaryFileTypeDecompilers.INSTANCE.addExplicitExtension(fileManager.getFileTypeByExtension("tset"), tsetDecompiler)
         virtualFileManager.addVirtualFileListener(fileSaveListener)
         actionManager.registerAction(INITIALISATION_ACTION, init)
-        //actionManager.registerAction(MENU_ACTION,menu)
         val defaultActionGroup : DefaultActionGroup? = actionManager.getAction(WINDOW_MENU_ACTION) as DefaultActionGroup?
         defaultActionGroup?.addSeparator()
-        //defaultActionGroup?.addAction(menu)
+        ProjectManager.getInstance().addProjectManagerListener(projectListener)
     }
 }

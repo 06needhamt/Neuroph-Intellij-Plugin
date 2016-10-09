@@ -59,7 +59,7 @@ class AutoCodeGenerator {
     var groovy : GroovyNetworkCodeGenerator? = null
     var kotlin : KotlinNetworkCodeGenerator? = null
     var configs : ArrayList<Tuple2<NetworkConfiguration?, String>?>? = null
-
+    var error : Boolean = false
     constructor(){
         project = InitialisationAction.project
         projectDirectory = InitialisationAction.project?.basePath
@@ -120,8 +120,10 @@ class AutoCodeGenerator {
     }
 
     fun GenerateCode() : Boolean{
-        if(configs == null)
+        if(configs == null) {
+            error = false
             return false
+        }
         for(conf: Tuple2<NetworkConfiguration?, String>? in configs!!){
             if(conf != null){
                 val settings = GetGenerationSettings()

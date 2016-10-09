@@ -31,6 +31,7 @@ import com.intellij.openapi.vfs.VirtualFileEvent
 import com.intellij.openapi.vfs.VirtualFileListener
 import com.intellij.openapi.vfs.VirtualFileMoveEvent
 import com.intellij.openapi.vfs.VirtualFilePropertyEvent
+import com.thomas.needham.neurophidea.PluginRegistration
 import com.thomas.needham.neurophidea.actions.AutoGenerateCodeAction
 import java.awt.event.InputEvent
 
@@ -64,7 +65,7 @@ class FileSaveListener : VirtualFileListener {
 
     override fun contentsChanged(p0 : VirtualFileEvent) {
         val generator : AutoCodeGenerator = AutoCodeGenerator()
-        if(!generator.GenerateCode())
+        if(!generator.GenerateCode() && generator.error && !PluginRegistration.projectClosing)
             Messages.showErrorDialog(AutoCodeGenerator.project, "Error Generating Code", "Error")
     }
 

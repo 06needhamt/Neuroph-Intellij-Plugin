@@ -26,7 +26,6 @@ package com.thomas.needham.neurophidea.designer.editor.tset
 import com.intellij.openapi.ui.Messages
 import com.intellij.openapi.vfs.VirtualFile
 import com.thomas.needham.neurophidea.actions.InitialisationAction
-import org.neuroph.core.data.DataSet
 import org.neuroph.core.learning.TrainingSet
 import org.neuroph.core.learning.TrainingElement
 import java.io.File

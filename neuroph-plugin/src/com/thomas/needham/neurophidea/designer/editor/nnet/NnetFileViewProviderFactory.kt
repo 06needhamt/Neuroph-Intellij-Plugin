@@ -21,7 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-package com.thomas.needham.neurophidea.designer.editor.snnet
+package com.thomas.needham.neurophidea.designer.editor.nnet
 
 import com.intellij.lang.Language
 import com.intellij.openapi.vfs.VirtualFile
@@ -30,10 +30,9 @@ import com.intellij.psi.FileViewProviderFactory
 import com.intellij.psi.PsiManager
 
 /**
- * Created by thoma on 24/06/2016.
+ * Created by Thomas Needham on 09/06/2016.
  */
-
-class SnnetFileViewProvider : FileViewProviderFactory {
+class NnetFileViewProviderFactory : FileViewProviderFactory {
 
     override fun createFileViewProvider(p0 : VirtualFile, p1 : Language?, p2 : PsiManager, p3 : Boolean) : FileViewProvider {
         throw UnsupportedOperationException()

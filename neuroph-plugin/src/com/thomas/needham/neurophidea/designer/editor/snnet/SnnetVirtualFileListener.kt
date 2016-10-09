@@ -29,7 +29,6 @@ import com.intellij.openapi.vfs.VirtualFileAdapter
 import com.intellij.openapi.vfs.VirtualFileEvent
 import com.intellij.openapi.vfs.VirtualFilePropertyEvent
 import com.intellij.util.FileContentUtilCore
-import com.thomas.needham.neurophidea.designer.editor.nnet.NnetEditorComponent
 
 /**
  * Created by thoma on 24/06/2016.
@@ -55,9 +54,9 @@ class SnnetVirtualFileListener : VirtualFileAdapter {
     override fun contentsChanged(event : VirtualFileEvent) {
         super.contentsChanged(event)
         if(event.isFromSave){
-            NnetEditorComponent.assertThread()
+            SnnetEditorComponent.assertThread()
             val file : VirtualFile = event.file
-            NnetEditorComponent.LOG.assertTrue(file.isValid)
+            SnnetEditorComponent.LOG.assertTrue(file.isValid)
             if(component.file!!.equals(file)){
                 component.updateModifiedProperty()
             }

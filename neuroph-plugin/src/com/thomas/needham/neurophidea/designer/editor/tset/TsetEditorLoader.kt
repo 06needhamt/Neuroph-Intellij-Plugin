@@ -37,7 +37,7 @@ import java.io.ObjectInputStream
 /**
  * Created by thoma on 12/07/2016.
  */
-class TsetLoader {
+class TsetEditorLoader {
     val file : VirtualFile?
     constructor(file: VirtualFile?){
         this.file = file

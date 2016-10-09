@@ -25,7 +25,6 @@ package com.thomas.needham.neurophidea.designer.editor.snnet
 
 import com.intellij.openapi.fileTypes.FileTypeEvent
 import com.intellij.openapi.fileTypes.FileTypeListener
-import com.thomas.needham.neurophidea.designer.editor.nnet.NnetEditorComponent
 
 /**
  * Created by thoma on 24/06/2016.
@@ -39,7 +38,7 @@ class SnnetFileTypeListener : FileTypeListener.Adapter {
 
     override fun fileTypesChanged(event : FileTypeEvent) {
         super.fileTypesChanged(event)
-        NnetEditorComponent.assertThread()
+        SnnetEditorComponent.assertThread()
         component.updateValidProperty()
         component.updateHighlighters()
     }

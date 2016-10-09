@@ -19,7 +19,7 @@ SOFTWARE. -->
 <idea-plugin version="2">
     <id>com.thomas.needham.neurophidea</id>
     <name>Neuroph For Intellij</name>
-    <version>0.9.0</version>
+    <version>1.0.0</version>
     <vendor email="06needhamt@gmail.com" url="https://github.com/06needhamt/Neuroph-Intellij-Plugin">Tom Needham</vendor>
 
     <description><![CDATA[
@@ -58,16 +58,22 @@ SOFTWARE. -->
         <moduleBuilder builderClass="com.thomas.needham.neurophidea.project.NeurophModuleBuilder">
         </moduleBuilder>
 
-        <fileType.fileViewProviderFactory filetype="nnet" implementationClass="com.thomas.needham.neurophidea.designer.editor.nnet.NnetFileViewProvider">
+        <fileType.fileViewProviderFactory filetype="nnet" implementationClass="com.thomas.needham.neurophidea.designer.editor.nnet.NnetFileViewProviderFactory">
         </fileType.fileViewProviderFactory>
 
         <fileEditorProvider implementation="com.thomas.needham.neurophidea.designer.editor.nnet.NnetFileEditorProvider">
         </fileEditorProvider>
 
-        <fileType.fileViewProviderFactory filetype="snnet" implementationClass="com.thomas.needham.neurophidea.designer.editor.snnet.SnnetFileViewProvider">
+        <fileType.fileViewProviderFactory filetype="snnet" implementationClass="com.thomas.needham.neurophidea.designer.editor.snnet.SnnetFileViewProviderFactory">
         </fileType.fileViewProviderFactory>
         
         <fileEditorProvider implementation="com.thomas.needham.neurophidea.designer.editor.snnet.SnnetFileEditorProvider">
+        </fileEditorProvider>
+
+        <fileType.fileViewProviderFactory filetype="tset" implementationClass="com.thomas.needham.neurophidea.designer.editor.tset.TsetFileViewProviderFactory">
+        </fileType.fileViewProviderFactory>
+
+        <fileEditorProvider implementation="com.thomas.needham.neurophidea.designer.editor.tset.TsetFileEditorProvider">
         </fileEditorProvider>
 
         <!-- Add your extensions here -->
@@ -146,7 +152,13 @@ SOFTWARE. -->
             <implementation-class>com.thomas.needham.neurophidea.designer.editor.nnet.NnetDecompiler</implementation-class>
         </component>
         <component>
+            <implementation-class>com.thomas.needham.neurophidea.designer.editor.tset.TsetDecompiler</implementation-class>
+        </component>
+        <component>
             <implementation-class>com.thomas.needham.neurophidea.designer.editor.snnet.SnnetDocumentManager</implementation-class>
+        </component>
+        <component>
+            <implementation-class>com.thomas.needham.neurophidea.designer.editor.tset.TsetDocumentManager</implementation-class>
         </component>
     </application-components>
 </idea-plugin>

@@ -56,8 +56,8 @@ class SnnetFileEditorProvider : FileEditorProvider {
             return ApplicationManager.getApplication().getComponent(SnnetFileEditorProvider::class.java)
         }
 
-        fun putSnnetEditor(editor : Editor?, nnetEditor : SnnetEditorImpl?) {
-            editor?.putUserData(NNET_EDITOR_KEY, nnetEditor)
+        fun putSnnetEditor(editor : Editor?, snnetEditor : SnnetEditorImpl?) {
+            editor?.putUserData(NNET_EDITOR_KEY, snnetEditor)
         }
     }
 

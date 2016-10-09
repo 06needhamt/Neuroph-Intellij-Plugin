@@ -150,7 +150,7 @@ open class SnnetEditorImpl : UserDataHolderBase, SnnetEditor {
         component?.dispose()
     }
     fun firePropertyChange(propertyName: String, oldValue: Any?, newValue: Any?) {
-        changeSupport?.firePropertyChange(propertyName, oldValue, newValue);
+        changeSupport?.firePropertyChange(propertyName, oldValue, newValue)
     }
 
     override fun toString() : String {

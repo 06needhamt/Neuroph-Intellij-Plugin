@@ -36,6 +36,7 @@ import com.thomas.needham.neurophidea.Constants.WINDOW_MENU_ACTION
 import com.thomas.needham.neurophidea.core.FileSaveListener
 import com.thomas.needham.neurophidea.designer.psi.tset.TsetFileType
 import com.thomas.needham.neurophidea.designer.editor.nnet.NnetDecompiler
+import com.thomas.needham.neurophidea.designer.editor.tset.TsetDecompiler
 import com.thomas.needham.neurophidea.designer.psi.nnet.NnetFileType
 import com.thomas.needham.neurophidea.designer.psi.snnet.SnnetFileType
 
@@ -67,6 +68,7 @@ class PluginRegistration : ApplicationComponent {
         fileManager.registerFileType(SnnetFileType(),*arrayOf("snnet"))
         fileManager.registerFileType(TsetFileType(),*arrayOf("tset"))
         BinaryFileTypeDecompilers.INSTANCE.addExplicitExtension(fileManager.getFileTypeByExtension("nnet"), NnetDecompiler())
+        BinaryFileTypeDecompilers.INSTANCE.addExplicitExtension(fileManager.getFileTypeByExtension("tset"), TsetDecompiler())
         virtualFileManager.addVirtualFileListener(fileSaveListener)
         actionManager.registerAction(INITIALISATION_ACTION, init)
         //actionManager.registerAction(MENU_ACTION,menu)

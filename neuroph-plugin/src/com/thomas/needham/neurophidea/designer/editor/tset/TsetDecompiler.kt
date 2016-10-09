@@ -13,14 +13,14 @@ import java.io.IOException
  * Created by thoma on 12/07/2016.
  */
 class TsetDecompiler : BinaryFileDecompiler {
-    var dataSetLoader : TsetLoader? = null
+    var dataSetLoader : TsetEditorLoader? = null
     var dataSet : TrainingSet<TrainingElement?>? = null
 
     override fun decompile(p0 : VirtualFile?) : CharSequence {
         try {
             var result = ""
             if (p0?.isValid!!) {
-                dataSetLoader = TsetLoader(p0)
+                dataSetLoader = TsetEditorLoader(p0)
                 dataSet = dataSetLoader?.LoadDataSet()
                 if (dataSet == null) {
                     throw IOException("Error Loading Data Set From File: ${p0?.path}")

@@ -1,4 +1,4 @@
-NetworkName : "Compiled Network"
+NetworkName : "CompiledNetwork"
 NetworkType : "MultiLayerPerceptron"
 NetworkLayers : 8, 8, 1;
 NetworkLearningRule : "BackPropagation"

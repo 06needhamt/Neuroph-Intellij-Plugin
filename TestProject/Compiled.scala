@@ -15,7 +15,7 @@ import org.neuroph.nnet.learning.BackPropagation
 import org.neuroph.core.transfer.Gaussian
 
 
-object Compiled Network { 
+object CompiledNetwork { 
   var inputSize : Int = 8 
   var outputSize : Int = 1
   var network : NeuralNetwork = _
@@ -23,7 +23,7 @@ object Compiled Network {
   var testingSet : TrainingSet[SupervisedTrainingElement] = _
   var layers : Array[Int] = Array(8,8,1)
 def loadNetwork() { 
- network = NeuralNetwork.load("D:/GitHub/Neuroph-Intellij-Plugin/TestProject/Compiled Network.nnet")
+ network = NeuralNetwork.load("D:/GitHub/Neuroph-Intellij-Plugin/TestProject/CompiledNetwork.nnet")
 }
 def trainNetwork() {
 val list = new util.ArrayList[Integer]()
@@ -36,7 +36,7 @@ trainingSet = TrainingSet.createFromFile("", inputSize, outputSize, ",").asInsta
 val learningRule = new BackPropagation();
 network.setLearningRule(learningRule)
 network.learn(trainingSet)
-network.save("D:/GitHub/Neuroph-Intellij-Plugin/TestProject/Compiled Network.nnet")
+network.save("D:/GitHub/Neuroph-Intellij-Plugin/TestProject/CompiledNetwork.nnet")
 }
 
 def testNetwork() { 

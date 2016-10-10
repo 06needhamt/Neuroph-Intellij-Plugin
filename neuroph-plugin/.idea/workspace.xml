@@ -7,12 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bf29350-129e-4cfc-8762-78cb4578196f" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../TestProject/.idea/inspectionProfiles/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../TestProject/Compiled.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../TestProject/Compiled.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../TestProject/Compiled.kt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../TestProject/Compiled.scala" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TestProject/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../TestProject/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TestProject/src/Main.java" afterPath="$PROJECT_DIR$/../TestProject/src/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/META-INF/plugin.xml" afterPath="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/AutoCodeGenerator.kt" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/AutoCodeGenerator.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/FileSaveListener.kt" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/FileSaveListener.kt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/PluginRegistration.kt" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/PluginRegistration.kt" />
     </list>
     <ignored path="neuroph-plugin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,8 +39,8 @@
       <file leaf-file-name="plugin.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="143" column="28" selection-start-line="143" selection-start-column="28" selection-end-line="143" selection-end-column="28" />
+            <state relative-caret-position="540">
+              <caret line="31" column="67" selection-start-line="31" selection-start-column="67" selection-end-line="31" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -45,7 +49,7 @@
       <file leaf-file-name="TsetDecompiler.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetDecompiler.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
+            <state relative-caret-position="600">
               <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding>
                 <element signature="e#61#428#0" expanded="true" />
@@ -54,136 +58,85 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NnetLoader.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetLoader.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="59" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TrainingSet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Downloads/neuroph-2.6/neuroph-2.6/sources/org/neuroph/core/learning/TrainingSet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8130">
-              <caret line="334" column="30" selection-start-line="334" selection-start-column="30" selection-end-line="334" selection-end-column="30" />
-              <folding>
-                <element signature="n#!!doc" expanded="false" />
-                <element signature="imports" expanded="false" />
-                <element signature="e#2216#2217#0" expanded="false" />
-                <element signature="e#2266#2267#0" expanded="false" />
-                <element signature="e#4413#4414#0" expanded="false" />
-                <element signature="e#4454#4455#0" expanded="false" />
-                <element signature="e#4649#4650#0" expanded="false" />
-                <element signature="e#4696#4697#0" expanded="false" />
-                <element signature="e#4865#4866#0" expanded="false" />
-                <element signature="e#4901#4902#0" expanded="false" />
-                <element signature="e#5036#5037#0" expanded="false" />
-                <element signature="e#5072#5073#0" expanded="false" />
-                <element signature="e#5346#5347#0" expanded="false" />
-                <element signature="e#5391#5392#0" expanded="false" />
-                <element signature="e#5480#5481#0" expanded="false" />
-                <element signature="e#5517#5518#0" expanded="false" />
-                <element signature="e#5697#5698#0" expanded="false" />
-                <element signature="e#5743#5744#0" expanded="false" />
-                <element signature="e#5928#5929#0" expanded="false" />
-                <element signature="e#5971#5972#0" expanded="false" />
-                <element signature="e#6113#6114#0" expanded="false" />
-                <element signature="e#6141#6142#0" expanded="false" />
-                <element signature="e#6313#6314#0" expanded="false" />
-                <element signature="e#6347#6348#0" expanded="false" />
-                <element signature="e#6491#6492#0" expanded="false" />
-                <element signature="e#6531#6532#0" expanded="false" />
-                <element signature="e#6694#6695#0" expanded="false" />
-                <element signature="e#6725#6726#0" expanded="false" />
-                <element signature="e#6879#6880#0" expanded="false" />
-                <element signature="e#6912#6913#0" expanded="false" />
-                <element signature="e#12025#12026#0" expanded="false" />
-                <element signature="e#12076#12077#0" expanded="false" />
-                <element signature="e#12128#12129#0" expanded="false" />
-                <element signature="e#12170#12171#0" expanded="false" />
-                <element signature="e#12464#12465#0" expanded="false" />
-                <element signature="e#12508#12509#0" expanded="false" />
-                <element signature="e#12561#12562#0" expanded="false" />
-                <element signature="e#12615#12616#0" expanded="false" />
-                <element signature="e#12670#12671#0" expanded="false" />
-                <element signature="e#12726#12727#0" expanded="false" />
-                <element signature="e#13968#13969#0" expanded="false" />
-                <element signature="e#14012#14013#0" expanded="false" />
-                <element signature="e#14305#14306#0" expanded="false" />
-                <element signature="e#14348#14349#0" expanded="false" />
-                <element signature="e#14377#14378#0" expanded="false" />
-                <element signature="e#14422#14423#0" expanded="false" />
-                <element signature="e#14718#14719#0" expanded="false" />
-                <element signature="e#14766#14767#0" expanded="false" />
-                <element signature="e#15428#15429#0" expanded="false" />
-                <element signature="e#15471#15472#0" expanded="false" />
-                <element signature="e#16058#16059#0" expanded="false" />
-                <element signature="e#16085#16086#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PluginRegistration.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/PluginRegistration.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1050">
-              <caret line="79" column="51" selection-start-line="79" selection-start-column="51" selection-end-line="79" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileTypeManagerImpl.class" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA Ultimate Edition 163.4830.24/lib/idea.jar!/com/intellij/openapi/fileTypes/impl/FileTypeManagerImpl.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="147" column="34" selection-start-line="147" selection-start-column="16" selection-end-line="147" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NeurophProjectManagerListener.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/NeurophProjectManagerListener.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="656">
-              <caret line="48" column="49" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
-              <folding>
-                <element signature="e#1223#1382#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TsetEditorLoader.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetEditorLoader.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="27" column="66" selection-start-line="27" selection-start-column="66" selection-end-line="27" selection-end-column="66" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="FileSaveListener.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/FileSaveListener.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="67" column="40" selection-start-line="67" selection-start-column="40" selection-end-line="67" selection-end-column="40" />
+            <state relative-caret-position="-1210">
+              <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+              <folding>
+                <element signature="e#1223#1859#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VirtualFileSystemEntry.class" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA Ultimate Edition 163.4830.24/lib/idea.jar!/com/intellij/openapi/vfs/newvfs/impl/VirtualFileSystemEntry.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AutoCodeGenerator.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/AutoCodeGenerator.kt">
+      <file leaf-file-name="VirtualFileEvent.class" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA Ultimate Edition 163.4830.24/lib/openapi.jar!/com/intellij/openapi/vfs/VirtualFileEvent.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2028">
-              <caret line="123" column="25" selection-start-line="123" selection-start-column="25" selection-end-line="123" selection-end-column="25" />
+            <state relative-caret-position="1950">
+              <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+              <folding>
+                <element signature="e#2960#2961#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventDispatcher.class" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA Ultimate Edition 163.4830.24/lib/util.jar!/com/intellij/util/EventDispatcher.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BulkVirtualFileListenerAdapter.class" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA Ultimate Edition 163.4830.24/lib/openapi.jar!/com/intellij/openapi/vfs/impl/BulkVirtualFileListenerAdapter.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="430">
+              <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessageBusConnectionImpl.class" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA Ultimate Edition 163.4830.24/lib/util.jar!/com/intellij/util/messages/impl/MessageBusConnectionImpl.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessageBusImpl.class" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA Ultimate Edition 163.4830.24/lib/util.jar!/com/intellij/util/messages/impl/MessageBusImpl.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="520">
+              <caret line="317" column="0" selection-start-line="317" selection-start-column="0" selection-end-line="317" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StorageVirtualFileTracker.class" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA Ultimate Edition 163.4830.24/lib/idea.jar!/com/intellij/configurationStore/StorageVirtualFileTracker.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="497">
+              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -259,15 +212,15 @@
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetFileViewProvider.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetFileViewProviderFactory.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetEditorImpl.kt" />
-        <option value="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/PluginRegistration.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetLoader.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetDecompiler.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetEditorLoader.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/PluginRegistration.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/NeurophProjectManagerListener.kt" />
-        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/FileSaveListener.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/AutoCodeGenerator.kt" />
+        <option value="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
+        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/FileSaveListener.kt" />
       </list>
     </option>
   </component>
@@ -331,8 +284,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -1092,7 +1045,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1107,7 +1060,6 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2185501" sideWeight="0.4940978" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32214764" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="ASM" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19299221" sideWeight="0.5059022" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1123,6 +1075,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988507" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32214764" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1169,10 +1122,48 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/FileSaveListener.kt</url>
+          <line>79</line>
+          <properties />
+          <option name="timeStamp" value="194" />
+        </line-breakpoint>
+        <line-breakpoint type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/FileSaveListener.kt</url>
+          <line>83</line>
+          <properties />
+          <option name="timeStamp" value="195" />
+        </line-breakpoint>
+        <line-breakpoint type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/FileSaveListener.kt</url>
+          <line>87</line>
+          <properties />
+          <option name="timeStamp" value="196" />
+        </line-breakpoint>
+        <line-breakpoint type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/FileSaveListener.kt</url>
+          <line>91</line>
+          <properties />
+          <option name="timeStamp" value="197" />
+        </line-breakpoint>
+        <line-breakpoint type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/FileSaveListener.kt</url>
+          <line>78</line>
+          <properties />
+          <option name="timeStamp" value="198" />
+        </line-breakpoint>
+        <line-breakpoint type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/FileSaveListener.kt</url>
+          <line>64</line>
+          <properties />
+          <option name="timeStamp" value="199" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="182" />
+      <option name="time" value="200" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
@@ -1186,56 +1177,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowExportNetworkFormAction.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="47" column="20" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/export/ExportNetworkForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="46" column="11" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/export/ExportNetworkFormImplementation.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
-          <caret line="38" column="70" selection-start-line="38" selection-start-column="70" selection-end-line="38" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/export/ExportSourceButtonActionListener.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1110">
-          <caret line="80" column="15" selection-start-line="80" selection-start-column="0" selection-end-line="100" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/JavaNetworkCodeGenerator.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1500">
-          <caret line="79" column="8" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA Ultimate Edition 163.3983.4/lib/idea.jar!/com/intellij/openapi/project/impl/ProjectImpl.class" />
-    <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA Ultimate Edition 163.3983.4/lib/idea.jar!/com/intellij/openapi/vfs/newvfs/impl/VirtualDirectoryImpl.class" />
-    <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA Ultimate Edition 163.3983.4/lib/util.jar!/com/intellij/util/EventDispatcher.class" />
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophModule.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophModuleBuilder.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3510">
           <caret line="176" column="87" selection-start-line="176" selection-start-column="87" selection-end-line="176" selection-end-column="87" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1380,9 +1325,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
           <caret line="102" column="37" selection-start-line="102" selection-start-column="37" selection-end-line="102" selection-end-column="37" />
-          <folding>
-            <element signature="e#1146#2456#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1414,7 +1356,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="38" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1422,7 +1363,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="35" column="6" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1430,9 +1370,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="35" column="59" selection-start-line="35" selection-start-column="59" selection-end-line="35" selection-end-column="59" />
-          <folding>
-            <element signature="e#1239#1440#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1457,7 +1394,7 @@
         <state relative-caret-position="2430">
           <caret line="188" column="79" selection-start-line="188" selection-start-column="79" selection-end-line="188" selection-end-column="79" />
           <folding>
-            <element signature="e#1239#5325#0" expanded="true" />
+            <element signature="e#1239#5325#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1466,9 +1403,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="44" column="15" selection-start-line="44" selection-start-column="15" selection-end-line="44" selection-end-column="15" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1476,60 +1410,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8130">
           <caret line="334" column="30" selection-start-line="334" selection-start-column="30" selection-end-line="334" selection-end-column="30" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#2216#2217#0" expanded="false" />
-            <element signature="e#2266#2267#0" expanded="false" />
-            <element signature="e#4413#4414#0" expanded="false" />
-            <element signature="e#4454#4455#0" expanded="false" />
-            <element signature="e#4649#4650#0" expanded="false" />
-            <element signature="e#4696#4697#0" expanded="false" />
-            <element signature="e#4865#4866#0" expanded="false" />
-            <element signature="e#4901#4902#0" expanded="false" />
-            <element signature="e#5036#5037#0" expanded="false" />
-            <element signature="e#5072#5073#0" expanded="false" />
-            <element signature="e#5346#5347#0" expanded="false" />
-            <element signature="e#5391#5392#0" expanded="false" />
-            <element signature="e#5480#5481#0" expanded="false" />
-            <element signature="e#5517#5518#0" expanded="false" />
-            <element signature="e#5697#5698#0" expanded="false" />
-            <element signature="e#5743#5744#0" expanded="false" />
-            <element signature="e#5928#5929#0" expanded="false" />
-            <element signature="e#5971#5972#0" expanded="false" />
-            <element signature="e#6113#6114#0" expanded="false" />
-            <element signature="e#6141#6142#0" expanded="false" />
-            <element signature="e#6313#6314#0" expanded="false" />
-            <element signature="e#6347#6348#0" expanded="false" />
-            <element signature="e#6491#6492#0" expanded="false" />
-            <element signature="e#6531#6532#0" expanded="false" />
-            <element signature="e#6694#6695#0" expanded="false" />
-            <element signature="e#6725#6726#0" expanded="false" />
-            <element signature="e#6879#6880#0" expanded="false" />
-            <element signature="e#6912#6913#0" expanded="false" />
-            <element signature="e#12025#12026#0" expanded="false" />
-            <element signature="e#12076#12077#0" expanded="false" />
-            <element signature="e#12128#12129#0" expanded="false" />
-            <element signature="e#12170#12171#0" expanded="false" />
-            <element signature="e#12464#12465#0" expanded="false" />
-            <element signature="e#12508#12509#0" expanded="false" />
-            <element signature="e#12561#12562#0" expanded="false" />
-            <element signature="e#12615#12616#0" expanded="false" />
-            <element signature="e#12670#12671#0" expanded="false" />
-            <element signature="e#12726#12727#0" expanded="false" />
-            <element signature="e#13968#13969#0" expanded="false" />
-            <element signature="e#14012#14013#0" expanded="false" />
-            <element signature="e#14305#14306#0" expanded="false" />
-            <element signature="e#14348#14349#0" expanded="false" />
-            <element signature="e#14377#14378#0" expanded="false" />
-            <element signature="e#14422#14423#0" expanded="false" />
-            <element signature="e#14718#14719#0" expanded="false" />
-            <element signature="e#14766#14767#0" expanded="false" />
-            <element signature="e#15428#15429#0" expanded="false" />
-            <element signature="e#15471#15472#0" expanded="false" />
-            <element signature="e#16058#16059#0" expanded="false" />
-            <element signature="e#16085#16086#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1542,13 +1422,43 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetLoader.kt" />
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetDecompiler.kt">
+    <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA Ultimate Edition 163.4830.24/lib/idea.jar!/com/intellij/openapi/fileTypes/impl/FileTypeManagerImpl.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="4380">
+          <caret line="147" column="34" selection-start-line="147" selection-start-column="16" selection-end-line="147" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/PluginRegistration.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1140">
+          <caret line="79" column="51" selection-start-line="79" selection-start-column="51" selection-end-line="79" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/NeurophProjectManagerListener.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="48" column="49" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
           <folding>
-            <element signature="e#61#428#0" expanded="true" />
+            <element signature="e#1223#1382#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/nnet/NnetFileType.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="34" column="6" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/AutoCodeGenerator.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="62" column="4" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1560,53 +1470,97 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA Ultimate Edition 163.4830.24/lib/idea.jar!/com/intellij/openapi/fileTypes/impl/FileTypeManagerImpl.class">
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowNetworkOutputFormAction.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="147" column="34" selection-start-line="147" selection-start-column="16" selection-end-line="147" selection-end-column="34" />
+        <state relative-caret-position="1590">
+          <caret line="83" column="16" selection-start-line="83" selection-start-column="16" selection-end-line="83" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/PluginRegistration.kt">
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetDecompiler.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="79" column="51" selection-start-line="79" selection-start-column="51" selection-end-line="79" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/NeurophProjectManagerListener.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="656">
-          <caret line="48" column="49" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
+        <state relative-caret-position="600">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
-            <element signature="e#1223#1382#0" expanded="true" />
+            <element signature="e#61#428#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA Ultimate Edition 163.4830.24/lib/openapi.jar!/com/intellij/openapi/vfs/VirtualFileEvent.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1950">
+          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+          <folding>
+            <element signature="e#2960#2961#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="143" column="28" selection-start-line="143" selection-start-column="28" selection-end-line="143" selection-end-column="28" />
+        <state relative-caret-position="540">
+          <caret line="31" column="67" selection-start-line="31" selection-start-column="67" selection-end-line="31" selection-end-column="67" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/AutoCodeGenerator.kt">
+    <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA Ultimate Edition 163.4830.24/lib/openapi.jar!/com/intellij/openapi/vfs/impl/BulkVirtualFileListenerAdapter.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2028">
-          <caret line="123" column="25" selection-start-line="123" selection-start-column="25" selection-end-line="123" selection-end-column="25" />
+        <state relative-caret-position="430">
+          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA Ultimate Edition 163.4830.24/lib/idea.jar!/com/intellij/configurationStore/StorageVirtualFileTracker.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA Ultimate Edition 163.4830.24/lib/util.jar!/com/intellij/util/messages/impl/MessageBusConnectionImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA Ultimate Edition 163.4830.24/lib/util.jar!/com/intellij/util/messages/impl/MessageBusImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="317" column="0" selection-start-line="317" selection-start-column="0" selection-end-line="317" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA Ultimate Edition 163.4830.24/lib/util.jar!/com/intellij/util/EventDispatcher.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA Ultimate Edition 163.4830.24/lib/idea.jar!/com/intellij/openapi/vfs/newvfs/impl/VirtualFileSystemEntry.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/FileSaveListener.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="67" column="40" selection-start-line="67" selection-start-column="40" selection-end-line="67" selection-end-column="40" />
-          <folding />
+        <state relative-caret-position="-1210">
+          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+          <folding>
+            <element signature="e#1223#1859#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

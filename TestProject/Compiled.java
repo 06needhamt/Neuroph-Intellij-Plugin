@@ -18,7 +18,7 @@ import org.neuroph.nnet.learning.BackPropagation;
 import org.neuroph.core.transfer.Gaussian;
 
 
-public class Compiled Network { 
+public class CompiledNetwork { 
 static int inputSize = 8;
 static int outputSize = 1;
 static NeuralNetwork network;
@@ -27,7 +27,7 @@ static TrainingSet<SupervisedTrainingElement> testingSet;
 static int[] layers = {8,8,1};
 
 static void loadNetwork() { 
-network = NeuralNetwork.load("D:/GitHub/Neuroph-Intellij-Plugin/TestProject/Compiled Network.nnet");
+network = NeuralNetwork.load("D:/GitHub/Neuroph-Intellij-Plugin/TestProject/CompiledNetwork.nnet");
 }
 
 static void trainNetwork() { 
@@ -42,7 +42,7 @@ trainingSet = TrainingSet.createFromFile("", inputSize, outputSize, ",");
 BackPropagation learningRule = new BackPropagation();
 network.setLearningRule(learningRule);
 network.learn(trainingSet);
-network.save("D:/GitHub/Neuroph-Intellij-Plugin/TestProject/Compiled Network.nnet");
+network.save("D:/GitHub/Neuroph-Intellij-Plugin/TestProject/CompiledNetwork.nnet");
 }
 
 static void testNetwork() { 

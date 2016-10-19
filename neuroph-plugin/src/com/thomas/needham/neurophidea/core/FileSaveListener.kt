@@ -53,7 +53,7 @@ class FileSaveListener : VirtualFileListener {
             val project : Project? = dataContext.getData(DataConstants.PROJECT) as Project?
             project
         }
-        inline fun getNetworksInProject() : List<VirtualFile?> {
+        inline @JvmStatic fun getNetworksInProject() : List<VirtualFile?> {
             files = mutableListOf()
             val project : Project? = getProject.invoke()
             if (project == null)

@@ -7,15 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bf29350-129e-4cfc-8762-78cb4578196f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../TestProject/.idea/inspectionProfiles/profiles_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../TestProject/Compiled.groovy" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../TestProject/Compiled.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../TestProject/Compiled.kt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../TestProject/Compiled.scala" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TestProject/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../TestProject/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TestProject/src/Main.java" afterPath="$PROJECT_DIR$/../TestProject/src/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/META-INF/plugin.xml" afterPath="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/FileSaveListener.kt" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/FileSaveListener.kt" />
     </list>
     <ignored path="neuroph-plugin.iws" />
@@ -39,7 +31,7 @@
       <file leaf-file-name="plugin.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
+            <state relative-caret-position="930">
               <caret line="31" column="67" selection-start-line="31" selection-start-column="67" selection-end-line="31" selection-end-column="67" />
               <folding />
             </state>
@@ -61,8 +53,8 @@
       <file leaf-file-name="FileSaveListener.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/FileSaveListener.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1210">
-              <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+            <state relative-caret-position="1020">
+              <caret line="56" column="35" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="35" />
               <folding>
                 <element signature="e#1223#1859#0" expanded="true" />
               </folding>
@@ -73,7 +65,7 @@
       <file leaf-file-name="VirtualFileSystemEntry.class" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA Ultimate Edition 163.4830.24/lib/idea.jar!/com/intellij/openapi/vfs/newvfs/impl/VirtualFileSystemEntry.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
+            <state relative-caret-position="840">
               <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
               <folding />
             </state>
@@ -95,7 +87,7 @@
       <file leaf-file-name="EventDispatcher.class" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA Ultimate Edition 163.4830.24/lib/util.jar!/com/intellij/util/EventDispatcher.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
+            <state relative-caret-position="1980">
               <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
               <folding />
             </state>
@@ -105,7 +97,7 @@
       <file leaf-file-name="BulkVirtualFileListenerAdapter.class" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA Ultimate Edition 163.4830.24/lib/openapi.jar!/com/intellij/openapi/vfs/impl/BulkVirtualFileListenerAdapter.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
+            <state relative-caret-position="1290">
               <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
               <folding />
             </state>
@@ -115,7 +107,7 @@
       <file leaf-file-name="MessageBusConnectionImpl.class" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA Ultimate Edition 163.4830.24/lib/util.jar!/com/intellij/util/messages/impl/MessageBusConnectionImpl.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
+            <state relative-caret-position="2700">
               <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
               <folding />
             </state>
@@ -125,7 +117,7 @@
       <file leaf-file-name="MessageBusImpl.class" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA Ultimate Edition 163.4830.24/lib/util.jar!/com/intellij/util/messages/impl/MessageBusImpl.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
+            <state relative-caret-position="8280">
               <caret line="317" column="0" selection-start-line="317" selection-start-column="0" selection-end-line="317" selection-end-column="0" />
               <folding />
             </state>
@@ -135,7 +127,7 @@
       <file leaf-file-name="StorageVirtualFileTracker.class" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA Ultimate Edition 163.4830.24/lib/idea.jar!/com/intellij/configurationStore/StorageVirtualFileTracker.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="497">
+            <state relative-caret-position="810">
               <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
@@ -284,8 +276,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -614,6 +604,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1122,44 +1114,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/FileSaveListener.kt</url>
-          <line>79</line>
-          <properties />
-          <option name="timeStamp" value="194" />
-        </line-breakpoint>
-        <line-breakpoint type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/FileSaveListener.kt</url>
-          <line>83</line>
-          <properties />
-          <option name="timeStamp" value="195" />
-        </line-breakpoint>
-        <line-breakpoint type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/FileSaveListener.kt</url>
-          <line>87</line>
-          <properties />
-          <option name="timeStamp" value="196" />
-        </line-breakpoint>
-        <line-breakpoint type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/FileSaveListener.kt</url>
-          <line>91</line>
-          <properties />
-          <option name="timeStamp" value="197" />
-        </line-breakpoint>
-        <line-breakpoint type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/FileSaveListener.kt</url>
-          <line>78</line>
-          <properties />
-          <option name="timeStamp" value="198" />
-        </line-breakpoint>
-        <line-breakpoint type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/FileSaveListener.kt</url>
-          <line>64</line>
-          <properties />
-          <option name="timeStamp" value="199" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
@@ -1213,13 +1167,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/open/OpenNetworkForm.form">
+      <provider editor-type-id="ui-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="ui-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/open/OpenNetworkForm.java">
@@ -1254,7 +1208,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="925">
           <caret line="785" column="5" selection-start-line="113" selection-start-column="2" selection-end-line="785" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1339,9 +1292,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
-          <folding>
-            <element signature="e#1239#1355#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1377,7 +1327,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3540">
           <caret line="159" column="0" selection-start-line="159" selection-start-column="0" selection-end-line="161" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1385,7 +1334,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="858">
           <caret line="159" column="4" selection-start-line="159" selection-start-column="4" selection-end-line="159" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1393,9 +1341,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2430">
           <caret line="188" column="79" selection-start-line="188" selection-start-column="79" selection-end-line="188" selection-end-column="79" />
-          <folding>
-            <element signature="e#1239#5325#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1417,7 +1362,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="59" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1441,9 +1385,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
           <caret line="48" column="49" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
-          <folding>
-            <element signature="e#1223#1382#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1458,7 +1399,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="62" column="4" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1466,7 +1406,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="27" column="66" selection-start-line="27" selection-start-column="66" selection-end-line="27" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1474,7 +1413,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1590">
           <caret line="83" column="16" selection-start-line="83" selection-start-column="16" selection-end-line="83" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1500,7 +1438,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
+        <state relative-caret-position="930">
           <caret line="31" column="67" selection-start-line="31" selection-start-column="67" selection-end-line="31" selection-end-column="67" />
           <folding />
         </state>
@@ -1508,7 +1446,7 @@
     </entry>
     <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA Ultimate Edition 163.4830.24/lib/openapi.jar!/com/intellij/openapi/vfs/impl/BulkVirtualFileListenerAdapter.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
+        <state relative-caret-position="1290">
           <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
           <folding />
         </state>
@@ -1516,7 +1454,7 @@
     </entry>
     <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA Ultimate Edition 163.4830.24/lib/idea.jar!/com/intellij/configurationStore/StorageVirtualFileTracker.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
+        <state relative-caret-position="810">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
@@ -1524,7 +1462,7 @@
     </entry>
     <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA Ultimate Edition 163.4830.24/lib/util.jar!/com/intellij/util/messages/impl/MessageBusConnectionImpl.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
+        <state relative-caret-position="2700">
           <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
           <folding />
         </state>
@@ -1532,7 +1470,7 @@
     </entry>
     <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA Ultimate Edition 163.4830.24/lib/util.jar!/com/intellij/util/messages/impl/MessageBusImpl.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
+        <state relative-caret-position="8280">
           <caret line="317" column="0" selection-start-line="317" selection-start-column="0" selection-end-line="317" selection-end-column="0" />
           <folding />
         </state>
@@ -1540,7 +1478,7 @@
     </entry>
     <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA Ultimate Edition 163.4830.24/lib/util.jar!/com/intellij/util/EventDispatcher.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
+        <state relative-caret-position="1980">
           <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
           <folding />
         </state>
@@ -1548,7 +1486,7 @@
     </entry>
     <entry file="jar://C:/Program Files (x86)/JetBrains/IntelliJ IDEA Ultimate Edition 163.4830.24/lib/idea.jar!/com/intellij/openapi/vfs/newvfs/impl/VirtualFileSystemEntry.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
+        <state relative-caret-position="840">
           <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
           <folding />
         </state>
@@ -1556,8 +1494,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/FileSaveListener.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1210">
-          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+        <state relative-caret-position="1020">
+          <caret line="56" column="35" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="35" />
           <folding>
             <element signature="e#1223#1859#0" expanded="true" />
           </folding>

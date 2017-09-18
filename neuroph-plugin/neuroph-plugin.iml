@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="PLUGIN_MODULE" version="4">
   <component name="DevKit.ModuleBuildProperties" url="file://$MODULE_DIR$/resources/META-INF/plugin.xml" />
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="false">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://C:/production/neuroph-plugin" />
     <output-test url="file://C:/test/neuroph-plugin" />
     <exclude-output />
@@ -15,18 +15,20 @@
       <library>
         <CLASSES>
           <root url="file://$MODULE_DIR$/lib" />
+          <root url="jar://$MODULE_DIR$/lib/kotlin-stdlib.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
           <root url="file://$MODULE_DIR$/lib" />
           <root url="file://$USER_HOME$/Downloads/neuroph-2.6/neuroph-2.6/sources" />
+          <root url="jar://$MODULE_DIR$/lib/kotlin-stdlib-sources.jar!/" />
         </SOURCES>
         <jarDirectory url="file://$MODULE_DIR$/lib" recursive="false" />
         <jarDirectory url="file://$MODULE_DIR$/lib" recursive="false" type="SOURCES" />
       </library>
     </orderEntry>
     <orderEntry type="library" name="KotlinJavaRuntime" level="project" />
-    <orderEntry type="library" name="groovy-2.4.6" level="application" />
-    <orderEntry type="library" name="scala-sdk-2.11.8" level="application" />
+    <orderEntry type="library" name="scala-sdk-2.12.3" level="project" />
+    <orderEntry type="library" name="Groovy" level="project" />
   </component>
 </module>

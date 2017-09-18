@@ -36,6 +36,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 import java.awt.BorderLayout;
+import java.awt.Font;
 import java.awt.Insets;
 import java.awt.Toolkit;
 
@@ -66,6 +67,25 @@ public class NetworkWeightsForm extends JFrame {
         this.saveButton = NetworkWeightsFormImplementationKt.CreateSaveButton(this);
         this.pack();
         this.setVisible(true);
+    }
+
+    /**
+     * @noinspection ALL
+     */
+    private Font $$$getFont$$$(String fontName, int style, int size, Font currentFont) {
+        if (currentFont == null) return null;
+        String resultName;
+        if (fontName == null) {
+            resultName = currentFont.getName();
+        } else {
+            Font testFont = new Font(fontName, Font.PLAIN, 10);
+            if (testFont.canDisplay('a') && testFont.canDisplay('1')) {
+                resultName = fontName;
+            } else {
+                resultName = currentFont.getName();
+            }
+        }
+        return new Font(resultName, style >= 0 ? style : currentFont.getStyle(), size >= 0 ? size : currentFont.getSize());
     }
 
     {

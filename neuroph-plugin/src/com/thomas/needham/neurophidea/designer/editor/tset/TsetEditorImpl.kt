@@ -51,19 +51,19 @@ open class TsetEditorImpl : UserDataHolderBase, TsetEditor {
     val project : Project?
     val changeSupport : PropertyChangeSupport?
     @NotNull val component : TsetEditorComponent?
-    @NotNull val file: VirtualFile?
+    @NotNull val TsetFile: VirtualFile?
     val asyncLoader : AsyncEditorLoader? = null
 
     constructor(@NotNull project: Project?, @NotNull file: VirtualFile?, provider: TsetFileEditorProvider?) : super(){
         this.project = project
-        this.file = file
+        this.TsetFile = file
         this.changeSupport = PropertyChangeSupport(this)
         this.component = CreateEditorComponent(project!!,file!!)
     }
     @NotNull
     protected fun loadEditorInBackground() : Runnable{
         val scheme = EditorColorsManager.getInstance().globalScheme
-        val highLighter = EditorHighlighterFactory.getInstance().createEditorHighlighter(file!!,scheme,project)
+        val highLighter = EditorHighlighterFactory.getInstance().createEditorHighlighter(TsetFile!!,scheme,project)
         val editor : EditorEx? = getEditor() as EditorEx
         highLighter.setText(editor?.document?.immutableCharSequence!! as String)
         val run : Runnable = { editor : EditorEx -> editor.highlighter = highLighter } as Runnable

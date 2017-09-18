@@ -34,9 +34,6 @@ class NeurophModule : ModuleType<NeurophModuleBuilder>("Neuroph Project") {
     companion object Instance{
         val INSTANCE : NeurophModule? = NeurophModule.INSTANCE
     }
-    override fun getBigIcon() : Icon? {
-        return IconLoader.getTransparentIcon(IconLoader.getIcon("/icon2.png"))
-    }
 
     override fun createModuleBuilder() : NeurophModuleBuilder {
         val build = NeurophModuleBuilder()

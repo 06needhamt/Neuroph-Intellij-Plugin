@@ -99,7 +99,7 @@ class TsetEditorComponent : JBLoadingPanel, DataProvider {
         (e as EditorEx).gutterComponentEx.setForceShowRightFreePaintersArea(true)
         e.setFile(file)
         e.contextMenuGroupId = IdeActions.GROUP_EDITOR_POPUP
-        (e as EditorImpl).dropHandler = FileDropHandler(e)
+        (e as EditorImpl).setDropHandler(FileDropHandler(e))
         TsetFileEditorProvider.putTsetEditor(e, tsetEditor)
         return e
     }

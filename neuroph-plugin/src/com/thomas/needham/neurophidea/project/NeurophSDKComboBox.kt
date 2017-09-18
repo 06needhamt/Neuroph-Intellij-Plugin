@@ -51,7 +51,7 @@ class NeurophSDKComboBox : ComboboxWithBrowseButton {
     }
 
     fun updateSDKList(sdk : Sdk?, any : Boolean) {
-        val sdkList : MutableList<Sdk?> = ProjectJdkTable.getInstance().getSdksOfType(NeurophSDK.getInstance())
+        val sdkList : MutableList<Sdk?> = ProjectJdkTable.getInstance().getSdksOfType(NeurophSDK.getInstance()!!)
         var sdkToSelect = sdk
         if(any && sdkList.size > 0){
             sdkToSelect = sdkList.elementAt(0)

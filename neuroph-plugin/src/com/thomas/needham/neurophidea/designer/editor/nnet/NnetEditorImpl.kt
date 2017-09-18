@@ -52,12 +52,12 @@ open class NnetEditorImpl : UserDataHolderBase, NnetEditor {
     val project : Project?
     val changeSupport : PropertyChangeSupport?
     @NotNull val component : NnetEditorComponent?
-    @NotNull val file: VirtualFile?
+    @NotNull val NnetFile: VirtualFile?
     val asyncLoader : AsyncEditorLoader? = null
 
     constructor(@NotNull project: Project?, @NotNull file: VirtualFile?, provider: NnetFileEditorProvider?) : super(){
         this.project = project
-        this.file = file
+        this.NnetFile = file
         this.changeSupport = PropertyChangeSupport(this)
         this.component = CreateEditorComponent(project!!,file!!)
     }

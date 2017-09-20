@@ -77,6 +77,12 @@ class AutoGenerateCodeSetting : Configurable {
     }
 
     override fun apply() {
+        generate = generateCheckBox.isSelected
+        generateJava = javaCheckBox.isSelected
+        generateGroovy = groovyCheckBox.isSelected
+        generateScala = scalaCheckBox.isSelected
+        generateKotlin = kotlinCheckBox.isSelected
+
         properties.setValue(GENERATE_CODE_KEY, generate)
         properties.setValue(GENERATE_JAVA_KEY, generateJava)
         properties.setValue(GENERATE_GROOVY_KEY, generateGroovy)

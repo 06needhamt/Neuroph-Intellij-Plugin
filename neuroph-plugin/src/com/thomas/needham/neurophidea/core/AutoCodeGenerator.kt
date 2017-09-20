@@ -154,8 +154,8 @@ class AutoCodeGenerator {
     }
 
     private fun GetGenerationSettings() : Array<Boolean> {
-        val settings = Array<Boolean>(4,{ e -> false })
-        val properties : PropertiesComponent = PropertiesComponent.getInstance()
+        val settings = Array<Boolean>(4,{ e -> true })
+        val properties : PropertiesComponent = PropertiesComponent.getInstance(project)
         var shouldGenerate : Boolean = false
         shouldGenerate = properties.getBoolean(GENERATE_CODE_KEY, false)
         if(!shouldGenerate)

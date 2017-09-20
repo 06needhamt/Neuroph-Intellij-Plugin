@@ -19,7 +19,7 @@ SOFTWARE. -->
 <idea-plugin version="2">
     <id>com.thomas.needham.neurophidea</id>
     <name>Neuroph For Intellij</name>
-    <version>1.0.1</version>
+    <version>1.1.0</version>
     <vendor email="06needhamt@gmail.com" url="https://github.com/06needhamt/Neuroph-Intellij-Plugin">Tom Needham</vendor>
 
     <description><![CDATA[
@@ -30,6 +30,7 @@ SOFTWARE. -->
     <change-notes><![CDATA[
         v1.0.0: First Release <br>
         v1.0.1: Code Generator Only Regenerates On Changed Network Files And Bug Fixes <br>
+        v1.1.0: Plugin Now Works on 2017.X.X Products <br>
     ]]>
     </change-notes>
 

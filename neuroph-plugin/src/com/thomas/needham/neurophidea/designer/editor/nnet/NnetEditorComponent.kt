@@ -107,7 +107,7 @@ class NnetEditorComponent : JBLoadingPanel, DataProvider {
         (e as EditorEx).gutterComponentEx.setForceShowRightFreePaintersArea(true)
         e.setFile(file)
         e.contextMenuGroupId = IdeActions.GROUP_EDITOR_POPUP
-        (e as EditorImpl).dropHandler = FileDropHandler(e)
+        (e as EditorImpl).setDropHandler(FileDropHandler(e))
         NnetFileEditorProvider.putNnetEditor(e ,nnetEditor)
         return e
     }

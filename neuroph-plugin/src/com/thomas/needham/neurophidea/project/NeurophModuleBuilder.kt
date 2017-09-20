@@ -125,16 +125,12 @@ class NeurophModuleBuilder : JavaModuleBuilder, ModuleBuilderListener {
         return "neuroph"
     }
 
-    override fun getBigIcon() : Icon? {
-        return IconLoader.getTransparentIcon(IconLoader.getIcon("/icon2.png"))
-    }
-
     override fun getNodeIcon() : Icon? {
         return IconLoader.getTransparentIcon(IconLoader.getIcon("/icon2.png"))
     }
 
     override fun getDescription() : String? {
-        if (ProjectJdkTable.getInstance().getSdksOfType(NeurophSDK.getInstance()).isEmpty()) {
+        if (ProjectJdkTable.getInstance().getSdksOfType(NeurophSDK.getInstance()!!).isEmpty()) {
             return "<html><body>Before you start make sure you have Neuroph installed." +
                     "<br/>Download <a href='http://downloads.sourceforge.net/project/neuroph/neuroph-2.92/neurophstudio-2.92.zip?r=http%3A%2F%2Fneuroph.sourceforge.net%2Fdownload.html&ts=1465207712&use_mirror=tenet'>the latest version</a>" +
                     "<br/>Unpack the zip file to any folder and select it as Neuroph SDK</body></html>";

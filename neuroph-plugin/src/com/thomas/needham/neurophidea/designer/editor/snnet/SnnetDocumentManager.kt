@@ -56,8 +56,8 @@ import com.intellij.openapi.project.Project
 import com.intellij.openapi.project.ProjectLocator
 import com.intellij.openapi.project.ProjectManager
 import com.intellij.openapi.project.ProjectManagerListener
-import com.intellij.openapi.project.ProjectUtil
 import com.intellij.openapi.project.ex.ProjectEx
+import com.intellij.openapi.project.guessProjectForFile
 import com.intellij.openapi.ui.DialogBuilder
 import com.intellij.openapi.ui.DialogWrapper
 import com.intellij.openapi.ui.Messages
@@ -222,6 +222,10 @@ class SnnetDocumentManager : FileDocumentManager, VirtualFileListener, ProjectMa
 
     override fun getFile(@NotNull p0 : Document) : VirtualFile? {
         return p0.getUserData(FILE_KEY)
+    }
+
+    override fun isPartialPreviewOfALargeFile(p0: Document): Boolean {
+        return false
     }
 
     override fun saveAllDocuments() {
@@ -554,7 +558,7 @@ class SnnetDocumentManager : FileDocumentManager, VirtualFileListener, ProjectMa
                 for (doc : Document? in unsavedDocuments) {
                     val file : VirtualFile? = getFile(doc!!)
                     if (file == null) continue
-                    val project : Project? = ProjectUtil.guessProjectForFile(file)
+                    val project : Project? = guessProjectForFile(file)
                     if (project == null) continue
                     if (PsiDocumentManager.getInstance(project).isDocumentBlockedByPsi(doc)) {
                         saveDocument(doc)

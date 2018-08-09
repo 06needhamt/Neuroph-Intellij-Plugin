@@ -57,7 +57,7 @@ class NeurophFacetConfiguration : FacetConfiguration, PersistentStateComponent<N
         return settings
     }
 
-    override fun loadState(p0 : NeurophFacetSettings?) {
+    override fun loadState(p0 : NeurophFacetSettings) {
         XmlSerializerUtil.copyBean(state!!,settings!!)
     }
 

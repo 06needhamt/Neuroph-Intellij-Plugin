@@ -15,19 +15,15 @@
       <library>
         <CLASSES>
           <root url="file://$MODULE_DIR$/lib" />
-          <root url="jar://$MODULE_DIR$/lib/kotlin-stdlib.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
           <root url="file://$MODULE_DIR$/lib" />
-          <root url="file://$USER_HOME$/Downloads/neuroph-2.6/neuroph-2.6/sources" />
-          <root url="jar://$MODULE_DIR$/lib/kotlin-stdlib-sources.jar!/" />
         </SOURCES>
         <jarDirectory url="file://$MODULE_DIR$/lib" recursive="false" />
         <jarDirectory url="file://$MODULE_DIR$/lib" recursive="false" type="SOURCES" />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="KotlinJavaRuntime" level="project" />
     <orderEntry type="library" name="scala-sdk-2.12.3" level="project" />
     <orderEntry type="library" name="Groovy" level="project" />
   </component>

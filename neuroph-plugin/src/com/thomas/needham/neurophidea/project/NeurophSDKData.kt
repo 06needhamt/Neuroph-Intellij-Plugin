@@ -26,7 +26,6 @@ package com.thomas.needham.neurophidea.project
 import com.intellij.openapi.components.PersistentStateComponent
 import com.intellij.openapi.projectRoots.SdkAdditionalData
 import com.intellij.util.xmlb.XmlSerializerUtil
-import com.sun.org.apache.xml.internal.serialize.XMLSerializer
 
 /**
  * Created by Thomas Needham on 06/06/2016.
@@ -44,16 +43,12 @@ class NeurophSDKData : SdkAdditionalData, PersistentStateComponent<NeurophSDKDat
         this.homePath = homePath
         this.version = version
     }
-    @SuppressWarnings("CloneDoesntCallSuperClone")
-    override fun clone() : Any? {
-        throw CloneNotSupportedException()
-    }
 
     override fun getState() : NeurophSDKData? {
         return this
     }
 
-    override fun loadState(p0 : NeurophSDKData?) {
-        XmlSerializerUtil.copyBean<NeurophSDKData?>(p0!!, this);
+    override fun loadState(p0 : NeurophSDKData) {
+        XmlSerializerUtil.copyBean<NeurophSDKData?>(p0, this);
     }
 }

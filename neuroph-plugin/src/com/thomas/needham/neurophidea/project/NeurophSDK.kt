@@ -34,7 +34,6 @@ import com.intellij.openapi.projectRoots.SdkTypeId
 import com.intellij.openapi.vfs.LocalFileSystem
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.util.xmlb.XmlSerializer
-import com.sun.org.apache.xml.internal.serialize.XMLSerializer
 import com.thomas.needham.neurophidea.Constants.VERSION_KEY
 import org.jdom.Element
 import org.jetbrains.annotations.Nullable

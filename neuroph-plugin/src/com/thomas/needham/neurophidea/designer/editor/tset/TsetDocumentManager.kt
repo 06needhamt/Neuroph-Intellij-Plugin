@@ -479,7 +479,7 @@ class TsetDocumentManager : FileDocumentManager, VirtualFileListener, ProjectMan
     private fun fireBeforeFileContentReload(file : VirtualFile?, p0 : Document) : Boolean {
         for(vector : FileDocumentSynchronizationVetoer in Extensions.getExtensions(FileDocumentSynchronizationVetoer.EP_NAME)){
             try{
-                if(!vector.mayReloadFileContent(file,p0))
+                if(!vector.mayReloadFileContent(file!!,p0))
                     return false
             }
             catch(e: Exception){

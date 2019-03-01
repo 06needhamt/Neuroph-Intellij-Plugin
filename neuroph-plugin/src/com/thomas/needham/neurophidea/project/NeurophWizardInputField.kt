@@ -27,33 +27,34 @@ import com.intellij.ide.util.projectWizard.WizardInputField
 import com.intellij.openapi.projectRoots.ProjectJdkTable
 import com.intellij.openapi.projectRoots.Sdk
 import com.thomas.needham.neurophidea.Constants.SDK_NAME
-import javax.swing.JComponent
 
 /**
  * Created by Thomas Needham on 07/06/2016.
  */
 open class NeurophWizardInputField : WizardInputField<NeurophSDKComboBox> {
-    companion object Data{
-        var combo : NeurophSDKComboBox? = null
-        @JvmStatic fun findMostRecentSdkPath() : String?{
-            val sdk : Sdk? = ProjectJdkTable.getInstance().findMostRecentSdk(NeurophSDKCondition())
-            return if(sdk != null) sdk.name else null
-        }
-    }
-    constructor() : super(SDK_NAME,findMostRecentSdkPath()){
-        combo = NeurophSDKComboBox()
-    }
-
-    override fun getLabel() : String? {
-        return "Neuroph SDK"
-    }
-
-    override fun getComponent() : NeurophSDKComboBox? {
-        return combo
-    }
-
-    override fun getValue() : String? {
-        val sdk : Sdk? = combo?.getSelectedSdk()
-        return if(sdk == null) "" else sdk.homePath
-    }
+	companion object Data {
+		var combo: NeurophSDKComboBox? = null
+		@JvmStatic
+		fun findMostRecentSdkPath(): String? {
+			val sdk: Sdk? = ProjectJdkTable.getInstance().findMostRecentSdk(NeurophSDKCondition())
+			return if (sdk != null) sdk.name else null
+		}
+	}
+	
+	constructor() : super(SDK_NAME, findMostRecentSdkPath()) {
+		combo = NeurophSDKComboBox()
+	}
+	
+	override fun getLabel(): String? {
+		return "Neuroph SDK"
+	}
+	
+	override fun getComponent(): NeurophSDKComboBox? {
+		return combo
+	}
+	
+	override fun getValue(): String? {
+		val sdk: Sdk? = combo?.getSelectedSdk()
+		return if (sdk == null) "" else sdk.homePath
+	}
 }

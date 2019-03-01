@@ -33,8 +33,8 @@ import com.intellij.psi.PsiManager
  * Created by Thomas Needham on 09/06/2016.
  */
 class NnetFileViewProviderFactory : FileViewProviderFactory {
-
-    override fun createFileViewProvider(p0 : VirtualFile, p1 : Language?, p2 : PsiManager, p3 : Boolean) : FileViewProvider {
-        throw UnsupportedOperationException()
-    }
+	
+	override fun createFileViewProvider(p0: VirtualFile, p1: Language?, p2: PsiManager, p3: Boolean): FileViewProvider {
+		throw UnsupportedOperationException()
+	}
 }

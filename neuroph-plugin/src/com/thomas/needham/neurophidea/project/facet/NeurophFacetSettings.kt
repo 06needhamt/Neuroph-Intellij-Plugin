@@ -27,9 +27,12 @@ package com.thomas.needham.neurophidea.project.facet
  * Created by Thomas Needham on 06/06/2016.
  */
 class NeurophFacetSettings {
-    var neurophSDKName : String? = null
-    companion object Data {
-        @JvmStatic val FACET_ID : String = "NeurophForIntelliJ"
-        @JvmStatic val FACET_NAME : String = "Neuroph For IntelliJ"
-    }
+	var neurophSDKName: String? = null
+	
+	companion object Data {
+		@JvmStatic
+		val FACET_ID: String = "NeurophForIntelliJ"
+		@JvmStatic
+		val FACET_NAME: String = "Neuroph For IntelliJ"
+	}
 }

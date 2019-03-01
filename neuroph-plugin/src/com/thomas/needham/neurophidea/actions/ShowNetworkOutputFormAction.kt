@@ -27,73 +27,71 @@ import com.intellij.ide.util.PropertiesComponent
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.project.Project
-import com.intellij.openapi.ui.Messages
 import com.thomas.needham.neurophidea.forms.output.NetworkOutputForm
 import com.thomas.needham.neurophidea.forms.output.WindowCloseListener
-import com.thomas.needham.neurophidea.forms.test.TestNetworkForm
 import java.io.File
 
 /**
  * Created by Thomas Needham on 09/06/2016.
  */
 class ShowNetworkOutputFormAction : AnAction() {
-    var form : NetworkOutputForm? = null
-    var itr : Long = 0L
-
-    companion object Data{
-        var project : Project? = null
-        var projectDirectory : String? = ""
-        var isOpen : Boolean? = false
-        val properties = PropertiesComponent.getInstance()
-        val testAction : ShowTestNetworkFormAction? = ShowTestNetworkFormAction()
-        var path : String? = ""
-        var lastModifiedFile : (String?) -> File? = { dirPath ->
-            val dir = File(dirPath)
-            val files = dir.listFiles()
-            if (files == null || files.size == 0) {
-                throw IllegalArgumentException("Invalid File Path")
-            }
-
-            var lastModifiedFile = files[0]
-            for (i in 1..files.size - 1) {
-                if (lastModifiedFile.lastModified() < files[i].lastModified()) {
-                    lastModifiedFile = files[i]
-                }
-            }
-            lastModifiedFile
-
-        }
-    }
-    override fun actionPerformed(e : AnActionEvent) {
-        project = e.project
-        projectDirectory = project?.basePath
-        isOpen = project?.isOpen
-        testAction?.actionPerformed(e)
-        testAction?.form?.shouldClose = true
-        val listener : WindowCloseListener? = WindowCloseListener {
-            try {
-                val dirpath = testAction?.form?.txtOutputPath?.text
-                val file = lastModifiedFile(dirpath)
-                path = file?.path
-                if (file == null)
-                    return@WindowCloseListener
-                form = NetworkOutputForm(path!!)
-            }
-            catch(iae: IllegalArgumentException){
-                iae.printStackTrace(System.err)
-                return@WindowCloseListener
-            }
-        }
-        testAction?.form?.addWindowListener(listener)
-        exit@ Unit
-    }
-
-    override fun update(e : AnActionEvent?) {
-        super.update(e)
-        if(form != null){
-            form?.repaint(itr,0,0,form?.width!!,form?.height!!)
-            itr++
-        }
-        e?.presentation?.isEnabledAndVisible = true
-    }
+	var form: NetworkOutputForm? = null
+	var itr: Long = 0L
+	
+	companion object Data {
+		var project: Project? = null
+		var projectDirectory: String? = ""
+		var isOpen: Boolean? = false
+		val properties = PropertiesComponent.getInstance()
+		val testAction: ShowTestNetworkFormAction? = ShowTestNetworkFormAction()
+		var path: String? = ""
+		var lastModifiedFile: (String?) -> File? = { dirPath ->
+			val dir = File(dirPath)
+			val files = dir.listFiles()
+			if (files == null || files.size == 0) {
+				throw IllegalArgumentException("Invalid File Path")
+			}
+			
+			var lastModifiedFile = files[0]
+			for (i in 1..files.size - 1) {
+				if (lastModifiedFile.lastModified() < files[i].lastModified()) {
+					lastModifiedFile = files[i]
+				}
+			}
+			lastModifiedFile
+			
+		}
+	}
+	
+	override fun actionPerformed(e: AnActionEvent) {
+		project = e.project
+		projectDirectory = project?.basePath
+		isOpen = project?.isOpen
+		testAction?.actionPerformed(e)
+		testAction?.form?.shouldClose = true
+		val listener: WindowCloseListener? = WindowCloseListener {
+			try {
+				val dirpath = testAction?.form?.txtOutputPath?.text
+				val file = lastModifiedFile(dirpath)
+				path = file?.path
+				if (file == null)
+					return@WindowCloseListener
+				form = NetworkOutputForm(path!!)
+			} catch (iae: IllegalArgumentException) {
+				iae.printStackTrace(System.err)
+				return@WindowCloseListener
+			}
+		}
+		testAction?.form?.addWindowListener(listener)
+		exit@ Unit
+	}
+	
+	override fun update(e: AnActionEvent?) {
+		super.update(e)
+		if (form != null) {
+			form?.repaint(itr, 0, 0, form?.width!!, form?.height!!)
+			itr++
+		}
+		e?.presentation?.isEnabledAndVisible = true
+	}
 }

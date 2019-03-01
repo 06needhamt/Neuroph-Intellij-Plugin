@@ -31,6 +31,6 @@ import org.jetbrains.annotations.NotNull
  * Created by thoma on 12/07/2016.
  */
 interface TsetEditor : NavigatableFileEditor {
-    @NotNull
-    fun getEditor() : Editor?
+	@NotNull
+	fun getEditor(): Editor?
 }

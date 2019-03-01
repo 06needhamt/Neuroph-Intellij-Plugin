@@ -24,21 +24,11 @@ SOFTWARE.
 package com.thomas.needham.neurophidea.forms.weights;
 
 import com.intellij.uiDesigner.core.GridLayoutManager;
-import com.thomas.needham.neurophidea.forms.test.NetworkResultsBrowseActionListener;
-import com.thomas.needham.neurophidea.forms.test.TestNetworkFormImplementationKt;
 import org.jetbrains.annotations.NotNull;
 import org.neuroph.core.NeuralNetwork;
 
-import javax.swing.JButton;
-import javax.swing.JComponent;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.WindowConstants;
-import java.awt.BorderLayout;
-import java.awt.Font;
-import java.awt.Insets;
-import java.awt.Toolkit;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * Created by thoma on 13/06/2016.
@@ -97,4 +87,5 @@ public class NetworkWeightsForm extends JFrame {
     public JComponent $$$getRootComponent$$$() {
         return root;
     }
+
 }

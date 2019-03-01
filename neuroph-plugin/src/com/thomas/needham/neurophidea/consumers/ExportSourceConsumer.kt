@@ -33,16 +33,21 @@ import com.thomas.needham.neurophidea.Constants.VERSION_KEY
  * Created by Thomas Needham on 29/05/2016.
  */
 class ExportSourceConsumer : Consumer<VirtualDirectoryImpl?> {
-    constructor(){
-
-    }
-    companion object Data{
-        @JvmStatic var properties = PropertiesComponent.getInstance()
-        @JvmStatic var version = properties.getValue(VERSION_KEY)
-        @JvmStatic var path : String? = ""
-    }
-    override fun consume(p0 : VirtualDirectoryImpl?) {
-        path = p0?.path
-        properties.setValue(SOURCE_TO_EXPORT_LOCATION_KEY, path)
-    }
+	constructor() {
+	
+	}
+	
+	companion object Data {
+		@JvmStatic
+		var properties = PropertiesComponent.getInstance()
+		@JvmStatic
+		var version = properties.getValue(VERSION_KEY)
+		@JvmStatic
+		var path: String? = ""
+	}
+	
+	override fun consume(p0: VirtualDirectoryImpl?) {
+		path = p0?.path
+		properties.setValue(SOURCE_TO_EXPORT_LOCATION_KEY, path)
+	}
 }

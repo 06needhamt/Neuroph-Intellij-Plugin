@@ -22,15 +22,11 @@ SOFTWARE.
 */
 package com.thomas.needham.neurophidea.examples.groovy
 
-import org.neuroph.core.NeuralNetwork;
-import org.neuroph.core.learning.SupervisedTrainingElement;
+import org.neuroph.core.NeuralNetwork
+import org.neuroph.core.learning.SupervisedTrainingElement
 import org.neuroph.core.learning.TrainingSet
-import org.neuroph.nnet.Outstar;
-import org.neuroph.util.TransferFunctionType;
-
-import org.neuroph.nnet.learning.BackPropagation;
-import org.neuroph.core.transfer.Sigmoid;
-
+import org.neuroph.nnet.Outstar
+import org.neuroph.nnet.learning.BackPropagation
 
 public class TestOutstar {
     static int inputSize = 8;

@@ -31,7 +31,6 @@ import com.intellij.util.Consumer
 import com.thomas.needham.neurophidea.Constants.NETWORK_OUTPUT_LOCATION_KEY
 import com.thomas.needham.neurophidea.actions.ShowCreateNetworkFormAction
 import com.thomas.needham.neurophidea.consumers.NetworkOutputFileConsumer
-import com.thomas.needham.neurophidea.forms.create.CreateNetworkForm
 import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
 
@@ -39,21 +38,21 @@ import java.awt.event.ActionListener
  * Created by Thomas Needham on 27/05/2016.
  */
 class NetworkOutputBrowseButtonActionListener : ActionListener {
-    var formInstance : CreateNetworkForm? = null
-
-    companion object Data{
-        val defaultPath = ""
-        val allowedFileTypes = arrayOf("conf","nnet")
-        val fileDescriptor = FileChooserDescriptor(false, true, false, false, false, false)
-        val consumer : NetworkOutputFileConsumer? = NetworkOutputFileConsumer()
-        val properties = PropertiesComponent.getInstance()
-        var chosenPath = ""
-    }
-
-    override fun actionPerformed(e : ActionEvent?) {
-        properties?.setValue(NETWORK_OUTPUT_LOCATION_KEY, CreateTrainingSetBrowseButtonActionListener.defaultPath)
-        FileChooser.chooseFile(fileDescriptor, ShowCreateNetworkFormAction.project,null, consumer as Consumer<VirtualFile?>)
-        chosenPath = properties.getValue(NETWORK_OUTPUT_LOCATION_KEY, defaultPath)
-        formInstance?.txtNetworkOutputPath?.text = chosenPath
-    }
+	var formInstance: CreateNetworkForm? = null
+	
+	companion object Data {
+		val defaultPath = ""
+		val allowedFileTypes = arrayOf("conf", "nnet")
+		val fileDescriptor = FileChooserDescriptor(false, true, false, false, false, false)
+		val consumer: NetworkOutputFileConsumer? = NetworkOutputFileConsumer()
+		val properties = PropertiesComponent.getInstance()
+		var chosenPath = ""
+	}
+	
+	override fun actionPerformed(e: ActionEvent?) {
+		properties?.setValue(NETWORK_OUTPUT_LOCATION_KEY, CreateTrainingSetBrowseButtonActionListener.defaultPath)
+		FileChooser.chooseFile(fileDescriptor, ShowCreateNetworkFormAction.project, null, consumer as Consumer<VirtualFile?>)
+		chosenPath = properties.getValue(NETWORK_OUTPUT_LOCATION_KEY, defaultPath)
+		formInstance?.txtNetworkOutputPath?.text = chosenPath
+	}
 }

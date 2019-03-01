@@ -23,7 +23,8 @@ SOFTWARE.
  */
 package com.thomas.needham.neurophidea.forms.create;
 
-import com.intellij.uiDesigner.core.*;
+import com.intellij.uiDesigner.core.GridConstraints;
+import com.intellij.uiDesigner.core.GridLayoutManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -158,4 +159,5 @@ public class CreateNetworkForm extends JFrame {
     public JComponent $$$getRootComponent$$$() {
         return root;
     }
+
 }

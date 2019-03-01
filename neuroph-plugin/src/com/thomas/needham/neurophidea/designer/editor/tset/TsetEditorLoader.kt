@@ -26,36 +26,33 @@ package com.thomas.needham.neurophidea.designer.editor.tset
 import com.intellij.openapi.ui.Messages
 import com.intellij.openapi.vfs.VirtualFile
 import com.thomas.needham.neurophidea.actions.InitialisationAction
-import org.neuroph.core.learning.TrainingSet
 import org.neuroph.core.learning.TrainingElement
-import java.io.File
-import java.io.FileInputStream
-import java.io.FileNotFoundException
-import java.io.IOException
-import java.io.ObjectInputStream
+import org.neuroph.core.learning.TrainingSet
+import java.io.*
 
 /**
  * Created by thoma on 12/07/2016.
  */
 class TsetEditorLoader {
-    val file : VirtualFile?
-    constructor(file: VirtualFile?){
-        this.file = file
-    }
-
-    fun LoadDataSet() : TrainingSet<TrainingElement?>? {
-        try {
-            val f = File(file?.path)
-            val fis : FileInputStream? = f.inputStream()
-            val ois : ObjectInputStream = ObjectInputStream(fis)
-            return ois?.readObject() as TrainingSet<TrainingElement?>?
-        } catch(ioe : IOException) {
-            ioe.printStackTrace(System.err)
-            Messages.showErrorDialog(InitialisationAction.project, "Error Loading Data Set From File", "Error")
-        } catch(fnfe : FileNotFoundException) {
-            fnfe.printStackTrace(System.err)
-            Messages.showErrorDialog(InitialisationAction.project, "No Data Set found in file: ${file?.path}", "Error")
-        }
-        return null
-    }
+	val file: VirtualFile?
+	
+	constructor(file: VirtualFile?) {
+		this.file = file
+	}
+	
+	fun LoadDataSet(): TrainingSet<TrainingElement?>? {
+		try {
+			val f = File(file?.path)
+			val fis: FileInputStream? = f.inputStream()
+			val ois: ObjectInputStream = ObjectInputStream(fis)
+			return ois?.readObject() as TrainingSet<TrainingElement?>?
+		} catch (ioe: IOException) {
+			ioe.printStackTrace(System.err)
+			Messages.showErrorDialog(InitialisationAction.project, "Error Loading Data Set From File", "Error")
+		} catch (fnfe: FileNotFoundException) {
+			fnfe.printStackTrace(System.err)
+			Messages.showErrorDialog(InitialisationAction.project, "No Data Set found in file: ${file?.path}", "Error")
+		}
+		return null
+	}
 }

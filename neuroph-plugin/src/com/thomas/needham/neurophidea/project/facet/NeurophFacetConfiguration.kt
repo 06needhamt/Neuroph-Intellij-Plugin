@@ -37,32 +37,34 @@ import org.jetbrains.annotations.NotNull
  * Created by Thomas Needham on 06/06/2016.
  */
 class NeurophFacetConfiguration : FacetConfiguration, PersistentStateComponent<NeurophFacetSettings> {
-     companion object Data{
-        var settings : NeurophFacetSettings? = NeurophFacetSettings()
-    }
-
-    @Deprecated("No Longer in Use")
-    override fun readExternal(p0 : Element?) {
-    }
-
-    override fun createEditorTabs(p0 : FacetEditorContext?, p1 : FacetValidatorsManager?) : Array<out FacetEditorTab>? {
-        return arrayOf(NeurophFacetEditorTab(settings))
-    }
-    @Deprecated("No Longer in Use")
-    override fun writeExternal(p0 : Element?) {
-
-    }
-@NotNull
-    override fun getState() : NeurophFacetSettings? {
-        return settings
-    }
-
-    override fun loadState(p0 : NeurophFacetSettings) {
-        XmlSerializerUtil.copyBean(state!!,settings!!)
-    }
-
-    fun setSdk(sdk: Sdk?) : Unit{
-        settings?.neurophSDKName = sdk?.name
-
-    }
+	companion object Data {
+		var settings: NeurophFacetSettings? = NeurophFacetSettings()
+	}
+	
+	@Deprecated("No Longer in Use")
+	override fun readExternal(p0: Element?) {
+	}
+	
+	override fun createEditorTabs(p0: FacetEditorContext?, p1: FacetValidatorsManager?): Array<out FacetEditorTab>? {
+		return arrayOf(NeurophFacetEditorTab(settings))
+	}
+	
+	@Deprecated("No Longer in Use")
+	override fun writeExternal(p0: Element?) {
+	
+	}
+	
+	@NotNull
+	override fun getState(): NeurophFacetSettings? {
+		return settings
+	}
+	
+	override fun loadState(p0: NeurophFacetSettings) {
+		XmlSerializerUtil.copyBean(state!!, settings!!)
+	}
+	
+	fun setSdk(sdk: Sdk?): Unit {
+		settings?.neurophSDKName = sdk?.name
+		
+	}
 }

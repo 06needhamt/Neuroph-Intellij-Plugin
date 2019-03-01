@@ -1,790 +1,921 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="neuroph-plugin" default="all">
 
-  <property file="build.properties"/>
-  <!-- Uncomment the following property if no tests compilation is needed -->
+    <property file="build.properties"/>
+    <!-- Uncomment the following property if no tests compilation is needed -->
 
-  <property name="skip.tests" value="true"/>
-  
-  <!-- Compiler options -->
-  
-  <property name="compiler.debug" value="on"/>
-  <property name="compiler.generate.no.warnings" value="off"/>
-  <property name="compiler.args" value=""/>
-  <property name="compiler.max.memory" value="700m"/>
-  <patternset id="ignored.files">
-    <exclude name="**/*.hprof/**"/>
-    <exclude name="**/*.pyc/**"/>
-    <exclude name="**/*.pyo/**"/>
-    <exclude name="**/*.rbc/**"/>
-    <exclude name="**/*.yarb/**"/>
-    <exclude name="**/*~/**"/>
-    <exclude name="**/.DS_Store/**"/>
-    <exclude name="**/.git/**"/>
-    <exclude name="**/.hg/**"/>
-    <exclude name="**/.svn/**"/>
-    <exclude name="**/CVS/**"/>
-    <exclude name="**/RCS/**"/>
-    <exclude name="**/SCCS/**"/>
-    <exclude name="**/__pycache__/**"/>
-    <exclude name="**/_svn/**"/>
-    <exclude name="**/rcs/**"/>
-    <exclude name="**/vssver.scc/**"/>
-    <exclude name="**/vssver2.scc/**"/>
-  </patternset>
-  <patternset id="library.patterns">
-    <include name="*.war"/>
-    <include name="*.swc"/>
-    <include name="*.apk"/>
-    <include name="*.zip"/>
-    <include name="*.egg"/>
-    <include name="*.ane"/>
-    <include name="*.jar"/>
-    <include name="*.ear"/>
-  </patternset>
-  <patternset id="compiler.resources">
-    <exclude name="**/?*.java"/>
-    <exclude name="**/?*.form"/>
-    <exclude name="**/?*.class"/>
-    <exclude name="**/?*.groovy"/>
-    <exclude name="**/?*.scala"/>
-    <exclude name="**/?*.flex"/>
-    <exclude name="**/?*.kt"/>
-    <exclude name="**/?*.clj"/>
-    <exclude name="**/?*.aj"/>
-  </patternset>
-  
-  <!-- JDK definitions -->
-  
-  <property name="jdk.bin.intellij_idea_iu-162.1024.1" value="${jdk.home.intellij_idea_iu-162.1024.1}/../../../Program Files/Java/jdk1.8.0_91/bin"/>
-  <path id="jdk.classpath.intellij_idea_iu-162.1024.1">
-    <fileset dir="${jdk.home.intellij_idea_iu-162.1024.1}">
-      <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/charsets.jar"/>
-      <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/deploy.jar"/>
-      <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/ext/access-bridge-64.jar"/>
-      <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/ext/cldrdata.jar"/>
-      <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/ext/dnsns.jar"/>
-      <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/ext/jaccess.jar"/>
-      <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/ext/jfxrt.jar"/>
-      <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/ext/localedata.jar"/>
-      <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/ext/nashorn.jar"/>
-      <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/ext/sunec.jar"/>
-      <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/ext/sunjce_provider.jar"/>
-      <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/ext/sunmscapi.jar"/>
-      <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/ext/sunpkcs11.jar"/>
-      <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/ext/zipfs.jar"/>
-      <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/javaws.jar"/>
-      <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/jce.jar"/>
-      <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/jfr.jar"/>
-      <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/jfxswt.jar"/>
-      <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/jsse.jar"/>
-      <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/management-agent.jar"/>
-      <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/plugin.jar"/>
-      <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/resources.jar"/>
-      <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/rt.jar"/>
-      <include name="lib/alloy.jar"/>
-      <include name="lib/annotations.jar"/>
-      <include name="lib/asm-all.jar"/>
-      <include name="lib/asm-commons.jar"/>
-      <include name="lib/asm.jar"/>
-      <include name="lib/automaton.jar"/>
-      <include name="lib/batik-all.jar"/>
-      <include name="lib/boot.jar"/>
-      <include name="lib/bootstrap.jar"/>
-      <include name="lib/cglib-2.2.2.jar"/>
-      <include name="lib/cli-parser-1.1.jar"/>
-      <include name="lib/clojure-1.8.0.jar"/>
-      <include name="lib/clojure-jsr223-1.5.1.jar"/>
-      <include name="lib/commons-codec-1.9.jar"/>
-      <include name="lib/commons-httpclient-3.1-patched.jar"/>
-      <include name="lib/commons-logging-1.2.jar"/>
-      <include name="lib/commons-net-3.3.jar"/>
-      <include name="lib/coverage-agent.jar"/>
-      <include name="lib/coverage-instrumenter.jar"/>
-      <include name="lib/coverage-util.jar"/>
-      <include name="lib/ecj-4.5.2.jar"/>
-      <include name="lib/extensions.jar"/>
-      <include name="lib/external-system-rt.jar"/>
-      <include name="lib/fluent-hc-4.4.1.jar"/>
-      <include name="lib/forms_rt.jar"/>
-      <include name="lib/groovy-all-2.4.6.jar"/>
-      <include name="lib/gson-2.5.jar"/>
-      <include name="lib/guava-17.0.jar"/>
-      <include name="lib/hamcrest-core-1.3.jar"/>
-      <include name="lib/httpclient-4.4.1.jar"/>
-      <include name="lib/httpcore-4.4.1.jar"/>
-      <include name="lib/httpmime-4.4.1.jar"/>
-      <include name="lib/icons.jar"/>
-      <include name="lib/idea-jsp-openapi.jar"/>
-      <include name="lib/idea.jar"/>
-      <include name="lib/ideax.jar"/>
-      <include name="lib/idea_rt.jar"/>
-      <include name="lib/imgscalr-lib-4.2.jar"/>
-      <include name="lib/isorelax.jar"/>
-      <include name="lib/jasper21_rt.jar"/>
-      <include name="lib/jasper2_rt.jar"/>
-      <include name="lib/javac2.jar"/>
-      <include name="lib/jaxen-1.1.3.jar"/>
-      <include name="lib/jayatana-1.2.4.jar"/>
-      <include name="lib/jcip-annotations.jar"/>
-      <include name="lib/jdkAnnotations.jar"/>
-      <include name="lib/jdom.jar"/>
-      <include name="lib/jettison-1.3.2.jar"/>
-      <include name="lib/jgoodies-common-1.2.1.jar"/>
-      <include name="lib/jgoodies-forms.jar"/>
-      <include name="lib/jgoodies-looks-2.4.2.jar"/>
-      <include name="lib/jh.jar"/>
-      <include name="lib/jing.jar"/>
-      <include name="lib/jna-platform.jar"/>
-      <include name="lib/jna.jar"/>
-      <include name="lib/jps-builders.jar"/>
-      <include name="lib/jps-launcher.jar"/>
-      <include name="lib/jps-model.jar"/>
-      <include name="lib/jsch-0.1.53.jar"/>
-      <include name="lib/jsch.agentproxy.connector-factory.jar"/>
-      <include name="lib/jsch.agentproxy.core.jar"/>
-      <include name="lib/jsch.agentproxy.pageant.jar"/>
-      <include name="lib/jsch.agentproxy.sshagent.jar"/>
-      <include name="lib/jsch.agentproxy.usocket-jna.jar"/>
-      <include name="lib/jsch.agentproxy.usocket-nc.jar"/>
-      <include name="lib/jsp-api.jar"/>
-      <include name="lib/jsr173_1.0_api.jar"/>
-      <include name="lib/junit-4.12.jar"/>
-      <include name="lib/jzlib-1.1.1.jar"/>
-      <include name="lib/kotlin-reflect.jar"/>
-      <include name="lib/kotlin-runtime.jar"/>
-      <include name="lib/log4j.jar"/>
-      <include name="lib/markdown4j-2.2.jar"/>
-      <include name="lib/markdownj-core-0.4.2-SNAPSHOT.jar"/>
-      <include name="lib/microba.jar"/>
-      <include name="lib/miglayout-swing.jar"/>
-      <include name="lib/nanoxml-2.2.3.jar"/>
-      <include name="lib/nekohtml-1.9.14.jar"/>
-      <include name="lib/netty-all-4.1.1.Final.jar"/>
-      <include name="lib/openapi.jar"/>
-      <include name="lib/optimizedFileManager.jar"/>
-      <include name="lib/oromatcher.jar"/>
-      <include name="lib/picocontainer.jar"/>
-      <include name="lib/protobuf-2.5.0.jar"/>
-      <include name="lib/proxy-vole_20131209.jar"/>
-      <include name="lib/pty4j-0.7.jar"/>
-      <include name="lib/purejavacomm.jar"/>
-      <include name="lib/resolver.jar"/>
-      <include name="lib/resources.jar"/>
-      <include name="lib/resources_en.jar"/>
-      <include name="lib/rhino-js-1_7R4.jar"/>
-      <include name="lib/rngom-20051226-patched.jar"/>
-      <include name="lib/sanselan-0.98-snapshot.jar"/>
-      <include name="lib/serviceMessages.jar"/>
-      <include name="lib/servlet-api.jar"/>
-      <include name="lib/slf4j-api-1.7.10.jar"/>
-      <include name="lib/slf4j-log4j12-1.7.10.jar"/>
-      <include name="lib/snappy-in-java-0.3.1.jar"/>
-      <include name="lib/sqlite-jdbc-3.6.20.1.jar"/>
-      <include name="lib/swingx-core-1.6.2.jar"/>
-      <include name="lib/trang-core.jar"/>
-      <include name="lib/trove4j.jar"/>
-      <include name="lib/util.jar"/>
-      <include name="lib/velocity.jar"/>
-      <include name="lib/winp-1.23.jar"/>
-      <include name="lib/xbean.jar"/>
-      <include name="lib/xercesImpl.jar"/>
-      <include name="lib/xml-apis-ext.jar"/>
-      <include name="lib/xml-apis.jar"/>
-      <include name="lib/xmlgraphics-commons-1.5.jar"/>
-      <include name="lib/xmlrpc-2.0.jar"/>
-      <include name="lib/xpp3-1.1.4-min.jar"/>
-      <include name="lib/xstream-1.4.8.jar"/>
-      <include name="lib/yjp-controller-api-redist.jar"/>
-      <include name="plugins/JavaEE/lib/gradle-javaee.jar"/>
-      <include name="plugins/JavaEE/lib/IntelliLang-javaee.jar"/>
-      <include name="plugins/JavaEE/lib/javaee-openapi.jar"/>
-      <include name="plugins/JavaEE/lib/resources_en.jar"/>
-      <include name="plugins/JavaEE/lib/webDeployment-transport.jar"/>
-      <include name="plugins/PersistenceSupport/lib/persistence-openapi.jar"/>
-      <include name="plugins/PersistenceSupport/lib/resources_en.jar"/>
-      <include name="plugins/DatabaseTools/lib/database-openapi.jar"/>
-      <include name="plugins/DatabaseTools/lib/dekaf-single-2.0.0.252.jar"/>
-      <include name="plugins/DatabaseTools/lib/resources_en.jar"/>
-      <include name="plugins/css/lib/css-openapi.jar"/>
-      <include name="plugins/css/lib/resources_en.jar"/>
-      <include name="plugins/uml/lib/diagram-api.jar"/>
-      <include name="plugins/Spring/lib/spring-aop.jar"/>
-      <include name="plugins/Spring/lib/spring-api.jar"/>
-      <include name="plugins/Spring/lib/spring-eclipse.jar"/>
-      <include name="plugins/Spring/lib/spring-graph.jar"/>
-      <include name="plugins/Spring/lib/spring-web.jar"/>
-    </fileset>
-  </path>
-  
-  <property name="project.jdk.home" value="${jdk.home.intellij_idea_iu-162.1024.1}"/>
-  <property name="project.jdk.bin" value="${jdk.bin.intellij_idea_iu-162.1024.1}"/>
-  <property name="project.jdk.classpath" value="jdk.classpath.intellij_idea_iu-162.1024.1"/>
-  
-  
-  <!-- Project Libraries -->
-  
-  <path id="library.kotlinjavaruntime.classpath">
-    <pathelement location="${basedir}/lib/kotlin-reflect.jar"/>
-    <pathelement location="${basedir}/lib/kotlin-runtime.jar"/>
-  </path>
-  
-  <path id="library.scala-sdk-2.11.8.classpath">
-    <pathelement location="C:/Users/thoma/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.8.jar"/>
-    <pathelement location="C:/Users/thoma/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.8.jar"/>
-  </path>
-  
-  
-  <!-- Global Libraries -->
-  
-  <path id="library.groovy-2.4.6.classpath">
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/abeilleformbuilder-3.0.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ant-1.9.4.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ant-antlr-1.9.4.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ant-junit-1.9.4.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ant-launcher-1.9.4.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-anim-1.7.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-awt-util-1.7.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-bridge-1.7.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-codec-1.7.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-css-1.7.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-dom-1.7.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-ext-1.7.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-extension-1.7.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-gui-util-1.7.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-gvt-1.7.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-parser-1.7.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-script-1.7.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-svg-dom-1.7.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-svggen-1.7.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-swing-1.7.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-transcoder-1.7.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-util-1.7.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-xml-1.7.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/bsf-2.4.0.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/commons-cli-1.2.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/commons-logging-1.2.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/cssbuilder-1.0.0.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/cssparser-0.9.5.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/easyb-ast-1.1.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/easyb-core-1.6.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/filters-2.0.235.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/flamingo-4.1.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/flamingobuilder-0.5.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/forms-1.2.1.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/formsrt-2.1.0M1.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gant-1.9.11_groovy-2.3.0.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gfxbuilder-core-0.8.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gfxbuilder-svg-0.8.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gfxbuilder-swingx-0.8.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gmock-0.8.3.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gpars-1.2.1.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/grengine-1.0.5.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-2.4.6.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-ant-2.4.6.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-bsf-2.4.6.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-console-2.4.6.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-docgenerator-2.4.6.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-groovydoc-2.4.6.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-groovysh-2.4.6.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-jmx-2.4.6.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-json-2.4.6.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-jsr223-2.4.6.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-nio-2.4.6.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-servlet-2.4.6.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-sql-2.4.6.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-swing-2.4.6.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-templates-2.4.6.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-test-2.4.6.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-testng-2.4.6.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-xml-2.4.6.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovyserv-1.0.0.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/hamcrest-core-1.3.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ivy-2.4.0.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jacob-1.14.3.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jansi-1.11.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jcommander-1.47.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jcsp-1.1-rc5.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jide-oss-3.4.7.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jidebuilder-6.0.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jline-2.12.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jna-4.1.0.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jsilhouette-geom-0.4.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jsp-api-2.0.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jsr166y-1.7.0.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/junit-4.12.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/mac_widgets-0.9.5.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/macwidgetsbuilder-0.5.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/multiverse-core-0.7.0.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/netty-all-4.0.27.Final.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/qdox-1.12.1.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/sac-1.3.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-1.6.0.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-ie-6-tlb-1.6.0.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-office-2K3-tlb-1.6.0.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-sapi-tlb-1.6.0.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-scripting-tlb-1.6.0.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-wbem-tlb-1.6.0.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-wsh-tlb-1.6.0.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/servlet-api-2.4.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/spock-core-1.0-groovy-2.4.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/svg-salamander-1.1.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swing-worker-1.1.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-action-1.6.4.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-autocomplete-1.6.4.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-beaninfo-1.6.4.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-common-1.6.4.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-core-1.6.4.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-graphics-1.6.4.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-painters-1.6.4.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-plaf-1.6.4.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingxbuilder-0.3.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/testng-6.8.13.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/timingframework-1.0.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/trident-7.0.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/tridentbuilder-0.6.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/xml-apis-ext-1.3.04.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/xmlpull-1.1.3.1.jar"/>
-    <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/xstream-1.4.7.jar"/>
-  </path>
-  
-  <path id="library.scala-sdk-2.11.8.classpath">
-    <pathelement location="C:/Users/thoma/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.8.jar"/>
-    <pathelement location="C:/Users/thoma/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.8.jar"/>
-  </path>
-  <!-- Register Custom Compiler Taskdefs -->
-  <property name="idea.home" value="C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 2016.2"/>
+    <property name="skip.tests" value="true"/>
+
+    <!-- Compiler options -->
+
+    <property name="compiler.debug" value="on"/>
+    <property name="compiler.generate.no.warnings" value="off"/>
+    <property name="compiler.args" value=""/>
+    <property name="compiler.max.memory" value="700m"/>
+    <patternset id="ignored.files">
+        <exclude name="**/*.hprof/**"/>
+        <exclude name="**/*.pyc/**"/>
+        <exclude name="**/*.pyo/**"/>
+        <exclude name="**/*.rbc/**"/>
+        <exclude name="**/*.yarb/**"/>
+        <exclude name="**/*~/**"/>
+        <exclude name="**/.DS_Store/**"/>
+        <exclude name="**/.git/**"/>
+        <exclude name="**/.hg/**"/>
+        <exclude name="**/.svn/**"/>
+        <exclude name="**/CVS/**"/>
+        <exclude name="**/RCS/**"/>
+        <exclude name="**/SCCS/**"/>
+        <exclude name="**/__pycache__/**"/>
+        <exclude name="**/_svn/**"/>
+        <exclude name="**/rcs/**"/>
+        <exclude name="**/vssver.scc/**"/>
+        <exclude name="**/vssver2.scc/**"/>
+    </patternset>
+    <patternset id="library.patterns">
+        <include name="*.war"/>
+        <include name="*.swc"/>
+        <include name="*.apk"/>
+        <include name="*.zip"/>
+        <include name="*.egg"/>
+        <include name="*.ane"/>
+        <include name="*.jar"/>
+        <include name="*.ear"/>
+    </patternset>
+    <patternset id="compiler.resources">
+        <exclude name="**/?*.java"/>
+        <exclude name="**/?*.form"/>
+        <exclude name="**/?*.class"/>
+        <exclude name="**/?*.groovy"/>
+        <exclude name="**/?*.scala"/>
+        <exclude name="**/?*.flex"/>
+        <exclude name="**/?*.kt"/>
+        <exclude name="**/?*.clj"/>
+        <exclude name="**/?*.aj"/>
+    </patternset>
+
+    <!-- JDK definitions -->
+
+    <property name="jdk.bin.intellij_idea_iu-162.1024.1"
+              value="${jdk.home.intellij_idea_iu-162.1024.1}/../../../Program Files/Java/jdk1.8.0_91/bin"/>
+    <path id="jdk.classpath.intellij_idea_iu-162.1024.1">
+        <fileset dir="${jdk.home.intellij_idea_iu-162.1024.1}">
+            <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/charsets.jar"/>
+            <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/deploy.jar"/>
+            <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/ext/access-bridge-64.jar"/>
+            <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/ext/cldrdata.jar"/>
+            <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/ext/dnsns.jar"/>
+            <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/ext/jaccess.jar"/>
+            <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/ext/jfxrt.jar"/>
+            <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/ext/localedata.jar"/>
+            <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/ext/nashorn.jar"/>
+            <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/ext/sunec.jar"/>
+            <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/ext/sunjce_provider.jar"/>
+            <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/ext/sunmscapi.jar"/>
+            <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/ext/sunpkcs11.jar"/>
+            <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/ext/zipfs.jar"/>
+            <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/javaws.jar"/>
+            <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/jce.jar"/>
+            <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/jfr.jar"/>
+            <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/jfxswt.jar"/>
+            <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/jsse.jar"/>
+            <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/management-agent.jar"/>
+            <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/plugin.jar"/>
+            <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/resources.jar"/>
+            <include name="../../../Program Files/Java/jdk1.8.0_91/jre/lib/rt.jar"/>
+            <include name="lib/alloy.jar"/>
+            <include name="lib/annotations.jar"/>
+            <include name="lib/asm-all.jar"/>
+            <include name="lib/asm-commons.jar"/>
+            <include name="lib/asm.jar"/>
+            <include name="lib/automaton.jar"/>
+            <include name="lib/batik-all.jar"/>
+            <include name="lib/boot.jar"/>
+            <include name="lib/bootstrap.jar"/>
+            <include name="lib/cglib-2.2.2.jar"/>
+            <include name="lib/cli-parser-1.1.jar"/>
+            <include name="lib/clojure-1.8.0.jar"/>
+            <include name="lib/clojure-jsr223-1.5.1.jar"/>
+            <include name="lib/commons-codec-1.9.jar"/>
+            <include name="lib/commons-httpclient-3.1-patched.jar"/>
+            <include name="lib/commons-logging-1.2.jar"/>
+            <include name="lib/commons-net-3.3.jar"/>
+            <include name="lib/coverage-agent.jar"/>
+            <include name="lib/coverage-instrumenter.jar"/>
+            <include name="lib/coverage-util.jar"/>
+            <include name="lib/ecj-4.5.2.jar"/>
+            <include name="lib/extensions.jar"/>
+            <include name="lib/external-system-rt.jar"/>
+            <include name="lib/fluent-hc-4.4.1.jar"/>
+            <include name="lib/forms_rt.jar"/>
+            <include name="lib/groovy-all-2.4.6.jar"/>
+            <include name="lib/gson-2.5.jar"/>
+            <include name="lib/guava-17.0.jar"/>
+            <include name="lib/hamcrest-core-1.3.jar"/>
+            <include name="lib/httpclient-4.4.1.jar"/>
+            <include name="lib/httpcore-4.4.1.jar"/>
+            <include name="lib/httpmime-4.4.1.jar"/>
+            <include name="lib/icons.jar"/>
+            <include name="lib/idea-jsp-openapi.jar"/>
+            <include name="lib/idea.jar"/>
+            <include name="lib/ideax.jar"/>
+            <include name="lib/idea_rt.jar"/>
+            <include name="lib/imgscalr-lib-4.2.jar"/>
+            <include name="lib/isorelax.jar"/>
+            <include name="lib/jasper21_rt.jar"/>
+            <include name="lib/jasper2_rt.jar"/>
+            <include name="lib/javac2.jar"/>
+            <include name="lib/jaxen-1.1.3.jar"/>
+            <include name="lib/jayatana-1.2.4.jar"/>
+            <include name="lib/jcip-annotations.jar"/>
+            <include name="lib/jdkAnnotations.jar"/>
+            <include name="lib/jdom.jar"/>
+            <include name="lib/jettison-1.3.2.jar"/>
+            <include name="lib/jgoodies-common-1.2.1.jar"/>
+            <include name="lib/jgoodies-forms.jar"/>
+            <include name="lib/jgoodies-looks-2.4.2.jar"/>
+            <include name="lib/jh.jar"/>
+            <include name="lib/jing.jar"/>
+            <include name="lib/jna-platform.jar"/>
+            <include name="lib/jna.jar"/>
+            <include name="lib/jps-builders.jar"/>
+            <include name="lib/jps-launcher.jar"/>
+            <include name="lib/jps-model.jar"/>
+            <include name="lib/jsch-0.1.53.jar"/>
+            <include name="lib/jsch.agentproxy.connector-factory.jar"/>
+            <include name="lib/jsch.agentproxy.core.jar"/>
+            <include name="lib/jsch.agentproxy.pageant.jar"/>
+            <include name="lib/jsch.agentproxy.sshagent.jar"/>
+            <include name="lib/jsch.agentproxy.usocket-jna.jar"/>
+            <include name="lib/jsch.agentproxy.usocket-nc.jar"/>
+            <include name="lib/jsp-api.jar"/>
+            <include name="lib/jsr173_1.0_api.jar"/>
+            <include name="lib/junit-4.12.jar"/>
+            <include name="lib/jzlib-1.1.1.jar"/>
+            <include name="lib/kotlin-reflect.jar"/>
+            <include name="lib/kotlin-runtime.jar"/>
+            <include name="lib/log4j.jar"/>
+            <include name="lib/markdown4j-2.2.jar"/>
+            <include name="lib/markdownj-core-0.4.2-SNAPSHOT.jar"/>
+            <include name="lib/microba.jar"/>
+            <include name="lib/miglayout-swing.jar"/>
+            <include name="lib/nanoxml-2.2.3.jar"/>
+            <include name="lib/nekohtml-1.9.14.jar"/>
+            <include name="lib/netty-all-4.1.1.Final.jar"/>
+            <include name="lib/openapi.jar"/>
+            <include name="lib/optimizedFileManager.jar"/>
+            <include name="lib/oromatcher.jar"/>
+            <include name="lib/picocontainer.jar"/>
+            <include name="lib/protobuf-2.5.0.jar"/>
+            <include name="lib/proxy-vole_20131209.jar"/>
+            <include name="lib/pty4j-0.7.jar"/>
+            <include name="lib/purejavacomm.jar"/>
+            <include name="lib/resolver.jar"/>
+            <include name="lib/resources.jar"/>
+            <include name="lib/resources_en.jar"/>
+            <include name="lib/rhino-js-1_7R4.jar"/>
+            <include name="lib/rngom-20051226-patched.jar"/>
+            <include name="lib/sanselan-0.98-snapshot.jar"/>
+            <include name="lib/serviceMessages.jar"/>
+            <include name="lib/servlet-api.jar"/>
+            <include name="lib/slf4j-api-1.7.10.jar"/>
+            <include name="lib/slf4j-log4j12-1.7.10.jar"/>
+            <include name="lib/snappy-in-java-0.3.1.jar"/>
+            <include name="lib/sqlite-jdbc-3.6.20.1.jar"/>
+            <include name="lib/swingx-core-1.6.2.jar"/>
+            <include name="lib/trang-core.jar"/>
+            <include name="lib/trove4j.jar"/>
+            <include name="lib/util.jar"/>
+            <include name="lib/velocity.jar"/>
+            <include name="lib/winp-1.23.jar"/>
+            <include name="lib/xbean.jar"/>
+            <include name="lib/xercesImpl.jar"/>
+            <include name="lib/xml-apis-ext.jar"/>
+            <include name="lib/xml-apis.jar"/>
+            <include name="lib/xmlgraphics-commons-1.5.jar"/>
+            <include name="lib/xmlrpc-2.0.jar"/>
+            <include name="lib/xpp3-1.1.4-min.jar"/>
+            <include name="lib/xstream-1.4.8.jar"/>
+            <include name="lib/yjp-controller-api-redist.jar"/>
+            <include name="plugins/JavaEE/lib/gradle-javaee.jar"/>
+            <include name="plugins/JavaEE/lib/IntelliLang-javaee.jar"/>
+            <include name="plugins/JavaEE/lib/javaee-openapi.jar"/>
+            <include name="plugins/JavaEE/lib/resources_en.jar"/>
+            <include name="plugins/JavaEE/lib/webDeployment-transport.jar"/>
+            <include name="plugins/PersistenceSupport/lib/persistence-openapi.jar"/>
+            <include name="plugins/PersistenceSupport/lib/resources_en.jar"/>
+            <include name="plugins/DatabaseTools/lib/database-openapi.jar"/>
+            <include name="plugins/DatabaseTools/lib/dekaf-single-2.0.0.252.jar"/>
+            <include name="plugins/DatabaseTools/lib/resources_en.jar"/>
+            <include name="plugins/css/lib/css-openapi.jar"/>
+            <include name="plugins/css/lib/resources_en.jar"/>
+            <include name="plugins/uml/lib/diagram-api.jar"/>
+            <include name="plugins/Spring/lib/spring-aop.jar"/>
+            <include name="plugins/Spring/lib/spring-api.jar"/>
+            <include name="plugins/Spring/lib/spring-eclipse.jar"/>
+            <include name="plugins/Spring/lib/spring-graph.jar"/>
+            <include name="plugins/Spring/lib/spring-web.jar"/>
+        </fileset>
+    </path>
+
+    <property name="project.jdk.home" value="${jdk.home.intellij_idea_iu-162.1024.1}"/>
+    <property name="project.jdk.bin" value="${jdk.bin.intellij_idea_iu-162.1024.1}"/>
+    <property name="project.jdk.classpath" value="jdk.classpath.intellij_idea_iu-162.1024.1"/>
+
+
+    <!-- Project Libraries -->
+
+    <path id="library.kotlinjavaruntime.classpath">
+        <pathelement location="${basedir}/lib/kotlin-reflect.jar"/>
+        <pathelement location="${basedir}/lib/kotlin-runtime.jar"/>
+    </path>
+
+    <path id="library.scala-sdk-2.11.8.classpath">
+        <pathelement location="C:/Users/thoma/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.8.jar"/>
+        <pathelement location="C:/Users/thoma/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.8.jar"/>
+    </path>
+
+
+    <!-- Global Libraries -->
+
+    <path id="library.groovy-2.4.6.classpath">
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/abeilleformbuilder-3.0.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ant-1.9.4.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ant-antlr-1.9.4.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ant-junit-1.9.4.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ant-launcher-1.9.4.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-anim-1.7.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-awt-util-1.7.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-bridge-1.7.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-codec-1.7.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-css-1.7.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-dom-1.7.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-ext-1.7.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-extension-1.7.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-gui-util-1.7.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-gvt-1.7.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-parser-1.7.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-script-1.7.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-svg-dom-1.7.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-svggen-1.7.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-swing-1.7.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-transcoder-1.7.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-util-1.7.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-xml-1.7.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/bsf-2.4.0.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/commons-cli-1.2.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/commons-logging-1.2.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/cssbuilder-1.0.0.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/cssparser-0.9.5.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/easyb-ast-1.1.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/easyb-core-1.6.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/filters-2.0.235.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/flamingo-4.1.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/flamingobuilder-0.5.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/forms-1.2.1.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/formsrt-2.1.0M1.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gant-1.9.11_groovy-2.3.0.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gfxbuilder-core-0.8.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gfxbuilder-svg-0.8.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gfxbuilder-swingx-0.8.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gmock-0.8.3.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gpars-1.2.1.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/grengine-1.0.5.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-2.4.6.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-ant-2.4.6.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-bsf-2.4.6.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-console-2.4.6.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-docgenerator-2.4.6.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-groovydoc-2.4.6.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-groovysh-2.4.6.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-jmx-2.4.6.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-json-2.4.6.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-jsr223-2.4.6.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-nio-2.4.6.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-servlet-2.4.6.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-sql-2.4.6.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-swing-2.4.6.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-templates-2.4.6.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-test-2.4.6.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-testng-2.4.6.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-xml-2.4.6.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovyserv-1.0.0.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/hamcrest-core-1.3.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ivy-2.4.0.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jacob-1.14.3.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jansi-1.11.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jcommander-1.47.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jcsp-1.1-rc5.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jide-oss-3.4.7.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jidebuilder-6.0.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jline-2.12.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jna-4.1.0.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jsilhouette-geom-0.4.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jsp-api-2.0.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jsr166y-1.7.0.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/junit-4.12.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/mac_widgets-0.9.5.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/macwidgetsbuilder-0.5.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/multiverse-core-0.7.0.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/netty-all-4.0.27.Final.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/qdox-1.12.1.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/sac-1.3.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-1.6.0.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-ie-6-tlb-1.6.0.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-office-2K3-tlb-1.6.0.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-sapi-tlb-1.6.0.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-scripting-tlb-1.6.0.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-wbem-tlb-1.6.0.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-wsh-tlb-1.6.0.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/servlet-api-2.4.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/spock-core-1.0-groovy-2.4.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/svg-salamander-1.1.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swing-worker-1.1.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-action-1.6.4.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-autocomplete-1.6.4.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-beaninfo-1.6.4.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-common-1.6.4.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-core-1.6.4.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-graphics-1.6.4.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-painters-1.6.4.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-plaf-1.6.4.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingxbuilder-0.3.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/testng-6.8.13.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/timingframework-1.0.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/trident-7.0.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/tridentbuilder-0.6.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/xml-apis-ext-1.3.04.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/xmlpull-1.1.3.1.jar"/>
+        <pathelement location="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/xstream-1.4.7.jar"/>
+    </path>
+
+    <path id="library.scala-sdk-2.11.8.classpath">
+        <pathelement location="C:/Users/thoma/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.8.jar"/>
+        <pathelement location="C:/Users/thoma/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.8.jar"/>
+    </path>
+    <!-- Register Custom Compiler Taskdefs -->
+    <property name="idea.home" value="C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 2016.2"/>
     <property name="project.jdk.bin" value="${jdk.bin}"/>
-  <property name="project.jdk.classpath" value="jdk.classpath"/>
-  <property name="project.jdk.home" value="${jdk.home}"/>
-  <!-- Register Custom Compiler Taskdefs -->
-  <property name="javac2.home" value="${idea.home}"/>
-  <path id="javac2.classpath">
-    <pathelement location="${javac2.home}/lib/javac2.jar"/>
-    <pathelement location="${javac2.home}/lib/jdom.jar"/>
-    <pathelement location="${javac2.home}/lib/asm-all.jar"/>
-    <pathelement location="${javac2.home}/lib/jgoodies-forms.jar"/>
-    <pathelement location="${javac2.home}/lib/redist/forms_rt.jar"/>
-  </path>
-  <target name="register.custom.compilers">
-    <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
-    <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
-    <property name="grooovyc.task.sdk" value="library.groovy-2.4.6.classpath"/>
-    <taskdef name="groovyc" classname="org.codehaus.groovy.ant.Groovyc" classpathref="${grooovyc.task.sdk}"/>
-  </target>
-  
-  <!-- Modules -->
-  
-  
-  <!-- Module neuroph-plugin -->
-  
-  <dirname property="module.neuroph-plugin.basedir" file="${ant.file}"/>
-  
-  
-  <property name="module.jdk.home.neuroph-plugin" value="${project.jdk.home}"/>
-  <property name="module.jdk.bin.neuroph-plugin" value="${project.jdk.bin}"/>
-  <property name="module.jdk.classpath.neuroph-plugin" value="${project.jdk.classpath}"/>
-  
-  <property name="compiler.args.neuroph-plugin" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
-  
-  <property name="neuroph-plugin.output.dir" value="C:/production/neuroph-plugin"/>
-  <property name="neuroph-plugin.testoutput.dir" value="C:/test/neuroph-plugin"/>
-  
-  <path id="neuroph-plugin.module.bootclasspath">
-    <!-- Paths to be included in compilation bootclasspath -->
-  </path>
-  
-  <path id="neuroph-plugin.module.production.classpath">
-    <path refid="${module.jdk.classpath.neuroph-plugin}"/>
-    <path refid="library.kotlinjavaruntime.classpath"/>
-    <fileset dir="${basedir}/lib">
-      <patternset refid="library.patterns"/>
-    </fileset>
-    <path refid="library.scala-sdk-2.11.8.classpath"/>
-    <path refid="library.groovy-2.4.6.classpath"/>
-  </path>
-  
-  <path id="neuroph-plugin.runtime.production.module.classpath">
-    <pathelement location="${neuroph-plugin.output.dir}"/>
-    <path refid="library.kotlinjavaruntime.classpath"/>
-    <fileset dir="${basedir}/lib">
-      <patternset refid="library.patterns"/>
-    </fileset>
-    <path refid="library.scala-sdk-2.11.8.classpath"/>
-    <path refid="library.groovy-2.4.6.classpath"/>
-  </path>
-  
-  <path id="neuroph-plugin.module.classpath">
-    <path refid="${module.jdk.classpath.neuroph-plugin}"/>
-    <pathelement location="${neuroph-plugin.output.dir}"/>
-    <path refid="library.kotlinjavaruntime.classpath"/>
-    <fileset dir="${basedir}/lib">
-      <patternset refid="library.patterns"/>
-    </fileset>
-    <path refid="library.scala-sdk-2.11.8.classpath"/>
-    <path refid="library.groovy-2.4.6.classpath"/>
-  </path>
-  
-  <path id="neuroph-plugin.runtime.module.classpath">
-    <pathelement location="${neuroph-plugin.testoutput.dir}"/>
-    <pathelement location="${neuroph-plugin.output.dir}"/>
-    <path refid="library.kotlinjavaruntime.classpath"/>
-    <fileset dir="${basedir}/lib">
-      <patternset refid="library.patterns"/>
-    </fileset>
-    <path refid="library.scala-sdk-2.11.8.classpath"/>
-    <path refid="library.groovy-2.4.6.classpath"/>
-  </path>
-  
-  
-  <patternset id="excluded.from.module.neuroph-plugin">
-    <patternset refid="ignored.files"/>
-  </patternset>
-  
-  <patternset id="excluded.from.compilation.neuroph-plugin">
-    <patternset refid="excluded.from.module.neuroph-plugin"/>
-  </patternset>
-  
-  <path id="neuroph-plugin.module.sourcepath">
-    <dirset dir="${module.neuroph-plugin.basedir}">
-      <include name="src"/>
-      <include name="resources"/>
-    </dirset>
-  </path>
-  
-  
-  <target name="compile.module.neuroph-plugin" depends="compile.module.neuroph-plugin.production,compile.module.neuroph-plugin.tests" description="Compile module neuroph-plugin"/>
-  
-  <target name="compile.module.neuroph-plugin.production" depends="register.custom.compilers" description="Compile module neuroph-plugin; production classes">
-    <mkdir dir="${neuroph-plugin.output.dir}"/>
-    <groovyc destdir="${neuroph-plugin.output.dir}" fork="no">
-      <src refid="neuroph-plugin.module.sourcepath"/>
-      <classpath refid="neuroph-plugin.module.production.classpath"/>
-      <patternset refid="excluded.from.compilation.neuroph-plugin"/>
-      <javac debug="${compiler.debug}">
-        <compilerarg line="${compiler.args.neuroph-plugin}"/>
-      </javac>
-    </groovyc>
-    <instrumentIdeaExtensions destdir="${neuroph-plugin.output.dir}">
-      <compilerarg line="${compiler.args.neuroph-plugin}"/>
-      <bootclasspath refid="neuroph-plugin.module.bootclasspath"/>
-      <classpath refid="neuroph-plugin.module.production.classpath"/>
-      <src refid="neuroph-plugin.module.sourcepath"/>
-      <patternset refid="excluded.from.compilation.neuroph-plugin"/>
-    </instrumentIdeaExtensions>
-    
-    <copy todir="${neuroph-plugin.output.dir}">
-      <fileset dir="${module.neuroph-plugin.basedir}/src">
-        <patternset refid="compiler.resources"/>
-        <type type="file"/>
-      </fileset>
-      <fileset dir="${module.neuroph-plugin.basedir}/resources">
-        <patternset refid="compiler.resources"/>
-        <type type="file"/>
-      </fileset>
-    </copy>
-  </target>
-  
-  <target name="compile.module.neuroph-plugin.tests" depends="register.custom.compilers,compile.module.neuroph-plugin.production" description="compile module neuroph-plugin; test classes" unless="skip.tests"/>
-  
-  <target name="clean.module.neuroph-plugin" description="cleanup module">
-    <delete dir="${neuroph-plugin.output.dir}"/>
-    <delete dir="${neuroph-plugin.testoutput.dir}"/>
-  </target>
-  
-  <property name="neuroph-plugin.plugin.path.jar" value="${module.neuroph-plugin.basedir}/neuroph-plugin.zip"/>
-  
-  <!-- Build archive for plugin 'neuroph-plugin' -->
-  <target name="plugin.build.jar.neuroph-plugin" depends="compile.module.neuroph-plugin" description="Build plugin archive for module &#39;neuroph-plugin&#39;">
-    <property name="tmp.dir.neuroph-plugin" value="${module.neuroph-plugin.basedir}/../temp"/>
-    <mkdir dir="${tmp.dir.neuroph-plugin}"/>
-    <mkdir dir="${tmp.dir.neuroph-plugin}/lib"/>
-    <jar destfile="${tmp.dir.neuroph-plugin}/lib/neuroph-plugin.jar" duplicate="preserve">
-      <zipfileset dir="C:/production/neuroph-plugin"/>
-      <zipfileset file="${module.neuroph-plugin.basedir}/resources/META-INF/plugin.xml" prefix="META-INF"/>
-      <manifest>
-        <attribute name="Created-By" value="IntelliJ IDEA"/>
-        <attribute name="Manifest-Version" value="1.0"/>
-      </manifest>
-    </jar>
-    <copy file="${module.neuroph-plugin.basedir}/lib/kotlin-runtime.jar" tofile="${tmp.dir.neuroph-plugin}/lib/kotlin-runtime.jar"/>
-    <copy file="${module.neuroph-plugin.basedir}/lib/kotlin-reflect.jar" tofile="${tmp.dir.neuroph-plugin}/lib/kotlin-reflect.jar"/>
-    <copy file="C:/Users/thoma/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.8.jar" tofile="${tmp.dir.neuroph-plugin}/lib/scala-library-2.11.8.jar"/>
-    <copy file="C:/Users/thoma/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.8.jar" tofile="${tmp.dir.neuroph-plugin}/lib/scala-reflect-2.11.8.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/abeilleformbuilder-3.0.jar" tofile="${tmp.dir.neuroph-plugin}/lib/abeilleformbuilder-3.0.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ant-1.9.4.jar" tofile="${tmp.dir.neuroph-plugin}/lib/ant-1.9.4.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ant-antlr-1.9.4.jar" tofile="${tmp.dir.neuroph-plugin}/lib/ant-antlr-1.9.4.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ant-junit-1.9.4.jar" tofile="${tmp.dir.neuroph-plugin}/lib/ant-junit-1.9.4.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ant-launcher-1.9.4.jar" tofile="${tmp.dir.neuroph-plugin}/lib/ant-launcher-1.9.4.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-anim-1.7.jar" tofile="${tmp.dir.neuroph-plugin}/lib/batik-anim-1.7.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-awt-util-1.7.jar" tofile="${tmp.dir.neuroph-plugin}/lib/batik-awt-util-1.7.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-bridge-1.7.jar" tofile="${tmp.dir.neuroph-plugin}/lib/batik-bridge-1.7.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-codec-1.7.jar" tofile="${tmp.dir.neuroph-plugin}/lib/batik-codec-1.7.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-css-1.7.jar" tofile="${tmp.dir.neuroph-plugin}/lib/batik-css-1.7.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-dom-1.7.jar" tofile="${tmp.dir.neuroph-plugin}/lib/batik-dom-1.7.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-ext-1.7.jar" tofile="${tmp.dir.neuroph-plugin}/lib/batik-ext-1.7.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-extension-1.7.jar" tofile="${tmp.dir.neuroph-plugin}/lib/batik-extension-1.7.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-gui-util-1.7.jar" tofile="${tmp.dir.neuroph-plugin}/lib/batik-gui-util-1.7.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-gvt-1.7.jar" tofile="${tmp.dir.neuroph-plugin}/lib/batik-gvt-1.7.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-parser-1.7.jar" tofile="${tmp.dir.neuroph-plugin}/lib/batik-parser-1.7.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-script-1.7.jar" tofile="${tmp.dir.neuroph-plugin}/lib/batik-script-1.7.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-svg-dom-1.7.jar" tofile="${tmp.dir.neuroph-plugin}/lib/batik-svg-dom-1.7.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-svggen-1.7.jar" tofile="${tmp.dir.neuroph-plugin}/lib/batik-svggen-1.7.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-swing-1.7.jar" tofile="${tmp.dir.neuroph-plugin}/lib/batik-swing-1.7.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-transcoder-1.7.jar" tofile="${tmp.dir.neuroph-plugin}/lib/batik-transcoder-1.7.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-util-1.7.jar" tofile="${tmp.dir.neuroph-plugin}/lib/batik-util-1.7.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-xml-1.7.jar" tofile="${tmp.dir.neuroph-plugin}/lib/batik-xml-1.7.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/bsf-2.4.0.jar" tofile="${tmp.dir.neuroph-plugin}/lib/bsf-2.4.0.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/commons-cli-1.2.jar" tofile="${tmp.dir.neuroph-plugin}/lib/commons-cli-1.2.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/commons-logging-1.2.jar" tofile="${tmp.dir.neuroph-plugin}/lib/commons-logging-1.2.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/cssbuilder-1.0.0.jar" tofile="${tmp.dir.neuroph-plugin}/lib/cssbuilder-1.0.0.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/cssparser-0.9.5.jar" tofile="${tmp.dir.neuroph-plugin}/lib/cssparser-0.9.5.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/easyb-ast-1.1.jar" tofile="${tmp.dir.neuroph-plugin}/lib/easyb-ast-1.1.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/easyb-core-1.6.jar" tofile="${tmp.dir.neuroph-plugin}/lib/easyb-core-1.6.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/filters-2.0.235.jar" tofile="${tmp.dir.neuroph-plugin}/lib/filters-2.0.235.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/flamingo-4.1.jar" tofile="${tmp.dir.neuroph-plugin}/lib/flamingo-4.1.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/flamingobuilder-0.5.jar" tofile="${tmp.dir.neuroph-plugin}/lib/flamingobuilder-0.5.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/forms-1.2.1.jar" tofile="${tmp.dir.neuroph-plugin}/lib/forms-1.2.1.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/formsrt-2.1.0M1.jar" tofile="${tmp.dir.neuroph-plugin}/lib/formsrt-2.1.0M1.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gant-1.9.11_groovy-2.3.0.jar" tofile="${tmp.dir.neuroph-plugin}/lib/gant-1.9.11_groovy-2.3.0.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gfxbuilder-core-0.8.jar" tofile="${tmp.dir.neuroph-plugin}/lib/gfxbuilder-core-0.8.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gfxbuilder-svg-0.8.jar" tofile="${tmp.dir.neuroph-plugin}/lib/gfxbuilder-svg-0.8.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gfxbuilder-swingx-0.8.jar" tofile="${tmp.dir.neuroph-plugin}/lib/gfxbuilder-swingx-0.8.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gmock-0.8.3.jar" tofile="${tmp.dir.neuroph-plugin}/lib/gmock-0.8.3.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gpars-1.2.1.jar" tofile="${tmp.dir.neuroph-plugin}/lib/gpars-1.2.1.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/grengine-1.0.5.jar" tofile="${tmp.dir.neuroph-plugin}/lib/grengine-1.0.5.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-2.4.6.jar" tofile="${tmp.dir.neuroph-plugin}/lib/groovy-2.4.6.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-ant-2.4.6.jar" tofile="${tmp.dir.neuroph-plugin}/lib/groovy-ant-2.4.6.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-bsf-2.4.6.jar" tofile="${tmp.dir.neuroph-plugin}/lib/groovy-bsf-2.4.6.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-console-2.4.6.jar" tofile="${tmp.dir.neuroph-plugin}/lib/groovy-console-2.4.6.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-docgenerator-2.4.6.jar" tofile="${tmp.dir.neuroph-plugin}/lib/groovy-docgenerator-2.4.6.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-groovydoc-2.4.6.jar" tofile="${tmp.dir.neuroph-plugin}/lib/groovy-groovydoc-2.4.6.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-groovysh-2.4.6.jar" tofile="${tmp.dir.neuroph-plugin}/lib/groovy-groovysh-2.4.6.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-jmx-2.4.6.jar" tofile="${tmp.dir.neuroph-plugin}/lib/groovy-jmx-2.4.6.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-json-2.4.6.jar" tofile="${tmp.dir.neuroph-plugin}/lib/groovy-json-2.4.6.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-jsr223-2.4.6.jar" tofile="${tmp.dir.neuroph-plugin}/lib/groovy-jsr223-2.4.6.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-nio-2.4.6.jar" tofile="${tmp.dir.neuroph-plugin}/lib/groovy-nio-2.4.6.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-servlet-2.4.6.jar" tofile="${tmp.dir.neuroph-plugin}/lib/groovy-servlet-2.4.6.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-sql-2.4.6.jar" tofile="${tmp.dir.neuroph-plugin}/lib/groovy-sql-2.4.6.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-swing-2.4.6.jar" tofile="${tmp.dir.neuroph-plugin}/lib/groovy-swing-2.4.6.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-templates-2.4.6.jar" tofile="${tmp.dir.neuroph-plugin}/lib/groovy-templates-2.4.6.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-test-2.4.6.jar" tofile="${tmp.dir.neuroph-plugin}/lib/groovy-test-2.4.6.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-testng-2.4.6.jar" tofile="${tmp.dir.neuroph-plugin}/lib/groovy-testng-2.4.6.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-xml-2.4.6.jar" tofile="${tmp.dir.neuroph-plugin}/lib/groovy-xml-2.4.6.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovyserv-1.0.0.jar" tofile="${tmp.dir.neuroph-plugin}/lib/groovyserv-1.0.0.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/hamcrest-core-1.3.jar" tofile="${tmp.dir.neuroph-plugin}/lib/hamcrest-core-1.3.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ivy-2.4.0.jar" tofile="${tmp.dir.neuroph-plugin}/lib/ivy-2.4.0.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jacob-1.14.3.jar" tofile="${tmp.dir.neuroph-plugin}/lib/jacob-1.14.3.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jansi-1.11.jar" tofile="${tmp.dir.neuroph-plugin}/lib/jansi-1.11.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jcommander-1.47.jar" tofile="${tmp.dir.neuroph-plugin}/lib/jcommander-1.47.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jcsp-1.1-rc5.jar" tofile="${tmp.dir.neuroph-plugin}/lib/jcsp-1.1-rc5.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jide-oss-3.4.7.jar" tofile="${tmp.dir.neuroph-plugin}/lib/jide-oss-3.4.7.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jidebuilder-6.0.jar" tofile="${tmp.dir.neuroph-plugin}/lib/jidebuilder-6.0.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jline-2.12.jar" tofile="${tmp.dir.neuroph-plugin}/lib/jline-2.12.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jna-4.1.0.jar" tofile="${tmp.dir.neuroph-plugin}/lib/jna-4.1.0.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jsilhouette-geom-0.4.jar" tofile="${tmp.dir.neuroph-plugin}/lib/jsilhouette-geom-0.4.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jsp-api-2.0.jar" tofile="${tmp.dir.neuroph-plugin}/lib/jsp-api-2.0.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jsr166y-1.7.0.jar" tofile="${tmp.dir.neuroph-plugin}/lib/jsr166y-1.7.0.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/junit-4.12.jar" tofile="${tmp.dir.neuroph-plugin}/lib/junit-4.12.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/macwidgetsbuilder-0.5.jar" tofile="${tmp.dir.neuroph-plugin}/lib/macwidgetsbuilder-0.5.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/mac_widgets-0.9.5.jar" tofile="${tmp.dir.neuroph-plugin}/lib/mac_widgets-0.9.5.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/multiverse-core-0.7.0.jar" tofile="${tmp.dir.neuroph-plugin}/lib/multiverse-core-0.7.0.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/netty-all-4.0.27.Final.jar" tofile="${tmp.dir.neuroph-plugin}/lib/netty-all-4.0.27.Final.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/qdox-1.12.1.jar" tofile="${tmp.dir.neuroph-plugin}/lib/qdox-1.12.1.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/sac-1.3.jar" tofile="${tmp.dir.neuroph-plugin}/lib/sac-1.3.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-1.6.0.jar" tofile="${tmp.dir.neuroph-plugin}/lib/scriptom-1.6.0.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-ie-6-tlb-1.6.0.jar" tofile="${tmp.dir.neuroph-plugin}/lib/scriptom-ie-6-tlb-1.6.0.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-office-2K3-tlb-1.6.0.jar" tofile="${tmp.dir.neuroph-plugin}/lib/scriptom-office-2K3-tlb-1.6.0.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-sapi-tlb-1.6.0.jar" tofile="${tmp.dir.neuroph-plugin}/lib/scriptom-sapi-tlb-1.6.0.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-scripting-tlb-1.6.0.jar" tofile="${tmp.dir.neuroph-plugin}/lib/scriptom-scripting-tlb-1.6.0.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-wbem-tlb-1.6.0.jar" tofile="${tmp.dir.neuroph-plugin}/lib/scriptom-wbem-tlb-1.6.0.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-wsh-tlb-1.6.0.jar" tofile="${tmp.dir.neuroph-plugin}/lib/scriptom-wsh-tlb-1.6.0.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/servlet-api-2.4.jar" tofile="${tmp.dir.neuroph-plugin}/lib/servlet-api-2.4.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/spock-core-1.0-groovy-2.4.jar" tofile="${tmp.dir.neuroph-plugin}/lib/spock-core-1.0-groovy-2.4.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/svg-salamander-1.1.jar" tofile="${tmp.dir.neuroph-plugin}/lib/svg-salamander-1.1.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swing-worker-1.1.jar" tofile="${tmp.dir.neuroph-plugin}/lib/swing-worker-1.1.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-action-1.6.4.jar" tofile="${tmp.dir.neuroph-plugin}/lib/swingx-action-1.6.4.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-autocomplete-1.6.4.jar" tofile="${tmp.dir.neuroph-plugin}/lib/swingx-autocomplete-1.6.4.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-beaninfo-1.6.4.jar" tofile="${tmp.dir.neuroph-plugin}/lib/swingx-beaninfo-1.6.4.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-common-1.6.4.jar" tofile="${tmp.dir.neuroph-plugin}/lib/swingx-common-1.6.4.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-core-1.6.4.jar" tofile="${tmp.dir.neuroph-plugin}/lib/swingx-core-1.6.4.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-graphics-1.6.4.jar" tofile="${tmp.dir.neuroph-plugin}/lib/swingx-graphics-1.6.4.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-painters-1.6.4.jar" tofile="${tmp.dir.neuroph-plugin}/lib/swingx-painters-1.6.4.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-plaf-1.6.4.jar" tofile="${tmp.dir.neuroph-plugin}/lib/swingx-plaf-1.6.4.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingxbuilder-0.3.jar" tofile="${tmp.dir.neuroph-plugin}/lib/swingxbuilder-0.3.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/testng-6.8.13.jar" tofile="${tmp.dir.neuroph-plugin}/lib/testng-6.8.13.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/timingframework-1.0.jar" tofile="${tmp.dir.neuroph-plugin}/lib/timingframework-1.0.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/trident-7.0.jar" tofile="${tmp.dir.neuroph-plugin}/lib/trident-7.0.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/tridentbuilder-0.6.jar" tofile="${tmp.dir.neuroph-plugin}/lib/tridentbuilder-0.6.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/xml-apis-ext-1.3.04.jar" tofile="${tmp.dir.neuroph-plugin}/lib/xml-apis-ext-1.3.04.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/xmlpull-1.1.3.1.jar" tofile="${tmp.dir.neuroph-plugin}/lib/xmlpull-1.1.3.1.jar"/>
-    <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/xstream-1.4.7.jar" tofile="${tmp.dir.neuroph-plugin}/lib/xstream-1.4.7.jar"/>
-    <copy file="${module.neuroph-plugin.basedir}/lib/KotlinMath.jar" tofile="${tmp.dir.neuroph-plugin}/lib/KotlinMath.jar"/>
-    <copy file="${module.neuroph-plugin.basedir}/lib/neuroph-2.6.jar" tofile="${tmp.dir.neuroph-plugin}/lib/neuroph-2.6.jar"/>
-    <copy file="${module.neuroph-plugin.basedir}/lib/kotlin-reflect.jar" tofile="${tmp.dir.neuroph-plugin}/lib/kotlin-reflect.jar"/>
-    <copy file="${module.neuroph-plugin.basedir}/lib/kotlin-runtime.jar" tofile="${tmp.dir.neuroph-plugin}/lib/kotlin-runtime.jar"/>
-    <copy file="${module.neuroph-plugin.basedir}/lib/JOCL-0.1.3a-beta.jar" tofile="${tmp.dir.neuroph-plugin}/lib/JOCL-0.1.3a-beta.jar"/>
-    <copy file="${module.neuroph-plugin.basedir}/lib/encog-engine-2.5.0.jar" tofile="${tmp.dir.neuroph-plugin}/lib/encog-engine-2.5.0.jar"/>
-    <copy file="${module.neuroph-plugin.basedir}/lib/kotlin-runtime-sources.jar" tofile="${tmp.dir.neuroph-plugin}/lib/kotlin-runtime-sources.jar"/>
-    <copy file="${module.neuroph-plugin.basedir}/lib/mysql-connector-java-5.1.17-bin.jar" tofile="${tmp.dir.neuroph-plugin}/lib/mysql-connector-java-5.1.17-bin.jar"/>
-    <zip destfile="${neuroph-plugin.plugin.path.jar}">
-      <fileset dir="${module.neuroph-plugin.basedir}/../temp"/>
-    </zip>
-    <delete dir="${tmp.dir.neuroph-plugin}"/>
-  </target>
-  
-  <target name="init" description="Build initialization">
-    <!-- Perform any build initialization in this target -->
-  </target>
-  
-  <target name="clean" depends="clean.module.neuroph-plugin" description="cleanup all"/>
-  
-  <target name="build.modules" depends="init, clean, plugin.build.jar.neuroph-plugin" description="build all modules"/>
-  
-  <target name="init.artifacts">
-    <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
-    <property name="artifact.output.neuroph-plugin:jar" value="${basedir}/out/artifacts/neuroph_plugin_jar"/>
-    <mkdir dir="${artifacts.temp.dir}"/>
-    <property name="temp.jar.path.neuroph-plugin.jar" value="${artifacts.temp.dir}/neuroph-plugin.jar"/>
-  </target>
-  
-  <target name="artifact.neuroph-plugin:jar" depends="init.artifacts, compile.module.neuroph-plugin" description="Build &#39;neuroph-plugin:jar&#39; artifact">
-    <property name="artifact.temp.output.neuroph-plugin:jar" value="${artifacts.temp.dir}/neuroph_plugin_jar"/>
-    <mkdir dir="${artifact.temp.output.neuroph-plugin:jar}"/>
-    <jar destfile="${temp.jar.path.neuroph-plugin.jar}" duplicate="preserve" filesetmanifest="mergewithoutmain">
-      <zipfileset dir="${neuroph-plugin.output.dir}"/>
-      <zipfileset src="${basedir}/lib/KotlinMath.jar"/>
-      <zipfileset src="${basedir}/lib/neuroph-2.6.jar"/>
-      <zipfileset src="${basedir}/lib/kotlin-reflect.jar"/>
-      <zipfileset src="${basedir}/lib/kotlin-runtime.jar"/>
-      <zipfileset src="${basedir}/lib/JOCL-0.1.3a-beta.jar"/>
-      <zipfileset src="${basedir}/lib/encog-engine-2.5.0.jar"/>
-      <zipfileset src="${basedir}/lib/kotlin-runtime-sources.jar"/>
-      <zipfileset src="${basedir}/lib/mysql-connector-java-5.1.17-bin.jar"/>
-      <zipfileset src="C:/Users/thoma/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.8.jar"/>
-      <zipfileset src="C:/Users/thoma/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.8.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/abeilleformbuilder-3.0.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ant-1.9.4.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ant-antlr-1.9.4.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ant-junit-1.9.4.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ant-launcher-1.9.4.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-anim-1.7.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-awt-util-1.7.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-bridge-1.7.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-codec-1.7.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-css-1.7.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-dom-1.7.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-ext-1.7.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-extension-1.7.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-gui-util-1.7.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-gvt-1.7.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-parser-1.7.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-script-1.7.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-svg-dom-1.7.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-svggen-1.7.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-swing-1.7.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-transcoder-1.7.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-util-1.7.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-xml-1.7.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/bsf-2.4.0.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/commons-cli-1.2.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/commons-logging-1.2.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/cssbuilder-1.0.0.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/cssparser-0.9.5.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/easyb-ast-1.1.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/easyb-core-1.6.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/filters-2.0.235.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/flamingo-4.1.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/flamingobuilder-0.5.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/forms-1.2.1.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/formsrt-2.1.0M1.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gant-1.9.11_groovy-2.3.0.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gfxbuilder-core-0.8.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gfxbuilder-svg-0.8.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gfxbuilder-swingx-0.8.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gmock-0.8.3.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gpars-1.2.1.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/grengine-1.0.5.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-2.4.6.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-ant-2.4.6.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-bsf-2.4.6.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-console-2.4.6.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-docgenerator-2.4.6.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-groovydoc-2.4.6.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-groovysh-2.4.6.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-jmx-2.4.6.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-json-2.4.6.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-jsr223-2.4.6.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-nio-2.4.6.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-servlet-2.4.6.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-sql-2.4.6.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-swing-2.4.6.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-templates-2.4.6.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-test-2.4.6.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-testng-2.4.6.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-xml-2.4.6.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovyserv-1.0.0.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/hamcrest-core-1.3.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ivy-2.4.0.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jacob-1.14.3.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jansi-1.11.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jcommander-1.47.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jcsp-1.1-rc5.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jide-oss-3.4.7.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jidebuilder-6.0.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jline-2.12.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jna-4.1.0.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jsilhouette-geom-0.4.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jsp-api-2.0.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jsr166y-1.7.0.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/junit-4.12.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/macwidgetsbuilder-0.5.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/mac_widgets-0.9.5.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/multiverse-core-0.7.0.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/netty-all-4.0.27.Final.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/qdox-1.12.1.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/sac-1.3.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-1.6.0.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-ie-6-tlb-1.6.0.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-office-2K3-tlb-1.6.0.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-sapi-tlb-1.6.0.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-scripting-tlb-1.6.0.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-wbem-tlb-1.6.0.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-wsh-tlb-1.6.0.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/servlet-api-2.4.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/spock-core-1.0-groovy-2.4.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/svg-salamander-1.1.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swing-worker-1.1.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-action-1.6.4.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-autocomplete-1.6.4.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-beaninfo-1.6.4.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-common-1.6.4.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-core-1.6.4.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-graphics-1.6.4.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-painters-1.6.4.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-plaf-1.6.4.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingxbuilder-0.3.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/testng-6.8.13.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/timingframework-1.0.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/trident-7.0.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/tridentbuilder-0.6.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/xml-apis-ext-1.3.04.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/xmlpull-1.1.3.1.jar"/>
-      <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/xstream-1.4.7.jar"/>
-      <zipfileset file="C:/Program Files (x86)/JetBrains/IntelliJ IDEA 162.426.1/redist/forms_rt.jar"/>
-    </jar>
-    <copy file="${temp.jar.path.neuroph-plugin.jar}" tofile="${artifact.temp.output.neuroph-plugin:jar}/neuroph-plugin.jar"/>
-  </target>
-  
-  <target name="build.all.artifacts" depends="artifact.neuroph-plugin:jar" description="Build all artifacts">
-    <mkdir dir="${artifact.output.neuroph-plugin:jar}"/>
-    <copy todir="${artifact.output.neuroph-plugin:jar}">
-      <fileset dir="${artifact.temp.output.neuroph-plugin:jar}"/>
-    </copy>
-    
-    <!-- Delete temporary files -->
-    <delete dir="${artifacts.temp.dir}"/>
-  </target>
-  
-  <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
+    <property name="project.jdk.classpath" value="jdk.classpath"/>
+    <property name="project.jdk.home" value="${jdk.home}"/>
+    <!-- Register Custom Compiler Taskdefs -->
+    <property name="javac2.home" value="${idea.home}"/>
+    <path id="javac2.classpath">
+        <pathelement location="${javac2.home}/lib/javac2.jar"/>
+        <pathelement location="${javac2.home}/lib/jdom.jar"/>
+        <pathelement location="${javac2.home}/lib/asm-all.jar"/>
+        <pathelement location="${javac2.home}/lib/jgoodies-forms.jar"/>
+        <pathelement location="${javac2.home}/lib/redist/forms_rt.jar"/>
+    </path>
+    <target name="register.custom.compilers">
+        <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
+        <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions"
+                 classpathref="javac2.classpath"/>
+        <property name="grooovyc.task.sdk" value="library.groovy-2.4.6.classpath"/>
+        <taskdef name="groovyc" classname="org.codehaus.groovy.ant.Groovyc" classpathref="${grooovyc.task.sdk}"/>
+    </target>
+
+    <!-- Modules -->
+
+
+    <!-- Module neuroph-plugin -->
+
+    <dirname property="module.neuroph-plugin.basedir" file="${ant.file}"/>
+
+
+    <property name="module.jdk.home.neuroph-plugin" value="${project.jdk.home}"/>
+    <property name="module.jdk.bin.neuroph-plugin" value="${project.jdk.bin}"/>
+    <property name="module.jdk.classpath.neuroph-plugin" value="${project.jdk.classpath}"/>
+
+    <property name="compiler.args.neuroph-plugin" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+
+    <property name="neuroph-plugin.output.dir" value="C:/production/neuroph-plugin"/>
+    <property name="neuroph-plugin.testoutput.dir" value="C:/test/neuroph-plugin"/>
+
+    <path id="neuroph-plugin.module.bootclasspath">
+        <!-- Paths to be included in compilation bootclasspath -->
+    </path>
+
+    <path id="neuroph-plugin.module.production.classpath">
+        <path refid="${module.jdk.classpath.neuroph-plugin}"/>
+        <path refid="library.kotlinjavaruntime.classpath"/>
+        <fileset dir="${basedir}/lib">
+            <patternset refid="library.patterns"/>
+        </fileset>
+        <path refid="library.scala-sdk-2.11.8.classpath"/>
+        <path refid="library.groovy-2.4.6.classpath"/>
+    </path>
+
+    <path id="neuroph-plugin.runtime.production.module.classpath">
+        <pathelement location="${neuroph-plugin.output.dir}"/>
+        <path refid="library.kotlinjavaruntime.classpath"/>
+        <fileset dir="${basedir}/lib">
+            <patternset refid="library.patterns"/>
+        </fileset>
+        <path refid="library.scala-sdk-2.11.8.classpath"/>
+        <path refid="library.groovy-2.4.6.classpath"/>
+    </path>
+
+    <path id="neuroph-plugin.module.classpath">
+        <path refid="${module.jdk.classpath.neuroph-plugin}"/>
+        <pathelement location="${neuroph-plugin.output.dir}"/>
+        <path refid="library.kotlinjavaruntime.classpath"/>
+        <fileset dir="${basedir}/lib">
+            <patternset refid="library.patterns"/>
+        </fileset>
+        <path refid="library.scala-sdk-2.11.8.classpath"/>
+        <path refid="library.groovy-2.4.6.classpath"/>
+    </path>
+
+    <path id="neuroph-plugin.runtime.module.classpath">
+        <pathelement location="${neuroph-plugin.testoutput.dir}"/>
+        <pathelement location="${neuroph-plugin.output.dir}"/>
+        <path refid="library.kotlinjavaruntime.classpath"/>
+        <fileset dir="${basedir}/lib">
+            <patternset refid="library.patterns"/>
+        </fileset>
+        <path refid="library.scala-sdk-2.11.8.classpath"/>
+        <path refid="library.groovy-2.4.6.classpath"/>
+    </path>
+
+
+    <patternset id="excluded.from.module.neuroph-plugin">
+        <patternset refid="ignored.files"/>
+    </patternset>
+
+    <patternset id="excluded.from.compilation.neuroph-plugin">
+        <patternset refid="excluded.from.module.neuroph-plugin"/>
+    </patternset>
+
+    <path id="neuroph-plugin.module.sourcepath">
+        <dirset dir="${module.neuroph-plugin.basedir}">
+            <include name="src"/>
+            <include name="resources"/>
+        </dirset>
+    </path>
+
+
+    <target name="compile.module.neuroph-plugin"
+            depends="compile.module.neuroph-plugin.production,compile.module.neuroph-plugin.tests"
+            description="Compile module neuroph-plugin"/>
+
+    <target name="compile.module.neuroph-plugin.production" depends="register.custom.compilers"
+            description="Compile module neuroph-plugin; production classes">
+        <mkdir dir="${neuroph-plugin.output.dir}"/>
+        <groovyc destdir="${neuroph-plugin.output.dir}" fork="no">
+            <src refid="neuroph-plugin.module.sourcepath"/>
+            <classpath refid="neuroph-plugin.module.production.classpath"/>
+            <patternset refid="excluded.from.compilation.neuroph-plugin"/>
+            <javac debug="${compiler.debug}">
+                <compilerarg line="${compiler.args.neuroph-plugin}"/>
+            </javac>
+        </groovyc>
+        <instrumentIdeaExtensions destdir="${neuroph-plugin.output.dir}">
+            <compilerarg line="${compiler.args.neuroph-plugin}"/>
+            <bootclasspath refid="neuroph-plugin.module.bootclasspath"/>
+            <classpath refid="neuroph-plugin.module.production.classpath"/>
+            <src refid="neuroph-plugin.module.sourcepath"/>
+            <patternset refid="excluded.from.compilation.neuroph-plugin"/>
+        </instrumentIdeaExtensions>
+
+        <copy todir="${neuroph-plugin.output.dir}">
+            <fileset dir="${module.neuroph-plugin.basedir}/src">
+                <patternset refid="compiler.resources"/>
+                <type type="file"/>
+            </fileset>
+            <fileset dir="${module.neuroph-plugin.basedir}/resources">
+                <patternset refid="compiler.resources"/>
+                <type type="file"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="compile.module.neuroph-plugin.tests"
+            depends="register.custom.compilers,compile.module.neuroph-plugin.production"
+            description="compile module neuroph-plugin; test classes" unless="skip.tests"/>
+
+    <target name="clean.module.neuroph-plugin" description="cleanup module">
+        <delete dir="${neuroph-plugin.output.dir}"/>
+        <delete dir="${neuroph-plugin.testoutput.dir}"/>
+    </target>
+
+    <property name="neuroph-plugin.plugin.path.jar" value="${module.neuroph-plugin.basedir}/neuroph-plugin.zip"/>
+
+    <!-- Build archive for plugin 'neuroph-plugin' -->
+    <target name="plugin.build.jar.neuroph-plugin" depends="compile.module.neuroph-plugin"
+            description="Build plugin archive for module &#39;neuroph-plugin&#39;">
+        <property name="tmp.dir.neuroph-plugin" value="${module.neuroph-plugin.basedir}/../temp"/>
+        <mkdir dir="${tmp.dir.neuroph-plugin}"/>
+        <mkdir dir="${tmp.dir.neuroph-plugin}/lib"/>
+        <jar destfile="${tmp.dir.neuroph-plugin}/lib/neuroph-plugin.jar" duplicate="preserve">
+            <zipfileset dir="C:/production/neuroph-plugin"/>
+            <zipfileset file="${module.neuroph-plugin.basedir}/resources/META-INF/plugin.xml" prefix="META-INF"/>
+            <manifest>
+                <attribute name="Created-By" value="IntelliJ IDEA"/>
+                <attribute name="Manifest-Version" value="1.0"/>
+            </manifest>
+        </jar>
+        <copy file="${module.neuroph-plugin.basedir}/lib/kotlin-runtime.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/kotlin-runtime.jar"/>
+        <copy file="${module.neuroph-plugin.basedir}/lib/kotlin-reflect.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/kotlin-reflect.jar"/>
+        <copy file="C:/Users/thoma/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.8.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/scala-library-2.11.8.jar"/>
+        <copy file="C:/Users/thoma/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.8.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/scala-reflect-2.11.8.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/abeilleformbuilder-3.0.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/abeilleformbuilder-3.0.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ant-1.9.4.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/ant-1.9.4.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ant-antlr-1.9.4.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/ant-antlr-1.9.4.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ant-junit-1.9.4.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/ant-junit-1.9.4.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ant-launcher-1.9.4.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/ant-launcher-1.9.4.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-anim-1.7.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/batik-anim-1.7.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-awt-util-1.7.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/batik-awt-util-1.7.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-bridge-1.7.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/batik-bridge-1.7.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-codec-1.7.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/batik-codec-1.7.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-css-1.7.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/batik-css-1.7.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-dom-1.7.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/batik-dom-1.7.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-ext-1.7.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/batik-ext-1.7.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-extension-1.7.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/batik-extension-1.7.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-gui-util-1.7.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/batik-gui-util-1.7.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-gvt-1.7.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/batik-gvt-1.7.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-parser-1.7.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/batik-parser-1.7.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-script-1.7.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/batik-script-1.7.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-svg-dom-1.7.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/batik-svg-dom-1.7.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-svggen-1.7.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/batik-svggen-1.7.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-swing-1.7.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/batik-swing-1.7.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-transcoder-1.7.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/batik-transcoder-1.7.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-util-1.7.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/batik-util-1.7.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-xml-1.7.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/batik-xml-1.7.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/bsf-2.4.0.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/bsf-2.4.0.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/commons-cli-1.2.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/commons-cli-1.2.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/commons-logging-1.2.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/commons-logging-1.2.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/cssbuilder-1.0.0.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/cssbuilder-1.0.0.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/cssparser-0.9.5.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/cssparser-0.9.5.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/easyb-ast-1.1.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/easyb-ast-1.1.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/easyb-core-1.6.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/easyb-core-1.6.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/filters-2.0.235.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/filters-2.0.235.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/flamingo-4.1.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/flamingo-4.1.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/flamingobuilder-0.5.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/flamingobuilder-0.5.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/forms-1.2.1.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/forms-1.2.1.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/formsrt-2.1.0M1.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/formsrt-2.1.0M1.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gant-1.9.11_groovy-2.3.0.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/gant-1.9.11_groovy-2.3.0.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gfxbuilder-core-0.8.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/gfxbuilder-core-0.8.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gfxbuilder-svg-0.8.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/gfxbuilder-svg-0.8.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gfxbuilder-swingx-0.8.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/gfxbuilder-swingx-0.8.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gmock-0.8.3.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/gmock-0.8.3.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gpars-1.2.1.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/gpars-1.2.1.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/grengine-1.0.5.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/grengine-1.0.5.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-2.4.6.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/groovy-2.4.6.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-ant-2.4.6.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/groovy-ant-2.4.6.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-bsf-2.4.6.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/groovy-bsf-2.4.6.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-console-2.4.6.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/groovy-console-2.4.6.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-docgenerator-2.4.6.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/groovy-docgenerator-2.4.6.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-groovydoc-2.4.6.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/groovy-groovydoc-2.4.6.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-groovysh-2.4.6.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/groovy-groovysh-2.4.6.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-jmx-2.4.6.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/groovy-jmx-2.4.6.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-json-2.4.6.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/groovy-json-2.4.6.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-jsr223-2.4.6.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/groovy-jsr223-2.4.6.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-nio-2.4.6.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/groovy-nio-2.4.6.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-servlet-2.4.6.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/groovy-servlet-2.4.6.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-sql-2.4.6.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/groovy-sql-2.4.6.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-swing-2.4.6.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/groovy-swing-2.4.6.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-templates-2.4.6.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/groovy-templates-2.4.6.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-test-2.4.6.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/groovy-test-2.4.6.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-testng-2.4.6.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/groovy-testng-2.4.6.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-xml-2.4.6.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/groovy-xml-2.4.6.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovyserv-1.0.0.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/groovyserv-1.0.0.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/hamcrest-core-1.3.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/hamcrest-core-1.3.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ivy-2.4.0.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/ivy-2.4.0.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jacob-1.14.3.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/jacob-1.14.3.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jansi-1.11.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/jansi-1.11.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jcommander-1.47.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/jcommander-1.47.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jcsp-1.1-rc5.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/jcsp-1.1-rc5.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jide-oss-3.4.7.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/jide-oss-3.4.7.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jidebuilder-6.0.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/jidebuilder-6.0.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jline-2.12.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/jline-2.12.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jna-4.1.0.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/jna-4.1.0.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jsilhouette-geom-0.4.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/jsilhouette-geom-0.4.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jsp-api-2.0.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/jsp-api-2.0.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jsr166y-1.7.0.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/jsr166y-1.7.0.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/junit-4.12.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/junit-4.12.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/macwidgetsbuilder-0.5.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/macwidgetsbuilder-0.5.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/mac_widgets-0.9.5.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/mac_widgets-0.9.5.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/multiverse-core-0.7.0.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/multiverse-core-0.7.0.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/netty-all-4.0.27.Final.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/netty-all-4.0.27.Final.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/qdox-1.12.1.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/qdox-1.12.1.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/sac-1.3.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/sac-1.3.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-1.6.0.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/scriptom-1.6.0.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-ie-6-tlb-1.6.0.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/scriptom-ie-6-tlb-1.6.0.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-office-2K3-tlb-1.6.0.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/scriptom-office-2K3-tlb-1.6.0.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-sapi-tlb-1.6.0.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/scriptom-sapi-tlb-1.6.0.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-scripting-tlb-1.6.0.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/scriptom-scripting-tlb-1.6.0.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-wbem-tlb-1.6.0.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/scriptom-wbem-tlb-1.6.0.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-wsh-tlb-1.6.0.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/scriptom-wsh-tlb-1.6.0.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/servlet-api-2.4.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/servlet-api-2.4.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/spock-core-1.0-groovy-2.4.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/spock-core-1.0-groovy-2.4.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/svg-salamander-1.1.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/svg-salamander-1.1.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swing-worker-1.1.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/swing-worker-1.1.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-action-1.6.4.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/swingx-action-1.6.4.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-autocomplete-1.6.4.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/swingx-autocomplete-1.6.4.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-beaninfo-1.6.4.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/swingx-beaninfo-1.6.4.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-common-1.6.4.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/swingx-common-1.6.4.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-core-1.6.4.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/swingx-core-1.6.4.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-graphics-1.6.4.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/swingx-graphics-1.6.4.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-painters-1.6.4.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/swingx-painters-1.6.4.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-plaf-1.6.4.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/swingx-plaf-1.6.4.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingxbuilder-0.3.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/swingxbuilder-0.3.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/testng-6.8.13.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/testng-6.8.13.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/timingframework-1.0.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/timingframework-1.0.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/trident-7.0.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/trident-7.0.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/tridentbuilder-0.6.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/tridentbuilder-0.6.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/xml-apis-ext-1.3.04.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/xml-apis-ext-1.3.04.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/xmlpull-1.1.3.1.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/xmlpull-1.1.3.1.jar"/>
+        <copy file="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/xstream-1.4.7.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/xstream-1.4.7.jar"/>
+        <copy file="${module.neuroph-plugin.basedir}/lib/KotlinMath.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/KotlinMath.jar"/>
+        <copy file="${module.neuroph-plugin.basedir}/lib/neuroph-2.6.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/neuroph-2.6.jar"/>
+        <copy file="${module.neuroph-plugin.basedir}/lib/kotlin-reflect.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/kotlin-reflect.jar"/>
+        <copy file="${module.neuroph-plugin.basedir}/lib/kotlin-runtime.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/kotlin-runtime.jar"/>
+        <copy file="${module.neuroph-plugin.basedir}/lib/JOCL-0.1.3a-beta.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/JOCL-0.1.3a-beta.jar"/>
+        <copy file="${module.neuroph-plugin.basedir}/lib/encog-engine-2.5.0.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/encog-engine-2.5.0.jar"/>
+        <copy file="${module.neuroph-plugin.basedir}/lib/kotlin-runtime-sources.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/kotlin-runtime-sources.jar"/>
+        <copy file="${module.neuroph-plugin.basedir}/lib/mysql-connector-java-5.1.17-bin.jar"
+              tofile="${tmp.dir.neuroph-plugin}/lib/mysql-connector-java-5.1.17-bin.jar"/>
+        <zip destfile="${neuroph-plugin.plugin.path.jar}">
+            <fileset dir="${module.neuroph-plugin.basedir}/../temp"/>
+        </zip>
+        <delete dir="${tmp.dir.neuroph-plugin}"/>
+    </target>
+
+    <target name="init" description="Build initialization">
+        <!-- Perform any build initialization in this target -->
+    </target>
+
+    <target name="clean" depends="clean.module.neuroph-plugin" description="cleanup all"/>
+
+    <target name="build.modules" depends="init, clean, plugin.build.jar.neuroph-plugin"
+            description="build all modules"/>
+
+    <target name="init.artifacts">
+        <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
+        <property name="artifact.output.neuroph-plugin:jar" value="${basedir}/out/artifacts/neuroph_plugin_jar"/>
+        <mkdir dir="${artifacts.temp.dir}"/>
+        <property name="temp.jar.path.neuroph-plugin.jar" value="${artifacts.temp.dir}/neuroph-plugin.jar"/>
+    </target>
+
+    <target name="artifact.neuroph-plugin:jar" depends="init.artifacts, compile.module.neuroph-plugin"
+            description="Build &#39;neuroph-plugin:jar&#39; artifact">
+        <property name="artifact.temp.output.neuroph-plugin:jar" value="${artifacts.temp.dir}/neuroph_plugin_jar"/>
+        <mkdir dir="${artifact.temp.output.neuroph-plugin:jar}"/>
+        <jar destfile="${temp.jar.path.neuroph-plugin.jar}" duplicate="preserve" filesetmanifest="mergewithoutmain">
+            <zipfileset dir="${neuroph-plugin.output.dir}"/>
+            <zipfileset src="${basedir}/lib/KotlinMath.jar"/>
+            <zipfileset src="${basedir}/lib/neuroph-2.6.jar"/>
+            <zipfileset src="${basedir}/lib/kotlin-reflect.jar"/>
+            <zipfileset src="${basedir}/lib/kotlin-runtime.jar"/>
+            <zipfileset src="${basedir}/lib/JOCL-0.1.3a-beta.jar"/>
+            <zipfileset src="${basedir}/lib/encog-engine-2.5.0.jar"/>
+            <zipfileset src="${basedir}/lib/kotlin-runtime-sources.jar"/>
+            <zipfileset src="${basedir}/lib/mysql-connector-java-5.1.17-bin.jar"/>
+            <zipfileset src="C:/Users/thoma/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.8.jar"/>
+            <zipfileset src="C:/Users/thoma/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.8.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/abeilleformbuilder-3.0.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ant-1.9.4.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ant-antlr-1.9.4.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ant-junit-1.9.4.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ant-launcher-1.9.4.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-anim-1.7.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-awt-util-1.7.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-bridge-1.7.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-codec-1.7.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-css-1.7.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-dom-1.7.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-ext-1.7.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-extension-1.7.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-gui-util-1.7.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-gvt-1.7.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-parser-1.7.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-script-1.7.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-svg-dom-1.7.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-svggen-1.7.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-swing-1.7.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-transcoder-1.7.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-util-1.7.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/batik-xml-1.7.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/bsf-2.4.0.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/commons-cli-1.2.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/commons-logging-1.2.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/cssbuilder-1.0.0.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/cssparser-0.9.5.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/easyb-ast-1.1.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/easyb-core-1.6.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/filters-2.0.235.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/flamingo-4.1.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/flamingobuilder-0.5.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/forms-1.2.1.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/formsrt-2.1.0M1.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gant-1.9.11_groovy-2.3.0.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gfxbuilder-core-0.8.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gfxbuilder-svg-0.8.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gfxbuilder-swingx-0.8.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gmock-0.8.3.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/gpars-1.2.1.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/grengine-1.0.5.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-2.4.6.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-ant-2.4.6.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-bsf-2.4.6.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-console-2.4.6.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-docgenerator-2.4.6.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-groovydoc-2.4.6.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-groovysh-2.4.6.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-jmx-2.4.6.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-json-2.4.6.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-jsr223-2.4.6.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-nio-2.4.6.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-servlet-2.4.6.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-sql-2.4.6.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-swing-2.4.6.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-templates-2.4.6.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-test-2.4.6.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-testng-2.4.6.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovy-xml-2.4.6.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/groovyserv-1.0.0.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/hamcrest-core-1.3.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/ivy-2.4.0.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jacob-1.14.3.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jansi-1.11.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jcommander-1.47.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jcsp-1.1-rc5.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jide-oss-3.4.7.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jidebuilder-6.0.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jline-2.12.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jna-4.1.0.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jsilhouette-geom-0.4.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jsp-api-2.0.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/jsr166y-1.7.0.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/junit-4.12.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/macwidgetsbuilder-0.5.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/mac_widgets-0.9.5.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/multiverse-core-0.7.0.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/netty-all-4.0.27.Final.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/qdox-1.12.1.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/sac-1.3.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-1.6.0.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-ie-6-tlb-1.6.0.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-office-2K3-tlb-1.6.0.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-sapi-tlb-1.6.0.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-scripting-tlb-1.6.0.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-wbem-tlb-1.6.0.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/scriptom-wsh-tlb-1.6.0.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/servlet-api-2.4.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/spock-core-1.0-groovy-2.4.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/svg-salamander-1.1.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swing-worker-1.1.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-action-1.6.4.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-autocomplete-1.6.4.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-beaninfo-1.6.4.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-common-1.6.4.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-core-1.6.4.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-graphics-1.6.4.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-painters-1.6.4.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingx-plaf-1.6.4.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/swingxbuilder-0.3.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/testng-6.8.13.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/timingframework-1.0.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/trident-7.0.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/tridentbuilder-0.6.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/xml-apis-ext-1.3.04.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/xmlpull-1.1.3.1.jar"/>
+            <zipfileset src="C:/Program Files (x86)/Groovy/Groovy-2.4.6/lib/xstream-1.4.7.jar"/>
+            <zipfileset file="C:/Program Files (x86)/JetBrains/IntelliJ IDEA 162.426.1/redist/forms_rt.jar"/>
+        </jar>
+        <copy file="${temp.jar.path.neuroph-plugin.jar}"
+              tofile="${artifact.temp.output.neuroph-plugin:jar}/neuroph-plugin.jar"/>
+    </target>
+
+    <target name="build.all.artifacts" depends="artifact.neuroph-plugin:jar" description="Build all artifacts">
+        <mkdir dir="${artifact.output.neuroph-plugin:jar}"/>
+        <copy todir="${artifact.output.neuroph-plugin:jar}">
+            <fileset dir="${artifact.temp.output.neuroph-plugin:jar}"/>
+        </copy>
+
+        <!-- Delete temporary files -->
+        <delete dir="${artifacts.temp.dir}"/>
+    </target>
+
+    <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
 </project>

@@ -36,35 +36,40 @@ import javax.swing.JComponent
  * Created by Thomas Needham on 06/06/2016.
  */
 class NeurophFacetEditorTab : FacetEditorTab {
-    companion object Data{
-        var panel : NeurophSDKPanel? = null
-        var settings : NeurophFacetSettings? = null
-    }
-    constructor(s: NeurophFacetSettings?){
-        settings = s
-        panel = NeurophSDKPanel()
-    }
-    override fun isModified() : Boolean {
-        return !StringUtil.equals(settings?.neurophSDKName,panel?.sdkName)
-    }
-
-    override fun disposeUIResources() {
-
-    }
-
-    override fun reset() {
-        val sdk = ProjectJdkTable.getInstance().findJdk(settings?.neurophSDKName)
-    }
-    @Nls
-    override fun getDisplayName() : String? {
-        return "Neuroph"
-    }
-@Nullable
-    override fun createComponent() : JComponent {
-        return panel?.root as JComponent
-    }
-@Throws(ConfigurationException::class)
-    override fun apply() {
-        settings?.neurophSDKName = panel?.sdkName
-    }
+	companion object Data {
+		var panel: NeurophSDKPanel? = null
+		var settings: NeurophFacetSettings? = null
+	}
+	
+	constructor(s: NeurophFacetSettings?) {
+		settings = s
+		panel = NeurophSDKPanel()
+	}
+	
+	override fun isModified(): Boolean {
+		return !StringUtil.equals(settings?.neurophSDKName, panel?.sdkName)
+	}
+	
+	override fun disposeUIResources() {
+	
+	}
+	
+	override fun reset() {
+		val sdk = ProjectJdkTable.getInstance().findJdk(settings?.neurophSDKName)
+	}
+	
+	@Nls
+	override fun getDisplayName(): String? {
+		return "Neuroph"
+	}
+	
+	@Nullable
+	override fun createComponent(): JComponent {
+		return panel?.root as JComponent
+	}
+	
+	@Throws(ConfigurationException::class)
+	override fun apply() {
+		settings?.neurophSDKName = panel?.sdkName
+	}
 }

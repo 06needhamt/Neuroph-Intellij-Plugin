@@ -8,10 +8,12 @@ import com.intellij.openapi.fileTypes.FileTypes
  * Created by thoma on 15/06/2016.
  */
 class NnetFileTypes : FileTypes {
-    private constructor() : super(){
-
-    }
-    companion object FileTypes {
-        @JvmStatic val NEURAL_NETWORK : FileType = FileTypeManager.getInstance().getFileTypeByExtension("nnet")
-    }
+	private constructor() : super() {
+	
+	}
+	
+	companion object FileTypes {
+		@JvmStatic
+		val NEURAL_NETWORK: FileType = FileTypeManager.getInstance().getFileTypeByExtension("nnet")
+	}
 }

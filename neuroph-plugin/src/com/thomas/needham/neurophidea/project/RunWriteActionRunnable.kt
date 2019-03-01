@@ -33,31 +33,32 @@ import java.io.IOException
 /**
  * Created by Thomas Needham on 06/06/2016.
  */
-class RunWriteActionRunnable : Runnable{
-    var builder : NeurophModuleBuilder?
-    var file : VirtualFile?
-    var module : Module?
-    constructor(builder: NeurophModuleBuilder?, file: VirtualFile?, module: Module?){
-        this.builder = builder
-        this.file = file
-        this.module = module
-    }
-    override fun run() {
-        try{
-            val test : VirtualFile? = file?.createChildDirectory(this,"test")
-            if(test != null){
-                val testSrc : VirtualFile? = test.createChildDirectory(this,"neuroph")
-                val rootModel = ModuleRootManager.getInstance(module!!).modifiableModel
-                val entry : ContentEntry? = NeurophModuleBuilder.findContentEntry(rootModel,testSrc)
-                if(entry != null){
-                    entry.addSourceFolder(testSrc!!,true)
-                    rootModel.commit()
-                }
-            }
-        }
-        catch(ioe: IOException){
-            ioe.printStackTrace(System.err)
-            Messages.showErrorDialog(null,"Error Creating Project","Error")
-        }
-    }
+class RunWriteActionRunnable : Runnable {
+	var builder: NeurophModuleBuilder?
+	var file: VirtualFile?
+	var module: Module?
+	
+	constructor(builder: NeurophModuleBuilder?, file: VirtualFile?, module: Module?) {
+		this.builder = builder
+		this.file = file
+		this.module = module
+	}
+	
+	override fun run() {
+		try {
+			val test: VirtualFile? = file?.createChildDirectory(this, "test")
+			if (test != null) {
+				val testSrc: VirtualFile? = test.createChildDirectory(this, "neuroph")
+				val rootModel = ModuleRootManager.getInstance(module!!).modifiableModel
+				val entry: ContentEntry? = NeurophModuleBuilder.findContentEntry(rootModel, testSrc)
+				if (entry != null) {
+					entry.addSourceFolder(testSrc!!, true)
+					rootModel.commit()
+				}
+			}
+		} catch (ioe: IOException) {
+			ioe.printStackTrace(System.err)
+			Messages.showErrorDialog(null, "Error Creating Project", "Error")
+		}
+	}
 }

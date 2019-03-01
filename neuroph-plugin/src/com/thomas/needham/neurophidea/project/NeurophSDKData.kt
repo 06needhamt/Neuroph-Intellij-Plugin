@@ -30,25 +30,28 @@ import com.intellij.util.xmlb.XmlSerializerUtil
 /**
  * Created by Thomas Needham on 06/06/2016.
  */
-class NeurophSDKData : SdkAdditionalData, PersistentStateComponent<NeurophSDKData>{
-    var homePath = ""
-    var version = ""
-    companion object Data{
-        val INSTANCE = NeurophSDKData()
-    }
-    constructor(){
-
-    }
-    constructor(homePath: String, version: String){
-        this.homePath = homePath
-        this.version = version
-    }
-
-    override fun getState() : NeurophSDKData? {
-        return this
-    }
-
-    override fun loadState(p0 : NeurophSDKData) {
-        XmlSerializerUtil.copyBean<NeurophSDKData?>(p0, this);
-    }
+class NeurophSDKData : SdkAdditionalData, PersistentStateComponent<NeurophSDKData> {
+	var homePath = ""
+	var version = ""
+	
+	companion object Data {
+		val INSTANCE = NeurophSDKData()
+	}
+	
+	constructor() {
+	
+	}
+	
+	constructor(homePath: String, version: String) {
+		this.homePath = homePath
+		this.version = version
+	}
+	
+	override fun getState(): NeurophSDKData? {
+		return this
+	}
+	
+	override fun loadState(p0: NeurophSDKData) {
+		XmlSerializerUtil.copyBean<NeurophSDKData?>(p0, this);
+	}
 }

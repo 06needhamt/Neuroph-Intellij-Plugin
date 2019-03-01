@@ -26,32 +26,34 @@ package com.thomas.needham.neurophidea.consumers
 import com.intellij.ide.util.PropertiesComponent
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.util.Consumer
-import com.thomas.needham.neurophidea.Constants.VERSION_KEY
 import com.thomas.needham.neurophidea.Constants.NETWORK_TO_OPEN_LOCATION_KEY
-import com.thomas.needham.neurophidea.forms.create.CreateTrainingSetBrowseButtonActionListener
+import com.thomas.needham.neurophidea.Constants.VERSION_KEY
 import com.thomas.needham.neurophidea.forms.open.OpenNetworkBrowseButtonActionListener
 
 /**
  * Created by thoma on 13/06/2016.
  */
 class OpenNetworkConsumer : Consumer<VirtualFile?> {
-    constructor() {
-
-    }
-
-    companion object Data {
-        @JvmStatic val properties = PropertiesComponent.getInstance()
-        @JvmStatic var version = NetworkOutputFileConsumer.properties.getValue(VERSION_KEY)
-        @JvmStatic var path : String? = ""
-    }
-
-    override fun consume(p0 : VirtualFile?) {
-        for (ext : String in OpenNetworkBrowseButtonActionListener.allowedFileTypes) {
-            if (p0?.extension?.equals(ext)!!) {
-                path = p0?.path
-                properties.setValue(NETWORK_TO_OPEN_LOCATION_KEY, path)
-                return
-            }
-        }
-    }
+	constructor() {
+	
+	}
+	
+	companion object Data {
+		@JvmStatic
+		val properties = PropertiesComponent.getInstance()
+		@JvmStatic
+		var version = NetworkOutputFileConsumer.properties.getValue(VERSION_KEY)
+		@JvmStatic
+		var path: String? = ""
+	}
+	
+	override fun consume(p0: VirtualFile?) {
+		for (ext: String in OpenNetworkBrowseButtonActionListener.allowedFileTypes) {
+			if (p0?.extension?.equals(ext)!!) {
+				path = p0?.path
+				properties.setValue(NETWORK_TO_OPEN_LOCATION_KEY, path)
+				return
+			}
+		}
+	}
 }

@@ -27,32 +27,33 @@ import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.project.Project
 import com.thomas.needham.neurophidea.forms.about.AboutForm
-import com.thomas.needham.neurophidea.forms.create.CreateNetworkForm
 
 /**
  * Created by thoma on 13/06/2016.
  */
 class ShowAboutFromAction : AnAction() {
-    var form : AboutForm? = null
-    var itr : Long = 0L
-    companion object ProjectInfo{
-        var project : Project? = null
-        var projectDirectory : String? = ""
-        var isOpen : Boolean? = false
-    }
-    override fun actionPerformed(e : AnActionEvent) {
-        InitialisationAction.project = e.project
-        InitialisationAction.projectDirectory = InitialisationAction.project?.basePath
-        InitialisationAction.isOpen = InitialisationAction.project?.isOpen
-        form = AboutForm()
-    }
-
-    override fun update(e : AnActionEvent?) {
-        super.update(e)
-        if(form != null){
-            form?.repaint(itr,0,0,form?.width!!,form?.height!!)
-            itr++
-        }
-        e?.presentation?.isEnabledAndVisible = true
-    }
+	var form: AboutForm? = null
+	var itr: Long = 0L
+	
+	companion object ProjectInfo {
+		var project: Project? = null
+		var projectDirectory: String? = ""
+		var isOpen: Boolean? = false
+	}
+	
+	override fun actionPerformed(e: AnActionEvent) {
+		InitialisationAction.project = e.project
+		InitialisationAction.projectDirectory = InitialisationAction.project?.basePath
+		InitialisationAction.isOpen = InitialisationAction.project?.isOpen
+		form = AboutForm()
+	}
+	
+	override fun update(e: AnActionEvent?) {
+		super.update(e)
+		if (form != null) {
+			form?.repaint(itr, 0, 0, form?.width!!, form?.height!!)
+			itr++
+		}
+		e?.presentation?.isEnabledAndVisible = true
+	}
 }

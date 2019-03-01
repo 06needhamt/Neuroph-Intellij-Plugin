@@ -30,10 +30,7 @@ import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.util.Consumer
 import com.thomas.needham.neurophidea.Constants.NETWORK_RESULTS_OUTPUT_LOCATION_KEY
 import com.thomas.needham.neurophidea.actions.ShowNetworkOutputFormAction
-import com.thomas.needham.neurophidea.actions.ShowTestNetworkFormAction
-import com.thomas.needham.neurophidea.consumers.ExportSourceConsumer
 import com.thomas.needham.neurophidea.consumers.NetworkResultsOutputConsumer
-import com.thomas.needham.neurophidea.forms.test.NetworkResultsBrowseActionListener
 import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
 
@@ -41,19 +38,21 @@ import java.awt.event.ActionListener
  * Created by Thomas Needham on 09/06/2016.
  */
 class ResultsOutputBrowseButtonActionListener : ActionListener {
-    var formInstance : NetworkOutputForm? = null
-    companion object Data{
-        val defaultPath = ""
-        val allowedFileTypes = arrayOf("output")
-        val fileDescriptor = FileChooserDescriptor(false, true, false, false, false, false)
-        val consumer : NetworkResultsOutputConsumer? = NetworkResultsOutputConsumer()
-        val properties = PropertiesComponent.getInstance()
-        var chosenPath = ""
-    }
-    override fun actionPerformed(e : ActionEvent?) {
-        properties?.setValue(NETWORK_RESULTS_OUTPUT_LOCATION_KEY, defaultPath)
-        FileChooser.chooseFile(fileDescriptor, ShowNetworkOutputFormAction.project,null, consumer as Consumer<VirtualFile?>)
-        chosenPath = properties.getValue(NETWORK_RESULTS_OUTPUT_LOCATION_KEY, defaultPath)
-        formInstance?.txtSaveLocation?.text = chosenPath
-    }
+	var formInstance: NetworkOutputForm? = null
+	
+	companion object Data {
+		val defaultPath = ""
+		val allowedFileTypes = arrayOf("output")
+		val fileDescriptor = FileChooserDescriptor(false, true, false, false, false, false)
+		val consumer: NetworkResultsOutputConsumer? = NetworkResultsOutputConsumer()
+		val properties = PropertiesComponent.getInstance()
+		var chosenPath = ""
+	}
+	
+	override fun actionPerformed(e: ActionEvent?) {
+		properties?.setValue(NETWORK_RESULTS_OUTPUT_LOCATION_KEY, defaultPath)
+		FileChooser.chooseFile(fileDescriptor, ShowNetworkOutputFormAction.project, null, consumer as Consumer<VirtualFile?>)
+		chosenPath = properties.getValue(NETWORK_RESULTS_OUTPUT_LOCATION_KEY, defaultPath)
+		formInstance?.txtSaveLocation?.text = chosenPath
+	}
 }

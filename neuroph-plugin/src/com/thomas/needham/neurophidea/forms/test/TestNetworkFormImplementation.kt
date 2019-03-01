@@ -22,27 +22,26 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 @file:JvmName("TestNetworkForm\$Ext") // Do Some Kotlin Sorcery!
-@file:JvmMultifileClass() // Do Some Kotlin Sorcery!
-package com.thomas.needham.neurophidea.forms.test
+@file:JvmMultifileClass()
 
-import com.thomas.needham.neurophidea.forms.test.TestNetworkBrowseButtonActionListener
-import com.thomas.needham.neurophidea.forms.train.TrainNetworkButtonActionListener
+// Do Some Kotlin Sorcery!
+package com.thomas.needham.neurophidea.forms.test
 
 /**
  * Created by Thomas Needham on 04/06/2016.
  */
 
-fun TestNetworkForm.AddOnClickListeners(){
-    val browseNetworkListener : TestNetworkBrowseButtonActionListener? = TestNetworkBrowseButtonActionListener()
-    browseNetworkListener?.formInstance = this
-    btnBrowseNetwork?.addActionListener(browseNetworkListener)
-    val browseTestingSetListener : TestingSetBrowseButtonActionListener? = TestingSetBrowseButtonActionListener()
-    browseTestingSetListener?.formInstance = this
-    btnBrowseTestingSet?.addActionListener(browseTestingSetListener)
-    val resultsActionListener : NetworkResultsBrowseActionListener? = NetworkResultsBrowseActionListener()
-    resultsActionListener?.formInstance = this
-    btnBrowseOutput?.addActionListener(resultsActionListener)
-    val trainActionListener : TestNetworkButtonActionListener? = TestNetworkButtonActionListener()
-    trainActionListener?.formInstance = this
-    btnTestNetwork.addActionListener(trainActionListener)
+fun TestNetworkForm.AddOnClickListeners() {
+	val browseNetworkListener: TestNetworkBrowseButtonActionListener? = TestNetworkBrowseButtonActionListener()
+	browseNetworkListener?.formInstance = this
+	btnBrowseNetwork?.addActionListener(browseNetworkListener)
+	val browseTestingSetListener: TestingSetBrowseButtonActionListener? = TestingSetBrowseButtonActionListener()
+	browseTestingSetListener?.formInstance = this
+	btnBrowseTestingSet?.addActionListener(browseTestingSetListener)
+	val resultsActionListener: NetworkResultsBrowseActionListener? = NetworkResultsBrowseActionListener()
+	resultsActionListener?.formInstance = this
+	btnBrowseOutput?.addActionListener(resultsActionListener)
+	val trainActionListener: TestNetworkButtonActionListener? = TestNetworkButtonActionListener()
+	trainActionListener?.formInstance = this
+	btnTestNetwork.addActionListener(trainActionListener)
 }

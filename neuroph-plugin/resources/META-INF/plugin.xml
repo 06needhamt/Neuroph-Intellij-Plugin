@@ -20,7 +20,8 @@ SOFTWARE. -->
     <id>com.thomas.needham.neurophidea</id>
     <name>Neuroph For Intellij</name>
     <version>1.1.0</version>
-    <vendor email="06needhamt@gmail.com" url="https://github.com/06needhamt/Neuroph-Intellij-Plugin">Tom Needham</vendor>
+    <vendor email="06needhamt@gmail.com" url="https://github.com/06needhamt/Neuroph-Intellij-Plugin">Tom Needham
+    </vendor>
 
     <description><![CDATA[
       Allows for easy integration of the Neuroph libraries
@@ -59,19 +60,23 @@ SOFTWARE. -->
         <moduleBuilder builderClass="com.thomas.needham.neurophidea.project.NeurophModuleBuilder">
         </moduleBuilder>
 
-        <fileType.fileViewProviderFactory filetype="nnet" implementationClass="com.thomas.needham.neurophidea.designer.editor.nnet.NnetFileViewProviderFactory">
+        <fileType.fileViewProviderFactory filetype="nnet"
+                                          implementationClass="com.thomas.needham.neurophidea.designer.editor.nnet.NnetFileViewProviderFactory">
         </fileType.fileViewProviderFactory>
 
         <fileEditorProvider implementation="com.thomas.needham.neurophidea.designer.editor.nnet.NnetFileEditorProvider">
         </fileEditorProvider>
 
-        <fileType.fileViewProviderFactory filetype="snnet" implementationClass="com.thomas.needham.neurophidea.designer.editor.snnet.SnnetFileViewProviderFactory">
+        <fileType.fileViewProviderFactory filetype="snnet"
+                                          implementationClass="com.thomas.needham.neurophidea.designer.editor.snnet.SnnetFileViewProviderFactory">
         </fileType.fileViewProviderFactory>
-        
-        <fileEditorProvider implementation="com.thomas.needham.neurophidea.designer.editor.snnet.SnnetFileEditorProvider">
+
+        <fileEditorProvider
+                implementation="com.thomas.needham.neurophidea.designer.editor.snnet.SnnetFileEditorProvider">
         </fileEditorProvider>
 
-        <fileType.fileViewProviderFactory filetype="tset" implementationClass="com.thomas.needham.neurophidea.designer.editor.tset.TsetFileViewProviderFactory">
+        <fileType.fileViewProviderFactory filetype="tset"
+                                          implementationClass="com.thomas.needham.neurophidea.designer.editor.tset.TsetFileViewProviderFactory">
         </fileType.fileViewProviderFactory>
 
         <fileEditorProvider implementation="com.thomas.needham.neurophidea.designer.editor.tset.TsetFileEditorProvider">
@@ -89,16 +94,20 @@ SOFTWARE. -->
                 <keyboard-shortcut first-keystroke="ctrl alt N" keymap="$default"/>
             </action>
 
-            <action id="OpenExistingNetworkConfiguration" class="com.thomas.needham.neurophidea.actions.OpenExistingNetworkConfigurationAction"
-                    text="Open Existing Network Configuration" description="Opens an existing network configuration created by this plugin">
+            <action id="OpenExistingNetworkConfiguration"
+                    class="com.thomas.needham.neurophidea.actions.OpenExistingNetworkConfigurationAction"
+                    text="Open Existing Network Configuration"
+                    description="Opens an existing network configuration created by this plugin">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt H"/>
             </action>
-            <action id="OpenExistingNetworkAction" class="com.thomas.needham.neurophidea.actions.OpenExistingNetworkAction"
+            <action id="OpenExistingNetworkAction"
+                    class="com.thomas.needham.neurophidea.actions.OpenExistingNetworkAction"
                     text="Open Existing Network" description="Opens An Existing Network">
             </action>
             <action id="ExportNetworkToSourceCode"
                     class="com.thomas.needham.neurophidea.actions.ShowExportNetworkFormAction"
-                    text="Export Network To Source Code" description="Exports A network to its java source code equivalent">
+                    text="Export Network To Source Code"
+                    description="Exports A network to its java source code equivalent">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt G"/>
             </action>
             <action id="TrainNetworkAction" class="com.thomas.needham.neurophidea.actions.ShowTrainNetworkFormAction"
@@ -110,12 +119,14 @@ SOFTWARE. -->
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt B"/>
             </action>
             <action id="DisplayNetworkOutputAction"
-                    class="com.thomas.needham.neurophidea.actions.ShowNetworkOutputFormAction" text="Display Network Output"
+                    class="com.thomas.needham.neurophidea.actions.ShowNetworkOutputFormAction"
+                    text="Display Network Output"
                     description="Displays a Network&#39;s Output">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt D"/>
             </action>
             <action id="ShowNetworkWeightsFormAction"
-                    class="com.thomas.needham.neurophidea.actions.ShowNetworkWeightsFormAction" text="Edit Network Weights"
+                    class="com.thomas.needham.neurophidea.actions.ShowNetworkWeightsFormAction"
+                    text="Edit Network Weights"
                     description="Manually Edit Network Weights">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt W"/>
             </action>
@@ -135,7 +146,7 @@ SOFTWARE. -->
         <action id="DownloadNeurophAction" class="com.thomas.needham.neurophidea.actions.DownloadNeurophAction"
                 text="Download Neuroph" description="Downloads A Neuroph SDK"/>
         <!--<action id="OpenExistingNetworkAction" class="com.thomas.needham.neurophidea.actions.OpenExistingNetworkAction"-->
-                <!--text="Open Existing Network" description="Opens An Existing Network">-->
+        <!--text="Open Existing Network" description="Opens An Existing Network">-->
         <!--</action>-->
         <action id="AutoGenerateCodeAction" class="com.thomas.needham.neurophidea.actions.AutoGenerateCodeAction"
                 text="Auto Generate Code Action" description="Regenerate Code For Neural Networks In Project">
@@ -147,19 +158,24 @@ SOFTWARE. -->
             <implementation-class>com.thomas.needham.neurophidea.PluginRegistration</implementation-class>
         </component>
         <component>
-            <implementation-class>com.thomas.needham.neurophidea.designer.editor.nnet.NnetDocumentManager</implementation-class>
+            <implementation-class>com.thomas.needham.neurophidea.designer.editor.nnet.NnetDocumentManager
+            </implementation-class>
         </component>
         <component>
-            <implementation-class>com.thomas.needham.neurophidea.designer.editor.nnet.NnetDecompiler</implementation-class>
+            <implementation-class>com.thomas.needham.neurophidea.designer.editor.nnet.NnetDecompiler
+            </implementation-class>
         </component>
         <component>
-            <implementation-class>com.thomas.needham.neurophidea.designer.editor.tset.TsetDecompiler</implementation-class>
+            <implementation-class>com.thomas.needham.neurophidea.designer.editor.tset.TsetDecompiler
+            </implementation-class>
         </component>
         <component>
-            <implementation-class>com.thomas.needham.neurophidea.designer.editor.snnet.SnnetDocumentManager</implementation-class>
+            <implementation-class>com.thomas.needham.neurophidea.designer.editor.snnet.SnnetDocumentManager
+            </implementation-class>
         </component>
         <component>
-            <implementation-class>com.thomas.needham.neurophidea.designer.editor.tset.TsetDocumentManager</implementation-class>
+            <implementation-class>com.thomas.needham.neurophidea.designer.editor.tset.TsetDocumentManager
+            </implementation-class>
         </component>
     </application-components>
 </idea-plugin>

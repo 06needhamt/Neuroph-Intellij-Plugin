@@ -30,45 +30,48 @@ import java.io.Serializable
  */
 
 class LearningRules : Serializable {
-    enum class Rules(nameString : String) {
-        //Enum must be nested within a class to avoid a NoClassDefFoundException possible Kotlin bug???
-        BACK_PROPAGATION("Back Propagation"),
-        DYNAMIC_BACK_PROPAGATION("Dynamic Back Propagation"),
-        ANTI_HEBBAN_LEARNING("Anti Hebbian Learning"),
-        BINARY_DELTA_RULE("Binary Delta Rule"),
-        BINARY_HEBBIAN_LEARNING("Binary Hebbian Learning"),
-        COMPETITIVE_LEARNING("Competitive Learning"),
-        GENERALIZED_HEBBIAN_LEARNING("Generalized Hebbian Learning"),
-        HOPFIELD_LEARNING("Hopfield Learning"),
-        INSTAR_LEARNING("Instar Learning"),
-        KOHONEN_LEARNING("Kohonen Learning"),
-        LMS("LMS"),
-        MOMENTUM_BACK_PROPAGATION("Momentum Back Propagation"),
-        OJA_LEARNING("Oja Learning"),
-        OUTSTAR_LEARNING("Outstar Learning"),
-        PERCEPTRON_LEARNING("Perceptron Learning"),
-        RESILIENT_PROPAGATION("Resilient Propagation"),
-        SIGMOID_DELTA_RULE("Sigmoid Delta Rule"),
-        SIMULATED_ANNEALING_LEARNING("Simulated Annealing Learning"),
-        SUPERVISED_HEBBIAN_LEARNING("Supervised Hebbian Learning"),
-        UNSUPERVISED_HEBBIAN_LEARNING("Unsupervised Hebbian Learning");
-    }
-
-    companion object Names {
-        @JvmStatic val classNames = arrayOf("BackPropagation", "DynamicBackPropagation", "AntiHebbianLearning", "BinaryDeltaRule",
-                "BinaryHebbianLearning", "CompetitiveLearning", "GeneralizedHebbianLearning", "HopfieldLearning",
-                "InstarLearning", "KohonenLearning", "LMS", "MomentumBackPropagation", "OjaLearning", "OutstarLearning",
-                "PerceptronLearning", "ResilientPropagation", "SigmoidDeltaRule", "SimulatedAnnealingLearning",
-                "SupervisedHebbianLearning", "UnsupervisedHebbianLearning")
-
-        @JvmStatic val friendlyNames = arrayOf("Back Propagation", "Dynamic Back Propagation", "Anti Hebbian Learning", "Binary Delta Rule",
-                "Binary Hebbian Learning", "Competitive Learning", "Generalized Hebbian Learning", "Hopfield Learning",
-                "Instar Learning", "Kohonen Learning", "LMS", "Momentum Back Propagation", "Oja Learning", "Outstar Learning",
-                "Perceptron Learning", "Resilient Propagation", "Sigmoid Delta Rule", "Simulated Annealing Learning",
-                "Supervised Hebbian Learning", "Unsupervised Hebbian Learning")
-
-        @JvmStatic fun GetClassName(v : LearningRules.Rules) : String {
-            return classNames[v.ordinal]
-        }
-    }
+	enum class Rules(nameString: String) {
+		//Enum must be nested within a class to avoid a NoClassDefFoundException possible Kotlin bug???
+		BACK_PROPAGATION("Back Propagation"),
+		DYNAMIC_BACK_PROPAGATION("Dynamic Back Propagation"),
+		ANTI_HEBBAN_LEARNING("Anti Hebbian Learning"),
+		BINARY_DELTA_RULE("Binary Delta Rule"),
+		BINARY_HEBBIAN_LEARNING("Binary Hebbian Learning"),
+		COMPETITIVE_LEARNING("Competitive Learning"),
+		GENERALIZED_HEBBIAN_LEARNING("Generalized Hebbian Learning"),
+		HOPFIELD_LEARNING("Hopfield Learning"),
+		INSTAR_LEARNING("Instar Learning"),
+		KOHONEN_LEARNING("Kohonen Learning"),
+		LMS("LMS"),
+		MOMENTUM_BACK_PROPAGATION("Momentum Back Propagation"),
+		OJA_LEARNING("Oja Learning"),
+		OUTSTAR_LEARNING("Outstar Learning"),
+		PERCEPTRON_LEARNING("Perceptron Learning"),
+		RESILIENT_PROPAGATION("Resilient Propagation"),
+		SIGMOID_DELTA_RULE("Sigmoid Delta Rule"),
+		SIMULATED_ANNEALING_LEARNING("Simulated Annealing Learning"),
+		SUPERVISED_HEBBIAN_LEARNING("Supervised Hebbian Learning"),
+		UNSUPERVISED_HEBBIAN_LEARNING("Unsupervised Hebbian Learning");
+	}
+	
+	companion object Names {
+		@JvmStatic
+		val classNames = arrayOf("BackPropagation", "DynamicBackPropagation", "AntiHebbianLearning", "BinaryDeltaRule",
+				"BinaryHebbianLearning", "CompetitiveLearning", "GeneralizedHebbianLearning", "HopfieldLearning",
+				"InstarLearning", "KohonenLearning", "LMS", "MomentumBackPropagation", "OjaLearning", "OutstarLearning",
+				"PerceptronLearning", "ResilientPropagation", "SigmoidDeltaRule", "SimulatedAnnealingLearning",
+				"SupervisedHebbianLearning", "UnsupervisedHebbianLearning")
+		
+		@JvmStatic
+		val friendlyNames = arrayOf("Back Propagation", "Dynamic Back Propagation", "Anti Hebbian Learning", "Binary Delta Rule",
+				"Binary Hebbian Learning", "Competitive Learning", "Generalized Hebbian Learning", "Hopfield Learning",
+				"Instar Learning", "Kohonen Learning", "LMS", "Momentum Back Propagation", "Oja Learning", "Outstar Learning",
+				"Perceptron Learning", "Resilient Propagation", "Sigmoid Delta Rule", "Simulated Annealing Learning",
+				"Supervised Hebbian Learning", "Unsupervised Hebbian Learning")
+		
+		@JvmStatic
+		fun GetClassName(v: LearningRules.Rules): String {
+			return classNames[v.ordinal]
+		}
+	}
 }

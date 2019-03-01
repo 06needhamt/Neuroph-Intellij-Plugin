@@ -2,29 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8459ef46-171e-4305-b8bb-b8f872317c02" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neuroph-plugin/.idea/artifacts/neuroph_plugin_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../neuroph-plugin/.idea/artifacts/neuroph_plugin_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neuroph-plugin/.idea/libraries/KotlinJavaRuntime.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neuroph-plugin/.idea/libraries/scala_sdk_2_11_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neuroph-plugin/.idea/libraries/scala_sdk_2_12_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../neuroph-plugin/.idea/libraries/scala_sdk_2_12_3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neuroph-plugin/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../neuroph-plugin/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../neuroph-plugin/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../neuroph-plugin/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neuroph-plugin/neuroph-plugin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../neuroph-plugin/neuroph-plugin.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neuroph-plugin/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetDocumentManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../neuroph-plugin/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetDocumentManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neuroph-plugin/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetDocumentManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../neuroph-plugin/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetDocumentManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neuroph-plugin/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetDocumentManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../neuroph-plugin/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetDocumentManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neuroph-plugin/src/com/thomas/needham/neurophidea/forms/about/AboutForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../neuroph-plugin/src/com/thomas/needham/neurophidea/forms/about/AboutForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neuroph-plugin/src/com/thomas/needham/neurophidea/forms/create/CreateNetworkForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../neuroph-plugin/src/com/thomas/needham/neurophidea/forms/create/CreateNetworkForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neuroph-plugin/src/com/thomas/needham/neurophidea/forms/export/ExportNetworkForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../neuroph-plugin/src/com/thomas/needham/neurophidea/forms/export/ExportNetworkForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neuroph-plugin/src/com/thomas/needham/neurophidea/forms/output/NetworkOutputForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../neuroph-plugin/src/com/thomas/needham/neurophidea/forms/output/NetworkOutputForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neuroph-plugin/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../neuroph-plugin/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neuroph-plugin/src/com/thomas/needham/neurophidea/forms/weights/NetworkWeightsForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../neuroph-plugin/src/com/thomas/needham/neurophidea/forms/weights/NetworkWeightsForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neuroph-plugin/src/com/thomas/needham/neurophidea/project/NeurophSDK.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../neuroph-plugin/src/com/thomas/needham/neurophidea/project/NeurophSDK.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neuroph-plugin/src/com/thomas/needham/neurophidea/project/NeurophSDKData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../neuroph-plugin/src/com/thomas/needham/neurophidea/project/NeurophSDKData.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neuroph-plugin/src/com/thomas/needham/neurophidea/project/NeurophSDKPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../neuroph-plugin/src/com/thomas/needham/neurophidea/project/NeurophSDKPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neuroph-plugin/src/com/thomas/needham/neurophidea/project/facet/NeurophFacetConfiguration.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../neuroph-plugin/src/com/thomas/needham/neurophidea/project/facet/NeurophFacetConfiguration.kt" afterDir="false" />
     </list>
     <ignored path="TestProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,10 +20,11 @@
     <session id="-480073679">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
     </session>
@@ -103,8 +82,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -117,6 +94,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -451,7 +429,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info id="Palette&#9;" order="3" />

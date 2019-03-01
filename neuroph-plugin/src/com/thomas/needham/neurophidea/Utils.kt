@@ -30,31 +30,49 @@ import java.io.IOException
  * Created by Thomas Needham on 09/06/2016.
  */
 object Utils {
-    @JvmStatic inline fun <reified INNER> array2d(sizeOuter: Int, sizeInner: Int, noinline innerInit: (Int) -> INNER) : Array<Array<INNER>> = Array(sizeOuter) { Array<INNER>(sizeInner, innerInit) }
-    @JvmStatic fun array2dOfInt(sizeOuter: Int, sizeInner: Int) : Array<IntArray> = Array(sizeOuter) { IntArray(sizeInner) }
-    @JvmStatic fun array2dOfShort(sizeOuter: Int, sizeInner: Int) : Array<ShortArray> = Array(sizeOuter) { ShortArray(sizeInner) }
-    @JvmStatic fun array2dOfLong(sizeOuter: Int, sizeInner: Int) : Array<LongArray> = Array(sizeOuter) { LongArray(sizeInner) }
-    @JvmStatic fun array2dOfByte(sizeOuter: Int, sizeInner: Int) : Array<ByteArray> = Array(sizeOuter) { ByteArray(sizeInner) }
-    @JvmStatic fun array2dOfChar(sizeOuter: Int, sizeInner: Int) : Array<CharArray> = Array(sizeOuter) { CharArray(sizeInner) }
-    @JvmStatic fun array2dOfFloat(sizeOuter: Int, sizeInner: Int) : Array<FloatArray> = Array(sizeOuter) { FloatArray(sizeInner) }
-    @JvmStatic fun array2dOfDouble(sizeOuter: Int, sizeInner: Int) : Array<DoubleArray> = Array(sizeOuter) { DoubleArray(sizeInner) }
-    @JvmStatic fun array2dOfBoolean(sizeOuter: Int, sizeInner: Int) : Array<BooleanArray> = Array(sizeOuter) { BooleanArray(sizeInner) }
-
-    @Throws(IOException::class)
-    @JvmStatic fun fileToString(path : String) : String {
-        val builder = StringBuilder()
-        val reader = BufferedReader(FileReader(path))
-
-        var line : String?
-
-        line = reader.readLine()
-        while (line != null) {
-            builder.append(line).append('\n')
-            line = reader.readLine()
-        }
-
-        reader.close()
-
-        return builder.toString()
-    }
+	@JvmStatic
+	inline fun <reified INNER> array2d(sizeOuter: Int, sizeInner: Int, noinline innerInit: (Int) -> INNER): Array<Array<INNER>> = Array(sizeOuter) { Array<INNER>(sizeInner, innerInit) }
+	
+	@JvmStatic
+	fun array2dOfInt(sizeOuter: Int, sizeInner: Int): Array<IntArray> = Array(sizeOuter) { IntArray(sizeInner) }
+	
+	@JvmStatic
+	fun array2dOfShort(sizeOuter: Int, sizeInner: Int): Array<ShortArray> = Array(sizeOuter) { ShortArray(sizeInner) }
+	
+	@JvmStatic
+	fun array2dOfLong(sizeOuter: Int, sizeInner: Int): Array<LongArray> = Array(sizeOuter) { LongArray(sizeInner) }
+	
+	@JvmStatic
+	fun array2dOfByte(sizeOuter: Int, sizeInner: Int): Array<ByteArray> = Array(sizeOuter) { ByteArray(sizeInner) }
+	
+	@JvmStatic
+	fun array2dOfChar(sizeOuter: Int, sizeInner: Int): Array<CharArray> = Array(sizeOuter) { CharArray(sizeInner) }
+	
+	@JvmStatic
+	fun array2dOfFloat(sizeOuter: Int, sizeInner: Int): Array<FloatArray> = Array(sizeOuter) { FloatArray(sizeInner) }
+	
+	@JvmStatic
+	fun array2dOfDouble(sizeOuter: Int, sizeInner: Int): Array<DoubleArray> = Array(sizeOuter) { DoubleArray(sizeInner) }
+	
+	@JvmStatic
+	fun array2dOfBoolean(sizeOuter: Int, sizeInner: Int): Array<BooleanArray> = Array(sizeOuter) { BooleanArray(sizeInner) }
+	
+	@Throws(IOException::class)
+	@JvmStatic
+	fun fileToString(path: String): String {
+		val builder = StringBuilder()
+		val reader = BufferedReader(FileReader(path))
+		
+		var line: String?
+		
+		line = reader.readLine()
+		while (line != null) {
+			builder.append(line).append('\n')
+			line = reader.readLine()
+		}
+		
+		reader.close()
+		
+		return builder.toString()
+	}
 }

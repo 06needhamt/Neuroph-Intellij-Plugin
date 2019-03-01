@@ -22,21 +22,23 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 @file:JvmName("TrainNetworkForm\$Ext") // Do Some Kotlin Sorcery!
-@file:JvmMultifileClass() // Do Some Kotlin Sorcery!
+@file:JvmMultifileClass()
+
+// Do Some Kotlin Sorcery!
 package com.thomas.needham.neurophidea.forms.train
 
 /**
  * Created by Thomas Needham on 31/05/2016.
  */
 
-fun TrainNetworkForm.AddOnClickListeners(){
-    val browseNetworkListener : TrainNetworkBrowseButtonActionListener? = TrainNetworkBrowseButtonActionListener()
-    browseNetworkListener?.formInstance = this
-    btnBrowseNetwork.addActionListener(browseNetworkListener)
-    val trainingSetListener : TrainingSetBrowseButtonActionListener? = TrainingSetBrowseButtonActionListener()
-    trainingSetListener?.formInstance = this
-    btnBrowseTrainingSet.addActionListener(trainingSetListener)
-    val trainListener : TrainNetworkButtonActionListener? = TrainNetworkButtonActionListener()
-    trainListener?.formInstance = this
-    btnTrainNetwork.addActionListener(trainListener)
+fun TrainNetworkForm.AddOnClickListeners() {
+	val browseNetworkListener: TrainNetworkBrowseButtonActionListener? = TrainNetworkBrowseButtonActionListener()
+	browseNetworkListener?.formInstance = this
+	btnBrowseNetwork.addActionListener(browseNetworkListener)
+	val trainingSetListener: TrainingSetBrowseButtonActionListener? = TrainingSetBrowseButtonActionListener()
+	trainingSetListener?.formInstance = this
+	btnBrowseTrainingSet.addActionListener(trainingSetListener)
+	val trainListener: TrainNetworkButtonActionListener? = TrainNetworkButtonActionListener()
+	trainListener?.formInstance = this
+	btnTrainNetwork.addActionListener(trainListener)
 }

@@ -28,6 +28,6 @@ import com.intellij.lang.Language
 /**
  * Created by thoma on 12/07/2016.
  */
-class TsetLanguage(ID : String, vararg mimeTypes : String?) : Language(ID, *mimeTypes) {
+class TsetLanguage(ID: String, vararg mimeTypes: String?) : Language(ID, *mimeTypes) {
 
 }

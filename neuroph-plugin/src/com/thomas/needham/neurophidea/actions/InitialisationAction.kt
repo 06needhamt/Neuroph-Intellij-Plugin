@@ -31,21 +31,24 @@ import com.intellij.openapi.project.Project
  */
 
 class InitialisationAction : AnAction {
-    companion object ProjectInfo{
-        var project : Project? = null
-        var projectDirectory : String? = ""
-        var isOpen : Boolean? = false
-    }
-    constructor(){
-
-    }
-    constructor(text : String?) : super(text){
-
-    }
-    override fun actionPerformed(p0 : AnActionEvent?) {
-        project = p0?.project
-        projectDirectory = project?.basePath
-        isOpen = project?.isOpen
-    }
-
+	companion object ProjectInfo {
+		var project: Project? = null
+		var projectDirectory: String? = ""
+		var isOpen: Boolean? = false
+	}
+	
+	constructor() {
+	
+	}
+	
+	constructor(text: String?) : super(text) {
+	
+	}
+	
+	override fun actionPerformed(p0: AnActionEvent?) {
+		project = p0?.project
+		projectDirectory = project?.basePath
+		isOpen = project?.isOpen
+	}
+	
 }

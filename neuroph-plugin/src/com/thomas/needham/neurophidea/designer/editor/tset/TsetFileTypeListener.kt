@@ -30,17 +30,17 @@ import com.intellij.openapi.fileTypes.FileTypeListener
 /**
  * Created by thoma on 09/10/2016.
  */
-class TsetFileTypeListener : FileTypeListener.Adapter{
-    val component : TsetEditorComponent
-
-    constructor(component : TsetEditorComponent) : super() {
-        this.component = component
-    }
-
-    override fun fileTypesChanged(event : FileTypeEvent) {
-        super.fileTypesChanged(event)
-        TsetEditorComponent.assertThread()
-        component.updateValidProperty()
-        component.updateHighlighters()
-    }
+class TsetFileTypeListener : FileTypeListener.Adapter {
+	val component: TsetEditorComponent
+	
+	constructor(component: TsetEditorComponent) : super() {
+		this.component = component
+	}
+	
+	override fun fileTypesChanged(event: FileTypeEvent) {
+		super.fileTypesChanged(event)
+		TsetEditorComponent.assertThread()
+		component.updateValidProperty()
+		component.updateHighlighters()
+	}
 }

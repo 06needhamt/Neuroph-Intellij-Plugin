@@ -27,41 +27,39 @@ import com.intellij.ide.util.PropertiesComponent
 import com.intellij.openapi.ui.Messages
 import com.intellij.util.PlatformIcons
 import com.thomas.needham.neurophidea.actions.ShowNetworkOutputFormAction
-import com.thomas.needham.neurophidea.core.NetworkTester
-import com.thomas.needham.neurophidea.forms.test.TestNetworkForm
 import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
 import java.io.BufferedWriter
 import java.io.File
-import java.io.FileOutputStream
 import java.io.FileWriter
 import java.util.*
 
 /**
  * Created by Thomas Needham on 09/06/2016.
  */
-class SaveOutputButtonActionListener  : ActionListener {
-    var formInstance : NetworkOutputForm? = null
-    var file : File? = null
-
-    companion object Data {
-        val properties = PropertiesComponent.getInstance()
-        val defaultPath = ""
-        var path = ""
-    }
-    override fun actionPerformed(e : ActionEvent?) {
-        path = formInstance?.txtSaveLocation?.text!!
-        file = File((path + "/" + "Output ${Date().toString().replace(':', '-')}.output").replace(' ', '_'))
-        val fw = FileWriter(file,false)
-        val bw = BufferedWriter(fw)
-        for(i in 0..formInstance?.lstActual?.model?.size!! - 1){
-            bw.write(formInstance?.lstActual?.model?.getElementAt(i).toString() + ",")
-            bw.write(formInstance?.lstExpected?.model?.getElementAt(i).toString() + ",")
-            bw.write(formInstance?.lstDifference?.model?.getElementAt(i).toString() + "\n")
-            bw.flush()
-        }
-        bw.flush()
-        bw.close()
-        Messages.showOkCancelDialog(ShowNetworkOutputFormAction.project,"Output Written Successfully to file: ${file?.path}","Success",PlatformIcons.CHECK_ICON)
-    }
+class SaveOutputButtonActionListener : ActionListener {
+	var formInstance: NetworkOutputForm? = null
+	var file: File? = null
+	
+	companion object Data {
+		val properties = PropertiesComponent.getInstance()
+		val defaultPath = ""
+		var path = ""
+	}
+	
+	override fun actionPerformed(e: ActionEvent?) {
+		path = formInstance?.txtSaveLocation?.text!!
+		file = File((path + "/" + "Output ${Date().toString().replace(':', '-')}.output").replace(' ', '_'))
+		val fw = FileWriter(file, false)
+		val bw = BufferedWriter(fw)
+		for (i in 0..formInstance?.lstActual?.model?.size!! - 1) {
+			bw.write(formInstance?.lstActual?.model?.getElementAt(i).toString() + ",")
+			bw.write(formInstance?.lstExpected?.model?.getElementAt(i).toString() + ",")
+			bw.write(formInstance?.lstDifference?.model?.getElementAt(i).toString() + "\n")
+			bw.flush()
+		}
+		bw.flush()
+		bw.close()
+		Messages.showOkCancelDialog(ShowNetworkOutputFormAction.project, "Output Written Successfully to file: ${file?.path}", "Success", PlatformIcons.CHECK_ICON)
+	}
 }

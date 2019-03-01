@@ -32,28 +32,28 @@ import com.thomas.needham.neurophidea.forms.export.ExportNetworkForm
  * Created by Thomas Needham on 28/05/2016.
  */
 class ShowExportNetworkFormAction : AnAction() {
-    var form : ExportNetworkForm? = null
-    var itr : Long = 0L
-
-    companion object ProjectInfo{
-        var project : Project? = null
-        var projectDirectory : String? = ""
-        var isOpen : Boolean? = false
-    }
-
-    override fun actionPerformed(e : AnActionEvent) {
-        InitialisationAction.project = e.project
-        InitialisationAction.projectDirectory = InitialisationAction.project?.basePath
-        InitialisationAction.isOpen = InitialisationAction.project?.isOpen
-        form = ExportNetworkForm()
-    }
-
-    override fun update(e : AnActionEvent?) {
-        super.update(e)
-        if(form != null){
-            form?.repaint(itr,0,0,form?.width!!,form?.height!!)
-            itr++
-        }
-        e?.presentation?.isEnabledAndVisible = true
-    }
+	var form: ExportNetworkForm? = null
+	var itr: Long = 0L
+	
+	companion object ProjectInfo {
+		var project: Project? = null
+		var projectDirectory: String? = ""
+		var isOpen: Boolean? = false
+	}
+	
+	override fun actionPerformed(e: AnActionEvent) {
+		InitialisationAction.project = e.project
+		InitialisationAction.projectDirectory = InitialisationAction.project?.basePath
+		InitialisationAction.isOpen = InitialisationAction.project?.isOpen
+		form = ExportNetworkForm()
+	}
+	
+	override fun update(e: AnActionEvent?) {
+		super.update(e)
+		if (form != null) {
+			form?.repaint(itr, 0, 0, form?.width!!, form?.height!!)
+			itr++
+		}
+		e?.presentation?.isEnabledAndVisible = true
+	}
 }

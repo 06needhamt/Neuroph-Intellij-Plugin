@@ -31,24 +31,24 @@ import javax.swing.Icon
  * Created by Thomas Needham on 06/06/2016.
  */
 class NeurophModule : ModuleType<NeurophModuleBuilder>("Neuroph Project") {
-    companion object Instance{
-        val INSTANCE : NeurophModule? = NeurophModule.INSTANCE
-    }
-
-    override fun createModuleBuilder() : NeurophModuleBuilder {
-        val build = NeurophModuleBuilder()
-        return build
-    }
-
-    override fun getName() : String {
-        return "Neuroph Project"
-    }
-
-    override fun getDescription() : String {
-        return "Module With Integrated Neuroph Libraries"
-    }
-
-    override fun getNodeIcon(p0 : Boolean) : Icon? {
-        return IconLoader.getTransparentIcon(IconLoader.getIcon("/icon2.png"))
-    }
+	companion object Instance {
+		val INSTANCE: NeurophModule? = NeurophModule.INSTANCE
+	}
+	
+	override fun createModuleBuilder(): NeurophModuleBuilder {
+		val build = NeurophModuleBuilder()
+		return build
+	}
+	
+	override fun getName(): String {
+		return "Neuroph Project"
+	}
+	
+	override fun getDescription(): String {
+		return "Module With Integrated Neuroph Libraries"
+	}
+	
+	override fun getNodeIcon(p0: Boolean): Icon? {
+		return IconLoader.getTransparentIcon(IconLoader.getIcon("/icon2.png"))
+	}
 }

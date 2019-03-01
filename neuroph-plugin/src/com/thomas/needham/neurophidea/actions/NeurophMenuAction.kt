@@ -31,12 +31,13 @@ import com.intellij.openapi.project.Project
  * Created by Thomas Needham on 25/05/2016.
  */
 class NeurophMenuAction : AnAction() {
-    companion object ProjectInfo{
-        var project : Project? = null
-        var projectDirectory : String? = ""
-        var isOpen : Boolean? = false
-    }
-    override fun actionPerformed(e : AnActionEvent) {
-        println("Neuroph Menu Initialised")
-    }
+	companion object ProjectInfo {
+		var project: Project? = null
+		var projectDirectory: String? = ""
+		var isOpen: Boolean? = false
+	}
+	
+	override fun actionPerformed(e: AnActionEvent) {
+		println("Neuroph Menu Initialised")
+	}
 }

@@ -34,8 +34,8 @@ import com.intellij.psi.PsiManager
  */
 
 class SnnetFileViewProviderFactory : FileViewProviderFactory {
-
-    override fun createFileViewProvider(p0 : VirtualFile, p1 : Language?, p2 : PsiManager, p3 : Boolean) : FileViewProvider {
-        throw UnsupportedOperationException()
-    }
+	
+	override fun createFileViewProvider(p0: VirtualFile, p1: Language?, p2: PsiManager, p3: Boolean): FileViewProvider {
+		throw UnsupportedOperationException()
+	}
 }

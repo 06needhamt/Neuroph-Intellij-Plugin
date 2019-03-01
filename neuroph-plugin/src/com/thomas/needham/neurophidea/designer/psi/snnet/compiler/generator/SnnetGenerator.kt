@@ -31,65 +31,60 @@ import com.thomas.needham.neurophidea.datastructures.NetworkConfiguration
 import com.thomas.needham.neurophidea.datastructures.NetworkTypes
 import com.thomas.needham.neurophidea.datastructures.TransferFunctions
 import com.thomas.needham.neurophidea.designer.psi.snnet.compiler.parser.SnnetProperties
-import java.io.File
-import java.io.FileNotFoundException
-import java.io.FileOutputStream
-import java.io.IOException
-import java.io.ObjectOutputStream
+import java.io.*
 
 /**
  * Created by thoma on 01/07/2016.
  */
 class SnnetGenerator {
-    val networkDesc : SnnetProperties<Any>?
-    var networkConf : NetworkConfiguration?
-    val ToIntArray : (Array<Double>) -> Array<Int> = { e ->
-        val arr = IntArray(e.size)
-        for(i in 0..e.size - 1 ){
-            arr[i] = e[i].toInt()
-        }
-        arr.toTypedArray()
-    }
-    constructor(networkDesc: SnnetProperties<Any>){
-        this.networkDesc = networkDesc
-        this.networkConf = GenerateNetwork()
-    }
-
-    private fun GenerateNetwork() : NetworkConfiguration? {
-        var name : String = ""
-        var type : NetworkTypes.Types = NetworkTypes.Types.values()[0]
-        var rule : LearningRules.Rules = LearningRules.Rules.values()[0]
-        var function : TransferFunctions.Functions = TransferFunctions.Functions.values()[0]
-        var layers : Array<Double>? = null
-        for(prop: Tuple3<*,*,*> in networkDesc?.properties!!) {
-            when (prop.valueY as String) {
-                "NetworkName" -> name = prop.valueZ as String
-                "NetworkType" -> type = { NetworkTypes.Types.values()[NetworkTypes.classNames.indexOf(prop.valueZ as String)] }()
-                "NetworkLearningRule" -> rule = { LearningRules.Rules.values()[LearningRules.classNames.indexOf(prop.valueZ as String)] }()
-                "NetworkTransferFunction" -> function = { TransferFunctions.Functions.values()[TransferFunctions.classNames.indexOf(prop.valueZ as String)] }()
-                "NetworkLayers" -> layers = prop.valueZ as Array<Double>?
-            }
-        }
-            return NetworkConfiguration(name,type,ToIntArray(layers!!),rule,function,"","","${CompileSnnetFileAction.projectDirectory}")
-    }
-
-    fun SaveNetwork(path: String){
-        val file = File(path)
-        try{
-            val fos = FileOutputStream(file)
-            val oos = ObjectOutputStream(fos)
-            oos.writeObject(networkConf)
-            oos.close()
-        }
-        catch(ioe: IOException){
-            ioe.printStackTrace(System.err)
-            Messages.showErrorDialog(CompileSnnetFileAction.project,"Error Writing Compiled Network To File","Error")
-            return
-        }
-        catch(fnfe: FileNotFoundException){
-            fnfe.printStackTrace(System.err)
-            Messages.showErrorDialog(CompileSnnetFileAction.project,"File Does Not Exist ${file.path}","Error")
-            return
-        }
-    }
+	val networkDesc: SnnetProperties<Any>?
+	var networkConf: NetworkConfiguration?
+	val ToIntArray: (Array<Double>) -> Array<Int> = { e ->
+		val arr = IntArray(e.size)
+		for (i in 0..e.size - 1) {
+			arr[i] = e[i].toInt()
+		}
+		arr.toTypedArray()
+	}
+	
+	constructor(networkDesc: SnnetProperties<Any>) {
+		this.networkDesc = networkDesc
+		this.networkConf = GenerateNetwork()
+	}
+	
+	private fun GenerateNetwork(): NetworkConfiguration? {
+		var name: String = ""
+		var type: NetworkTypes.Types = NetworkTypes.Types.values()[0]
+		var rule: LearningRules.Rules = LearningRules.Rules.values()[0]
+		var function: TransferFunctions.Functions = TransferFunctions.Functions.values()[0]
+		var layers: Array<Double>? = null
+		for (prop: Tuple3<*, *, *> in networkDesc?.properties!!) {
+			when (prop.valueY as String) {
+				"NetworkName" -> name = prop.valueZ as String
+				"NetworkType" -> type = { NetworkTypes.Types.values()[NetworkTypes.classNames.indexOf(prop.valueZ as String)] }()
+				"NetworkLearningRule" -> rule = { LearningRules.Rules.values()[LearningRules.classNames.indexOf(prop.valueZ as String)] }()
+				"NetworkTransferFunction" -> function = { TransferFunctions.Functions.values()[TransferFunctions.classNames.indexOf(prop.valueZ as String)] }()
+				"NetworkLayers" -> layers = prop.valueZ as Array<Double>?
+			}
+		}
+		return NetworkConfiguration(name, type, ToIntArray(layers!!), rule, function, "", "", "${CompileSnnetFileAction.projectDirectory}")
+	}
+	
+	fun SaveNetwork(path: String) {
+		val file = File(path)
+		try {
+			val fos = FileOutputStream(file)
+			val oos = ObjectOutputStream(fos)
+			oos.writeObject(networkConf)
+			oos.close()
+		} catch (ioe: IOException) {
+			ioe.printStackTrace(System.err)
+			Messages.showErrorDialog(CompileSnnetFileAction.project, "Error Writing Compiled Network To File", "Error")
+			return
+		} catch (fnfe: FileNotFoundException) {
+			fnfe.printStackTrace(System.err)
+			Messages.showErrorDialog(CompileSnnetFileAction.project, "File Does Not Exist ${file.path}", "Error")
+			return
+		}
+	}
 }

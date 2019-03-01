@@ -30,15 +30,17 @@ import com.intellij.openapi.project.DumbService
  * Created by thoma on 09/10/2016.
  */
 class TsetDumbModeListener : DumbService.DumbModeListener {
-    val component : TsetEditorComponent
-    constructor(component : TsetEditorComponent){
-        this.component = component
-    }
-    override fun enteredDumbMode() {
-        component.updateHighlighters()
-    }
-
-    override fun exitDumbMode() {
-        component.updateHighlighters()
-    }
+	val component: TsetEditorComponent
+	
+	constructor(component: TsetEditorComponent) {
+		this.component = component
+	}
+	
+	override fun enteredDumbMode() {
+		component.updateHighlighters()
+	}
+	
+	override fun exitDumbMode() {
+		component.updateHighlighters()
+	}
 }

@@ -32,14 +32,16 @@ import java.lang.reflect.Method
  * Created by thoma on 09/10/2016.
  */
 class TsetInvocationHandler : InvocationHandler {
-    val documentManager : TsetDocumentManager
-    constructor(documentManager : TsetDocumentManager){
-        this.documentManager = documentManager
-    }
-    @Nullable
-    @Throws(Throwable::class)
-    override fun invoke(proxy : Any?, method : Method?, args : Array<out Any>?) : Any? {
-        documentManager.multiCast(method,args)
-        return null
-    }
+	val documentManager: TsetDocumentManager
+	
+	constructor(documentManager: TsetDocumentManager) {
+		this.documentManager = documentManager
+	}
+	
+	@Nullable
+	@Throws(Throwable::class)
+	override fun invoke(proxy: Any?, method: Method?, args: Array<out Any>?): Any? {
+		documentManager.multiCast(method, args)
+		return null
+	}
 }

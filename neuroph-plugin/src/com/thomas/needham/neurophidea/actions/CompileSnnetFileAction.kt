@@ -30,57 +30,55 @@ import com.intellij.openapi.fileEditor.FileDocumentManager
 import com.intellij.openapi.fileEditor.FileEditorManager
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.Messages
-import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.util.PlatformIcons
 import com.thomas.needham.neurophidea.Tuple3
 import com.thomas.needham.neurophidea.designer.psi.snnet.compiler.generator.SnnetGenerator
 import com.thomas.needham.neurophidea.designer.psi.snnet.compiler.lexer.SnnetLexer
 import com.thomas.needham.neurophidea.designer.psi.snnet.compiler.parser.SnnetParser
-import java.io.File
 
 /**
  * Created by thoma on 29/06/2016.
  */
 class CompileSnnetFileAction : AnAction() {
-
-    companion object ProjectInfo{
-        var project : Project? = null
-        var projectDirectory : String? = ""
-        var isOpen : Boolean? = false
-    }
-
-    override fun actionPerformed(p0 : AnActionEvent?) {
-        project = p0?.project
-        projectDirectory = project?.basePath
-        isOpen = project?.isOpen
-        val doc = FileEditorManager.getInstance(project!!).selectedTextEditor?.document
-        val file = FileDocumentManager.getInstance().getFile(doc!!)
-        val lexer = SnnetLexer(file)
-        if(!lexer.Start()){
-            Messages.showErrorDialog(project, "Error Lexing File ${file?.path}", "Error")
-            return
-        }
-        val tokens = lexer.tokenList
-        val parser = SnnetParser(tokens)
-        if(!parser.Start()){
-            Messages.showErrorDialog(project, "Error Parsing File ${file?.path}", "Error")
-            return
-        }
-        var failed = false
-        var names = ""
-        for(prop: Tuple3<*, *, *> in parser.properties.properties!!){
-            if(prop.valueZ == null){
-                failed = true
-                names += prop.valueY as String + ", "
-            }
-        }
-        if(failed){
-            Messages.showErrorDialog(project,"Error Compiling file ${file?.path} The following Properties are not set ${names}","ERROR")
-            return
-        }
-        val path = file?.path?.substring(0,file.path.length - file.name.length) + "Compiled.conf"
-        val generator = SnnetGenerator(parser.properties)
-        generator.SaveNetwork(path)
-        Messages.showOkCancelDialog(project,"Network Successfully Compiled To ${path}", "Success",PlatformIcons.CHECK_ICON)
-    }
+	
+	companion object ProjectInfo {
+		var project: Project? = null
+		var projectDirectory: String? = ""
+		var isOpen: Boolean? = false
+	}
+	
+	override fun actionPerformed(p0: AnActionEvent?) {
+		project = p0?.project
+		projectDirectory = project?.basePath
+		isOpen = project?.isOpen
+		val doc = FileEditorManager.getInstance(project!!).selectedTextEditor?.document
+		val file = FileDocumentManager.getInstance().getFile(doc!!)
+		val lexer = SnnetLexer(file)
+		if (!lexer.Start()) {
+			Messages.showErrorDialog(project, "Error Lexing File ${file?.path}", "Error")
+			return
+		}
+		val tokens = lexer.tokenList
+		val parser = SnnetParser(tokens)
+		if (!parser.Start()) {
+			Messages.showErrorDialog(project, "Error Parsing File ${file?.path}", "Error")
+			return
+		}
+		var failed = false
+		var names = ""
+		for (prop: Tuple3<*, *, *> in parser.properties.properties!!) {
+			if (prop.valueZ == null) {
+				failed = true
+				names += prop.valueY as String + ", "
+			}
+		}
+		if (failed) {
+			Messages.showErrorDialog(project, "Error Compiling file ${file?.path} The following Properties are not set ${names}", "ERROR")
+			return
+		}
+		val path = file?.path?.substring(0, file.path.length - file.name.length) + "Compiled.conf"
+		val generator = SnnetGenerator(parser.properties)
+		generator.SaveNetwork(path)
+		Messages.showOkCancelDialog(project, "Network Successfully Compiled To ${path}", "Success", PlatformIcons.CHECK_ICON)
+	}
 }

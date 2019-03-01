@@ -28,6 +28,6 @@ import com.intellij.lang.Language
 /**
  * Created by Thomas Needham on 09/06/2016.
  */
-class NnetLanguage(ID : String, vararg mimeTypes : String?) : Language(ID, *mimeTypes) {
+class NnetLanguage(ID: String, vararg mimeTypes: String?) : Language(ID, *mimeTypes) {
 
 }

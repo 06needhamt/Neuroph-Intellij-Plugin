@@ -29,15 +29,9 @@ import com.intellij.ui.components.labels.ActionLink;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.thomas.needham.neurophidea.actions.DownloadNeurophAction;
-import com.thomas.needham.neurophidea.datastructures.NeurophVersions;
 
-import javax.swing.JComponent;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import java.awt.BorderLayout;
-import java.awt.Font;
-import java.awt.Insets;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * Created by Thomas Needham on 06/06/2016.

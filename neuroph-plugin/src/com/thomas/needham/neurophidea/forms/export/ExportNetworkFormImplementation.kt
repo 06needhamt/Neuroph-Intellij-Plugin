@@ -22,21 +22,23 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 @file:JvmName("ExportNetworkForm\$Ext") // Do Some Kotlin Sorcery!
-@file:JvmMultifileClass() // Do Some Kotlin Sorcery!
+@file:JvmMultifileClass()
+
+// Do Some Kotlin Sorcery!
 package com.thomas.needham.neurophidea.forms.export
 
 /**
  * Created by Thomas Needham on 29/05/2016.
  */
 
-fun ExportNetworkForm.AddOnClickListeners(){
-    val networkListener : ExportNetworkBrowseButtonActionListener? = ExportNetworkBrowseButtonActionListener()
-    networkListener?.formInstance = this
-    btnBrowseExport?.addActionListener(networkListener)
-    val exportSourceListener : ExportSourceBrowseButtonActionListener? = ExportSourceBrowseButtonActionListener()
-    exportSourceListener?.formInstance = this
-    btnExportSource?.addActionListener(exportSourceListener)
-    val exportListener : ExportSourceButtonActionListener? = ExportSourceButtonActionListener()
-    exportListener?.formInstance = this
-    btnExport?.addActionListener(exportListener)
+fun ExportNetworkForm.AddOnClickListeners() {
+	val networkListener: ExportNetworkBrowseButtonActionListener? = ExportNetworkBrowseButtonActionListener()
+	networkListener?.formInstance = this
+	btnBrowseExport?.addActionListener(networkListener)
+	val exportSourceListener: ExportSourceBrowseButtonActionListener? = ExportSourceBrowseButtonActionListener()
+	exportSourceListener?.formInstance = this
+	btnExportSource?.addActionListener(exportSourceListener)
+	val exportListener: ExportSourceButtonActionListener? = ExportSourceButtonActionListener()
+	exportListener?.formInstance = this
+	btnExport?.addActionListener(exportListener)
 }

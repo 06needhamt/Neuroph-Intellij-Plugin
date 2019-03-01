@@ -22,25 +22,16 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 package com.thomas.needham.neurophidea.examples.java;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.Vector;
 
 import org.neuroph.core.NeuralNetwork;
 import org.neuroph.core.learning.SupervisedTrainingElement;
 import org.neuroph.core.learning.TrainingSet;
-import org.neuroph.util.TransferFunctionType;
-
 import org.neuroph.nnet.NeuroFuzzyPerceptron;
 import org.neuroph.nnet.learning.BackPropagation;
-import org.neuroph.core.transfer.Sigmoid;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Vector;
 
 
 public class TestFuzzyPerceptron {
@@ -61,7 +52,7 @@ public class TestFuzzyPerceptron {
             list.add(layer);
         }
 
-        network = new NeuroFuzzyPerceptron(inputSize, new Vector <Integer>(inputSize), outputSize);
+        network = new NeuroFuzzyPerceptron(inputSize, new Vector<Integer>(inputSize), outputSize);
         trainingSet = new TrainingSet<SupervisedTrainingElement>(inputSize, outputSize);
         trainingSet = TrainingSet.createFromFile("D:/GitHub/NeuralNetworkTest/Classroom Occupation Data.csv", inputSize, outputSize, ",");
         BackPropagation learningRule = new BackPropagation();

@@ -31,24 +31,27 @@ import com.intellij.openapi.editor.event.DocumentEvent
 /**
  * Created by thoma on 09/10/2016.
  */
-class TsetDocumentListener : DocumentAdapter, Runnable{
-    var updateScheduled : Boolean = false
-    var component : TsetEditorComponent? = null
-    private val lambda : () -> Unit = {
-        updateScheduled = false
-        this.component?.updateModifiedProperty()
-    }
-    constructor(component : TsetEditorComponent){
-        this.component = component
-    }
-    override fun run() {
-        lambda()
-    }
-    override fun documentChanged(e : DocumentEvent?) {
-        super.documentChanged(e)
-        if(!updateScheduled){
-            ApplicationManager.getApplication().invokeLater(this)
-            updateScheduled = true
-        }
-    }
+class TsetDocumentListener : DocumentAdapter, Runnable {
+	var updateScheduled: Boolean = false
+	var component: TsetEditorComponent? = null
+	private val lambda: () -> Unit = {
+		updateScheduled = false
+		this.component?.updateModifiedProperty()
+	}
+	
+	constructor(component: TsetEditorComponent) {
+		this.component = component
+	}
+	
+	override fun run() {
+		lambda()
+	}
+	
+	override fun documentChanged(e: DocumentEvent?) {
+		super.documentChanged(e)
+		if (!updateScheduled) {
+			ApplicationManager.getApplication().invokeLater(this)
+			updateScheduled = true
+		}
+	}
 }

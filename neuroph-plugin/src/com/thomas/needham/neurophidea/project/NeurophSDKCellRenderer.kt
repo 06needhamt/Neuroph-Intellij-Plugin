@@ -32,13 +32,12 @@ import javax.swing.JList
  * Created by Thomas Needham on 06/06/2016.
  */
 class NeurophSDKCellRenderer : ColoredListCellRenderer<Any>() {
-    override fun customizeCellRenderer(p0 : JList<out Any>, p1 : Any?, p2 : Int, p3 : Boolean, p4 : Boolean) {
-        if(p1 != null && p1 is Sdk?){
-            append((p1 as Sdk?)?.name!!)
-        }
-        else{
-            append("Select Neuroph SDK", SimpleTextAttributes.ERROR_ATTRIBUTES)
-        }
-    }
-
+	override fun customizeCellRenderer(p0: JList<out Any>, p1: Any?, p2: Int, p3: Boolean, p4: Boolean) {
+		if (p1 != null && p1 is Sdk?) {
+			append((p1 as Sdk?)?.name!!)
+		} else {
+			append("Select Neuroph SDK", SimpleTextAttributes.ERROR_ATTRIBUTES)
+		}
+	}
+	
 }

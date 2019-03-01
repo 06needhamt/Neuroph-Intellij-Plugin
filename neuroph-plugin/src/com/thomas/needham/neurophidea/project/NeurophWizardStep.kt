@@ -24,34 +24,32 @@ SOFTWARE.
 package com.thomas.needham.neurophidea.project
 
 import com.intellij.ide.util.projectWizard.ModuleWizardStep
-import com.intellij.openapi.util.text.StringUtil
-import javax.naming.ConfigurationException
 import javax.swing.JComponent
 
 /**
  * Created by Thomas Needham on 06/06/2016.
  */
 class NeurophWizardStep : ModuleWizardStep {
-    var panel  : NeurophSDKPanel? = null
-    var builder : NeurophModuleBuilder? = null
-
-    constructor(pbuilder : NeurophModuleBuilder?){
-        builder = pbuilder
-        panel = NeurophSDKPanel()
-    }
-
-    override fun getComponent() : JComponent? {
-        return panel?.rootPane
-    }
-
-    override fun updateDataModel() {
-        builder?.setSdk(panel?.sdk)
-    }
-
-    override fun validate() : Boolean {
+	var panel: NeurophSDKPanel? = null
+	var builder: NeurophModuleBuilder? = null
+	
+	constructor(pbuilder: NeurophModuleBuilder?) {
+		builder = pbuilder
+		panel = NeurophSDKPanel()
+	}
+	
+	override fun getComponent(): JComponent? {
+		return panel?.rootPane
+	}
+	
+	override fun updateDataModel() {
+		builder?.setSdk(panel?.sdk)
+	}
+	
+	override fun validate(): Boolean {
 //        if(StringUtil.isEmpty(panel?.sdkName)){
 //            throw ConfigurationException("Specify Neuroph SDK")
 //        }
-        return super.validate()
-    }
+		return super.validate()
+	}
 }

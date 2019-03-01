@@ -38,75 +38,73 @@ import com.thomas.needham.neurophidea.datastructures.LearningRules
 import com.thomas.needham.neurophidea.datastructures.NetworkConfiguration
 import com.thomas.needham.neurophidea.datastructures.NetworkTypes
 import com.thomas.needham.neurophidea.datastructures.TransferFunctions
-import java.io.File
-import java.io.FileInputStream
-import java.io.FileNotFoundException
-import java.io.IOException
-import java.io.ObjectInputStream
+import java.io.*
 
 /**
  * Created by Thomas Needham on 27/05/2016.
  */
 class OpenExistingNetworkConfigurationAction : AnAction() {
-
-    companion object Data {
-        var project : Project? = null
-        var projectDirectory : String? = ""
-        var isOpen : Boolean? = false
-        val properties = PropertiesComponent.getInstance()
-        val fileDesc : FileChooserDescriptor = FileChooserDescriptor(true, false, false, false, false, false)
-        val consumer : OpenNetworkConfigurationConsumer? = OpenNetworkConfigurationConsumer()
-        val createAction : ShowCreateNetworkFormAction? = ShowCreateNetworkFormAction()
-        val getNetwork : (String) -> NetworkConfiguration? = { path -> //Use Some Kotlin Sorcery
-            val network : NetworkConfiguration?
-            try {
-                val file = File(path)
-                val fis = FileInputStream(file)
-                val ois = ObjectInputStream(fis)
-                network = ois.readObject() as NetworkConfiguration?
-                network
-            }
-            catch (ioe: IOException){
-                ioe.printStackTrace(System.err)
-                Messages.showErrorDialog(OpenExistingNetworkConfigurationAction.project,"Error Reading Network From file", "Error")
-                null
-            }
-            catch (fnfe: FileNotFoundException){
-                fnfe.printStackTrace(System.err)
-                Messages.showErrorDialog(OpenExistingNetworkConfigurationAction.project,"No Network Configuration Found at: " + properties.getValue(NETWORK_CONFIGURATION_TO_OPEN_LOCATION_KEY,""), "Error")
-                null
-            }
-        }
-
-    }
-    override fun actionPerformed(e : AnActionEvent) {
-        project = InitialisationAction.project
-        projectDirectory = InitialisationAction.projectDirectory
-        isOpen = project?.isOpen
-        FileChooser.chooseFile(fileDesc,project,null,consumer as Consumer<VirtualFile?>)
-        val network : NetworkConfiguration? = getNetwork(properties.getValue(NETWORK_CONFIGURATION_TO_OPEN_LOCATION_KEY,"")) ?: return
-        val getLayersString : (Array<Int>) -> String = { layers -> //Use Some Kotlin Sorcery to convert Array<Int> to comma delimited string
-            var result = ""
-            for(i in IntRange(0,layers.size - 1)) {
-                if(i == layers.size - 1)
-                    result += layers[i].toString()
-                else
-                    result += (layers[i].toString() + ",")
-            }
-            result
-        }
-        createAction?.actionPerformed(e)
-        createAction?.form?.isVisible = false
-        createAction?.form?.txtNetworkName?.text = network?.networkName
-        createAction?.form?.txtLayers?.text = getLayersString(network?.networkLayers!!)
-        createAction?.form?.cmbNetworkType?.selectedItem = NetworkTypes.friendlyNames[network?.networkType?.ordinal!!]
-        createAction?.form?.cmbLearningRule?.selectedItem = LearningRules.friendlyNames[network?.networkLearningRule?.ordinal!!]
-        createAction?.form?.cmbTransferFunction?.selectedItem = TransferFunctions.friendlyNames[network?.networkTransferFunction?.ordinal!!]
-        createAction?.form?.txtTrainingData?.text = network?.networkTrainingDataPath
-        createAction?.form?.txtTestingData?.text = network?.networkTestingDataPath
-        createAction?.form?.txtNetworkOutputPath?.text = network?.networkOutputPath
-        createAction?.form?.repaint(Long.MAX_VALUE,0,0, createAction?.form?.width!!, createAction?.form?.height!!)
-        createAction?.form?.isVisible = true
-
-    }
+	
+	companion object Data {
+		var project: Project? = null
+		var projectDirectory: String? = ""
+		var isOpen: Boolean? = false
+		val properties = PropertiesComponent.getInstance()
+		val fileDesc: FileChooserDescriptor = FileChooserDescriptor(true, false, false, false, false, false)
+		val consumer: OpenNetworkConfigurationConsumer? = OpenNetworkConfigurationConsumer()
+		val createAction: ShowCreateNetworkFormAction? = ShowCreateNetworkFormAction()
+		val getNetwork: (String) -> NetworkConfiguration? = { path ->
+			//Use Some Kotlin Sorcery
+			val network: NetworkConfiguration?
+			try {
+				val file = File(path)
+				val fis = FileInputStream(file)
+				val ois = ObjectInputStream(fis)
+				network = ois.readObject() as NetworkConfiguration?
+				network
+			} catch (ioe: IOException) {
+				ioe.printStackTrace(System.err)
+				Messages.showErrorDialog(OpenExistingNetworkConfigurationAction.project, "Error Reading Network From file", "Error")
+				null
+			} catch (fnfe: FileNotFoundException) {
+				fnfe.printStackTrace(System.err)
+				Messages.showErrorDialog(OpenExistingNetworkConfigurationAction.project, "No Network Configuration Found at: " + properties.getValue(NETWORK_CONFIGURATION_TO_OPEN_LOCATION_KEY, ""), "Error")
+				null
+			}
+		}
+		
+	}
+	
+	override fun actionPerformed(e: AnActionEvent) {
+		project = InitialisationAction.project
+		projectDirectory = InitialisationAction.projectDirectory
+		isOpen = project?.isOpen
+		FileChooser.chooseFile(fileDesc, project, null, consumer as Consumer<VirtualFile?>)
+		val network: NetworkConfiguration? = getNetwork(properties.getValue(NETWORK_CONFIGURATION_TO_OPEN_LOCATION_KEY, ""))
+				?: return
+		val getLayersString: (Array<Int>) -> String = { layers ->
+			//Use Some Kotlin Sorcery to convert Array<Int> to comma delimited string
+			var result = ""
+			for (i in IntRange(0, layers.size - 1)) {
+				if (i == layers.size - 1)
+					result += layers[i].toString()
+				else
+					result += (layers[i].toString() + ",")
+			}
+			result
+		}
+		createAction?.actionPerformed(e)
+		createAction?.form?.isVisible = false
+		createAction?.form?.txtNetworkName?.text = network?.networkName
+		createAction?.form?.txtLayers?.text = getLayersString(network?.networkLayers!!)
+		createAction?.form?.cmbNetworkType?.selectedItem = NetworkTypes.friendlyNames[network?.networkType?.ordinal!!]
+		createAction?.form?.cmbLearningRule?.selectedItem = LearningRules.friendlyNames[network?.networkLearningRule?.ordinal!!]
+		createAction?.form?.cmbTransferFunction?.selectedItem = TransferFunctions.friendlyNames[network?.networkTransferFunction?.ordinal!!]
+		createAction?.form?.txtTrainingData?.text = network?.networkTrainingDataPath
+		createAction?.form?.txtTestingData?.text = network?.networkTestingDataPath
+		createAction?.form?.txtNetworkOutputPath?.text = network?.networkOutputPath
+		createAction?.form?.repaint(Long.MAX_VALUE, 0, 0, createAction?.form?.width!!, createAction?.form?.height!!)
+		createAction?.form?.isVisible = true
+		
+	}
 }

@@ -29,15 +29,17 @@ import com.intellij.openapi.project.DumbService
  * Created by thoma on 24/06/2016.
  */
 class SnnetDumbModeListener : DumbService.DumbModeListener {
-    val component : SnnetEditorComponent
-    constructor(component : SnnetEditorComponent){
-        this.component = component
-    }
-    override fun enteredDumbMode() {
-        component.updateHighlighters()
-    }
-
-    override fun exitDumbMode() {
-        component.updateHighlighters()
-    }
+	val component: SnnetEditorComponent
+	
+	constructor(component: SnnetEditorComponent) {
+		this.component = component
+	}
+	
+	override fun enteredDumbMode() {
+		component.updateHighlighters()
+	}
+	
+	override fun exitDumbMode() {
+		component.updateHighlighters()
+	}
 }

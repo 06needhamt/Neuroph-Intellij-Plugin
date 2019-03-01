@@ -27,23 +27,24 @@ import com.intellij.facet.Facet
 import com.intellij.facet.FacetManager
 import com.intellij.facet.FacetType
 import com.intellij.openapi.module.Module
-import com.thomas.needham.neurophidea.project.facet.NeurophFacetConfiguration
 import org.jetbrains.annotations.NotNull
 
 /**
  * Created by Thomas Needham on 07/06/2016.
  */
 class NeurophFacet : Facet<NeurophFacetConfiguration> {
-    constructor(@NotNull type: FacetType<NeurophFacet, NeurophFacetConfiguration>?,
-                @NotNull module: Module?,
-                name: String,
-                @NotNull config: NeurophFacetConfiguration,
-                underlying: Facet<NeurophFacetConfiguration>) : super(type!!,module!!,name,config,underlying) {
-
-    }
-    companion object Instance{
-        @JvmStatic fun getInstance(module: Module?) : NeurophFacet?{
-            return FacetManager.getInstance(module!!).getFacetByType(NeurophFacetType.FACET_TYPE_ID)
-        }
-    }
+	constructor(@NotNull type: FacetType<NeurophFacet, NeurophFacetConfiguration>?,
+				@NotNull module: Module?,
+				name: String,
+				@NotNull config: NeurophFacetConfiguration,
+				underlying: Facet<NeurophFacetConfiguration>) : super(type!!, module!!, name, config, underlying) {
+		
+	}
+	
+	companion object Instance {
+		@JvmStatic
+		fun getInstance(module: Module?): NeurophFacet? {
+			return FacetManager.getInstance(module!!).getFacetByType(NeurophFacetType.FACET_TYPE_ID)
+		}
+	}
 }

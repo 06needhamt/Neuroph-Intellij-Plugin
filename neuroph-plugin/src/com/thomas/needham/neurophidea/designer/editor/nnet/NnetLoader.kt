@@ -27,35 +27,31 @@ import com.intellij.openapi.ui.Messages
 import com.intellij.openapi.vfs.VirtualFile
 import com.thomas.needham.neurophidea.actions.InitialisationAction
 import org.neuroph.core.NeuralNetwork
-import java.io.File
-import java.io.FileInputStream
-import java.io.FileNotFoundException
-import java.io.IOException
-import java.io.ObjectInputStream
+import java.io.*
 
 /**
  * Created by Thomas Needham on 09/06/2016.
  */
 class NnetLoader {
-    val file : VirtualFile?
-    constructor(file: VirtualFile?){
-        this.file = file
-    }
-    fun LoadNetwork() : NeuralNetwork?{
-        try {
-            val f = File(file?.path)
-            val fis : FileInputStream? = f.inputStream()
-            val ois : ObjectInputStream? = ObjectInputStream(fis)
-            return ois?.readObject() as NeuralNetwork?
-        }
-        catch(ioe: IOException){
-            ioe.printStackTrace(System.err)
-            Messages.showErrorDialog(InitialisationAction.project,"Error Loading Network From File", "Error")
-        }
-        catch(fnfe: FileNotFoundException){
-            fnfe.printStackTrace(System.err)
-            Messages.showErrorDialog(InitialisationAction.project,"No network found in file: ${file?.path}","Error")
-        }
-        return null
-    }
+	val file: VirtualFile?
+	
+	constructor(file: VirtualFile?) {
+		this.file = file
+	}
+	
+	fun LoadNetwork(): NeuralNetwork? {
+		try {
+			val f = File(file?.path)
+			val fis: FileInputStream? = f.inputStream()
+			val ois: ObjectInputStream? = ObjectInputStream(fis)
+			return ois?.readObject() as NeuralNetwork?
+		} catch (ioe: IOException) {
+			ioe.printStackTrace(System.err)
+			Messages.showErrorDialog(InitialisationAction.project, "Error Loading Network From File", "Error")
+		} catch (fnfe: FileNotFoundException) {
+			fnfe.printStackTrace(System.err)
+			Messages.showErrorDialog(InitialisationAction.project, "No network found in file: ${file?.path}", "Error")
+		}
+		return null
+	}
 }

@@ -32,14 +32,16 @@ import java.lang.reflect.Method
  */
 
 class SnnetInvocationHandler : InvocationHandler {
-    val documentManager : SnnetDocumentManager
-    constructor(documentManager : SnnetDocumentManager){
-        this.documentManager = documentManager
-    }
-    @Nullable
-    @Throws(Throwable::class)
-    override fun invoke(proxy : Any?, method : Method?, args : Array<out Any>?) : Any? {
-        documentManager.multiCast(method,args)
-        return null
-    }
+	val documentManager: SnnetDocumentManager
+	
+	constructor(documentManager: SnnetDocumentManager) {
+		this.documentManager = documentManager
+	}
+	
+	@Nullable
+	@Throws(Throwable::class)
+	override fun invoke(proxy: Any?, method: Method?, args: Array<out Any>?): Any? {
+		documentManager.multiCast(method, args)
+		return null
+	}
 }

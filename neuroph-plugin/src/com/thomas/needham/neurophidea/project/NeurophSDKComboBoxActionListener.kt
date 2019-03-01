@@ -23,7 +23,6 @@ SOFTWARE.
  */
 package com.thomas.needham.neurophidea.project
 
-import com.intellij.configurationStore.stateToElement
 import com.intellij.openapi.project.ProjectManager
 import com.intellij.openapi.projectRoots.Sdk
 import com.intellij.openapi.projectRoots.ui.ProjectJdksEditor
@@ -34,17 +33,19 @@ import java.awt.event.ActionListener
  * Created by Thomas Needham on 06/06/2016.
  */
 class NeurophSDKComboBoxActionListener : ActionListener {
-    var instance : NeurophSDKComboBox? = null
-    companion object Data{
-        val project = ProjectManager.getInstance().defaultProject
-    }
-    override fun actionPerformed(e : ActionEvent?) {
-        var sdk : Sdk? = instance?.getSelectedSdk()
-        var editor = ProjectJdksEditor(sdk,NeurophSDKComboBoxActionListener.project,instance?.rootPane)
-        editor.show()
-        if(editor.isOK){
-            sdk = editor.selectedJdk
-            instance?.updateSDKList(sdk,false)
-        }
-    }
+	var instance: NeurophSDKComboBox? = null
+	
+	companion object Data {
+		val project = ProjectManager.getInstance().defaultProject
+	}
+	
+	override fun actionPerformed(e: ActionEvent?) {
+		var sdk: Sdk? = instance?.getSelectedSdk()
+		var editor = ProjectJdksEditor(sdk, NeurophSDKComboBoxActionListener.project, instance?.rootPane)
+		editor.show()
+		if (editor.isOK) {
+			sdk = editor.selectedJdk
+			instance?.updateSDKList(sdk, false)
+		}
+	}
 }

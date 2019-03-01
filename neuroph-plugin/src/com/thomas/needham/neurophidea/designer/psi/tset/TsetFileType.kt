@@ -26,38 +26,37 @@ package com.thomas.needham.neurophidea.designer.psi.tset
 import com.intellij.openapi.fileTypes.FileType
 import com.intellij.openapi.util.IconLoader
 import com.intellij.openapi.vfs.VirtualFile
-import com.intellij.util.PlatformIcons
 import javax.swing.Icon
 
 /**
  * Created by thoma on 15/06/2016.
  */
 class TsetFileType : FileType {
-    override fun getIcon() : Icon? {
-        return IconLoader.getTransparentIcon(IconLoader.getIcon("/icon2.png"))
-    }
-
-    override fun getName() : String {
-        return "Neuroph Training / Testing Set"
-    }
-
-    override fun isBinary() : Boolean {
-        return true
-    }
-
-    override fun isReadOnly() : Boolean {
-        return false
-    }
-
-    override fun getDefaultExtension() : String {
-        return "tset"
-    }
-
-    override fun getCharset(p0 : VirtualFile, p1 : ByteArray) : String? {
-        throw UnsupportedOperationException()
-    }
-
-    override fun getDescription() : String {
-        return "Data Set Used For Training and Testing Neural Networks"
-    }
+	override fun getIcon(): Icon? {
+		return IconLoader.getTransparentIcon(IconLoader.getIcon("/icon2.png"))
+	}
+	
+	override fun getName(): String {
+		return "Neuroph Training / Testing Set"
+	}
+	
+	override fun isBinary(): Boolean {
+		return true
+	}
+	
+	override fun isReadOnly(): Boolean {
+		return false
+	}
+	
+	override fun getDefaultExtension(): String {
+		return "tset"
+	}
+	
+	override fun getCharset(p0: VirtualFile, p1: ByteArray): String? {
+		throw UnsupportedOperationException()
+	}
+	
+	override fun getDescription(): String {
+		return "Data Set Used For Training and Testing Neural Networks"
+	}
 }

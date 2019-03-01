@@ -1,7 +1,5 @@
 package com.thomas.needham.neurophidea.core
 
-import kotlin.jvm.internal.InlineMarker
-
 /**
  * Created by thoma on 18/07/2016.
  */

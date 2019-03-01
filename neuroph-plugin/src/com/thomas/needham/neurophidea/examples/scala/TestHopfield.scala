@@ -22,21 +22,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 package com.thomas.needham.neurophidea.examples.scala
-import java.io.BufferedReader
-import java.io.BufferedWriter
-import java.io.File
-import java.io.FileWriter
-import java.io.IOException
-import java.io.InputStreamReader
-import java.util
-import org.neuroph.core.NeuralNetwork
-import org.neuroph.core.learning.SupervisedTrainingElement
-import org.neuroph.core.learning.TrainingSet
-import org.neuroph.util.TransferFunctionType
 
+import java.io._
+import java.util
+
+import org.neuroph.core.NeuralNetwork
+import org.neuroph.core.learning.{SupervisedTrainingElement, TrainingSet}
 import org.neuroph.nnet.Hopfield
 import org.neuroph.nnet.learning.BackPropagation
-import org.neuroph.core.transfer.Sigmoid
 
 
 object TestHopfield {

@@ -36,24 +36,28 @@ import com.thomas.needham.neurophidea.forms.create.CreateTrainingSetBrowseButton
  * Created by Thomas Needham on 31/05/2016.
  */
 class TrainNetworkSetFileConsumer : Consumer<VirtualFile?> {
-
-    constructor(){
-
-    }
-    companion object Data{
-        @JvmStatic var properties = PropertiesComponent.getInstance()
-        @JvmStatic var version = properties.getValue(VERSION_KEY)
-        @JvmStatic var path : String? = ""
-    }
-
-    override fun consume(p0 : VirtualFile?) {
-        for(ext : String in CreateTrainingSetBrowseButtonActionListener.allowedFileTypes){
-            if(p0?.extension?.equals(ext)!!){
-                path = p0?.path
-                properties.setValue(TRAIN_FORM_TRAINING_SET_LOCATION_KEY, path)
-                return
-            }
-        }
-        Messages.showErrorDialog(ShowCreateNetworkFormAction.project,"Invalid training data selected","Error")
-    }
+	
+	constructor() {
+	
+	}
+	
+	companion object Data {
+		@JvmStatic
+		var properties = PropertiesComponent.getInstance()
+		@JvmStatic
+		var version = properties.getValue(VERSION_KEY)
+		@JvmStatic
+		var path: String? = ""
+	}
+	
+	override fun consume(p0: VirtualFile?) {
+		for (ext: String in CreateTrainingSetBrowseButtonActionListener.allowedFileTypes) {
+			if (p0?.extension?.equals(ext)!!) {
+				path = p0?.path
+				properties.setValue(TRAIN_FORM_TRAINING_SET_LOCATION_KEY, path)
+				return
+			}
+		}
+		Messages.showErrorDialog(ShowCreateNetworkFormAction.project, "Invalid training data selected", "Error")
+	}
 }

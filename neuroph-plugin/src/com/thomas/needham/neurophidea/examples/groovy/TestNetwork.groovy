@@ -22,14 +22,12 @@ SOFTWARE.
 */
 package com.thomas.needham.neurophidea.examples.groovy
 
-import org.neuroph.core.NeuralNetwork;
-import org.neuroph.core.learning.SupervisedTrainingElement;
-import org.neuroph.core.learning.TrainingSet;
-import org.neuroph.util.TransferFunctionType;
-
-import org.neuroph.nnet.MultiLayerPerceptron;
-import org.neuroph.nnet.learning.BackPropagation;
-import org.neuroph.core.transfer.Gaussian;
+import org.neuroph.core.NeuralNetwork
+import org.neuroph.core.learning.SupervisedTrainingElement
+import org.neuroph.core.learning.TrainingSet
+import org.neuroph.nnet.MultiLayerPerceptron
+import org.neuroph.nnet.learning.BackPropagation
+import org.neuroph.util.TransferFunctionType
 
 public class TestNetwork {
     static int inputSize = 8;

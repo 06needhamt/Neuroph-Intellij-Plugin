@@ -34,19 +34,20 @@ import com.thomas.needham.neurophidea.settings.VersionSetting
  * Created by Thomas Needham on 25/05/2016.
  */
 class NeurophJarConsumer : Consumer<VirtualFile?> {
-    constructor(){
-
-    }
-    companion object Data{
-        var properties = PropertiesComponent.getInstance()
-        var version = properties.getValue(VERSION_KEY)
-    }
-
-    override fun consume(p0 : VirtualFile?) {
-        if(!p0?.name?.contains("neuroph")!! || !p0?.extension?.equals("jar")!!){
-           Messages.showErrorDialog("Path to neuroph.jar is not valid","Invalid Path")
-            return
-        }
-        VersionSetting.locationTextBox.text = p0?.path
-    }
+	constructor() {
+	
+	}
+	
+	companion object Data {
+		var properties = PropertiesComponent.getInstance()
+		var version = properties.getValue(VERSION_KEY)
+	}
+	
+	override fun consume(p0: VirtualFile?) {
+		if (!p0?.name?.contains("neuroph")!! || !p0?.extension?.equals("jar")!!) {
+			Messages.showErrorDialog("Path to neuroph.jar is not valid", "Invalid Path")
+			return
+		}
+		VersionSetting.locationTextBox.text = p0?.path
+	}
 }

@@ -35,33 +35,37 @@ import javax.swing.Icon
 /**
  * Created by Thomas Needham on 07/06/2016.
  */
-class NeurophFacetType : FacetType<NeurophFacet,NeurophFacetConfiguration> {
-    companion object ID{
-        @JvmStatic val FACET_TYPE_ID : FacetTypeId<NeurophFacet> = FacetTypeId<NeurophFacet>("Neuroph")
-        @JvmStatic fun getInstance() : NeurophFacetType?{
-            val cls = NeurophFacetType::class.java
-            return findInstance(cls)
-        }
-    }
-    constructor() : super(FACET_TYPE_ID,NeurophFacetSettings.FACET_ID,NeurophFacetSettings.FACET_NAME){
-
-    }
-
-    override fun createDefaultConfiguration() : NeurophFacetConfiguration? {
-        val config = NeurophFacetConfiguration()
-        return config
-    }
-
-    override fun createFacet(p0 : Module, p1 : String?, p2 : NeurophFacetConfiguration, p3 : Facet<*>?) : NeurophFacet? {
-        val facet = NeurophFacet(this,p0,p1!!,p2,p3 as Facet<NeurophFacetConfiguration>)
-        return facet
-    }
-
-    override fun isSuitableModuleType(p0 : ModuleType<*>?) : Boolean {
-        return p0 is JavaModuleType
-    }
-
-    override fun getIcon() : Icon? {
-        return IconLoader.getTransparentIcon(IconLoader.getIcon("/icon2.png"))
-    }
+class NeurophFacetType : FacetType<NeurophFacet, NeurophFacetConfiguration> {
+	companion object ID {
+		@JvmStatic
+		val FACET_TYPE_ID: FacetTypeId<NeurophFacet> = FacetTypeId<NeurophFacet>("Neuroph")
+		
+		@JvmStatic
+		fun getInstance(): NeurophFacetType? {
+			val cls = NeurophFacetType::class.java
+			return findInstance(cls)
+		}
+	}
+	
+	constructor() : super(FACET_TYPE_ID, NeurophFacetSettings.FACET_ID, NeurophFacetSettings.FACET_NAME) {
+	
+	}
+	
+	override fun createDefaultConfiguration(): NeurophFacetConfiguration? {
+		val config = NeurophFacetConfiguration()
+		return config
+	}
+	
+	override fun createFacet(p0: Module, p1: String?, p2: NeurophFacetConfiguration, p3: Facet<*>?): NeurophFacet? {
+		val facet = NeurophFacet(this, p0, p1!!, p2, p3 as Facet<NeurophFacetConfiguration>)
+		return facet
+	}
+	
+	override fun isSuitableModuleType(p0: ModuleType<*>?): Boolean {
+		return p0 is JavaModuleType
+	}
+	
+	override fun getIcon(): Icon? {
+		return IconLoader.getTransparentIcon(IconLoader.getIcon("/icon2.png"))
+	}
 }

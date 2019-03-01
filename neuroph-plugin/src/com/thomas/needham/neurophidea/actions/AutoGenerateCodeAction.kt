@@ -7,8 +7,8 @@ import com.intellij.openapi.actionSystem.AnActionEvent
  * Created by thoma on 23/09/2016.
  */
 class AutoGenerateCodeAction : AnAction() {
-
-    override fun actionPerformed(e : AnActionEvent) {
-        println("Action Fired")
-    }
+	
+	override fun actionPerformed(e: AnActionEvent) {
+		println("Action Fired")
+	}
 }

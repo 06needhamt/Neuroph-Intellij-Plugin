@@ -31,11 +31,12 @@ import com.intellij.openapi.fileTypes.FileTypes
  * Created by thoma on 24/06/2016.
  */
 class SnnetFileTypes : FileTypes {
-    private constructor() : super() {
-
-    }
-
-    companion object FileTypes {
-        @JvmStatic val NEURAL_NETWORK_SOURCE : FileType = FileTypeManager.getInstance().getFileTypeByExtension("snnet")
-    }
+	private constructor() : super() {
+	
+	}
+	
+	companion object FileTypes {
+		@JvmStatic
+		val NEURAL_NETWORK_SOURCE: FileType = FileTypeManager.getInstance().getFileTypeByExtension("snnet")
+	}
 }

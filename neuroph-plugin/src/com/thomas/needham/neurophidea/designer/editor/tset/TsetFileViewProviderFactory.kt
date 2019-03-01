@@ -33,8 +33,8 @@ import com.intellij.psi.PsiManager
 /**
  * Created by thoma on 09/10/2016.
  */
-class TsetFileViewProviderFactory : FileViewProviderFactory{
-    override fun createFileViewProvider(p0 : VirtualFile, p1 : Language?, p2 : PsiManager, p3 : Boolean) : FileViewProvider {
-        throw UnsupportedOperationException()
-    }
+class TsetFileViewProviderFactory : FileViewProviderFactory {
+	override fun createFileViewProvider(p0: VirtualFile, p1: Language?, p2: PsiManager, p3: Boolean): FileViewProvider {
+		throw UnsupportedOperationException()
+	}
 }

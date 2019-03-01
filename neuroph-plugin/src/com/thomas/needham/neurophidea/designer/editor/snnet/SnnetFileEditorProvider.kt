@@ -39,42 +39,64 @@ import org.jetbrains.annotations.NonNls
  * Created by thoma on 24/06/2016.
  */
 class SnnetFileEditorProvider : FileEditorProvider {
-
-    companion object Data {
-        @JvmStatic val LOG = Logger.getInstance("#com.thomas.needham.neurophidea.designer.editor.snnet.SnnetFileEditorProvider")
-        @JvmStatic val NNET_EDITOR_KEY : Key<SnnetEditor> = Key.create("snnetEditor")
-        @JvmStatic @NonNls val TYPE_ID : String = "snnet-editor"
-        @JvmStatic @NonNls val LINE_ATTR : String = "line"
-        @JvmStatic @NonNls val COLUMN_ATTR : String = "column"
-        @JvmStatic @NonNls val SELECTION_START_LINE_ATTR : String = "selection-start-line"
-        @JvmStatic @NonNls val SELECTION_START_COLUMN_ATTR : String = "selection-start-column"
-        @JvmStatic @NonNls val SELECTION_END_LINE_ATTR : String = "selection-end-line"
-        @JvmStatic @NonNls val SELECTION_END_COLUMN_ATTR : String = "selection-end-column"
-        @JvmStatic @NonNls val RELATIVE_CARET_POSITION_ATTR : String = "relative-caret-position"
-        @JvmStatic @NonNls val CARET_ELEMENT : String = "caret"
-        @JvmStatic fun GetInstance() : SnnetFileEditorProvider? {
-            return ApplicationManager.getApplication().getComponent(SnnetFileEditorProvider::class.java)
-        }
-
-        fun putSnnetEditor(editor : Editor?, snnetEditor : SnnetEditorImpl?) {
-            editor?.putUserData(NNET_EDITOR_KEY, snnetEditor)
-        }
-    }
-
-    override fun createEditor(p0 : Project, p1 : VirtualFile) : FileEditor {
-        LOG.assertTrue(accept(p0, p1))
-        return SnnetEditorImpl(p0, p1, this)
-    }
-
-    override fun getPolicy() : FileEditorPolicy {
-        return FileEditorPolicy.NONE
-    }
-
-    override fun getEditorTypeId() : String {
-        return TYPE_ID
-    }
-
-    override fun accept(p0 : Project, p1 : VirtualFile) : Boolean {
-        return p1.fileType is SnnetFileType
-    }
+	
+	companion object Data {
+		@JvmStatic
+		val LOG = Logger.getInstance("#com.thomas.needham.neurophidea.designer.editor.snnet.SnnetFileEditorProvider")
+		@JvmStatic
+		val NNET_EDITOR_KEY: Key<SnnetEditor> = Key.create("snnetEditor")
+		@JvmStatic
+		@NonNls
+		val TYPE_ID: String = "snnet-editor"
+		@JvmStatic
+		@NonNls
+		val LINE_ATTR: String = "line"
+		@JvmStatic
+		@NonNls
+		val COLUMN_ATTR: String = "column"
+		@JvmStatic
+		@NonNls
+		val SELECTION_START_LINE_ATTR: String = "selection-start-line"
+		@JvmStatic
+		@NonNls
+		val SELECTION_START_COLUMN_ATTR: String = "selection-start-column"
+		@JvmStatic
+		@NonNls
+		val SELECTION_END_LINE_ATTR: String = "selection-end-line"
+		@JvmStatic
+		@NonNls
+		val SELECTION_END_COLUMN_ATTR: String = "selection-end-column"
+		@JvmStatic
+		@NonNls
+		val RELATIVE_CARET_POSITION_ATTR: String = "relative-caret-position"
+		@JvmStatic
+		@NonNls
+		val CARET_ELEMENT: String = "caret"
+		
+		@JvmStatic
+		fun GetInstance(): SnnetFileEditorProvider? {
+			return ApplicationManager.getApplication().getComponent(SnnetFileEditorProvider::class.java)
+		}
+		
+		fun putSnnetEditor(editor: Editor?, snnetEditor: SnnetEditorImpl?) {
+			editor?.putUserData(NNET_EDITOR_KEY, snnetEditor)
+		}
+	}
+	
+	override fun createEditor(p0: Project, p1: VirtualFile): FileEditor {
+		LOG.assertTrue(accept(p0, p1))
+		return SnnetEditorImpl(p0, p1, this)
+	}
+	
+	override fun getPolicy(): FileEditorPolicy {
+		return FileEditorPolicy.NONE
+	}
+	
+	override fun getEditorTypeId(): String {
+		return TYPE_ID
+	}
+	
+	override fun accept(p0: Project, p1: VirtualFile): Boolean {
+		return p1.fileType is SnnetFileType
+	}
 }

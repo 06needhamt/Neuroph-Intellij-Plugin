@@ -29,6 +29,6 @@ import com.intellij.lang.Language
  * Created by thoma on 24/06/2016.
  */
 
-class SnnetLanguage(ID : String, vararg mimeTypes : String?) : Language(ID, *mimeTypes) {
+class SnnetLanguage(ID: String, vararg mimeTypes: String?) : Language(ID, *mimeTypes) {
 
 }

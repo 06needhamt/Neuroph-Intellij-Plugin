@@ -30,16 +30,16 @@ import com.intellij.openapi.fileTypes.FileTypeListener
  * Created by thoma on 24/06/2016.
  */
 class SnnetFileTypeListener : FileTypeListener.Adapter {
-    val component : SnnetEditorComponent
-
-    constructor(component : SnnetEditorComponent) : super() {
-        this.component = component
-    }
-
-    override fun fileTypesChanged(event : FileTypeEvent) {
-        super.fileTypesChanged(event)
-        SnnetEditorComponent.assertThread()
-        component.updateValidProperty()
-        component.updateHighlighters()
-    }
+	val component: SnnetEditorComponent
+	
+	constructor(component: SnnetEditorComponent) : super() {
+		this.component = component
+	}
+	
+	override fun fileTypesChanged(event: FileTypeEvent) {
+		super.fileTypesChanged(event)
+		SnnetEditorComponent.assertThread()
+		component.updateValidProperty()
+		component.updateHighlighters()
+	}
 }

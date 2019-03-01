@@ -6,48 +6,250 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bf29350-129e-4cfc-8762-78cb4578196f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../TestProject/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestProject/.idea/copyright/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestProject/.idea/libraries/KotlinJavaRuntime.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestProject/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestProject/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestProject/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestProject/Compiled.conf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestProject/Compiled.groovy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestProject/Compiled.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestProject/Compiled.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestProject/Compiled.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestProject/TestData.tset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestProject/TestProject.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestProject/TrainTest.conf.nnet" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestProject/data/Classroom Occupation Data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestProject/data/Classroom Occupation Test Data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestProject/lib/kotlin-reflect.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestProject/lib/kotlin-runtime-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestProject/lib/kotlin-runtime.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestProject/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestProject/test.snnet" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/neuroph_plugin_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/neuroph_plugin_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/scala_sdk_2_11_8.xml" beforeDir="false" />
+    <list default="true" id="0bf29350-129e-4cfc-8762-78cb4578196f" name="Default" comment="Fix All Formatting">
+      <change beforePath="$PROJECT_DIR$/../TestProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TestProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/scala_sdk_2_12_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/scala_sdk_2_12_3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neuroph-plugin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/neuroph-plugin.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/META-INF/plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/Constants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/Constants.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/PluginRegistration.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/PluginRegistration.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/Predicates.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/Predicates.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/Tuple2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/Tuple2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/Tuple3.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/Tuple3.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/Utils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/AutoGenerateCodeAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/AutoGenerateCodeAction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/CompileSnnetFileAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/CompileSnnetFileAction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/DownloadNeurophAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/DownloadNeurophAction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/InitialisationAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/InitialisationAction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/NeurophMenuAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/NeurophMenuAction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/OpenExistingNetworkAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/OpenExistingNetworkAction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/OpenExistingNetworkConfigurationAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/OpenExistingNetworkConfigurationAction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowAboutFromAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowAboutFromAction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowCreateNetworkFormAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowCreateNetworkFormAction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowExportNetworkFormAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowExportNetworkFormAction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowNetworkOutputFormAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowNetworkOutputFormAction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowNetworkWeightsFormAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowNetworkWeightsFormAction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowTestNetworkFormAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowTestNetworkFormAction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowTrainNetworkFormAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowTrainNetworkFormAction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/ExportNetworkConsumer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/ExportNetworkConsumer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/ExportSourceConsumer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/ExportSourceConsumer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/NetworkOutputFileConsumer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/NetworkOutputFileConsumer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/NetworkResultsConsumer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/NetworkResultsConsumer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/NetworkResultsOutputConsumer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/NetworkResultsOutputConsumer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/NetworkToTestConsumer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/NetworkToTestConsumer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/NetworkToTrainConsumer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/NetworkToTrainConsumer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/NeurophJarConsumer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/NeurophJarConsumer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/NeurophSDKConsumer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/NeurophSDKConsumer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/OpenNetworkConfigurationConsumer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/OpenNetworkConfigurationConsumer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/OpenNetworkConsumer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/OpenNetworkConsumer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/TestNetworkSetFileConsumer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/TestNetworkSetFileConsumer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/TestingSetFileConsumer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/TestingSetFileConsumer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/TrainNetworkSetFileConsumer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/TrainNetworkSetFileConsumer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/TrainingSetFileConsumer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/TrainingSetFileConsumer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/AutoCodeGenerator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/AutoCodeGenerator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/FileSaveListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/FileSaveListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/GroovyNetworkCodeGenerator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/GroovyNetworkCodeGenerator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/ICodeGenerator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/ICodeGenerator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/JavaNetworkCodeGenerator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/JavaNetworkCodeGenerator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/KotlinNetworkCodeGenerator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/KotlinNetworkCodeGenerator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/NetworkTester.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/NetworkTester.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/NetworkTrainer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/NetworkTrainer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/NeurophProjectManagerListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/NeurophProjectManagerListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/ScalaNetworkCodeGenerator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/ScalaNetworkCodeGenerator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/datastructures/LearningRules.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/datastructures/LearningRules.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/datastructures/NetworkConfiguration.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/datastructures/NetworkConfiguration.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/datastructures/NetworkConfigurationFormData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/datastructures/NetworkConfigurationFormData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/datastructures/NetworkResult.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/datastructures/NetworkResult.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/datastructures/NetworkTypes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/datastructures/NetworkTypes.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/datastructures/NeurophVersions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/datastructures/NeurophVersions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/datastructures/TransferFunctions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/datastructures/TransferFunctions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetDecompiler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetDecompiler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetDocumentListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetDocumentListener.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetDocumentManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetDocumentManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetDumbModeListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetDumbModeListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetEditor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetEditor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetEditorComponent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetEditorComponent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetEditorImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetEditorImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetFileEditorProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetFileEditorProvider.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetFileTypeListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetFileTypeListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetFileViewProviderFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetFileViewProviderFactory.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetInvocationHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetInvocationHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetLoader.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetLoader.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetViewer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetViewer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetVirtualFileListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetVirtualFileListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetDocumentListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetDocumentListener.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetDocumentManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetDocumentManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetDumbModeListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetDumbModeListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetEditor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetEditor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetEditorComponent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetEditorComponent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetEditorImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetEditorImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetFileEditorProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetFileEditorProvider.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetFileTypeListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetFileTypeListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetFileViewProviderFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetFileViewProviderFactory.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetInvocationHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetInvocationHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetVirtualFileListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetVirtualFileListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetDecompiler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetDecompiler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetDocumentListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetDocumentListener.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetDocumentManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetDocumentManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetDumbModeListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetDumbModeListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetEditor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetEditor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetEditorComponent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetEditorComponent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetEditorImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetEditorImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetEditorLoader.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetEditorLoader.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetFileEditorProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetFileEditorProvider.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetFileTypeListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetFileTypeListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetFileViewProviderFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetFileViewProviderFactory.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetInvocationHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetInvocationHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetVirtualFileListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetVirtualFileListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/nnet/NnetFile.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/nnet/NnetFile.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/nnet/NnetFileType.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/nnet/NnetFileType.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/nnet/NnetFileTypes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/nnet/NnetFileTypes.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/nnet/NnetLanguage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/nnet/NnetLanguage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/SnnetFile.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/SnnetFile.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/SnnetFileType.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/SnnetFileType.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/SnnetFileTypes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/SnnetFileTypes.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/SnnetLanguage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/SnnetLanguage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/compiler/generator/SnnetGenerator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/compiler/generator/SnnetGenerator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/compiler/lexer/SnnetLexer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/compiler/lexer/SnnetLexer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/compiler/lexer/SnnetToken.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/compiler/lexer/SnnetToken.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/compiler/lexer/SnnetTokenType.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/compiler/lexer/SnnetTokenType.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/compiler/parser/SnnetParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/compiler/parser/SnnetParser.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/compiler/parser/SnnetProperties.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/snnet/compiler/parser/SnnetProperties.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/tset/TsetFile.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/tset/TsetFile.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/tset/TsetFileType.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/tset/TsetFileType.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/tset/TsetFileTypes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/tset/TsetFileTypes.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/tset/TsetLanguage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/psi/tset/TsetLanguage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TestAdaline.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TestAdaline.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TestBAM.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TestBAM.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TestCompetitive.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TestCompetitive.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TestFuzzyPerceptron.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TestFuzzyPerceptron.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TestHopfield.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TestHopfield.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TestInstar.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TestInstar.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TestKohonen.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TestKohonen.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TestMaxNet.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TestMaxNet.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TestMultiLayerPerceptron.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TestMultiLayerPerceptron.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TestNetwork.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TestNetwork.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TestNeuroph.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TestNeuroph.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TestOutstar.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TestOutstar.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TestPerceptron.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TestPerceptron.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TestRBF.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TestRBF.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TestSHN.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TestSHN.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TestUHN.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TestUHN.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TrainTest.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/groovy/TrainTest.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TestAdaline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TestAdaline.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TestBAM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TestBAM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TestCompetitive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TestCompetitive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TestFuzzyPerceptron.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TestFuzzyPerceptron.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TestHopfield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TestHopfield.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TestInstar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TestInstar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TestKohonen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TestKohonen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TestMaxNet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TestMaxNet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TestMultiLayerPerceptron.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TestMultiLayerPerceptron.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TestNetwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TestNetwork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TestNeuroph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TestNeuroph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TestOutstar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TestOutstar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TestPerceptron.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TestPerceptron.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TestRBF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TestRBF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TestSHN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TestSHN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TestUHN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TestUHN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TrainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/java/TrainTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TestAdaline.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TestAdaline.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TestBAM.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TestBAM.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TestCompetitive.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TestCompetitive.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TestFuzzyPerceptron.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TestFuzzyPerceptron.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TestHopfield.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TestHopfield.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TestInstar.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TestInstar.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TestKohonen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TestKohonen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TestMaxNet.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TestMaxNet.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TestMultiLayerPerceptron.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TestMultiLayerPerceptron.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TestNetwork.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TestNetwork.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TestNeuroph.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TestNeuroph.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TestOutstar.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TestOutstar.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TestPerceptron.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TestPerceptron.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TestRBF.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TestRBF.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TestSHN.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TestSHN.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TestUHN.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TestUHN.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TrainTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/kotlin/TrainTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TestAdaline.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TestAdaline.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TestBAM.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TestBAM.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TestCompetitive.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TestCompetitive.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TestFuzzyPerceptron.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TestFuzzyPerceptron.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TestHopfield.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TestHopfield.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TestInstar.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TestInstar.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TestKohonen.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TestKohonen.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TestMaxNet.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TestMaxNet.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TestMultiLayerPerceptron.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TestMultiLayerPerceptron.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TestNetwork.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TestNetwork.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TestNeuroph.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TestNeuroph.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TestOutstar.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TestOutstar.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TestPerceptron.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TestPerceptron.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TestRBF.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TestRBF.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TestSHN.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TestSHN.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TestUHN.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TestUHN.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TrainTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TrainTest.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/exceptions/InvalidLayerSizeException.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/exceptions/InvalidLayerSizeException.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/exceptions/SaveVetoException.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/exceptions/SaveVetoException.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/exceptions/UnknownLearningRuleException.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/exceptions/UnknownLearningRuleException.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/exceptions/UnknownNetworkTypeException.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/exceptions/UnknownNetworkTypeException.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/exceptions/UnknownTransferFunctionException.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/exceptions/UnknownTransferFunctionException.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/about/AboutForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/about/AboutForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/about/AboutFormImplementation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/about/AboutFormImplementation.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/create/CreateNetworkForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/create/CreateNetworkForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/create/CreateNetworkFormImplementation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/create/CreateNetworkFormImplementation.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/create/CreateTestingSetBrowseButtonActionListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/create/CreateTestingSetBrowseButtonActionListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/create/CreateTrainingSetBrowseButtonActionListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/create/CreateTrainingSetBrowseButtonActionListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/create/NetworkOutputBrowseButtonActionListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/create/NetworkOutputBrowseButtonActionListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/create/SaveNetworkButtonActionListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/create/SaveNetworkButtonActionListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/export/ExportNetworkBrowseButtonActionListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/export/ExportNetworkBrowseButtonActionListener.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/export/ExportNetworkForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/export/ExportNetworkForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/export/ExportNetworkFormImplementation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/export/ExportNetworkFormImplementation.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/export/ExportSourceBrowseButtonActionListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/export/ExportSourceBrowseButtonActionListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/export/ExportSourceButtonActionListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/export/ExportSourceButtonActionListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/open/OpenNetworkBrowseButtonActionListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/open/OpenNetworkBrowseButtonActionListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/open/OpenNetworkButtonActionListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/open/OpenNetworkButtonActionListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/open/OpenNetworkForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/open/OpenNetworkForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/open/OpenNetworkFormImplementation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/open/OpenNetworkFormImplementation.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/output/NetworkOutputForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/output/NetworkOutputForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/output/NetworkOutputFormImplementation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/output/NetworkOutputFormImplementation.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/output/ResultsOutputBrowseButtonActionListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/output/ResultsOutputBrowseButtonActionListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/output/SaveOutputButtonActionListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/output/SaveOutputButtonActionListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/output/WindowCloseListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/output/WindowCloseListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/test/NetworkResultsBrowseActionListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/test/NetworkResultsBrowseActionListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/test/TestNetworkBrowseButtonActionListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/test/TestNetworkBrowseButtonActionListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/test/TestNetworkButtonActionListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/test/TestNetworkButtonActionListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/test/TestNetworkForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/test/TestNetworkForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/test/TestNetworkFormImplementation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/test/TestNetworkFormImplementation.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/test/TestingSetBrowseButtonActionListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/test/TestingSetBrowseButtonActionListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkBrowseButtonActionListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkBrowseButtonActionListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkButtonActionListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkButtonActionListener.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkFormImplementation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkFormImplementation.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainingSetBrowseButtonActionListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainingSetBrowseButtonActionListener.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/weights/NetworkWeightsForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/weights/NetworkWeightsForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/weights/NetworkWeightsFormImplementation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/weights/NetworkWeightsFormImplementation.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/weights/SaveNetworkWeightsButtonActionListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/weights/SaveNetworkWeightsButtonActionListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophModuleBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophModuleBuilder.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDK.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDK.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDKCellRenderer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDKCellRenderer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDKComboBox.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDKComboBox.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDKComboBoxActionListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDKComboBoxActionListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDKCondition.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDKCondition.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDKData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDKData.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDKPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDKPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophWizardInputField.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophWizardInputField.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophWizardStep.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophWizardStep.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/RunWriteActionRunnable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/RunWriteActionRunnable.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/facet/NeurophFacet.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/facet/NeurophFacet.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/facet/NeurophFacetConfiguration.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/facet/NeurophFacetConfiguration.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/facet/NeurophFacetEditorTab.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/facet/NeurophFacetEditorTab.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/facet/NeurophFacetSettings.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/facet/NeurophFacetSettings.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/facet/NeurophFacetType.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/facet/NeurophFacetType.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/settings/AutoGenerateCodeSetting.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/settings/AutoGenerateCodeSetting.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/settings/JARLocationDocumentListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/settings/JARLocationDocumentListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/settings/VersionSetting.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/settings/VersionSetting.kt" afterDir="false" />
     </list>
     <ignored path="neuroph-plugin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,37 +262,9 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="171056087">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.10" value="1" />
-          <entry key="project.opened" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="kt" value="6" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="Kotlin" value="6" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="kt" value="11" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="Kotlin" value="11" />
-        </counts>
-      </usages-collector>
-    </session>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="neuroph-plugin" />
@@ -98,64 +272,96 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/AutoCodeGenerator.kt">
+        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/DownloadNeurophAction.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1887">
-              <caret line="157" column="40" selection-start-line="157" selection-start-column="40" selection-end-line="157" selection-end-column="40" />
+            <state relative-caret-position="192">
+              <caret line="38" column="6" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetDocumentManager.kt">
+        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/NetworkOutputFileConsumer.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6341">
-              <caret line="486" column="54" selection-start-line="486" selection-start-column="54" selection-end-line="486" selection-end-column="54" />
+            <state relative-caret-position="216">
+              <caret line="35" column="6" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetDocumentManager.kt">
+        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/weights/NetworkWeightsFormImplementation.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6341">
-              <caret line="477" column="54" selection-start-line="477" selection-start-column="54" selection-end-line="477" selection-end-column="54" />
+            <state relative-caret-position="576">
+              <caret line="51" column="64" selection-start-line="51" selection-start-column="64" selection-end-line="51" selection-end-column="64" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetDocumentManager.kt">
+        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkFormImplementation.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6358">
-              <caret line="481" column="54" selection-start-line="481" selection-start-column="54" selection-end-line="481" selection-end-column="54" />
+            <state>
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDK.kt">
+        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkBrowseButtonActionListener.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+            <state relative-caret-position="192">
+              <caret line="39" column="6" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDKData.kt">
+        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkButtonActionListener.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
+            <state relative-caret-position="624">
+              <caret line="55" column="36" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/NetworkTrainer.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="239">
+              <caret line="165" column="83" selection-start-line="165" selection-start-column="83" selection-end-line="165" selection-end-column="83" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/CompileSnnetFileAction.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="24">
+              <caret line="41" selection-start-line="41" selection-end-line="41" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/facet/NeurophFacetConfiguration.kt">
+        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/create/SaveNetworkButtonActionListener.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="60" column="53" selection-start-line="60" selection-start-column="53" selection-end-line="60" selection-end-column="53" />
+            <state relative-caret-position="528">
+              <caret line="123" column="18" selection-start-line="123" selection-start-column="18" selection-end-line="123" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/datastructures/NetworkConfiguration.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1200">
+              <caret line="73" column="40" selection-start-line="73" selection-start-column="40" selection-end-line="73" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -183,7 +389,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/build.xml" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/export/ExportNetworkForm.java" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/OpenExistingNetworkActionInternal.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/open/OpenNetworkButtonActionListener.kt" />
@@ -234,6 +439,7 @@
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDK.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDKData.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/facet/NeurophFacetConfiguration.kt" />
+        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/NetworkTrainer.kt" />
       </list>
     </option>
   </component>
@@ -280,8 +486,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -316,10 +520,26 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="neurophidea" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="neuroph-plugin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="neuroph-plugin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="neurophidea" type="462c0819:PsiDirectoryNode" />
+              <item name="forms" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="neuroph-plugin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="neuroph-plugin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="neurophidea" type="462c0819:PsiDirectoryNode" />
+              <item name="forms" type="462c0819:PsiDirectoryNode" />
+              <item name="train" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -334,11 +554,12 @@
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="678" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542468082065" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../FTL-Compiler" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.language.Kotlin" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -373,53 +594,6 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
-      <module name="" />
-      <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="PM_INSTALL_OPTIONS" value="" />
-      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="DEBUGGER_TYPE" value="Java" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <Java />
-      <Profilers>
-        <option name="GAPID_DISABLE_PCS" value="false" />
-      </Profilers>
-      <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
-      <module name="" />
-      <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="EXTRA_OPTIONS" value="" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="DEBUGGER_TYPE" value="Java" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <Java />
-      <Profilers>
-        <option name="GAPID_DISABLE_PCS" value="false" />
-      </Profilers>
-      <method />
-    </configuration>
     <configuration default="true" type="BatchConfigurationType" factoryName="Batch">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -518,7 +692,62 @@
       <setting name="rowsRange" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
+    <configuration default="true" type="AndroidRunConfigurationType">
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <Java />
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType">
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <Java />
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -531,6 +760,7 @@
       </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -570,7 +800,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <properties />
       <listeners />
@@ -578,7 +809,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Neuroph" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+    <configuration name="Neuroph" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
       <module name="neuroph-plugin" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -587,11 +818,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
       <module name="neuroph-plugin" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
+      <predefined_log_file enabled="true" id="idea.log" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -620,11 +851,11 @@
     <option name="totallyTimeSpent" value="439000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4940978" visible="true" weight="0.22121535" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4940978" visible="true" weight="0.24360341" />
       <window_info id="Image Layers" order="2" />
       <window_info id="DB Browser" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -637,10 +868,10 @@
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.3264346" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5127932" side_tool="true" weight="0.23106425" />
       <window_info anchor="bottom" id="Message" order="2" />
-      <window_info anchor="bottom" id="TODO" order="3" />
+      <window_info active="true" anchor="bottom" id="TODO" order="3" visible="true" weight="0.32981783" />
       <window_info anchor="bottom" id="Version Control" order="4" />
-      <window_info anchor="bottom" id="Messages" order="5" sideWeight="0.48827294" weight="0.26679462" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.48720682" visible="true" weight="0.2284069" />
+      <window_info anchor="bottom" id="Messages" order="5" sideWeight="0.48827294" weight="0.26653883" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.48720682" weight="0.2284069" />
       <window_info anchor="bottom" id="Tool Output" order="7" />
       <window_info anchor="bottom" id="ANTLR Preview" order="8" weight="0.32988507" />
       <window_info anchor="bottom" id="Debug" order="9" sideWeight="0.49666294" weight="0.31044215" />
@@ -663,6 +894,7 @@
       <window_info anchor="right" id="Kotlin Bytecode" order="10" visible="true" weight="0.3298109" />
       <window_info anchor="right" id="Database" order="11" />
       <window_info anchor="right" id="Structure" order="12" sideWeight="0.5059022" side_tool="true" weight="0.19299221" />
+      <window_info anchor="right" id="Maven" order="13" />
     </layout>
     <layout-to-restore>
       <window_info id="Designer" order="0" />
@@ -704,8 +936,10 @@
       <collection />
     </option>
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <MESSAGE value="Fix All Formatting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix All Formatting" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -720,111 +954,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetInvocationHandler.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="34" selection-start-line="34" selection-end-line="43" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetVirtualFileListener.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetFileTypeListener.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="32" selection-start-line="32" selection-end-line="43" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetDumbModeListener.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="31" selection-start-line="31" selection-end-line="41" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetFileEditorProvider.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetDocumentListener.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetDumbModeListener.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="33" column="47" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetEditor.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="32" column="10" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetFileEditorProvider.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="56" column="71" selection-start-line="56" selection-start-column="71" selection-end-line="56" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetInvocationHandler.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetFileTypeListener.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="45" column="1" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetFileViewProviderFactory.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="36" selection-start-line="36" selection-end-line="38" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetFileViewProviderFactory.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="35" column="6" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetFileViewProviderFactory.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="35" column="59" selection-start-line="35" selection-start-column="59" selection-end-line="35" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/examples/scala/TestAdaline.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="44" column="15" selection-start-line="44" selection-start-column="15" selection-end-line="44" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/neuroph-2.6/neuroph-2.6/sources/org/neuroph/core/learning/TrainingSet.java" />
     <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetLoader.kt">
       <provider selected="true" editor-type-id="text-editor">
@@ -964,50 +1093,158 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/AutoCodeGenerator.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1887">
+        <state relative-caret-position="2664">
           <caret line="157" column="40" selection-start-line="157" selection-start-column="40" selection-end-line="157" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetDocumentManager.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6341">
+        <state relative-caret-position="8952">
           <caret line="486" column="54" selection-start-line="486" selection-start-column="54" selection-end-line="486" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetDocumentManager.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6341">
+        <state relative-caret-position="8952">
           <caret line="477" column="54" selection-start-line="477" selection-start-column="54" selection-end-line="477" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetDocumentManager.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6358">
+        <state relative-caret-position="8976">
           <caret line="481" column="54" selection-start-line="481" selection-start-column="54" selection-end-line="481" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDK.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
+        <state relative-caret-position="312">
           <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDKData.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
+        <state relative-caret-position="624">
           <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/facet/NeurophFacetConfiguration.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
+        <state relative-caret-position="720">
           <caret line="60" column="53" selection-start-line="60" selection-start-column="53" selection-end-line="60" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/Predicates.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/create/CreateNetworkFormImplementation.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-648">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/weights/NetworkWeightsForm.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/neuroph-2.6.jar!/org/neuroph/nnet/learning/HopfieldLearning.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/datastructures/NetworkConfigurationFormData.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="29" column="11" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/DownloadNeurophAction.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="38" column="6" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/consumers/NetworkOutputFileConsumer.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="35" column="6" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/weights/NetworkWeightsFormImplementation.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="51" column="64" selection-start-line="51" selection-start-column="64" selection-end-line="51" selection-end-column="64" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkFormImplementation.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkBrowseButtonActionListener.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="39" column="6" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/train/TrainNetworkButtonActionListener.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="55" column="36" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/datastructures/NetworkConfiguration.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1200">
+          <caret line="73" column="40" selection-start-line="73" selection-start-column="40" selection-end-line="73" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/NetworkTrainer.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="165" column="83" selection-start-line="165" selection-start-column="83" selection-end-line="165" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/CompileSnnetFileAction.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/create/SaveNetworkButtonActionListener.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="123" column="18" selection-start-line="123" selection-start-column="18" selection-end-line="123" selection-end-column="18" />
         </state>
       </provider>
     </entry>

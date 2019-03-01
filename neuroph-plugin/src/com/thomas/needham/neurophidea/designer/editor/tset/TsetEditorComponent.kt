@@ -54,106 +54,111 @@ import java.awt.BorderLayout
  * Created by thoma on 09/10/2016.
  */
 class TsetEditorComponent : JBLoadingPanel, DataProvider {
-    val project : Project?
-    @NotNull val file : VirtualFile?
-    val tsetEditor : TsetEditorImpl?
-    val editor : Editor?
-    val document : Document?
-    val documentListener : TsetDocumentListener?
-    var isComponentModified : Boolean
-    var isComponentValid : Boolean
-    val fileListener : TsetVirtualFileListener?
-    val busConnection : MessageBusConnection?
-
-    companion object Log {
-        @JvmStatic val LOG : Logger = Logger.getInstance("#com.thomas.needham.neurophidea.designer.editor.tset.TsetEditorComponent")
-        @JvmStatic val assertThread : () -> Unit = {
-            ApplicationManager.getApplication().assertIsDispatchThread()
-        }
-    }
-
-    constructor(@NotNull project : Project?, @NotNull file : VirtualFile?, @NotNull editor : TsetEditorImpl?)
-    : super(BorderLayout(), editor as Disposable) {
-        this.project = project
-        this.file = file
-        this.tsetEditor = editor
-        this.document = TsetDocumentManager.getInstance().getDocument(file!!)
-        LOG.assertTrue(this.document != null)
-        documentListener = TsetDocumentListener(this)
-        document?.addDocumentListener(documentListener)
-        this.editor = createEditor()
-        this.add(this, BorderLayout.CENTER)
-        isComponentModified = isModifiedImpl()
-        isComponentValid = isEditorValidImpl()
-        LOG.assertTrue(isComponentValid)
-        fileListener = TsetVirtualFileListener(this)
-        this.file?.fileSystem?.addVirtualFileListener(fileListener)
-        busConnection = project?.messageBus?.connect()
-        busConnection?.subscribe(FileTypeManager.TOPIC, TsetFileTypeListener(this))
-        busConnection?.subscribe(DumbService.DUMB_MODE, TsetDumbModeListener(this))
-    }
-    @NotNull
-    private fun createEditor() : Editor? {
-        val e : Editor? = EditorFactory.getInstance().createEditor(document!!, project)
-        (e?.markupModel as EditorMarkupModel).isErrorStripeVisible = true
-        (e as EditorEx).gutterComponentEx.setForceShowRightFreePaintersArea(true)
-        e.setFile(file)
-        e.contextMenuGroupId = IdeActions.GROUP_EDITOR_POPUP
-        (e as EditorImpl).setDropHandler(FileDropHandler(e))
-        TsetFileEditorProvider.putTsetEditor(e, tsetEditor)
-        return e
-    }
-    private fun isEditorValidImpl() : Boolean {
-        return TsetDocumentManager.getInstance().getDocument(file!!) != null
-    }
-
-    override fun getData(p0 : String?) : Any? {
-        throw UnsupportedOperationException()
-    }
-
-    fun updateModifiedProperty() {
-        val oldModified = isComponentModified
-        isComponentModified = isModifiedImpl()
-        tsetEditor?.firePropertyChange(FileEditor.PROP_MODIFIED, oldModified, isComponentModified)
-    }
-
-    private fun isModifiedImpl() : Boolean {
-        return TsetDocumentManager.getInstance().isFileModified(file!!);
-    }
-
-    fun updateValidProperty() {
-        val oldValid = isComponentValid
-        isComponentValid = isEditorValidImpl()
-        tsetEditor?.firePropertyChange(FileEditor.PROP_VALID, oldValid, isComponentValid)
-    }
-
-    fun updateHighlighters() {
-        if (!project?.isDisposed!! && !editor?.isDisposed!!) {
-            val highlighter : EditorHighlighter = EditorHighlighterFactory.getInstance().createEditorHighlighter(project, file!!)
-            (editor as EditorEx).highlighter = highlighter
-        }
-    }
-
-    fun dispose() {
-        document?.removeDocumentListener(documentListener!!)
-        if (!project?.isDefault!!) {
-            EditorHistoryManager.getInstance(project!!).updateHistoryEntry(file, false)
-        }
-        disposeEditor()
-        busConnection?.disconnect()
-        file?.fileSystem?.removeVirtualFileListener(fileListener!!)
-    }
-
-    private fun disposeEditor() {
-        EditorFactory.getInstance().releaseEditor(editor!!)
-    }
-
-    fun selectNotify() {
-        updateStatusBar()
-    }
-
-    private fun updateStatusBar() {
-        val statusBar : StatusBarEx? = WindowManager.getInstance().getStatusBar(project) as StatusBarEx
-        statusBar?.updateWidgets()
-    }
+	val project: Project?
+	@NotNull
+	val file: VirtualFile?
+	val tsetEditor: TsetEditorImpl?
+	val editor: Editor?
+	val document: Document?
+	val documentListener: TsetDocumentListener?
+	var isComponentModified: Boolean
+	var isComponentValid: Boolean
+	val fileListener: TsetVirtualFileListener?
+	val busConnection: MessageBusConnection?
+	
+	companion object Log {
+		@JvmStatic
+		val LOG: Logger = Logger.getInstance("#com.thomas.needham.neurophidea.designer.editor.tset.TsetEditorComponent")
+		@JvmStatic
+		val assertThread: () -> Unit = {
+			ApplicationManager.getApplication().assertIsDispatchThread()
+		}
+	}
+	
+	constructor(@NotNull project: Project?, @NotNull file: VirtualFile?, @NotNull editor: TsetEditorImpl?)
+			: super(BorderLayout(), editor as Disposable) {
+		this.project = project
+		this.file = file
+		this.tsetEditor = editor
+		this.document = TsetDocumentManager.getInstance().getDocument(file!!)
+		LOG.assertTrue(this.document != null)
+		documentListener = TsetDocumentListener(this)
+		document?.addDocumentListener(documentListener)
+		this.editor = createEditor()
+		this.add(this, BorderLayout.CENTER)
+		isComponentModified = isModifiedImpl()
+		isComponentValid = isEditorValidImpl()
+		LOG.assertTrue(isComponentValid)
+		fileListener = TsetVirtualFileListener(this)
+		this.file?.fileSystem?.addVirtualFileListener(fileListener)
+		busConnection = project?.messageBus?.connect()
+		busConnection?.subscribe(FileTypeManager.TOPIC, TsetFileTypeListener(this))
+		busConnection?.subscribe(DumbService.DUMB_MODE, TsetDumbModeListener(this))
+	}
+	
+	@NotNull
+	private fun createEditor(): Editor? {
+		val e: Editor? = EditorFactory.getInstance().createEditor(document!!, project)
+		(e?.markupModel as EditorMarkupModel).isErrorStripeVisible = true
+		(e as EditorEx).gutterComponentEx.setForceShowRightFreePaintersArea(true)
+		e.setFile(file)
+		e.contextMenuGroupId = IdeActions.GROUP_EDITOR_POPUP
+		(e as EditorImpl).setDropHandler(FileDropHandler(e))
+		TsetFileEditorProvider.putTsetEditor(e, tsetEditor)
+		return e
+	}
+	
+	private fun isEditorValidImpl(): Boolean {
+		return TsetDocumentManager.getInstance().getDocument(file!!) != null
+	}
+	
+	override fun getData(p0: String?): Any? {
+		throw UnsupportedOperationException()
+	}
+	
+	fun updateModifiedProperty() {
+		val oldModified = isComponentModified
+		isComponentModified = isModifiedImpl()
+		tsetEditor?.firePropertyChange(FileEditor.PROP_MODIFIED, oldModified, isComponentModified)
+	}
+	
+	private fun isModifiedImpl(): Boolean {
+		return TsetDocumentManager.getInstance().isFileModified(file!!);
+	}
+	
+	fun updateValidProperty() {
+		val oldValid = isComponentValid
+		isComponentValid = isEditorValidImpl()
+		tsetEditor?.firePropertyChange(FileEditor.PROP_VALID, oldValid, isComponentValid)
+	}
+	
+	fun updateHighlighters() {
+		if (!project?.isDisposed!! && !editor?.isDisposed!!) {
+			val highlighter: EditorHighlighter = EditorHighlighterFactory.getInstance().createEditorHighlighter(project, file!!)
+			(editor as EditorEx).highlighter = highlighter
+		}
+	}
+	
+	fun dispose() {
+		document?.removeDocumentListener(documentListener!!)
+		if (!project?.isDefault!!) {
+			EditorHistoryManager.getInstance(project!!).updateHistoryEntry(file, false)
+		}
+		disposeEditor()
+		busConnection?.disconnect()
+		file?.fileSystem?.removeVirtualFileListener(fileListener!!)
+	}
+	
+	private fun disposeEditor() {
+		EditorFactory.getInstance().releaseEditor(editor!!)
+	}
+	
+	fun selectNotify() {
+		updateStatusBar()
+	}
+	
+	private fun updateStatusBar() {
+		val statusBar: StatusBarEx? = WindowManager.getInstance().getStatusBar(project) as StatusBarEx
+		statusBar?.updateWidgets()
+	}
 }

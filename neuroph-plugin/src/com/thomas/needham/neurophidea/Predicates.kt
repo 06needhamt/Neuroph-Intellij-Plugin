@@ -27,27 +27,33 @@ package com.thomas.needham.neurophidea
  * Created by Thomas Needham on 28/05/2016.
  */
 object Predicates {
-    @JvmStatic val EqualTo : (Int,Int) -> Boolean = { a,b ->
-        a == b
-    }
-
-    @JvmStatic val EqualToZero : (Int) -> Boolean = { e ->
-        e == 0
-    }
-
-    @JvmStatic val EqualToOrLessThan : (Int,Int) -> Boolean = { a,b ->
-        a <= b
-    }
-
-    @JvmStatic val MoreThan : (Int, Int) -> Boolean = { a,b ->
-        a > b
-    }
-
-    @JvmStatic val StringInherit : (Int) -> String = {
-        ""
-    }
-
-    @JvmStatic val IntInherit : (Int) -> Int = {
-        0
-    }
+	@JvmStatic
+	val EqualTo: (Int, Int) -> Boolean = { a, b ->
+		a == b
+	}
+	
+	@JvmStatic
+	val EqualToZero: (Int) -> Boolean = { e ->
+		e == 0
+	}
+	
+	@JvmStatic
+	val EqualToOrLessThan: (Int, Int) -> Boolean = { a, b ->
+		a <= b
+	}
+	
+	@JvmStatic
+	val MoreThan: (Int, Int) -> Boolean = { a, b ->
+		a > b
+	}
+	
+	@JvmStatic
+	val StringInherit: (Int) -> String = {
+		""
+	}
+	
+	@JvmStatic
+	val IntInherit: (Int) -> Int = {
+		0
+	}
 }

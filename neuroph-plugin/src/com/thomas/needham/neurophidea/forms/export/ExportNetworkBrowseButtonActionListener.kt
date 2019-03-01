@@ -31,7 +31,6 @@ import com.intellij.util.Consumer
 import com.thomas.needham.neurophidea.Constants.NETWORK_TO_EXPORT_LOCATION_KEY
 import com.thomas.needham.neurophidea.actions.ShowExportNetworkFormAction
 import com.thomas.needham.neurophidea.consumers.ExportNetworkConsumer
-import com.thomas.needham.neurophidea.forms.create.NetworkOutputBrowseButtonActionListener
 import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
 
@@ -39,19 +38,21 @@ import java.awt.event.ActionListener
  * Created by Thomas Needham on 29/05/2016.
  */
 class ExportNetworkBrowseButtonActionListener : ActionListener {
-    var formInstance : ExportNetworkForm? = null
-    companion object Data{
-        val defaultPath = ""
-        val allowedFileTypes = arrayOf("conf")
-        val fileDescriptor = FileChooserDescriptor(true, false, false, false, false, false)
-        val consumer : ExportNetworkConsumer? = ExportNetworkConsumer()
-        val properties = PropertiesComponent.getInstance()
-        var chosenPath = ""
-    }
-    override fun actionPerformed(e : ActionEvent?) {
-        properties?.setValue(NETWORK_TO_EXPORT_LOCATION_KEY,defaultPath)
-        FileChooser.chooseFile(fileDescriptor,ShowExportNetworkFormAction.project,null,consumer as Consumer<VirtualFile?>)
-        chosenPath = properties.getValue(NETWORK_TO_EXPORT_LOCATION_KEY, defaultPath)
-        formInstance?.txtExportNetwork?.text = chosenPath
-    }
+	var formInstance: ExportNetworkForm? = null
+	
+	companion object Data {
+		val defaultPath = ""
+		val allowedFileTypes = arrayOf("conf")
+		val fileDescriptor = FileChooserDescriptor(true, false, false, false, false, false)
+		val consumer: ExportNetworkConsumer? = ExportNetworkConsumer()
+		val properties = PropertiesComponent.getInstance()
+		var chosenPath = ""
+	}
+	
+	override fun actionPerformed(e: ActionEvent?) {
+		properties?.setValue(NETWORK_TO_EXPORT_LOCATION_KEY, defaultPath)
+		FileChooser.chooseFile(fileDescriptor, ShowExportNetworkFormAction.project, null, consumer as Consumer<VirtualFile?>)
+		chosenPath = properties.getValue(NETWORK_TO_EXPORT_LOCATION_KEY, defaultPath)
+		formInstance?.txtExportNetwork?.text = chosenPath
+	}
 }

@@ -23,7 +23,8 @@ SOFTWARE.
  */
 package com.thomas.needham.neurophidea.forms.train;
 
-import com.intellij.uiDesigner.core.*;
+import com.intellij.uiDesigner.core.GridConstraints;
+import com.intellij.uiDesigner.core.GridLayoutManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -110,4 +111,5 @@ public class TrainNetworkForm extends JFrame {
     public JComponent $$$getRootComponent$$$() {
         return root;
     }
+
 }

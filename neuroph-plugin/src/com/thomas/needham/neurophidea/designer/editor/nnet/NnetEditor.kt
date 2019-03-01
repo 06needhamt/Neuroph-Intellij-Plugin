@@ -30,7 +30,7 @@ import org.jetbrains.annotations.NotNull
 /**
  * Created by thoma on 17/06/2016.
  */
-interface  NnetEditor : NavigatableFileEditor {
-    @NotNull
-    fun getEditor() : Editor?
+interface NnetEditor : NavigatableFileEditor {
+	@NotNull
+	fun getEditor(): Editor?
 }

@@ -28,6 +28,6 @@ package com.thomas.needham.neurophidea.datastructures
  * Created by thoma on 11/09/2016.
  */
 data class NetworkConfigurationFormData(val name: String, val layers: String,
-                                        val trainingDataPath: String, val testingDataPath: String) {
-
+										val trainingDataPath: String, val testingDataPath: String) {
+	
 }

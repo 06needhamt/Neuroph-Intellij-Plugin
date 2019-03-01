@@ -31,23 +31,26 @@ import com.intellij.openapi.editor.event.DocumentEvent
  * Created by thoma on 17/06/2016.
  */
 class NnetDocumentListener : DocumentAdapter, Runnable {
-    var updateScheduled : Boolean = false
-    var component : NnetEditorComponent? = null
-    private val lambda : () -> Unit = {
-        updateScheduled = false
-       this.component?.updateModifiedProperty()
-    }
-    constructor(component : NnetEditorComponent){
-        this.component = component
-    }
-    override fun run() {
-        lambda()
-    }
-    override fun documentChanged(e : DocumentEvent?) {
-        super.documentChanged(e)
-        if(!updateScheduled){
-            ApplicationManager.getApplication().invokeLater(this)
-            updateScheduled = true
-        }
-    }
+	var updateScheduled: Boolean = false
+	var component: NnetEditorComponent? = null
+	private val lambda: () -> Unit = {
+		updateScheduled = false
+		this.component?.updateModifiedProperty()
+	}
+	
+	constructor(component: NnetEditorComponent) {
+		this.component = component
+	}
+	
+	override fun run() {
+		lambda()
+	}
+	
+	override fun documentChanged(e: DocumentEvent?) {
+		super.documentChanged(e)
+		if (!updateScheduled) {
+			ApplicationManager.getApplication().invokeLater(this)
+			updateScheduled = true
+		}
+	}
 }

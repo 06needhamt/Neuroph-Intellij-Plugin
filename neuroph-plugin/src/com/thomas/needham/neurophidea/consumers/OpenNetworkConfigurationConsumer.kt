@@ -33,16 +33,21 @@ import com.thomas.needham.neurophidea.Constants.VERSION_KEY
  * Created by Thomas Needham on 27/05/2016.
  */
 class OpenNetworkConfigurationConsumer : Consumer<VirtualFile?> {
-    constructor(){
-
-    }
-    companion object Data{
-        @JvmStatic val properties = PropertiesComponent.getInstance()
-        @JvmStatic var version = NetworkOutputFileConsumer.properties.getValue(VERSION_KEY)
-        @JvmStatic var path : String? = ""
-    }
-    override fun consume(p0 : VirtualFile?) {
-        path = p0?.path
-        properties.setValue(NETWORK_CONFIGURATION_TO_OPEN_LOCATION_KEY,path)
-    }
+	constructor() {
+	
+	}
+	
+	companion object Data {
+		@JvmStatic
+		val properties = PropertiesComponent.getInstance()
+		@JvmStatic
+		var version = NetworkOutputFileConsumer.properties.getValue(VERSION_KEY)
+		@JvmStatic
+		var path: String? = ""
+	}
+	
+	override fun consume(p0: VirtualFile?) {
+		path = p0?.path
+		properties.setValue(NETWORK_CONFIGURATION_TO_OPEN_LOCATION_KEY, path)
+	}
 }

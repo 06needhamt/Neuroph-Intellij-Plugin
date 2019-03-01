@@ -2,21 +2,10 @@ package com.thomas.needham.neurophidea.forms.open;
 
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
-import com.thomas.needham.neurophidea.forms.create.CreateNetworkFormImplementationKt;
 import org.neuroph.core.NeuralNetwork;
 
-import javax.swing.JButton;
-import javax.swing.JComponent;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.WindowConstants;
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.HeadlessException;
-import java.awt.Insets;
-import java.awt.Toolkit;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * Created by thoma on 13/06/2016.
@@ -82,4 +71,5 @@ public class OpenNetworkForm extends JFrame {
     public JComponent $$$getRootComponent$$$() {
         return root;
     }
+
 }

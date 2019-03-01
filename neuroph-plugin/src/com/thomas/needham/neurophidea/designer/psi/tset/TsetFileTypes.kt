@@ -31,10 +31,12 @@ import com.intellij.openapi.fileTypes.FileTypes
  * Created by thoma on 12/07/2016.
  */
 class TsetFileTypes : FileTypes {
-    private constructor() : super(){
-
-    }
-    companion object FileTypes{
-        @JvmStatic val DATA_SET : FileType = FileTypeManager.getInstance().getFileTypeByExtension("tset")
-    }
+	private constructor() : super() {
+	
+	}
+	
+	companion object FileTypes {
+		@JvmStatic
+		val DATA_SET: FileType = FileTypeManager.getInstance().getFileTypeByExtension("tset")
+	}
 }

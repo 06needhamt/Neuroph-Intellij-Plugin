@@ -33,30 +33,31 @@ import javax.swing.ListCellRenderer
  * Created by Thomas Needham on 06/06/2016.
  */
 class NeurophSDKComboBox : ComboboxWithBrowseButton {
-    companion object Data{
-        var cellRenderer : NeurophSDKCellRenderer? = null
-        var listener : NeurophSDKComboBoxActionListener? = null
-    }
-    constructor(){
-        cellRenderer = NeurophSDKCellRenderer()
-        listener = NeurophSDKComboBoxActionListener()
-        this.comboBox.renderer = cellRenderer as ListCellRenderer<in Any>
-        listener?.instance = this
-        this.addActionListener(listener)
-        updateSDKList(getSelectedSdk(),false)
-    }
-
-    fun getSelectedSdk() : Sdk? {
-        return this.comboBox.selectedItem as Sdk?
-    }
-
-    fun updateSDKList(sdk : Sdk?, any : Boolean) {
-        val sdkList : MutableList<Sdk?> = ProjectJdkTable.getInstance().getSdksOfType(NeurophSDK.getInstance()!!)
-        var sdkToSelect = sdk
-        if(any && sdkList.size > 0){
-            sdkToSelect = sdkList.elementAt(0)
-            comboBox.model = DefaultComboBoxModel(sdkList.toTypedArray())
-            comboBox.selectedItem = sdkToSelect
-        }
-    }
+	companion object Data {
+		var cellRenderer: NeurophSDKCellRenderer? = null
+		var listener: NeurophSDKComboBoxActionListener? = null
+	}
+	
+	constructor() {
+		cellRenderer = NeurophSDKCellRenderer()
+		listener = NeurophSDKComboBoxActionListener()
+		this.comboBox.renderer = cellRenderer as ListCellRenderer<in Any>
+		listener?.instance = this
+		this.addActionListener(listener)
+		updateSDKList(getSelectedSdk(), false)
+	}
+	
+	fun getSelectedSdk(): Sdk? {
+		return this.comboBox.selectedItem as Sdk?
+	}
+	
+	fun updateSDKList(sdk: Sdk?, any: Boolean) {
+		val sdkList: MutableList<Sdk?> = ProjectJdkTable.getInstance().getSdksOfType(NeurophSDK.getInstance()!!)
+		var sdkToSelect = sdk
+		if (any && sdkList.size > 0) {
+			sdkToSelect = sdkList.elementAt(0)
+			comboBox.model = DefaultComboBoxModel(sdkList.toTypedArray())
+			comboBox.selectedItem = sdkToSelect
+		}
+	}
 }

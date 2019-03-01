@@ -22,18 +22,20 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 @file:JvmName("OpenNetworkForm\$Ext") // Do Some Kotlin Sorcery!
-@file:JvmMultifileClass() // Do Some Kotlin Sorcery!
+@file:JvmMultifileClass()
+
+// Do Some Kotlin Sorcery!
 package com.thomas.needham.neurophidea.forms.open
 
 /**
  * Created by thoma on 13/06/2016.
  */
 
-fun OpenNetworkForm.AddOnClickListeners(){
-    val browseListener : OpenNetworkBrowseButtonActionListener? = OpenNetworkBrowseButtonActionListener()
-    browseListener?.formInstance = this
-    this.btnBrowseNetwork.addActionListener(browseListener)
-    val openListener : OpenNetworkButtonActionListener? = OpenNetworkButtonActionListener()
-    openListener?.formInstance = this
-    this.btnOpenNetwork.addActionListener(openListener);
+fun OpenNetworkForm.AddOnClickListeners() {
+	val browseListener: OpenNetworkBrowseButtonActionListener? = OpenNetworkBrowseButtonActionListener()
+	browseListener?.formInstance = this
+	this.btnBrowseNetwork.addActionListener(browseListener)
+	val openListener: OpenNetworkButtonActionListener? = OpenNetworkButtonActionListener()
+	openListener?.formInstance = this
+	this.btnOpenNetwork.addActionListener(openListener);
 }

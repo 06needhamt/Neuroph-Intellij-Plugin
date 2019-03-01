@@ -30,7 +30,7 @@ import com.intellij.openapi.util.Condition
  * Created by Thomas Needham on 07/06/2016.
  */
 class NeurophSDKCondition : Condition<Sdk?> {
-    override fun value(p0 : Sdk?) : Boolean {
-        return p0?.sdkType is NeurophSDK
-    }
+	override fun value(p0: Sdk?): Boolean {
+		return p0?.sdkType is NeurophSDK
+	}
 }

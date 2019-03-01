@@ -32,17 +32,19 @@ import com.intellij.psi.FileViewProvider
  * Created by thoma on 12/07/2016.
  */
 class TsetFile : PsiFileBase {
-    companion object Data{
-        var fileProvider : FileViewProvider? = null
-        var fileLanguage : Language? = null
-        var fileTy : TsetFileType? = null
-    }
-    constructor(fileViewProvider : FileViewProvider, language : Language) : super(fileViewProvider,language){
-        fileProvider = fileViewProvider
-        fileLanguage = language
-    }
-    override fun getFileType() : FileType {
-        fileTy = TsetFileType()
-        return fileTy as FileType
-    }
+	companion object Data {
+		var fileProvider: FileViewProvider? = null
+		var fileLanguage: Language? = null
+		var fileTy: TsetFileType? = null
+	}
+	
+	constructor(fileViewProvider: FileViewProvider, language: Language) : super(fileViewProvider, language) {
+		fileProvider = fileViewProvider
+		fileLanguage = language
+	}
+	
+	override fun getFileType(): FileType {
+		fileTy = TsetFileType()
+		return fileTy as FileType
+	}
 }

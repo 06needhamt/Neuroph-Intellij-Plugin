@@ -26,40 +26,39 @@ package com.thomas.needham.neurophidea.designer.psi.snnet
 import com.intellij.openapi.fileTypes.FileType
 import com.intellij.openapi.util.IconLoader
 import com.intellij.openapi.vfs.VirtualFile
-import com.intellij.util.PlatformIcons
 import javax.swing.Icon
 
 /**
  * Created by thoma on 24/06/2016.
  */
 class SnnetFileType : FileType {
-
-    override fun getIcon() : Icon? {
-        return IconLoader.getTransparentIcon(IconLoader.getIcon("/icon2.png"))
-    }
-
-    override fun getName() : String {
-        return "Neuroph Neural Network Source File"
-    }
-
-    override fun isBinary() : Boolean {
-        return false
-    }
-
-    override fun isReadOnly() : Boolean {
-        return false
-    }
-
-    override fun getDefaultExtension() : String {
-        return "snnet"
-    }
-
-    override fun getCharset(p0 : VirtualFile, p1 : ByteArray) : String? {
-        return null
-    }
-
-    override fun getDescription() : String {
-        return "Contains all information required to compile a neural network" +
-                "using the Neuroph framework"
-    }
+	
+	override fun getIcon(): Icon? {
+		return IconLoader.getTransparentIcon(IconLoader.getIcon("/icon2.png"))
+	}
+	
+	override fun getName(): String {
+		return "Neuroph Neural Network Source File"
+	}
+	
+	override fun isBinary(): Boolean {
+		return false
+	}
+	
+	override fun isReadOnly(): Boolean {
+		return false
+	}
+	
+	override fun getDefaultExtension(): String {
+		return "snnet"
+	}
+	
+	override fun getCharset(p0: VirtualFile, p1: ByteArray): String? {
+		return null
+	}
+	
+	override fun getDescription(): String {
+		return "Contains all information required to compile a neural network" +
+				"using the Neuroph framework"
+	}
 }

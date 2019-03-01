@@ -30,12 +30,14 @@ import java.awt.event.WindowEvent
  * Created by Thomas Needham on 09/06/2016.
  */
 class WindowCloseListener : WindowAdapter {
-    val lambda : () -> Unit
-    constructor(lambda: () -> Unit) : super(){
-       this.lambda = lambda
-    }
-    override fun windowClosing(e : WindowEvent?) {
-        super.windowClosing(e)
-        lambda.invoke()
-    }
+	val lambda: () -> Unit
+	
+	constructor(lambda: () -> Unit) : super() {
+		this.lambda = lambda
+	}
+	
+	override fun windowClosing(e: WindowEvent?) {
+		super.windowClosing(e)
+		lambda.invoke()
+	}
 }

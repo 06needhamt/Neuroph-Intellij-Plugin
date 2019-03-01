@@ -26,24 +26,9 @@ package com.thomas.needham.neurophidea.forms.output;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
-import com.thaiopensource.xml.dtd.om.Def;
-import com.thomas.needham.neurophidea.forms.export.ExportNetworkFormImplementationKt;
 
-import javax.swing.DefaultListModel;
-import javax.swing.JButton;
-import javax.swing.JComponent;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextField;
-import javax.swing.WindowConstants;
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.Insets;
-import java.awt.Toolkit;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * Created by Thomas Needham on 09/06/2016.
@@ -60,11 +45,10 @@ public class NetworkOutputForm extends JFrame {
     public JButton btnSaveOutput;
     public JTextField txtSaveLocation;
     public JButton btnBrowseSaveLocation;
-
-    private String path;
     public DefaultListModel<Double> expectedItems;
     public DefaultListModel<Double> actualItems;
     public DefaultListModel<Double> differenceItems;
+    private String path;
 
     public NetworkOutputForm(String path) {
         super("View Network Output");
@@ -152,4 +136,5 @@ public class NetworkOutputForm extends JFrame {
     public JComponent $$$getRootComponent$$$() {
         return root;
     }
+
 }

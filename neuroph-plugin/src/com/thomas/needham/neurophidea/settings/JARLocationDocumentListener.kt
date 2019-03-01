@@ -30,15 +30,15 @@ import javax.swing.event.DocumentListener
  * Created by Thomas Needham on 24/05/2016.
  */
 class JARLocationDocumentListener : DocumentListener {
-    override fun insertUpdate(e : DocumentEvent?) {
-
-    }
-
-    override fun removeUpdate(e : DocumentEvent?) {
-
-    }
-
-    override fun changedUpdate(e : DocumentEvent?) {
-        VersionSetting.modified = true
-    }
+	override fun insertUpdate(e: DocumentEvent?) {
+	
+	}
+	
+	override fun removeUpdate(e: DocumentEvent?) {
+	
+	}
+	
+	override fun changedUpdate(e: DocumentEvent?) {
+		VersionSetting.modified = true
+	}
 }

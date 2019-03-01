@@ -33,17 +33,19 @@ import com.intellij.psi.FileViewProvider
  */
 
 class SnnetFile : PsiFileBase {
-    companion object Data{
-        var fileProvider : FileViewProvider? = null
-        var fileLanguage : Language? = null
-        var fileTy : SnnetFileType? = null
-    }
-    constructor(fileViewProvider : FileViewProvider, language : Language) : super(fileViewProvider,language){
-        fileProvider = fileViewProvider
-        fileLanguage = language
-    }
-    override fun getFileType() : FileType {
-        fileTy = SnnetFileType()
-        return fileTy as FileType
-    }
+	companion object Data {
+		var fileProvider: FileViewProvider? = null
+		var fileLanguage: Language? = null
+		var fileTy: SnnetFileType? = null
+	}
+	
+	constructor(fileViewProvider: FileViewProvider, language: Language) : super(fileViewProvider, language) {
+		fileProvider = fileViewProvider
+		fileLanguage = language
+	}
+	
+	override fun getFileType(): FileType {
+		fileTy = SnnetFileType()
+		return fileTy as FileType
+	}
 }

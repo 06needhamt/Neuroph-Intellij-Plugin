@@ -22,7 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 @file:JvmName("AboutForm\$Ext") // Do Some Kotlin Sorcery!
-@file:JvmMultifileClass() // Do Some Kotlin Sorcery!
+@file:JvmMultifileClass()
+
+// Do Some Kotlin Sorcery!
 package com.thomas.needham.neurophidea.forms.about
 
 import com.intellij.ide.IdeBundle
@@ -35,12 +37,12 @@ import com.intellij.openapi.extensions.PluginId
  * Created by thoma on 13/06/2016.
  */
 
-fun AboutForm.DisplayPluginVersion(){
-    lblVersion.text += PluginManager.getPlugin(PluginId.getId("com.thomas.needham.neurophidea"))?.getVersion();
+fun AboutForm.DisplayPluginVersion() {
+	lblVersion.text += PluginManager.getPlugin(PluginId.getId("com.thomas.needham.neurophidea"))?.getVersion();
 }
 
-fun AboutForm.DisplayIDEVersion(){
-    val appInfo : ApplicationInfoImpl? = ApplicationInfoEx.getInstance() as ApplicationInfoImpl?
-    val buildinfo : String = IdeBundle.message("about.box.build.number",appInfo?.build.toString())
-    lblRunningOn.text += buildinfo
+fun AboutForm.DisplayIDEVersion() {
+	val appInfo: ApplicationInfoImpl? = ApplicationInfoEx.getInstance() as ApplicationInfoImpl?
+	val buildinfo: String = IdeBundle.message("about.box.build.number", appInfo?.build.toString())
+	lblRunningOn.text += buildinfo
 }

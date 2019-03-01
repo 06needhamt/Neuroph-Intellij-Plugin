@@ -23,21 +23,15 @@ SOFTWARE.
  */
 package com.thomas.needham.neurophidea.examples.java;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-
 import org.neuroph.core.NeuralNetwork;
 import org.neuroph.core.learning.SupervisedTrainingElement;
 import org.neuroph.core.learning.TrainingSet;
-import org.neuroph.util.TransferFunctionType;
-
 import org.neuroph.nnet.MultiLayerPerceptron;
 import org.neuroph.nnet.learning.BackPropagation;
+import org.neuroph.util.TransferFunctionType;
+
+import java.io.*;
+import java.util.ArrayList;
 
 public class TrainTest {
     static int inputSize = 8;
@@ -45,7 +39,7 @@ public class TrainTest {
     static NeuralNetwork network;
     static TrainingSet<SupervisedTrainingElement> trainingSet;
     static TrainingSet<SupervisedTrainingElement> testingSet;
-    static int[] layers = {8,8,1};
+    static int[] layers = {8, 8, 1};
 
     static void loadNetwork() {
         network = NeuralNetwork.load("D:/GitHub/Neuroph-Intellij-Plugin/TrainTest.nnet");
@@ -53,7 +47,7 @@ public class TrainTest {
 
     static void trainNetwork() {
         ArrayList<Integer> list = new ArrayList<Integer>();
-        for(int layer : layers) {
+        for (int layer : layers) {
             list.add(layer);
         }
 
@@ -75,22 +69,22 @@ public class TrainTest {
             try {
                 System.out.println("Enter test values or \"\": ");
                 input = fromKeyboard.readLine();
-                if(input.equals("")) {
+                if (input.equals("")) {
                     break;
                 }
                 input = input.replace(" ", "");
                 String[] stringVals = input.split(",");
                 testValues.clear();
-                for(String val : stringVals) {
+                for (String val : stringVals) {
                     testValues.add(Double.parseDouble(val));
                 }
-            } catch(IOException ioe) {
+            } catch (IOException ioe) {
                 ioe.printStackTrace(System.err);
-            } catch(NumberFormatException nfe) {
+            } catch (NumberFormatException nfe) {
                 nfe.printStackTrace(System.err);
             }
             testValuesDouble = new double[testValues.size()];
-            for(int t = 0; t < testValuesDouble.length; t++) {
+            for (int t = 0; t < testValuesDouble.length; t++) {
                 testValuesDouble[t] = testValues.get(t).doubleValue();
             }
             network.setInput(testValuesDouble);
@@ -102,20 +96,20 @@ public class TrainTest {
         double total = 0.0;
         ArrayList<Integer> list = new ArrayList<Integer>();
         ArrayList<String> outputLine = new ArrayList<String>();
-        for(int layer : layers) {
+        for (int layer : layers) {
             list.add(layer);
         }
 
-        testingSet = TrainingSet.createFromFile(setPath, inputSize, outputSize,",");
+        testingSet = TrainingSet.createFromFile(setPath, inputSize, outputSize, ",");
         int count = testingSet.elements().size();
         double averageDeviance = 0;
         String resultString = "";
-        try{
+        try {
             File file = new File("Results " + setPath);
             FileWriter fw = new FileWriter(file);
             BufferedWriter bw = new BufferedWriter(fw);
 
-            for(int i = 0; i < testingSet.elements().size(); i ++){
+            for (int i = 0; i < testingSet.elements().size(); i++) {
                 double expected;
                 double calculated;
                 network.setInput(testingSet.elementAt(i).getInput());
@@ -128,13 +122,13 @@ public class TrainTest {
                 averageDeviance += Math.abs(Math.abs(calculated) - Math.abs(expected));
                 total += network.getOutput()[0];
                 resultString = "";
-                for(int cols = 0; cols < testingSet.elementAt(i).getInputArray().length; cols++) {
+                for (int cols = 0; cols < testingSet.elementAt(i).getInputArray().length; cols++) {
                     resultString += testingSet.elementAt(i).getInputArray()[cols] + ", ";
                 }
-                for(int t = 0; t < network.getOutput().length; t++) {
+                for (int t = 0; t < network.getOutput().length; t++) {
                     resultString += network.getOutput()[t] + ", ";
                 }
-                resultString = resultString.substring(0, resultString.length()-2);
+                resultString = resultString.substring(0, resultString.length() - 2);
                 resultString += "";
                 bw.write(resultString);
                 bw.flush();
@@ -144,8 +138,7 @@ public class TrainTest {
             System.out.println("Average Deviance % : " + (averageDeviance / count) * 100);
             bw.flush();
             bw.close();
-        }
-        catch(IOException ex) {
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
     }

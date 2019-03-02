@@ -112,7 +112,7 @@ class SnnetEditorComponent : JBLoadingPanel, DataProvider {
 		return SnnetDocumentManager.getInstance().getDocument(file!!) != null
 	}
 	
-	override fun getData(p0: String?): Any? {
+	override fun getData(p0: String): Any? {
 		throw UnsupportedOperationException()
 	}
 	

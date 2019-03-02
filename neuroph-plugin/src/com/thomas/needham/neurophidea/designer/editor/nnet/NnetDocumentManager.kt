@@ -439,13 +439,12 @@ class NnetDocumentManager : FileDocumentManager, VirtualFileListener, ProjectMan
 	
 	override fun reloadFromDisk(p0: Document) {
 		ApplicationManager.getApplication().assertIsDispatchThread()
-		val file: VirtualFile? = getFile(p0)
-		assert(file != null)
+		val file: VirtualFile = getFile(p0)!!
 		if (!fireBeforeFileContentReload(file, p0)) return
-		if (file?.length!! > FileUtilRt.LARGE_FOR_CONTENT_LOADING) {
+		if (file.length > FileUtilRt.LARGE_FOR_CONTENT_LOADING) {
 			unbindFileFromDocument(file, p0)
 			unsavedDocuments.remove(p0)
-			documentManagerListener?.fileWithNoDocumentChanged(file!!)
+			documentManagerListener?.fileWithNoDocumentChanged(file)
 			return
 		}
 		val project = ProjectLocator.getInstance().guessProjectForFile(file)
@@ -454,13 +453,13 @@ class NnetDocumentManager : FileDocumentManager, VirtualFileListener, ProjectMan
 				val wasWritable = p0.isWritable
 				val docEx = p0 as DocumentEx
 				docEx.setReadOnly(false)
-				docEx.replaceText(LoadTextUtil.loadText(file!!), file.modificationStamp)
+				docEx.replaceText(LoadTextUtil.loadText(file), file.modificationStamp)
 				docEx.setReadOnly(!wasWritable)
 			}
 			
 		}), UIBundle.message("file.cache.conflict.action"), null, UndoConfirmationPolicy.REQUEST_CONFIRMATION)
 		unsavedDocuments.remove(p0)
-		documentManagerListener?.fileContentReloaded(file!!, p0)
+		documentManagerListener?.fileContentReloaded(file, p0)
 	}
 	
 	private fun unbindFileFromDocument(file: VirtualFile?, p0: Document) {
@@ -469,10 +468,10 @@ class NnetDocumentManager : FileDocumentManager, VirtualFileListener, ProjectMan
 		p0.putUserData(FILE_KEY, null)
 	}
 	
-	private fun fireBeforeFileContentReload(file: VirtualFile?, p0: Document): Boolean {
+	private fun fireBeforeFileContentReload(file: VirtualFile, p0: Document): Boolean {
 		for (vector: FileDocumentSynchronizationVetoer in Extensions.getExtensions(FileDocumentSynchronizationVetoer.EP_NAME)) {
 			try {
-				if (!vector.mayReloadFileContent(file!!, p0))
+				if (!vector.mayReloadFileContent(file, p0))
 					return false
 			} catch (e: Exception) {
 				e.printStackTrace(System.err)
@@ -510,7 +509,7 @@ class NnetDocumentManager : FileDocumentManager, VirtualFileListener, ProjectMan
 			return null;
 		} else {
 			val text: String = LoadTextUtil.loadText(p0) as String
-			synchronized(LOCK!!, {
+			synchronized(LOCK!!) {
 				document = getCachedDocument(p0) as DocumentEx?
 				if (document != null) return document
 				document = createDocument(text, p0) as DocumentEx
@@ -525,8 +524,8 @@ class NnetDocumentManager : FileDocumentManager, VirtualFileListener, ProjectMan
 				}
 				if (!(p0 is LightVirtualFile || p0.fileSystem is NonPhysicalFileSystem)) {
 					document?.addDocumentListener(object : DocumentAdapter() {
-						override fun documentChanged(e: DocumentEvent?) {
-							val doc: Document? = e?.document
+						override fun documentChanged(e: DocumentEvent) {
+							val doc: Document? = e.document
 							unsavedDocuments.add(doc)
 							val command: Runnable? = CommandProcessor.getInstance().currentCommand
 							val project: Project? = if (command == null) null else CommandProcessor.getInstance().currentCommandProject
@@ -537,7 +536,7 @@ class NnetDocumentManager : FileDocumentManager, VirtualFileListener, ProjectMan
 						}
 					})
 				}
-			})
+			}
 			documentManagerListener?.fileContentLoaded(p0, document!!)
 		}
 		return document
@@ -660,7 +659,7 @@ class NnetDocumentManager : FileDocumentManager, VirtualFileListener, ProjectMan
 		fileCreated(p0 as VirtualFileEvent)
 	}
 	
-	override fun canCloseProject(p0: Project?): Boolean {
+	override fun canCloseProject(p0: Project): Boolean {
 		if (!unsavedDocuments.isEmpty()) {
 			onClose = true
 			try {
@@ -672,13 +671,13 @@ class NnetDocumentManager : FileDocumentManager, VirtualFileListener, ProjectMan
 		return unsavedDocuments.isEmpty()
 	}
 	
-	override fun projectClosing(p0: Project?) {
+	override fun projectClosing(p0: Project) {
 	}
 	
-	override fun projectClosed(p0: Project?) {
+	override fun projectClosed(p0: Project) {
 	}
 	
-	override fun projectOpened(p0: Project?) {
+	override fun projectOpened(p0: Project) {
 	}
 	
 	@SuppressWarnings("OverlyBroadCatchBlock")

@@ -55,7 +55,7 @@ class NeurophFacetEditorTab : FacetEditorTab {
 	}
 	
 	override fun reset() {
-		val sdk = ProjectJdkTable.getInstance().findJdk(settings?.neurophSDKName)
+		val sdk = ProjectJdkTable.getInstance().findJdk(settings?.neurophSDKName!!)
 	}
 	
 	@Nls

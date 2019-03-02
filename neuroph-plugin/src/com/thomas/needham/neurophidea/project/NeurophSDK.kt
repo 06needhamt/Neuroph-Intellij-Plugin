@@ -64,7 +64,7 @@ class NeurophSDK : SdkType("Neuroph SDK") {
 		return false
 	}
 	
-	override fun suggestSdkName(p0: String?, p1: String?): String? {
+	override fun suggestSdkName(p0: String?, p1: String?): String {
 		return "Neuroph SDK"
 	}
 	
@@ -84,9 +84,9 @@ class NeurophSDK : SdkType("Neuroph SDK") {
 		return null
 	}
 	
-	override fun loadAdditionalData(additional: Element?): SdkAdditionalData? {
+	override fun loadAdditionalData(additional: Element): SdkAdditionalData? {
 		val cls = NeurophSDKData::class.java
-		return XmlSerializer.deserialize(additional!!, cls);
+		return XmlSerializer.deserialize(additional, cls);
 	}
 	
 	override fun getIcon(): Icon? {

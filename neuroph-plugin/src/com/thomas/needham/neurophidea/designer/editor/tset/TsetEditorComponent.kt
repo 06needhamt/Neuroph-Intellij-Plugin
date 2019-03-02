@@ -112,7 +112,7 @@ class TsetEditorComponent : JBLoadingPanel, DataProvider {
 		return TsetDocumentManager.getInstance().getDocument(file!!) != null
 	}
 	
-	override fun getData(p0: String?): Any? {
+	override fun getData(p0: String): Any? {
 		throw UnsupportedOperationException()
 	}
 	

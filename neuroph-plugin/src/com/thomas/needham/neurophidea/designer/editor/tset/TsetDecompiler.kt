@@ -16,14 +16,14 @@ class TsetDecompiler : BinaryFileDecompiler {
 	var dataSetLoader: TsetEditorLoader? = null
 	var dataSet: TrainingSet<TrainingElement?>? = null
 	
-	override fun decompile(p0: VirtualFile?): CharSequence {
+	override fun decompile(p0: VirtualFile): CharSequence {
 		try {
 			var result = ""
-			if (p0?.isValid!!) {
+			if (p0.isValid) {
 				dataSetLoader = TsetEditorLoader(p0)
 				dataSet = dataSetLoader?.LoadDataSet()
 				if (dataSet == null) {
-					throw IOException("Error Loading Data Set From File: ${p0?.path}")
+					throw IOException("Error Loading Data Set From File: ${p0.path}")
 				}
 				for (i in 0..dataSet?.elements()?.size!! - 1) {
 					val inarr = dataSet?.elements()!![i]?.inputArray

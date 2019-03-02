@@ -47,7 +47,7 @@ class TsetDocumentListener : DocumentAdapter, Runnable {
 		lambda()
 	}
 	
-	override fun documentChanged(e: DocumentEvent?) {
+	override fun documentChanged(e: DocumentEvent) {
 		super.documentChanged(e)
 		if (!updateScheduled) {
 			ApplicationManager.getApplication().invokeLater(this)

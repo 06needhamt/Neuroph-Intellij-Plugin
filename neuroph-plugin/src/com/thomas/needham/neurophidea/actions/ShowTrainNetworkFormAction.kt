@@ -51,12 +51,12 @@ class ShowTrainNetworkFormAction : AnAction() {
 		form = TrainNetworkForm()
 	}
 	
-	override fun update(e: AnActionEvent?) {
+	override fun update(e: AnActionEvent) {
 		super.update(e)
 		if (form != null) {
 			form?.repaint(itr, 0, 0, form?.width!!, form?.height!!)
 			itr++
 		}
-		e?.presentation?.isEnabledAndVisible = true
+		e.presentation.isEnabledAndVisible = true
 	}
 }

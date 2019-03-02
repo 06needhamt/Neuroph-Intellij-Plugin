@@ -155,9 +155,9 @@ class NeurophModuleBuilder : JavaModuleBuilder, ModuleBuilderListener {
 		return settingsStep
 	}
 	
-	override fun getAdditionalFields(): MutableList<WizardInputField<JComponent>>? {
+	override fun getAdditionalFields(): List<WizardInputField<JComponent>> {
 		val field = NeurophWizardInputField()
-		return listOf<WizardInputField<*>>(field) as MutableList<WizardInputField<JComponent>>
+		return listOf<WizardInputField<JComponent>>(field as WizardInputField<JComponent>)
 		//return super.getAdditionalFields() // Do Not Try To Get Steps From Superclass
 	}
 }

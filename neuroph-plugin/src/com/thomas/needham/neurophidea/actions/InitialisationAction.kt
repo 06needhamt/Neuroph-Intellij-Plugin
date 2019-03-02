@@ -45,8 +45,8 @@ class InitialisationAction : AnAction {
 	
 	}
 	
-	override fun actionPerformed(p0: AnActionEvent?) {
-		project = p0?.project
+	override fun actionPerformed(p0: AnActionEvent) {
+		project = p0.project
 		projectDirectory = project?.basePath
 		isOpen = project?.isOpen
 	}

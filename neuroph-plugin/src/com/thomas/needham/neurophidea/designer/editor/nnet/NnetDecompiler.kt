@@ -40,13 +40,13 @@ class NnetDecompiler : BinaryFileDecompiler {
 	var networkLoader: NnetLoader? = null
 	var network: NeuralNetwork? = null
 	
-	override fun decompile(p0: VirtualFile?): CharSequence {
+	override fun decompile(p0: VirtualFile): CharSequence {
 		try {
-			if (p0?.isValid!!) {
+			if (p0.isValid) {
 				networkLoader = NnetLoader(p0)
 				network = networkLoader?.LoadNetwork()
 				if (network == null)
-					throw IOException("Error Loading Network From File: ${p0?.path}")
+					throw IOException("Error Loading Network From File: ${p0.path}")
 				var result = ""
 				result += "Network Type: ${network?.networkType?.name}" + "\n"
 				result += "Learning Rule: "

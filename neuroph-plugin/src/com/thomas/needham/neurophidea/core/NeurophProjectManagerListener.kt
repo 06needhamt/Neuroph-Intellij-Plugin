@@ -32,20 +32,20 @@ import com.thomas.needham.neurophidea.PluginRegistration
  * Created by thoma on 09/10/2016.
  */
 class NeurophProjectManagerListener : ProjectManagerListener {
-	override fun canCloseProject(project: Project?): Boolean {
+	override fun canCloseProject(project: Project): Boolean {
 		return super.canCloseProject(project)
 	}
 	
-	override fun projectClosing(project: Project?) {
+	override fun projectClosing(project: Project) {
 		PluginRegistration.projectClosing = true
 		super.projectClosing(project)
 	}
 	
-	override fun projectClosed(project: Project?) {
+	override fun projectClosed(project: Project) {
 		super.projectClosed(project)
 	}
 	
-	override fun projectOpened(project: Project?) {
+	override fun projectOpened(project: Project) {
 		PluginRegistration.projectClosing = false
 		super.projectOpened(project)
 	}

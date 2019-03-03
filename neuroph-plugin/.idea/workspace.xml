@@ -6,14 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bf29350-129e-4cfc-8762-78cb4578196f" name="Default" comment="Update To Idea 2019.1.X EAP API">
-      <change beforePath="$PROJECT_DIR$/../TestProject/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TestProject/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TestProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/neuroph_plugin_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/neuroph_plugin_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Groovy.xml" beforeDir="false" />
+    <list default="true" id="0bf29350-129e-4cfc-8762-78cb4578196f" name="Default" comment="Add Missing id Attribute to Plugin Module">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neuroph-plugin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/neuroph-plugin.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/META-INF/plugin.xml" afterDir="false" />
     </list>
     <ignored path="neuroph-plugin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,19 +28,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/NeurophProjectManagerListener.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="947">
+            <state relative-caret-position="239">
               <caret line="58" selection-start-line="58" selection-end-line="58" />
             </state>
           </provider>
@@ -183,8 +168,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -563,7 +548,14 @@
       <option name="project" value="LOCAL" />
       <updated>1551530915743</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add Missing id Attribute to Plugin Module">
+      <created>1551605053489</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1551605053489</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -579,10 +571,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <layout>
       <window_info id="Designer" order="0" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4940978" visible="true" weight="0.25159913" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.4940978" visible="true" weight="0.25426438" />
       <window_info id="Image Layers" order="2" />
       <window_info id="DB Browser" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -597,7 +589,7 @@
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="TODO" order="3" weight="0.32981783" />
       <window_info anchor="bottom" id="Version Control" order="4" />
-      <window_info anchor="bottom" id="Messages" order="5" sideWeight="0.48827294" weight="0.26653883" />
+      <window_info anchor="bottom" id="Messages" order="5" sideWeight="0.48827294" visible="true" weight="0.26653883" />
       <window_info anchor="bottom" id="Run" order="6" sideWeight="0.48720682" weight="0.22818792" />
       <window_info anchor="bottom" id="Tool Output" order="7" />
       <window_info anchor="bottom" id="ANTLR Preview" order="8" weight="0.32988507" />
@@ -668,7 +660,8 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Fix All Formatting" />
     <MESSAGE value="Update To Idea 2019.1.X EAP API" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update To Idea 2019.1.X EAP API" />
+    <MESSAGE value="Add Missing id Attribute to Plugin Module" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Missing id Attribute to Plugin Module" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -1016,6 +1009,9 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/groovy/groovy_console.groovy">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/NeurophProjectManagerListener.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -1023,12 +1019,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/groovy/groovy_console.groovy">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="947">
+        <state relative-caret-position="239">
           <caret line="58" selection-start-line="58" selection-end-line="58" />
         </state>
       </provider>

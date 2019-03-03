@@ -25,6 +25,5 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="scala-sdk-2.12.3" level="project" />
-    <orderEntry type="library" name="Groovy" level="project" />
   </component>
 </module>

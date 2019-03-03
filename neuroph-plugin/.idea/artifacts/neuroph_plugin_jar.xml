@@ -8,7 +8,6 @@
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/JOCL-0.1.3a-beta.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/encog-engine-2.5.0.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/mysql-connector-java-5.1.17-bin.jar" path-in-jar="/" />
-      <element id="library" level="project" name="Groovy" />
       <element id="library" level="project" name="scala-sdk-2.12.3" />
     </root>
   </artifact>

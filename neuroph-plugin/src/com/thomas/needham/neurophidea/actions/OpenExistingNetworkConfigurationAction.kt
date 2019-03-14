@@ -42,6 +42,8 @@ import java.io.*
 
 /**
  * Created by Thomas Needham on 27/05/2016.
+ *
+ * Action performed when opwning an exiting network
  */
 class OpenExistingNetworkConfigurationAction : AnAction() {
 	
@@ -75,6 +77,9 @@ class OpenExistingNetworkConfigurationAction : AnAction() {
 		
 	}
 	
+	/**
+	 * Function called when action is performed.
+	 */
 	override fun actionPerformed(e: AnActionEvent) {
 		project = InitialisationAction.project
 		projectDirectory = InitialisationAction.projectDirectory

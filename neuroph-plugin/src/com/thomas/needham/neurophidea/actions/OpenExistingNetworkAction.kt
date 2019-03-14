@@ -8,6 +8,8 @@ import com.thomas.needham.neurophidea.forms.open.OpenNetworkForm
 
 /**
  * Created by thoma on 13/06/2016.
+ *
+ * Action to Open a network that was previously created by this plugin
  */
 class OpenExistingNetworkAction : AnAction() {
 	var form: OpenNetworkForm? = null
@@ -20,11 +22,13 @@ class OpenExistingNetworkAction : AnAction() {
 	}
 	
 	override fun actionPerformed(e: AnActionEvent) {
+		// Setup Project
 		InitialisationAction.project = e.project
 		InitialisationAction.projectDirectory = InitialisationAction.project?.basePath
 		InitialisationAction.isOpen = InitialisationAction.project?.isOpen
-		Messages.showErrorDialog(project, "Feature is Not Currently Implemented", "Not Implemented")
-		return
+		// TODO Implement
+//		Messages.showErrorDialog(project, "Feature is Not Currently Implemented", "Not Implemented")
+//		return
 		form = OpenNetworkForm()
 	}
 }

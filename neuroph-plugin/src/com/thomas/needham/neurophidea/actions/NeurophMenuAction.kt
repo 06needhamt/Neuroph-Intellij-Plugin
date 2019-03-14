@@ -29,6 +29,8 @@ import com.intellij.openapi.project.Project
 
 /**
  * Created by Thomas Needham on 25/05/2016.
+ *
+ * Action to initialise the Neuroph Menu Bar
  */
 class NeurophMenuAction : AnAction() {
 	companion object ProjectInfo {

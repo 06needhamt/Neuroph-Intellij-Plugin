@@ -6,8 +6,17 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bf29350-129e-4cfc-8762-78cb4578196f" name="Default" comment="Add Missing id Attribute to Plugin Module">
+    <list default="true" id="0bf29350-129e-4cfc-8762-78cb4578196f" name="Default" comment="Add Scala SDK">
+      <change beforePath="$PROJECT_DIR$/../TestProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TestProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/neuroph_plugin_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/neuroph_plugin_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/scala_sdk_2_12_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neuroph-plugin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/neuroph-plugin.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/InitialisationAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/InitialisationAction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/NeurophMenuAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/NeurophMenuAction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/OpenExistingNetworkAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/OpenExistingNetworkAction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/OpenExistingNetworkConfigurationAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/OpenExistingNetworkConfigurationAction.kt" afterDir="false" />
     </list>
     <ignored path="neuroph-plugin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,11 +37,92 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
+            <state relative-caret-position="1392">
               <caret line="58" selection-start-line="58" selection-end-line="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/InitialisationAction.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="744">
+              <caret line="54" column="48" selection-start-line="54" selection-start-column="48" selection-end-line="54" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/NeurophMenuAction.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="32" column="40" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/OpenExistingNetworkAction.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="648">
+              <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/open/OpenNetworkForm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="576">
+              <caret line="29" column="47" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/open/OpenNetworkFormImplementation.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="37" column="73" selection-start-line="37" selection-start-column="73" selection-end-line="37" selection-end-column="73" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/open/OpenNetworkButtonActionListener.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="792">
+              <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/OpenExistingNetworkConfigurationAction.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1008">
+              <caret line="80" column="48" selection-start-line="80" selection-start-column="48" selection-end-line="80" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowCreateNetworkFormAction.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="744">
+              <caret line="56" column="9" lean-forward="true" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowAboutFromAction.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="744">
+              <caret line="56" column="22" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -71,9 +161,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/settings/AutoGenerateCodeSetting.kt" />
-        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetEditor.kt" />
-        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetVirtualFileListener.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetVirtualFileListener.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetInvocationHandler.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetFileTypeListener.kt" />
@@ -98,7 +185,6 @@
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/facet/NeurophFacetConfiguration.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/NetworkTrainer.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/CompileSnnetFileAction.kt" />
-        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/InitialisationAction.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowAboutFromAction.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowCreateNetworkFormAction.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowExportNetworkFormAction.kt" />
@@ -122,6 +208,10 @@
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetDocumentManager.kt" />
         <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/NeurophProjectManagerListener.kt" />
         <option value="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
+        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/InitialisationAction.kt" />
+        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/NeurophMenuAction.kt" />
+        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/OpenExistingNetworkAction.kt" />
+        <option value="$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/OpenExistingNetworkConfigurationAction.kt" />
       </list>
     </option>
   </component>
@@ -139,10 +229,10 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1176" />
+    <option name="x" value="-6" />
+    <option name="y" value="-6" />
+    <option name="width" value="1292" />
+    <option name="height" value="785" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -168,7 +258,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -209,20 +298,27 @@
               <item name="neuroph-plugin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="neurophidea" type="462c0819:PsiDirectoryNode" />
-              <item name="forms" type="462c0819:PsiDirectoryNode" />
+              <item name="actions" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="neuroph-plugin" type="b2602c69:ProjectViewProjectNode" />
               <item name="neuroph-plugin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="neurophidea" type="462c0819:PsiDirectoryNode" />
-              <item name="forms" type="462c0819:PsiDirectoryNode" />
-              <item name="train" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="neuroph-plugin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="neuroph-plugin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="neurophidea" type="462c0819:PsiDirectoryNode" />
+              <item name="exceptions" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -233,12 +329,13 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="build" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="678" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542468082065" />
     <property name="last_opened_file_path" value="C:/Program Files (x86)/Groovy/Groovy-2.5.3" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.language.Kotlin" />
@@ -555,7 +652,14 @@
       <option name="project" value="LOCAL" />
       <updated>1551605053489</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add Scala SDK">
+      <created>1551605391564</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1551605391564</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -571,10 +675,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
+    <frame x="-7" y="-7" width="2575" height="1415" extended-state="6" />
     <layout>
       <window_info id="Designer" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.4940978" visible="true" weight="0.25426438" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.4940978" visible="true" weight="0.11720302" />
       <window_info id="Image Layers" order="2" />
       <window_info id="DB Browser" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -589,11 +693,11 @@
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="TODO" order="3" weight="0.32981783" />
       <window_info anchor="bottom" id="Version Control" order="4" />
-      <window_info anchor="bottom" id="Messages" order="5" sideWeight="0.48827294" visible="true" weight="0.26653883" />
+      <window_info anchor="bottom" id="Messages" order="5" sideWeight="0.48827294" weight="0.26653883" />
       <window_info anchor="bottom" id="Run" order="6" sideWeight="0.48720682" weight="0.22818792" />
       <window_info anchor="bottom" id="Tool Output" order="7" />
       <window_info anchor="bottom" id="ANTLR Preview" order="8" weight="0.32988507" />
-      <window_info anchor="bottom" id="Debug" order="9" sideWeight="0.49666294" weight="0.31044215" />
+      <window_info active="true" anchor="bottom" id="Debug" order="9" sideWeight="0.49666294" visible="true" weight="0.3096836" />
       <window_info anchor="bottom" id="Find" order="10" weight="0.32173094" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
@@ -661,13 +765,23 @@
     <MESSAGE value="Fix All Formatting" />
     <MESSAGE value="Update To Idea 2019.1.X EAP API" />
     <MESSAGE value="Add Missing id Attribute to Plugin Module" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Missing id Attribute to Plugin Module" />
+    <MESSAGE value="Add Scala SDK" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Scala SDK" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/open/OpenNetworkButtonActionListener.kt</url>
+          <line>42</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
-        <watch expression="arguments[0] as VirtualFile?" language="kotlin" custom="" />
-        <watch expression="tokenStringList" language="kotlin" custom="" />
+        <watch expression="formInstance?.network" language="kotlin" />
       </configuration>
     </watches-manager>
   </component>
@@ -676,42 +790,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophModule.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/project/NeurophSDKComboBox.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="53" column="112" selection-start-line="53" selection-start-column="112" selection-end-line="53" selection-end-column="112" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/snnet/SnnetEditorImpl.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="53" column="23" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/tset/TsetEditorImpl.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/designer/editor/nnet/NnetEditorImpl.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="59" column="21" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/rt.jar!/sun/reflect/DelegatingMethodAccessorImpl.class" />
     <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/core/AutoCodeGenerator.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2664">
@@ -838,27 +916,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="50" column="20" lean-forward="true" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/InitialisationAction.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="48" column="20" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowAboutFromAction.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="56" column="22" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowCreateNetworkFormAction.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="56" column="9" lean-forward="true" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -1021,8 +1078,71 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
+        <state relative-caret-position="1392">
           <caret line="58" selection-start-line="58" selection-end-line="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/InitialisationAction.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="744">
+          <caret line="54" column="48" selection-start-line="54" selection-start-column="48" selection-end-line="54" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/NeurophMenuAction.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="32" column="40" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/OpenExistingNetworkAction.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/open/OpenNetworkForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="29" column="47" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/open/OpenNetworkFormImplementation.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="37" column="73" selection-start-line="37" selection-start-column="73" selection-end-line="37" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/forms/open/OpenNetworkButtonActionListener.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/OpenExistingNetworkConfigurationAction.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="80" column="48" selection-start-line="80" selection-start-column="48" selection-end-line="80" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowCreateNetworkFormAction.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="744">
+          <caret line="56" column="9" lean-forward="true" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thomas/needham/neurophidea/actions/ShowAboutFromAction.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="744">
+          <caret line="56" column="22" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -1031,7 +1151,12 @@
     <states>
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
-          <artifact-editor />
+          <artifact-editor>
+            <show-content>
+              <type id="library" />
+              <type id="artifact" />
+            </show-content>
+          </artifact-editor>
           <last-edited>neuroph-plugin:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
@@ -1057,7 +1182,7 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
-          <last-edited>scala-sdk-2.11.8</last-edited>
+          <last-edited>scala-sdk-2.12.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1069,7 +1194,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>IntelliJ IDEA Community Edition IC-182.3911.36</last-edited>
+          <last-edited>IntelliJ IDEA Community Edition IC-191.6014.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1105,7 +1230,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>scala-sdk-2.12.3</last-edited>
+          <last-edited>scala-sdk-2.12.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

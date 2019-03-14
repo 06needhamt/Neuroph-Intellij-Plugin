@@ -28,8 +28,10 @@ import com.intellij.openapi.project.Project
 
 /**
  * Created by Thomas Needham on 24/05/2016.
+ *
+ * Initial action that is performed when the plugin is loaded on IDE startup
+ * or enabled manually by the user.
  */
-
 class InitialisationAction : AnAction {
 	companion object ProjectInfo {
 		var project: Project? = null
@@ -45,7 +47,12 @@ class InitialisationAction : AnAction {
 	
 	}
 	
+	/**
+	 * Function called when the plugin has been successfully initialised
+	 * @param p0 The action event that fired the action
+	 */
 	override fun actionPerformed(p0: AnActionEvent) {
+		// Setup the Plugin and load the project
 		project = p0.project
 		projectDirectory = project?.basePath
 		isOpen = project?.isOpen
